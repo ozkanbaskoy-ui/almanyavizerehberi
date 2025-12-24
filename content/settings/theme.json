@@ -1,0 +1,9 @@
+{
+  "activeTheme": "default",
+  "customColors": {
+    "heroFrom": "#1E3A8A",
+    "heroTo": "#0F172A",
+    "videoBg": "#F8FAFC",
+    "videoBorder": "#E2E8F0"
+  }
+}
