@@ -62,3 +62,43 @@ export function getPageBySlug(slug: string): PageContent {
     bodyHtml: cleanPageHtml(parsed.bodyHtml),
   };
 }
+
+export function getAllPages(): PageContent[] {
+  if (!fs.existsSync(PAGES_DIR)) return [];
+
+  const files = fs
+    .readdirSync(PAGES_DIR)
+    .filter((file) => file.endsWith('.json'));
+
+  return files.map((file) => {
+    const raw = fs.readFileSync(path.join(PAGES_DIR, file), 'utf8');
+    const parsed = JSON.parse(raw) as PageContent;
+    return {
+      ...parsed,
+      bodyHtml: cleanPageHtml(parsed.bodyHtml),
+    };
+  });
+}
+
+export function savePageBySlug(
+  slug: string,
+  fields: Pick<PageContent, 'title' | 'seoTitle' | 'seoDescription' | 'bodyHtml'>,
+) {
+  const fullPath = path.join(PAGES_DIR, `${slug}.json`);
+  if (!fs.existsSync(fullPath)) {
+    throw new Error(`Page not found for slug: ${slug}`);
+  }
+
+  const raw = fs.readFileSync(fullPath, 'utf8');
+  const current = JSON.parse(raw) as PageContent;
+
+  const next: PageContent = {
+    ...current,
+    title: fields.title,
+    seoTitle: fields.seoTitle,
+    seoDescription: fields.seoDescription,
+    bodyHtml: fields.bodyHtml,
+  };
+
+  fs.writeFileSync(fullPath, JSON.stringify(next, null, 2), 'utf8');
+}

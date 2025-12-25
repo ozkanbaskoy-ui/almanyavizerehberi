@@ -1,13 +1,16 @@
 import type { CSSProperties } from 'react';
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import { Plus_Jakarta_Sans } from 'next/font/google';
 import '../styles/globals.css';
 
 import { MainNav } from '@/components/layout/MainNav';
 import { Footer } from '@/components/layout/Footer';
 import { WhatsAppFloatingButton } from '@/components/layout/WhatsAppFloatingButton';
+import { MaintenanceGate } from '@/components/layout/MaintenanceGate';
 import { getThemeSettings } from '@/lib/settings/theme';
 import { getTypographySettings } from '@/lib/settings/typography';
+import { getSiteSettings } from '@/lib/settings/site';
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ['latin'],
@@ -49,6 +52,8 @@ type RootLayoutProps = {
 export default function RootLayout({ children }: RootLayoutProps) {
   const { activeTheme, customColors } = getThemeSettings();
   const typography = getTypographySettings();
+  const site = getSiteSettings();
+  const gaId = process.env.NEXT_PUBLIC_GA_ID;
 
   const cssVars = {
     '--color-hero-from': customColors.heroFrom,
@@ -62,17 +67,35 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <body
         className={[
           plusJakarta.variable,
-          'min-h-screen bg-surface-main text-brand-dark antialiased',
+          'min-h-screen bg-surface-main text-brand-dark antialiased scrollbar-modern',
           `theme-${activeTheme}`,
           `typography-${typography.scale}`,
         ].join(' ')}
         style={cssVars}
       >
+        {gaId && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
+              strategy="afterInteractive"
+            />
+            <Script id="ga-init" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${gaId}', { anonymize_ip: true });
+              `}
+            </Script>
+          </>
+        )}
         <div className="flex min-h-screen flex-col">
-          <MainNav />
-          <main className="flex-1">{children}</main>
-          <Footer />
-          <WhatsAppFloatingButton />
+          <MainNav site={site} />
+          <main className="flex-1">
+            <MaintenanceGate site={site}>{children}</MaintenanceGate>
+          </main>
+          <Footer site={site} />
+          <WhatsAppFloatingButton whatsappNumber={site.whatsappNumber} />
         </div>
       </body>
     </html>

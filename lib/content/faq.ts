@@ -14,6 +14,10 @@ export function getAllFaq(): FAQItem[] {
   return JSON.parse(raw) as FAQItem[];
 }
 
+export function saveAllFaq(items: FAQItem[]) {
+  fs.writeFileSync(FAQ_PATH, JSON.stringify(items, null, 2), 'utf8');
+}
+
 export function buildFaqSchemaOrg(items: FAQItem[]) {
   return {
     '@context': 'https://schema.org',

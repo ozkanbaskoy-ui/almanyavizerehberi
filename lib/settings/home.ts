@@ -4,6 +4,12 @@ import path from 'path';
 const SETTINGS_DIR = path.join(process.cwd(), 'content', 'settings');
 const HOME_SETTINGS_PATH = path.join(SETTINGS_DIR, 'home.json');
 
+export type HomeStat = {
+  label: string;
+  value: number;
+  suffix: string;
+};
+
 export type HomeSettings = {
   hero: {
     kicker: string;
@@ -21,6 +27,7 @@ export type HomeSettings = {
     title: string;
     body: string;
   };
+  stats: HomeStat[];
 };
 
 const DEFAULT_HOME_SETTINGS: HomeSettings = {
@@ -43,6 +50,12 @@ const DEFAULT_HOME_SETTINGS: HomeSettings = {
     body:
       "Almanya'da yeni bir hayat kurmak isteyenler için sunduğumuz vize türleriyle, kariyer ve yaşam hedeflerinize güvenli bir yol haritası çiziyoruz.",
   },
+  stats: [
+    { label: 'Mutlu Müşteri', value: 1000, suffix: '+' },
+    { label: 'Uzman Danışman', value: 50, suffix: '+' },
+    { label: 'Vize Onay Oranı', value: 95, suffix: '%' },
+    { label: 'Ülkeden Başvuru', value: 15, suffix: '+' },
+  ],
 };
 
 export function getHomeSettings(): HomeSettings {
@@ -53,6 +66,23 @@ export function getHomeSettings(): HomeSettings {
     if (!parsed || typeof parsed !== 'object') {
       return DEFAULT_HOME_SETTINGS;
     }
+
+    const stats: HomeStat[] = Array.isArray(parsed.stats)
+      ? parsed.stats.map((item, index) => {
+          const fallback = DEFAULT_HOME_SETTINGS.stats[index] ?? {
+            label: '',
+            value: 0,
+            suffix: '',
+          };
+          return {
+            label: item?.label ?? fallback.label,
+            value: Number.isFinite(Number(item?.value))
+              ? Number(item?.value)
+              : fallback.value,
+            suffix: item?.suffix ?? fallback.suffix,
+          };
+        })
+      : DEFAULT_HOME_SETTINGS.stats;
 
     return {
       hero: {
@@ -77,6 +107,7 @@ export function getHomeSettings(): HomeSettings {
           parsed.services?.title ?? DEFAULT_HOME_SETTINGS.services.title,
         body: parsed.services?.body ?? DEFAULT_HOME_SETTINGS.services.body,
       },
+      stats,
     };
   } catch {
     return DEFAULT_HOME_SETTINGS;

@@ -1,17 +1,18 @@
 import type { Metadata } from 'next';
+
 import { getPageBySlug } from '@/lib/content/pages';
 import { CalendlyEmbed } from '@/components/basvuru/CalendlyEmbed';
 import { RevealOnScroll } from '@/components/common/RevealOnScroll';
+import { getSiteSettings } from '@/lib/settings/site';
+import { BasvuruForm } from '@/components/basvuru/BasvuruForm';
 
 const page = getPageBySlug('basvuru');
+const site = getSiteSettings();
 
 export const metadata: Metadata = {
   title: page.seoTitle || page.title,
   description: page.seoDescription || '',
 };
-
-const CALENDLY_URL =
-  'https://calendly.com/almanyavizerehberi/almanya-vize-rehberi';
 
 export default function BasvuruPage() {
   return (
@@ -26,13 +27,14 @@ export default function BasvuruPage() {
               {page.title}
             </h1>
             <p className="mt-4 mx-auto max-w-2xl text-sm text-surface-main/80 md:text-base">
-              Almanya vize ve göç süreçleriniz için uygun olduğunuz zamanı seçin;
-              uzmanlarımız seçtiğiniz saatte çevrim içi olarak sizinle olacak.
+              Almanya vize ve göç süreçleriniz için uygun olduğunuz zamanı
+              seçin; uzmanlarımız seçtiğiniz saatte çevrim içi olarak sizinle
+              olacak.
             </p>
           </RevealOnScroll>
 
           <RevealOnScroll>
-            <CalendlyEmbed url={CALENDLY_URL} />
+            <CalendlyEmbed url={site.calendlyUrl} />
           </RevealOnScroll>
 
           <RevealOnScroll className="mt-10">
@@ -41,8 +43,13 @@ export default function BasvuruPage() {
               dangerouslySetInnerHTML={{ __html: page.bodyHtml }}
             />
           </RevealOnScroll>
+
+          <RevealOnScroll>
+            <BasvuruForm />
+          </RevealOnScroll>
         </div>
       </section>
     </main>
   );
 }
+

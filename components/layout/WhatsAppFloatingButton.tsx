@@ -1,9 +1,20 @@
 'use client';
 
-export function WhatsAppFloatingButton() {
+type WhatsAppFloatingButtonProps = {
+  whatsappNumber: string;
+};
+
+export function WhatsAppFloatingButton({
+  whatsappNumber,
+}: WhatsAppFloatingButtonProps) {
+  const cleaned = whatsappNumber.replace(/\s+/g, '');
+  const href = cleaned.startsWith('+')
+    ? `https://wa.me/${cleaned.replace('+', '')}`
+    : `https://wa.me/${cleaned}`;
+
   return (
     <a
-      href="https://wa.me/491783821542"
+      href={href}
       target="_blank"
       rel="noreferrer"
       aria-label="WhatsApp ile hızlı iletişim"

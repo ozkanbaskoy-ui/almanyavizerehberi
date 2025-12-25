@@ -490,19 +490,19 @@
 
   /* Scrollbar Styles */
   .scrollbar-modern::-webkit-scrollbar {
-    width: 10px;
+    width: 8px;
   }
 
   .scrollbar-modern::-webkit-scrollbar-track {
-    @apply bg-dark-100;
+    @apply bg-surface-soft;
   }
 
   .scrollbar-modern::-webkit-scrollbar-thumb {
-    @apply bg-primary-500 rounded-full;
+    @apply bg-brand-base rounded-full;
   }
 
   .scrollbar-modern::-webkit-scrollbar-thumb:hover {
-    @apply bg-primary-600;
+    @apply bg-brand-light;
   }
 }
 

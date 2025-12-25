@@ -6,6 +6,7 @@ import {
 } from '@/lib/thirdparty/youtube';
 import { YouTubeCoverflowSlider } from '@/components/youtube/YouTubeCoverflowSlider';
 import { RevealOnScroll } from '@/components/common/RevealOnScroll';
+import { getSiteSettings } from '@/lib/settings/site';
 
 function mapToCoverflowVideos(videos: YouTubeVideo[]) {
   return videos.map((v) => ({
@@ -19,6 +20,7 @@ function mapToCoverflowVideos(videos: YouTubeVideo[]) {
 export default async function YouTubePage() {
   const latestVideos = await fetchLatestVideos(12);
   const coverflowVideos = mapToCoverflowVideos(latestVideos);
+  const site = getSiteSettings();
 
   return (
     <main className="bg-surface-main">
@@ -32,9 +34,8 @@ export default async function YouTubePage() {
               Almanya Vize Süreçleri İçin Video Rehberler
             </h1>
             <p className="mt-4 mx-auto max-w-2xl text-sm md:text-base text-surface-main/80">
-              Almanya&apos;ya göç, çalışma, aile birleşimi ve fırsat kartı
-              gibi konularda hazırladığımız video rehberleri kaydırarak
-              inceleyin.
+              Almanya&apos;ya göç, çalışma, aile birleşimi ve fırsat kartı gibi
+              konularda hazırladığımız video rehberleri kaydırarak inceleyin.
             </p>
           </RevealOnScroll>
         </div>
@@ -52,14 +53,16 @@ export default async function YouTubePage() {
             <p className="text-sm text-slate-600">
               Daha fazla video için YouTube kanalımızı ziyaret edebilirsiniz.
             </p>
-            <Link
-              href="https://www.youtube.com/channel/UCYNClRqdbdinZphYGiSGg9Q"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-full bg-brand-base px-6 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-brand-light"
-            >
-              Kanala Git
-            </Link>
+            {site.youtubeUrl && (
+              <Link
+                href={site.youtubeUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center rounded-full bg-brand-base px-6 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-brand-light"
+              >
+                Kanala Git
+              </Link>
+            )}
           </RevealOnScroll>
         </div>
       </section>

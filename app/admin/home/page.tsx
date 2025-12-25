@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 
-import type { HomeSettings } from '@/lib/settings/home';
+import type { HomeSettings, HomeStat } from '@/lib/settings/home';
 
 export default function HomeAdminPage() {
   const [form, setForm] = useState<HomeSettings | null>(null);
@@ -24,7 +24,17 @@ export default function HomeAdminPage() {
         }
         const data = (await res.json()) as HomeSettings;
         if (!cancelled) {
-          setForm(data);
+          // stats alanı eksikse güvenli bir varsayılan ile doldur
+          const stats: HomeStat[] =
+            Array.isArray(data.stats) && data.stats.length > 0
+              ? data.stats
+              : [
+                  { label: 'Mutlu Müşteri', value: 1000, suffix: '+' },
+                  { label: 'Uzman Danışman', value: 50, suffix: '+' },
+                  { label: 'Vize Onay Oranı', value: 95, suffix: '%' },
+                  { label: 'Ülkeden Başvuru', value: 15, suffix: '+' },
+                ];
+          setForm({ ...data, stats });
         }
       } catch (err) {
         if (!cancelled) {
@@ -59,6 +69,23 @@ export default function HomeAdminPage() {
         [field]: value,
       },
     });
+  }
+
+  function updateStat(
+    index: number,
+    field: keyof HomeStat,
+    value: string,
+  ) {
+    if (!form) return;
+    const stats = form.stats.map((stat, i) => {
+      if (i !== index) return stat;
+      if (field === 'value') {
+        const numeric = Number(value);
+        return { ...stat, value: Number.isFinite(numeric) ? numeric : 0 };
+      }
+      return { ...stat, [field]: value };
+    });
+    setForm({ ...form, stats });
   }
 
   async function handleSubmit(e: React.FormEvent) {
@@ -103,8 +130,8 @@ export default function HomeAdminPage() {
         Ana Sayfa Metinleri
       </h1>
       <p className="mt-3 text-sm text-slate-600">
-        Hero başlığı, açıklama metinleri, hizmetler ve video bloğu
-        içeriklerini buradan güncelleyebilirsiniz.
+        Hero başlığı, açıklama metinleri, hizmetler ve video bloğu içeriklerini
+        ve güven bloğu istatistiklerini buradan güncelleyebilirsiniz.
       </p>
 
       {loading ? (
@@ -277,6 +304,70 @@ export default function HomeAdminPage() {
                   update('services', 'body', e.target.value)
                 }
               />
+            </div>
+          </section>
+
+          {/* Güven Bloğu / İstatistikler */}
+          <section className="space-y-4 rounded-2xl border border-border-subtle bg-surface-main p-6">
+            <h2 className="text-lg font-semibold text-brand-dark">
+              Güven Bloğu (İstatistikler)
+            </h2>
+            <p className="text-xs text-slate-600">
+              Ana sayfadaki sayaçları (1000+ Mutlu Müşteri vb.) buradan
+              düzenleyebilirsiniz.
+            </p>
+            <div className="grid gap-4 md:grid-cols-2">
+              {form.stats.map((stat, index) => (
+                <div
+                  key={`${stat.label}-${index}`}
+                  className="space-y-2 rounded-xl border border-border-subtle bg-surface-soft p-3"
+                >
+                  <div className="text-[11px] font-semibold uppercase tracking-wide text-slate-500">
+                    İstatistik #{index + 1}
+                  </div>
+                  <div>
+                    <label className="block text-[11px] font-semibold uppercase tracking-wide text-slate-500">
+                      Etiket
+                    </label>
+                    <input
+                      type="text"
+                      className="mt-1 w-full rounded-md border border-border-subtle bg-white px-2 py-1.5 text-xs"
+                      value={stat.label}
+                      onChange={(e) =>
+                        updateStat(index, 'label', e.target.value)
+                      }
+                    />
+                  </div>
+                  <div className="flex gap-2">
+                    <div className="flex-1">
+                      <label className="block text-[11px] font-semibold uppercase tracking-wide text-slate-500">
+                        Değer
+                      </label>
+                      <input
+                        type="number"
+                        className="mt-1 w-full rounded-md border border-border-subtle bg-white px-2 py-1.5 text-xs"
+                        value={stat.value}
+                        onChange={(e) =>
+                          updateStat(index, 'value', e.target.value)
+                        }
+                      />
+                    </div>
+                    <div className="w-20">
+                      <label className="block text-[11px] font-semibold uppercase tracking-wide text-slate-500">
+                        Sonek
+                      </label>
+                      <input
+                        type="text"
+                        className="mt-1 w-full rounded-md border border-border-subtle bg-white px-2 py-1.5 text-xs"
+                        value={stat.suffix}
+                        onChange={(e) =>
+                          updateStat(index, 'suffix', e.target.value)
+                        }
+                      />
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </section>
 

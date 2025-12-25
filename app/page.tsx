@@ -9,9 +9,7 @@ import {
 import { VideoSlider } from '@/components/home/VideoSlider';
 import { getHomeSettings } from '@/lib/settings/home';
 import { RevealOnScroll } from '@/components/common/RevealOnScroll';
-
-const HERO_IMAGE =
-  'https://2b.almanyavizerehberi.com/dist/img/slider/slider.webp';
+import { HeroParallaxImage } from '@/components/home/HeroParallaxImage';
 
 const VISA_CARD_ORDER = [
   {
@@ -102,16 +100,7 @@ export default async function HomePage() {
           </RevealOnScroll>
 
           <RevealOnScroll className="order-1 md:order-2 md:w-1/2" delay={0.15}>
-            <div className="relative h-72 w-full overflow-hidden rounded-[2.5rem] border border-surface-main/10 bg-surface-main/5 shadow-2xl shadow-black/40">
-              <Image
-                src={HERO_IMAGE}
-                alt="Almanya Vize Rehberi"
-                fill
-                className="object-cover"
-                priority
-              />
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-brand-dark/70 via-transparent to-brand-light/30" />
-            </div>
+            <HeroParallaxImage />
           </RevealOnScroll>
         </div>
       </section>

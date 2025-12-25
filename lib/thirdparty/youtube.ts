@@ -6,14 +6,17 @@ export type YouTubeVideo = {
   description?: string;
 };
 
-const CHANNEL_ID = 'UCYNClRqdbdinZphYGiSGg9Q';
+import { getSiteSettings } from '@/lib/settings/site';
 
 // Kanalın RSS feed'inden son videolari çeker.
 // Not: Hata durumunda bos dizi döner, bu durumda ana sayfa fallback statik videolari kullanabilir.
 export async function fetchLatestVideos(limit = 4): Promise<YouTubeVideo[]> {
   try {
+    const site = getSiteSettings();
+    const channelId = site.youtubeChannelId || 'UCYNClRqdbdinZphYGiSGg9Q';
+
     const res = await fetch(
-      `https://www.youtube.com/feeds/videos.xml?channel_id=${CHANNEL_ID}`,
+      `https://www.youtube.com/feeds/videos.xml?channel_id=${channelId}`,
       {
         next: { revalidate: 3600 }, // 1 saatte bir yeniden getir
       }
@@ -57,4 +60,3 @@ export async function fetchLatestVideos(limit = 4): Promise<YouTubeVideo[]> {
     return [];
   }
 }
-

@@ -38,3 +38,24 @@ export function getAllBlogPosts(): BlogPost[] {
     .sort((a, b) => (a.date > b.date ? -1 : 1));
 }
 
+export type BlogEditableFields = {
+  title?: string;
+  date?: string;
+  seoTitle?: string;
+  seoDescription?: string;
+  image?: string;
+  bodyHtml?: string;
+};
+
+export function saveBlogPostBySlug(slug: string, fields: BlogEditableFields) {
+  const fullPath = path.join(BLOG_DIR, `${slug}.json`);
+  const existing = getBlogPostBySlug(slug);
+
+  const next: BlogPost = {
+    ...existing,
+    ...fields,
+  };
+
+  fs.writeFileSync(fullPath, JSON.stringify(next, null, 2), 'utf8');
+}
+

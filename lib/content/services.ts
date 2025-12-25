@@ -33,3 +33,22 @@ export function getServiceBySlug(slug: string): ServiceContent {
 export function getAllServices(): ServiceContent[] {
   return getServiceSlugs().map(getServiceBySlug);
 }
+
+export type ServiceEditableFields = {
+  title?: string;
+  seoTitle?: string;
+  seoDescription?: string;
+  bodyHtml?: string;
+};
+
+export function saveServiceBySlug(slug: string, fields: ServiceEditableFields) {
+  const fullPath = path.join(SERVICES_DIR, `${slug}.json`);
+  const existing = getServiceBySlug(slug);
+
+  const next: ServiceContent = {
+    ...existing,
+    ...fields,
+  };
+
+  fs.writeFileSync(fullPath, JSON.stringify(next, null, 2), 'utf8');
+}

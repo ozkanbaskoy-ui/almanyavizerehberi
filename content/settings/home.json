@@ -14,6 +14,12 @@
     "kicker": "HİZMETLERİMİZ",
     "title": "Almanya'ya Açılan Kapınız",
     "body": "Almanya'da yeni bir hayat kurmak isteyenler için sunduğumuz vize türleriyle, kariyer ve yaşam hedeflerinize güvenli bir yol haritası çiziyoruz."
-  }
+  },
+  "stats": [
+    { "label": "Mutlu Müşteri", "value": 1000, "suffix": "+" },
+    { "label": "Uzman Danışman", "value": 50, "suffix": "+" },
+    { "label": "Vize Onay Oranı", "value": 95, "suffix": "%" },
+    { "label": "Ülkeden Başvuru", "value": 15, "suffix": "+" }
+  ]
 }
 

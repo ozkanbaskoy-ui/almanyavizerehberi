@@ -1,0 +1,29 @@
+{
+  "templates": [
+    {
+      "id": "application_received",
+      "name": "BaŸvuru Alnd",
+      "subject": "BaŸvurunuz alnd - Almanya Vize Rehberi",
+      "body": "Merhaba {{fullName}},\n\nAlmanya vize danŸmanlk baŸvurunuz tarafmza ulaŸt.\n\nVize tr: {{visaType}}\nBaŸvuru tarihi: {{createdAt}}\n\nUzman ekibimiz en ksa srede sizinle iletiŸime ge‡ecek. Bu sre i‡inde sorularnz olursa bu e-posta adresine yant verebilir veya WhatsApp hattmz zerinden bize ulaŸabilirsiniz.\n\nSayglarmzla,\nAlmanya Vize Rehberi Ekibi"
+    },
+    {
+      "id": "payment_received",
+      "name": "™deme Alnd",
+      "subject": "™demeniz i‡in teŸekkr ederiz",
+      "body": "Merhaba {{fullName}},\n\nDanŸmanlk hizmeti i‡in yapmŸ oldu§unuz ”demeyi baŸaryla aldk.\n\nTutar: {{amount}}\nPaket: {{productName}}\nTarih: {{paidAt}}\n\nBir sonraki admlar sizinle e-posta veya WhatsApp zerinden paylaŸaca§z.\n\nTeŸekkr ederiz,\nAlmanya Vize Rehberi Ekibi"
+    },
+    {
+      "id": "appointment_scheduled",
+      "name": "Randevu OluŸturuldu",
+      "subject": "G”rŸme randevunuz oluŸturuldu",
+      "body": "Merhaba {{fullName}},\n\nAlmanya Vize Rehberi ekibi ile online g”rŸme randevunuz oluŸturuldu.\n\nTarih: {{appointmentDate}}\nSaat: {{appointmentTime}}\nKanal: {{channel}}\n\nRandevuya zamannda katlmanz, srecinizin hzl ilerlemesi i‡in ‡ok ”nemlidir. Randevuyu ertelemek veya iptal etmek isterseniz ltfen en az 24 saat ”nce bize bilgi verin.\n\nG”rŸmek zere,\nAlmanya Vize Rehberi Ekibi"
+    },
+    {
+      "id": "admin_login_code",
+      "name": "Admin GiriŸ Kodu",
+      "subject": "Admin giriŸ kodunuz - Almanya Vize Rehberi",
+      "body": "Merhaba,\n\nAlmanya Vize Rehberi y”netim paneline giriŸ yapmak i‡in kullanaca§nz tek kullanmlk do§rulama kodunuz:\n\nKod: {{code}}\n\nBu kod {{time}} tarihinde retilmiŸtir ve ksa bir sre i‡inde (yaklaŸk 10 dakika) ge‡erlili§ini yitirecektir.\n\nE§er bu iste§i siz baŸlatmadysanz ltfen bu e-postay dikkate almayn ve giriŸ Ÿifrenizi de§iŸtirmeyi dŸnn.\n\nSayglarmzla,\nAlmanya Vize Rehberi"
+    }
+  ]
+}
+

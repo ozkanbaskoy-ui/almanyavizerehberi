@@ -5,6 +5,8 @@ import Image from 'next/image';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 
+import type { SiteSettings } from '@/lib/settings/site';
+
 type NavItem = {
   label: string;
   href?: string;
@@ -61,8 +63,20 @@ const MAIN_ITEMS: NavItem[] = [
   { label: 'İletişim', href: '/iletisim.php', title: 'İletişim' },
 ];
 
-export function MainNav() {
+type MainNavProps = {
+  site: SiteSettings;
+};
+
+export function MainNav({ site }: MainNavProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
+
+  const cleanedPhone = site.contactPhone.replace(/\s+/g, '');
+  const telHref = cleanedPhone ? `tel:${cleanedPhone}` : undefined;
+
+  const whatsappClean = site.whatsappNumber.replace(/\s+/g, '');
+  const whatsappHref = whatsappClean
+    ? `https://wa.me/${whatsappClean.replace('+', '')}`
+    : undefined;
 
   return (
     <motion.header
@@ -75,51 +89,59 @@ export function MainNav() {
       <div className="bg-[#545454] text-[13px] text-slate-100">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-2">
           <div className="flex flex-wrap items-center gap-4">
-            <a
-              href="mailto:info@almanyavizerehberi.com"
-              className="transition-colors hover:text-brand-coral"
-            >
-              info@almanyavizerehberi.com
-            </a>
-            <a
-              href="tel:+491783821542"
-              className="transition-colors hover:text-brand-coral"
-            >
-              +49 178 382 1542
-            </a>
+            {site.contactEmail && (
+              <a
+                href={`mailto:${site.contactEmail}`}
+                className="transition-colors hover:text-brand-coral"
+              >
+                {site.contactEmail}
+              </a>
+            )}
+            {telHref && (
+              <a
+                href={telHref}
+                className="transition-colors hover:text-brand-coral"
+              >
+                {site.contactPhone}
+              </a>
+            )}
           </div>
           <div className="hidden items-center gap-3 sm:flex">
-            <a
-              href="https://www.instagram.com/almanyavizerehberi"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Instagram"
-              className="transition-colors hover:text-brand-coral"
-            >
-              Instagram
-            </a>
-            <a
-              href="https://wa.me/491783821542"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="WhatsApp"
-              className="transition-colors hover:text-brand-coral"
-            >
-              WhatsApp
-            </a>
+            {site.instagramUrl && (
+              <a
+                href={site.instagramUrl}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Instagram"
+                className="transition-colors hover:text-brand-coral"
+              >
+                Instagram
+              </a>
+            )}
+            {whatsappHref && (
+              <a
+                href={whatsappHref}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="WhatsApp"
+                className="transition-colors hover:text-brand-coral"
+              >
+                WhatsApp
+              </a>
+            )}
           </div>
         </div>
       </div>
 
       {/* Main nav */}
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 border-b border-slate-100 bg-white/95">
+      <div className="mx-auto flex max-w-6xl items-center justify-between border-b border-slate-100 bg-white/95 px-4 py-3">
         <Link href="/index.php" className="flex items-center gap-3">
           <Image
             src="/assets/img/logo-yan.webp"
-            alt="Almanya Vize Rehberi"
-            width={180}
+            alt={site.siteName || 'Almanya Vize Rehberi'}
+            width={160}
             height={40}
-            className="h-10 w-auto"
+            className="h-8 w-auto"
             priority
           />
         </Link>
@@ -257,3 +279,4 @@ export function MainNav() {
     </motion.header>
   );
 }
+
