@@ -13,7 +13,7 @@ export async function GET() {
 
 export async function POST(request: Request) {
   try {
-    const body = (await request.json()) as TypographySettings;
+    const body = (await request.json()) as Partial<TypographySettings>;
 
     if (!body.scale) {
       return NextResponse.json(
@@ -22,7 +22,12 @@ export async function POST(request: Request) {
       );
     }
 
-    saveTypographySettings(body);
+    const nextSettings: TypographySettings = {
+      scale: body.scale,
+      font: body.font ?? 'plus-jakarta',
+    };
+
+    saveTypographySettings(nextSettings);
 
     return NextResponse.json({ ok: true });
   } catch (error) {
@@ -33,4 +38,3 @@ export async function POST(request: Request) {
     );
   }
 }
-

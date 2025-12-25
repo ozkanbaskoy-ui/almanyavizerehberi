@@ -1,7 +1,7 @@
 import type { CSSProperties } from 'react';
 import type { Metadata } from 'next';
 import Script from 'next/script';
-import { Plus_Jakarta_Sans } from 'next/font/google';
+import { Inter, Plus_Jakarta_Sans, Roboto } from 'next/font/google';
 import '../styles/globals.css';
 
 import { MainNav } from '@/components/layout/MainNav';
@@ -12,9 +12,26 @@ import { getThemeSettings } from '@/lib/settings/theme';
 import { getTypographySettings } from '@/lib/settings/typography';
 import { getSiteSettings } from '@/lib/settings/site';
 
-const plusJakarta = Plus_Jakarta_Sans({
+// Tüm ana yazı tiplerini aynı CSS değişkenine bağluyoruz.
+// Böylece Tailwind'deki font-sans / font-heading sınıfları değişmeden kalıyor,
+// sadece seçilen font bu değişkene atanıyor.
+const fontPlusJakarta = Plus_Jakarta_Sans({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
+  variable: '--font-plus-jakarta',
+  display: 'swap',
+});
+
+const fontInter = Inter({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-plus-jakarta',
+  display: 'swap',
+});
+
+const fontRoboto = Roboto({
+  subsets: ['latin'],
+  weight: ['400', '500', '700'],
   variable: '--font-plus-jakarta',
   display: 'swap',
 });
@@ -62,11 +79,18 @@ export default function RootLayout({ children }: RootLayoutProps) {
     '--color-video-border': customColors.videoBorder,
   } as CSSProperties;
 
+  const fontClass =
+    typography.font === 'inter'
+      ? fontInter.variable
+      : typography.font === 'roboto'
+        ? fontRoboto.variable
+        : fontPlusJakarta.variable;
+
   return (
     <html lang="tr">
       <body
         className={[
-          plusJakarta.variable,
+          fontClass,
           'min-h-screen bg-surface-main text-brand-dark antialiased scrollbar-modern',
           `theme-${activeTheme}`,
           `typography-${typography.scale}`,

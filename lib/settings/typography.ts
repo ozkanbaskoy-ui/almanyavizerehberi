@@ -8,13 +8,16 @@ const TYPOGRAPHY_SETTINGS_PATH = path.join(
 );
 
 export type TypographyScale = 'small' | 'normal' | 'large';
+export type TypographyFont = 'plus-jakarta' | 'inter' | 'roboto';
 
 export type TypographySettings = {
   scale: TypographyScale;
+  font: TypographyFont;
 };
 
 const DEFAULT_SETTINGS: TypographySettings = {
   scale: 'normal',
+  font: 'plus-jakarta',
 };
 
 export function getTypographySettings(): TypographySettings {
@@ -26,29 +29,43 @@ export function getTypographySettings(): TypographySettings {
       return DEFAULT_SETTINGS;
     }
 
-    if (
-      parsed.scale !== 'small' &&
-      parsed.scale !== 'normal' &&
-      parsed.scale !== 'large'
-    ) {
-      return DEFAULT_SETTINGS;
-    }
+    const scale: TypographyScale =
+      parsed.scale === 'small' ||
+      parsed.scale === 'normal' ||
+      parsed.scale === 'large'
+        ? parsed.scale
+        : DEFAULT_SETTINGS.scale;
 
-    return {
-      scale: parsed.scale,
-    };
+    const font: TypographyFont =
+      parsed.font === 'inter' ||
+      parsed.font === 'roboto' ||
+      parsed.font === 'plus-jakarta'
+        ? parsed.font
+        : DEFAULT_SETTINGS.font;
+
+    return { scale, font };
   } catch {
     return DEFAULT_SETTINGS;
   }
 }
 
 export function saveTypographySettings(next: TypographySettings) {
-  if (
-    next.scale !== 'small' &&
-    next.scale !== 'normal' &&
-    next.scale !== 'large'
-  ) {
+  const validScale =
+    next.scale === 'small' ||
+    next.scale === 'normal' ||
+    next.scale === 'large';
+
+  const validFont =
+    next.font === 'plus-jakarta' ||
+    next.font === 'inter' ||
+    next.font === 'roboto';
+
+  if (!validScale) {
     throw new Error('Geçersiz tipografi ölçeği');
+  }
+
+  if (!validFont) {
+    throw new Error('Geçersiz yazı tipi seçimi');
   }
 
   if (!fs.existsSync(SETTINGS_DIR)) {

@@ -7,6 +7,7 @@ import type { TypographySettings } from '@/lib/settings/typography';
 export default function TypographyAdminPage() {
   const [form, setForm] = useState<TypographySettings>({
     scale: 'normal',
+    font: 'plus-jakarta',
   });
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
@@ -75,7 +76,7 @@ export default function TypographyAdminPage() {
       }
 
       setSuccess(
-        'Tipografi ayarları güncellendi. Ana sayfayı yenileyerek sonucu görebilirsiniz.',
+        'Tipografi ayarları güncellendi. Siteyi yenileyerek sonucu görebilirsiniz.',
       );
     } catch (err) {
       setError(
@@ -92,17 +93,18 @@ export default function TypographyAdminPage() {
         Tipografi Ayarları
       </h1>
       <p className="mt-3 text-sm text-slate-600">
-        Buradan sitenin genel yazı büyüklük seviyesini (body metinler ve
-        başlıklar) değiştirebilirsiniz.
+        Buradan sitenin genel yazı boyutunu ve yazı tipini değiştirebilirsiniz.
+        Renkler ve diğer tasarım ayarları aynı kalır.
       </p>
 
       <form onSubmit={handleSubmit} className="mt-8 space-y-6">
+        {/* Yazı boyutu */}
         <fieldset
           className="space-y-4 rounded-2xl border border-border-subtle bg-surface-main p-6"
           disabled={loading || saving}
         >
           <legend className="text-sm font-semibold text-slate-700">
-            Yazı Büyüklüğü
+            Yazı Boyutu
           </legend>
 
           {loading ? (
@@ -170,6 +172,86 @@ export default function TypographyAdminPage() {
                   <p className="text-xs text-slate-500">
                     Başlıklar ve paragraflar daha büyük; okunabilirlik ve
                     vurgu artar.
+                  </p>
+                </div>
+              </label>
+            </div>
+          )}
+        </fieldset>
+
+        {/* Yazı tipi (font) */}
+        <fieldset
+          className="space-y-4 rounded-2xl border border-border-subtle bg-surface-main p-6"
+          disabled={loading || saving}
+        >
+          <legend className="text-sm font-semibold text-slate-700">
+            Yazı Tipi
+          </legend>
+
+          {loading ? (
+            <p className="text-sm text-slate-500">Yükleniyor…</p>
+          ) : (
+            <div className="space-y-3">
+              <label className="flex cursor-pointer items-center gap-3 rounded-xl border border-border-subtle bg-surface-soft p-3 hover:border-brand-base">
+                <input
+                  type="radio"
+                  name="font"
+                  value="plus-jakarta"
+                  className="h-4 w-4 border-slate-300 text-brand-base focus:ring-brand-base"
+                  checked={form.font === 'plus-jakarta'}
+                  onChange={() =>
+                    setForm((prev) => ({ ...prev, font: 'plus-jakarta' }))
+                  }
+                />
+                <div>
+                  <p className="text-sm font-semibold text-brand-dark">
+                    Plus Jakarta Sans (varsayılan)
+                  </p>
+                  <p className="text-xs text-slate-500">
+                    Modern, yuvarlak hatlı; mevcut tasarımla gelen varsayılan
+                    yazı tipi.
+                  </p>
+                </div>
+              </label>
+
+              <label className="flex cursor-pointer items-center gap-3 rounded-xl border border-border-subtle bg-surface-soft p-3 hover:border-brand-base">
+                <input
+                  type="radio"
+                  name="font"
+                  value="inter"
+                  className="h-4 w-4 border-slate-300 text-brand-base focus:ring-brand-base"
+                  checked={form.font === 'inter'}
+                  onChange={() =>
+                    setForm((prev) => ({ ...prev, font: 'inter' }))
+                  }
+                />
+                <div>
+                  <p className="text-sm font-semibold text-brand-dark">
+                    Inter
+                  </p>
+                  <p className="text-xs text-slate-500">
+                    Okunabilirliği yüksek, sade bir web yazı tipi.
+                  </p>
+                </div>
+              </label>
+
+              <label className="flex cursor-pointer items-center gap-3 rounded-xl border border-border-subtle bg-surface-soft p-3 hover:border-brand-base">
+                <input
+                  type="radio"
+                  name="font"
+                  value="roboto"
+                  className="h-4 w-4 border-slate-300 text-brand-base focus:ring-brand-base"
+                  checked={form.font === 'roboto'}
+                  onChange={() =>
+                    setForm((prev) => ({ ...prev, font: 'roboto' }))
+                  }
+                />
+                <div>
+                  <p className="text-sm font-semibold text-brand-dark">
+                    Roboto
+                  </p>
+                  <p className="text-xs text-slate-500">
+                    Google&apos;ın klasik, nötr ve dengeli web yazı tipi.
                   </p>
                 </div>
               </label>
