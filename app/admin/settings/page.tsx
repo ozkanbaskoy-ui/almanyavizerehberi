@@ -73,7 +73,8 @@ export default function AdminSettingsPage() {
           | { error?: string }
           | null;
         throw new Error(
-          data?.error ?? 'E-posta şablonları kaydedilirken hata oluştu.',
+          data?.error ??
+            'E-posta şablonları kaydedilirken bir hata oluştu.',
         );
       }
 
@@ -137,8 +138,8 @@ export default function AdminSettingsPage() {
         Ayarlar &amp; E-posta Şablonları
       </h1>
       <p className="mt-2 text-sm text-slate-600">
-        Buradan otomatik gönderilecek e-posta şablonlarının başlık ve içeriklerini
-        kod yazmadan güncelleyebilirsiniz.
+        Buradan otomatik gönderilecek e-posta şablonlarının konu ve
+        içeriklerini kod yazmadan güncelleyebilirsiniz.
       </p>
 
       {error && (
@@ -216,3 +217,4 @@ export default function AdminSettingsPage() {
     </main>
   );
 }
+

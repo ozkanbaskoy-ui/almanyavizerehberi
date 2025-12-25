@@ -14,8 +14,8 @@ const SMTP_PASS = process.env.SMTP_PASS;
 const SMTP_FROM =
   process.env.SMTP_FROM || 'info@almanyavizerehberi.com';
 
-// Exposed so other parts of the app (örneğin admin girişi için OTP)
-// SMTP yapılandırmasının hazır olup olmadığını kontrol edebilsin.
+// Diğer bölümlerin (örneğin admin girişi için OTP)
+// SMTP yapılandırmasının hazır olup olmadığını kontrol edebilmesi için.
 export function hasSmtpConfig() {
   return Boolean(SMTP_HOST && SMTP_USER && SMTP_PASS);
 }
@@ -81,3 +81,4 @@ export async function sendTemplatedEmail(params: {
     text: body,
   });
 }
+

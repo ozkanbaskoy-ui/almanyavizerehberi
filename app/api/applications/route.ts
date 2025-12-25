@@ -137,29 +137,42 @@ export async function POST(request: Request) {
       }
     }
 
-    const supabase = getSupabaseServerClient();
-    const id = crypto.randomUUID();
-
-    const { error } = await supabase.from('applications').insert({
-      id,
-      full_name: fullName,
-      email,
-      phone,
-      visa_type: visaType,
-      status: 'yeni',
-      payment_status: 'bekliyor',
-      source,
-    });
-
-    if (error) {
-      throw error;
+    // Supabase istemcisini dene; yoksa CRM demo modunda çalışır
+    let supabase: ReturnType<typeof getSupabaseServerClient> | null =
+      null;
+    try {
+      supabase = getSupabaseServerClient();
+    } catch (dbError) {
+      console.warn(
+        '[applications] Supabase yapılandırılmamış, başvuru veritabanına kaydedilmeyecek.',
+        dbError,
+      );
     }
 
-    await supabase.from('application_events').insert({
-      application_id: id,
-      type: 'not',
-      message: 'Başvuru formu gönderildi.',
-    });
+    const id = crypto.randomUUID();
+
+    if (supabase) {
+      const { error } = await supabase.from('applications').insert({
+        id,
+        full_name: fullName,
+        email,
+        phone,
+        visa_type: visaType,
+        status: 'yeni',
+        payment_status: 'bekliyor',
+        source,
+      });
+
+      if (error) {
+        throw error;
+      }
+
+      await supabase.from('application_events').insert({
+        application_id: id,
+        type: 'not',
+        message: 'Başvuru formu gönderildi.',
+      });
+    }
 
     try {
       const createdAt = new Date().toLocaleString('tr-TR');
@@ -193,3 +206,4 @@ export async function POST(request: Request) {
     );
   }
 }
+
