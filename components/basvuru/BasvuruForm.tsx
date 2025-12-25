@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import HCaptcha from 'react-hcaptcha';
+import HCaptcha from '@hcaptcha/react-hcaptcha';
 
 const VISA_OPTIONS = [
   { value: 'calisma-vizesi', label: 'Çalışma Vizesi' },
