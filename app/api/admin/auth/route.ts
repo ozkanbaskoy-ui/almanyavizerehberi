@@ -161,7 +161,8 @@ export async function POST(request: Request) {
         );
       }
 
-      const cookieStore = cookies();
+      // Next.js 16 ile birlikte cookies() async hale geldi, bu yüzden burada await kullanıyoruz.
+      const cookieStore = await cookies();
       const otpCookie = cookieStore.get(OTP_COOKIE_NAME)?.value;
 
       if (!otpCookie) {
@@ -264,4 +265,3 @@ export async function POST(request: Request) {
     );
   }
 }
-
