@@ -17,11 +17,11 @@ export function Footer({ site }: FooterProps) {
 
   return (
     <motion.footer
-      className="mt-0 border-t border-slate-200 bg-slate-950 text-slate-100"
-      initial={{ opacity: 0, y: 50 }}
+      className="mt-0 border-t border-slate-800 bg-slate-950 text-slate-100"
+      initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.3 }}
-      transition={{ duration: 0.8, ease: 'easeOut' }}
+      transition={{ duration: 0.6, ease: 'easeOut' }}
     >
       <div
         className="relative"
@@ -32,14 +32,15 @@ export function Footer({ site }: FooterProps) {
         }}
       >
         <div className="absolute inset-0 bg-black/80" />
-        <div className="relative mx-auto max-w-6xl px-4 py-12">
-          <div className="grid gap-10 md:grid-cols-4">
+        <div className="relative mx-auto max-w-6xl px-4 py-8">
+          <div className="grid gap-8 md:grid-cols-4">
+            {/* Brand */}
             <div className="md:col-span-2">
-              <h3 className="font-semibold tracking-tight">
+              <h3 className="text-lg font-semibold tracking-tight">
                 {site.siteName || 'Almanya Vize Rehberi'}
               </h3>
-              <p className="mt-3 text-sm text-slate-300">
-                Almanya'ya göç sürecinizde güvenilir partneriniz. Çalışma,
+              <p className="mt-3 text-sm text-slate-300/90">
+                Almanya&apos;ya göç sürecinizde güvenilir partneriniz. Çalışma,
                 eğitim ve aile birleşimi vizelerinde uzman danışmanlık
                 sunuyoruz.
               </p>
@@ -94,8 +95,9 @@ export function Footer({ site }: FooterProps) {
               </div>
             </div>
 
+            {/* Primary links */}
             <div>
-              <h4 className="text-sm font-semibold uppercase tracking-wide text-slate-400">
+              <h4 className="text-[13px] font-semibold uppercase tracking-wide text-slate-300">
                 Linkler
               </h4>
               <ul className="mt-3 space-y-2 text-sm">
@@ -138,7 +140,7 @@ export function Footer({ site }: FooterProps) {
                     href="/index.php#yorum"
                     className="hover:text-brand-coral"
                   >
-                    Müşteri Yorumları
+                    Sosyal Medya Videoları
                   </Link>
                 </li>
                 <li>
@@ -149,8 +151,9 @@ export function Footer({ site }: FooterProps) {
               </ul>
             </div>
 
+            {/* Secondary links */}
             <div>
-              <h4 className="text-sm font-semibold uppercase tracking-wide text-slate-400">
+              <h4 className="text-[13px] font-semibold uppercase tracking-wide text-slate-300">
                 Diğer Linkler
               </h4>
               <ul className="mt-3 space-y-2 text-sm">
@@ -200,9 +203,10 @@ export function Footer({ site }: FooterProps) {
             </div>
           </div>
 
-          <div className="mt-10 flex flex-col gap-6 border-t border-slate-800 pt-6 md:flex-row md:items-center md:justify-between">
+          {/* Newsletter */}
+          <div className="mt-8 flex flex-col gap-4 border-t border-slate-800 pt-4 md:flex-row md:items-center md:justify-between">
             <div>
-              <h4 className="text-sm font-semibold uppercase tracking-wide text-slate-400">
+              <h4 className="text-sm font-semibold uppercase tracking-wide text-slate-300">
                 Bültenimize Abone Olun
               </h4>
               <p className="mt-2 text-xs text-slate-400">
@@ -215,7 +219,7 @@ export function Footer({ site }: FooterProps) {
                 name="email"
                 required
                 placeholder="Mail adresinizi giriniz"
-                className="flex-1 rounded-md border border-slate-700 bg-slate-900 px-3 py-2 text-sm text-slate-100 placeholder:text-slate-500 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500"
+                className="flex-1 rounded-md border border-slate-700 bg-slate-900/90 px-3 py-2 text-sm text-slate-100 placeholder:text-slate-500 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500"
               />
               <button
                 type="submit"
@@ -226,7 +230,8 @@ export function Footer({ site }: FooterProps) {
             </form>
           </div>
 
-          <div className="mt-6 flex flex-col items-start justify-between gap-3 border-t border-slate-800 pt-4 text-xs text-slate-500 md:flex-row md:items-center">
+          {/* Bottom line */}
+          <div className="mt-4 flex flex-col items-start justify-between gap-3 border-t border-slate-800 pt-3 text-[11px] text-slate-500 md:flex-row md:items-center">
             <div>
               © {new Date().getFullYear()}{' '}
               <span className="font-semibold text-slate-200">

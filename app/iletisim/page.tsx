@@ -39,7 +39,8 @@ export default function IletisimPage() {
             <p className="mt-4 text-sm leading-relaxed text-surface-main/80 md:text-base">
               Almanya&apos;ya göç, çalışma, eğitim ve aile birleşimi
               süreçleriniz hakkında tüm sorularınız için bizimle iletişime
-              geçebilirsiniz. Uzman ekibimiz size en kısa sürede dönüş yapacaktır.
+              geçebilirsiniz. Uzman ekibimiz size en kısa sürede dönüş
+              yapacaktır.
             </p>
           </RevealOnScroll>
         </div>
@@ -49,6 +50,7 @@ export default function IletisimPage() {
       <section className="bg-surface-soft py-16">
         <div className="mx-auto max-w-[1200px] px-4">
           <div className="grid gap-8 md:grid-cols-2">
+            {/* Sol kart: Hemen Ulaşın */}
             <RevealOnScroll>
               <div className="h-full rounded-3xl border border-border-subtle bg-surface-main p-6 shadow-soft md:p-8">
                 <h2 className="text-lg font-semibold text-brand-dark md:text-xl">
@@ -132,6 +134,7 @@ export default function IletisimPage() {
               </div>
             </RevealOnScroll>
 
+            {/* Sağ kart: Danışmanlık Talebi */}
             <RevealOnScroll delay={0.05}>
               <div className="h-full rounded-3xl border border-border-subtle bg-surface-main p-6 shadow-soft md:p-8">
                 <h2 className="text-lg font-semibold text-brand-dark md:text-xl">
@@ -142,20 +145,12 @@ export default function IletisimPage() {
                   doldurabilirsiniz. Uzman ekibimiz dosyanızı inceleyip
                   sizinle iletişime geçecektir.
                 </p>
-                <div className="mt-6 space-y-3">
+                <div className="mt-6">
                   <Link
                     href="/basvuru.php"
                     className="block rounded-full bg-brand-base px-4 py-2 text-center text-xs font-semibold uppercase tracking-wide text-white shadow-sm transition hover:bg-brand-light"
                   >
                     Başvuru Formuna Git
-                  </Link>
-                  <Link
-                    href={site.calendlyUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="block rounded-full border border-border-subtle bg-surface-soft px-4 py-2 text-center text-xs font-semibold uppercase tracking-wide text-brand-dark transition hover:border-brand-base hover:text-brand-base"
-                  >
-                    Online Randevu Al
                   </Link>
                 </div>
               </div>
