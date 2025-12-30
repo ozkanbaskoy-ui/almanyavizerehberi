@@ -1,46 +1,21 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import Link from 'next/link';
 
-// Yeni sürüm anahtarı: daha önce verilen onayları sıfırlamak için
-// v4 -> herkese çubuğu tekrar gösterir
-const STORAGE_KEY = 'avrh_legal_consent_v4';
-
-type VisibleState = 'unknown' | 'shown' | 'hidden';
-
+// Bu çubuk her sayfa yüklemesinde görünür; "Kabul Et"e basınca sadece o oturumda kapanır.
 export function LegalConsentBar() {
-  const [visible, setVisible] = useState<VisibleState>('unknown');
-
-  useEffect(() => {
-    if (typeof window === 'undefined') return;
-
-    try {
-      const accepted = window.localStorage.getItem(STORAGE_KEY);
-      if (accepted === 'true') {
-        setVisible('hidden');
-      } else {
-        setVisible('shown');
-      }
-    } catch {
-      // localStorage kullanılamıyorsa barı yine de göster
-      setVisible('shown');
-    }
-  }, []);
-
   function handleAccept() {
-    try {
-      window.localStorage.setItem(STORAGE_KEY, 'true');
-    } catch {
-      // ignore
+    const bar = document.getElementById('legal-consent-bar');
+    if (bar) {
+      bar.style.display = 'none';
     }
-    setVisible('hidden');
   }
 
-  if (visible !== 'shown') return null;
-
   return (
-    <div className="fixed inset-x-0 bottom-0 z-40 border-t border-slate-800 bg-slate-900/95 text-slate-100">
+    <div
+      id="legal-consent-bar"
+      className="fixed inset-x-0 bottom-0 z-40 border-t border-slate-800 bg-slate-900/95 text-slate-100"
+    >
       <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-3 text-xs md:flex-row md:items-center md:justify-between md:text-sm">
         <p className="leading-snug">
           Web sitemiz, size en iyi deneyimi sunmak ve yasal yükümlülüklerimizi

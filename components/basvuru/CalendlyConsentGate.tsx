@@ -77,10 +77,10 @@ export function CalendlyConsentGate({ url }: CalendlyConsentGateProps) {
                 çerçevesinde bilgilendirme yapılmamaktadır.
               </p>
               <p>
-                <strong>İçerik:</strong> Bu görüşmede başvuru sahibinin
-                mesleki uygunluğu analiz edilir, riskler ve maliyetler
-                şeffafça aktarılır. İş bulma ihtimali ve izlenecek yol
-                haritası netleştirilir.
+                <strong>İçerik:</strong> Bu görüşmede başvuru sahibinin mesleki
+                uygunluğu analiz edilir, riskler ve maliyetler şeffafça
+                aktarılır. İş bulma ihtimali ve izlenecek yol haritası
+                netleştirilir.
               </p>
 
               <h3 className="mt-3 text-sm font-semibold text-slate-900 md:text-base">
@@ -112,12 +112,15 @@ export function CalendlyConsentGate({ url }: CalendlyConsentGateProps) {
               </p>
               <p>
                 <strong>İade Şartları:</strong> Görüşme gerçekleştirildikten
-                sonra içerikten memnuniyetsizlik veya kişisel nedenlerle ücret
-                iadesi yapılmaz.
+                sonra içerikten memnuniyetsizlik veya kişisel nedenlerle{' '}
+                <span className="font-extrabold text-red-600">
+                  ücret iadesi yapılmaz.
+                </span>
               </p>
               <p>
                 <strong>Yanlış Başvuru:</strong> Yanlış vize türü için randevu
-                alınması durumunda sorumluluk danışana aittir ve iade yapılmaz.
+                alınması durumunda sorumluluk danışana aittir ve iade
+                yapılmaz.
               </p>
 
               <h3 className="mt-3 text-sm font-semibold text-slate-900 md:text-base">
@@ -139,8 +142,8 @@ export function CalendlyConsentGate({ url }: CalendlyConsentGateProps) {
               </p>
               <ul className="list-disc pl-5">
                 <li>
-                  <strong>K.V.K.K. Metni ve Aydınlatma Formu:</strong>{' '}
-                  Kişisel verilerimin vize uygunluk analizi ve iletişim amacıyla
+                  <strong>K.V.K.K. Metni ve Aydınlatma Formu:</strong> Kişisel
+                  verilerimin vize uygunluk analizi ve iletişim amacıyla
                   işlenmesine onay veriyorum.
                 </li>
                 <li>
