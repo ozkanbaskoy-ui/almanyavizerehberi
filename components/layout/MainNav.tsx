@@ -106,16 +106,31 @@ export function MainNav({ site }: MainNavProps) {
               </a>
             )}
           </div>
-          <div className="hidden items-center gap-3 sm:flex">
+          <div className="hidden items-center gap-2 sm:flex">
             {site.instagramUrl && (
               <a
                 href={site.instagramUrl}
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Instagram"
-                className="transition-colors hover:text-brand-coral"
+                className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-slate-900/80 text-slate-100 shadow-sm ring-1 ring-slate-700/70 transition hover:bg-brand-coral hover:text-white hover:shadow-md"
               >
-                Instagram
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  className="h-3.5 w-3.5"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M12 7.3A4.7 4.7 0 1 0 16.7 12 4.71 4.71 0 0 0 12 7.3Zm0 7.7A3 3 0 1 1 15 12a3 3 0 0 1-3 3Z"
+                  />
+                  <circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" />
+                  <path
+                    fill="currentColor"
+                    d="M17.5 3H6.5A3.5 3.5 0 0 0 3 6.5v11A3.5 3.5 0 0 0 6.5 21h11a3.5 3.5 0 0 0 3.5-3.5v-11A3.5 3.5 0 0 0 17.5 3Zm2 14.5a2 2 0 0 1-2 2h-11a2 2 0 0 1-2-2v-11a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2Z"
+                  />
+                </svg>
               </a>
             )}
             {whatsappHref && (
@@ -124,9 +139,19 @@ export function MainNav({ site }: MainNavProps) {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="WhatsApp"
-                className="transition-colors hover:text-brand-coral"
+                className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-emerald-500 text-white shadow-sm ring-1 ring-emerald-400/70 transition hover:scale-110 hover:shadow-md"
               >
-                WhatsApp
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  className="h-3.5 w-3.5"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M20.5 12a8.5 8.5 0 0 0-14.5-6A8.44 8.44 0 0 0 3.5 12a8.32 8.32 0 0 0 1.2 4.3L3 21l4.8-1.6A8.55 8.55 0 0 0 20.5 12Zm-4.4 4.4a4.82 4.82 0 0 1-2.3.6 7.24 7.24 0 0 1-3.8-1.1 8.1 8.1 0 0 1-2.5-2.4 4.66 4.66 0 0 1-.9-2.6 3 3 0 0 1 1-2.2.79.79 0 0 1 .6-.3h.4c.2 0 .3 0 .4.3s.5 1.2.5 1.3a.33.33 0 0 1 0 .3 1.09 1.09 0 0 1-.2.3l-.2.3a.59.59 0 0 0-.1.5 3.09 3.09 0 0 0 .6 1.1 5.38 5.38 0 0 0 1.7 1.4 3.71 3.71 0 0 0 1.1.4.58.58 0 0 0 .4-.1l.4-.4a1.2 1.2 0 0 1 .4-.3.42.42 0 0 1 .4.1l1.2.6a1 1 0 0 1 .5.4.89.89 0 0 1-.1.5 3.64 3.64 0 0 1-1.3 1.4Z"
+                  />
+                </svg>
               </a>
             )}
           </div>
@@ -147,16 +172,16 @@ export function MainNav({ site }: MainNavProps) {
         </Link>
 
         {/* Desktop menu */}
-        <nav className="hidden items-center gap-6 text-[15px] font-semibold text-slate-800 md:flex">
+        <nav className="hidden items-center gap-4 text-[15px] font-semibold text-slate-800 md:flex">
           {MAIN_ITEMS.map((item) =>
             item.children ? (
               <div key={item.label} className="group relative">
                 <button
                   type="button"
-                  className="flex items-center gap-1 text-[15px] font-semibold text-slate-800 transition-colors hover:text-sky-700"
+                  className="flex items-center gap-1 rounded-full px-3 py-1 text-[15px] font-semibold text-slate-800 transition-all duration-200 hover:-translate-y-[1px] hover:bg-brand-base/5 hover:text-brand-base hover:shadow-card"
                 >
                   <span>{item.label}</span>
-                  <span className="text-xs">v</span>
+                  <span className="text-xs leading-none">↓</span>
                 </button>
                 <div className="invisible absolute left-0 top-full mt-2 w-64 rounded-lg border border-slate-100 bg-white text-xs shadow-lg opacity-0 transition-all group-hover:visible group-hover:opacity-100">
                   <ul className="py-2">
@@ -178,7 +203,7 @@ export function MainNav({ site }: MainNavProps) {
                 <Link
                   key={item.label}
                   href={item.href}
-                  className="text-[15px] font-semibold text-slate-800 transition-colors hover:text-sky-700"
+                  className="rounded-full px-3 py-1 text-[15px] font-semibold text-slate-800 transition-all duration-200 hover:-translate-y-[1px] hover:bg-brand-base/5 hover:text-brand-base hover:shadow-card"
                 >
                   {item.label}
                 </Link>
@@ -188,7 +213,7 @@ export function MainNav({ site }: MainNavProps) {
 
           <Link
             href="/basvuru.php"
-            className="rounded-full bg-brand-red px-4 py-2 text-xs font-semibold uppercase tracking-wide text-white shadow-sm transition hover:bg-red-700"
+            className="relative inline-flex items-center justify-center rounded-full bg-gradient-to-b from-brand-red to-red-700 px-5 py-2.5 text-xs font-semibold uppercase tracking-wide text-white shadow-[0_8px_18px_rgba(15,23,42,0.45)] transition-transform duration-150 hover:-translate-y-0.5 hover:shadow-[0_12px_26px_rgba(15,23,42,0.6)] active:translate-y-0 active:shadow-[0_4px_12px_rgba(15,23,42,0.4)]"
           >
             Başvuru Yap
           </Link>
@@ -267,7 +292,7 @@ export function MainNav({ site }: MainNavProps) {
             <li className="pt-2">
               <Link
                 href="/basvuru.php"
-                className="block rounded-full bg-brand-red px-4 py-2 text-center text-xs font-semibold uppercase tracking-wide text-white"
+                className="block rounded-full bg-gradient-to-b from-brand-red to-red-700 px-4 py-2 text-center text-xs font-semibold uppercase tracking-wide text-white shadow-[0_6px_14px_rgba(15,23,42,0.45)] active:shadow-[0_3px_8px_rgba(15,23,42,0.4)]"
                 onClick={() => setMobileOpen(false)}
               >
                 Başvuru Yap

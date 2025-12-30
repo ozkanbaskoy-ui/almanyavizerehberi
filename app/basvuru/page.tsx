@@ -1,10 +1,9 @@
 import type { Metadata } from 'next';
 
 import { getPageBySlug } from '@/lib/content/pages';
-import { CalendlyEmbed } from '@/components/basvuru/CalendlyEmbed';
+import { CalendlyConsentGate } from '@/components/basvuru/CalendlyConsentGate';
 import { RevealOnScroll } from '@/components/common/RevealOnScroll';
 import { getSiteSettings } from '@/lib/settings/site';
-import { BasvuruForm } from '@/components/basvuru/BasvuruForm';
 
 const page = getPageBySlug('basvuru');
 const site = getSiteSettings();
@@ -34,7 +33,7 @@ export default function BasvuruPage() {
           </RevealOnScroll>
 
           <RevealOnScroll>
-            <CalendlyEmbed url={site.calendlyUrl} />
+            <CalendlyConsentGate url={site.calendlyUrl} />
           </RevealOnScroll>
 
           <RevealOnScroll className="mt-10">
@@ -43,13 +42,8 @@ export default function BasvuruPage() {
               dangerouslySetInnerHTML={{ __html: page.bodyHtml }}
             />
           </RevealOnScroll>
-
-          <RevealOnScroll>
-            <BasvuruForm />
-          </RevealOnScroll>
         </div>
       </section>
     </main>
   );
 }
-

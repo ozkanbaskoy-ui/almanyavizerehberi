@@ -7,6 +7,7 @@ import '../styles/globals.css';
 import { MainNav } from '@/components/layout/MainNav';
 import { Footer } from '@/components/layout/Footer';
 import { WhatsAppFloatingButton } from '@/components/layout/WhatsAppFloatingButton';
+import { LegalConsentBar } from '@/components/layout/LegalConsentBar';
 import { MaintenanceGate } from '@/components/layout/MaintenanceGate';
 import { getThemeSettings } from '@/lib/settings/theme';
 import { getTypographySettings } from '@/lib/settings/typography';
@@ -119,6 +120,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
             <MaintenanceGate site={site}>{children}</MaintenanceGate>
           </main>
           <Footer site={site} />
+          <LegalConsentBar />
           <WhatsAppFloatingButton whatsappNumber={site.whatsappNumber} />
         </div>
       </body>

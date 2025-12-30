@@ -39,9 +39,9 @@ export function Footer({ site }: FooterProps) {
                 {site.siteName || 'Almanya Vize Rehberi'}
               </h3>
               <p className="mt-3 text-sm text-slate-300">
-                Almanya&apos;ya göç sürecinizde güvenilir partneriniz.
-                Çalışma, eğitim ve aile birleşimi vizelerinde uzman
-                danışmanlık sunuyoruz.
+                Almanya'ya göç sürecinizde güvenilir partneriniz. Çalışma,
+                eğitim ve aile birleşimi vizelerinde uzman danışmanlık
+                sunuyoruz.
               </p>
               <div className="mt-4 flex items-center gap-3 text-sm">
                 {site.instagramUrl && (
@@ -49,22 +49,46 @@ export function Footer({ site }: FooterProps) {
                     href={site.instagramUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="text-slate-300 transition-colors hover:text-brand-coral"
+                    aria-label="Instagram"
+                    className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-slate-900/70 text-slate-200 shadow-sm ring-1 ring-slate-700/70 transition hover:bg-brand-coral hover:text-white"
                   >
-                    Instagram
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      className="h-4 w-4"
+                      aria-hidden="true"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M12 7.3A4.7 4.7 0 1 0 16.7 12 4.71 4.71 0 0 0 12 7.3Zm0 7.7A3 3 0 1 1 15 12a3 3 0 0 1-3 3Z"
+                      />
+                      <circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" />
+                      <path
+                        fill="currentColor"
+                        d="M17.5 3H6.5A3.5 3.5 0 0 0 3 6.5v11A3.5 3.5 0 0 0 6.5 21h11a3.5 3.5 0 0 0 3.5-3.5v-11A3.5 3.5 0 0 0 17.5 3Zm2 14.5a2 2 0 0 1-2 2h-11a2 2 0 0 1-2-2v-11a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2Z"
+                      />
+                    </svg>
                   </a>
-                )}
-                {site.instagramUrl && whatsappHref && (
-                  <span className="text-slate-500">•</span>
                 )}
                 {whatsappHref && (
                   <a
                     href={whatsappHref}
                     target="_blank"
                     rel="noreferrer"
-                    className="text-slate-300 transition-colors hover:text-brand-coral"
+                    aria-label="WhatsApp"
+                    className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-slate-900/70 text-slate-200 shadow-sm ring-1 ring-slate-700/70 transition hover:bg-emerald-500 hover:text-white"
                   >
-                    WhatsApp
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      className="h-4 w-4"
+                      aria-hidden="true"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="M20.5 12a8.5 8.5 0 0 0-14.5-6A8.44 8.44 0 0 0 3.5 12a8.32 8.32 0 0 0 1.2 4.3L3 21l4.8-1.6A8.55 8.55 0 0 0 20.5 12Zm-4.4 4.4a4.82 4.82 0 0 1-2.3.6 7.24 7.24 0 0 1-3.8-1.1 8.1 8.1 0 0 1-2.5-2.4 4.66 4.66 0 0 1-.9-2.6 3 3 0 0 1 1-2.2.79.79 0 0 1 .6-.3h.4c.2 0 .3 0 .4.3s.5 1.2.5 1.3a.33.33 0 0 1 0 .3 1.09 1.09 0 0 1-.2.3l-.2.3a.59.59 0 0 0-.1.5 3.09 3.09 0 0 0 .6 1.1 5.38 5.38 0 0 0 1.7 1.4 3.71 3.71 0 0 0 1.1.4.58.58 0 0 0 .4-.1l.4-.4a1.2 1.2 0 0 1 .4-.3.42.42 0 0 1 .4.1l1.2.6a1 1 0 0 1 .5.4.89.89 0 0 1-.1.5 3.64 3.64 0 0 1-1.3 1.4Z"
+                      />
+                    </svg>
                   </a>
                 )}
               </div>
@@ -209,17 +233,6 @@ export function Footer({ site }: FooterProps) {
                 almanyavizerehberi.com
               </span>
               . Tüm hakları saklıdır.
-            </div>
-            <div>
-              Designed by{' '}
-              <a
-                href="https://parkdijital.com/"
-                target="_blank"
-                rel="noreferrer"
-                className="font-semibold text-brand-coral hover:underline"
-              >
-                Park Dijital
-              </a>
             </div>
           </div>
         </div>

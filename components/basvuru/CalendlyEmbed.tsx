@@ -12,7 +12,7 @@ export function CalendlyEmbed({ url }: CalendlyEmbedProps) {
       <InlineWidget
         url={url}
         styles={{
-          height: '820px',
+          height: '760px',
           minWidth: '320px',
           width: '100%',
         }}
