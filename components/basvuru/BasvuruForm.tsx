@@ -155,7 +155,7 @@ export function BasvuruForm() {
         <div className="md:col-span-2 flex items-center gap-4 pt-2">
           <button
             type="submit"
-            className="inline-flex items-center justify-center rounded-full bg-brand-base px-6 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-brand-light disabled:opacity-60"
+            className="inline-flex items-center justify-center rounded-full bg-brand-base px-6 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-brand-light disabled:opacity-60 font-ui"
             disabled={loading}
           >
             {loading ? 'Gönderiliyor…' : 'Başvuruyu Gönder'}

@@ -271,6 +271,117 @@ export default function SiteAdminPage() {
           </div>
         </section>
 
+        {/* Stripe Odeme Linkleri */}
+        <section className="space-y-4 rounded-2xl border border-border-subtle bg-surface-main p-6">
+          <h2 className="text-lg font-semibold text-brand-dark">
+            Stripe Odeme Linkleri
+          </h2>
+          <p className="text-xs text-slate-600">
+            Burada tanimladiginiz odeme linkleri, sitedeki{' '}
+            <code className="rounded bg-surface-soft px-1 py-0.5 text-[10px]">
+              /odeme
+            </code>{' '}
+            sayfasinda gosterilir. Stripe panelinizden Payment Link olusturup
+            URL&apos;leri bu alana yapistirabilirsiniz.
+          </p>
+
+          <div className="grid gap-4 md:grid-cols-2">
+            <div className="space-y-2 rounded-xl border border-border-subtle bg-surface-soft p-4">
+              <h3 className="text-sm font-semibold text-brand-dark">
+                1. Odeme Linki
+              </h3>
+              <div>
+                <label className="block text-[11px] font-semibold uppercase tracking-wide text-slate-500">
+                  Baslik
+                </label>
+                <input
+                  type="text"
+                  className="mt-1 w-full rounded-xl border border-border-subtle bg-white px-3 py-2 text-sm"
+                  value={form.payment1Label}
+                  onChange={(e) =>
+                    setForm({ ...form, payment1Label: e.target.value })
+                  }
+                />
+              </div>
+              <div>
+                <label className="block text-[11px] font-semibold uppercase tracking-wide text-slate-500">
+                  Tutar (bilgi icin)
+                </label>
+                <input
+                  type="text"
+                  className="mt-1 w-full rounded-xl border border-border-subtle bg-white px-3 py-2 text-sm"
+                  value={form.payment1Amount}
+                  onChange={(e) =>
+                    setForm({ ...form, payment1Amount: e.target.value })
+                  }
+                  placeholder="Orn: 99 €"
+                />
+              </div>
+              <div>
+                <label className="block text-[11px] font-semibold uppercase tracking-wide text-slate-500">
+                  Stripe Payment Link URL
+                </label>
+                <input
+                  type="url"
+                  className="mt-1 w-full rounded-xl border border-border-subtle bg-white px-3 py-2 text-sm"
+                  value={form.payment1Url}
+                  onChange={(e) =>
+                    setForm({ ...form, payment1Url: e.target.value })
+                  }
+                  placeholder="https://buy.stripe.com/..."
+                />
+              </div>
+            </div>
+
+            <div className="space-y-2 rounded-xl border border-border-subtle bg-surface-soft p-4">
+              <h3 className="text-sm font-semibold text-brand-dark">
+                2. Odeme Linki
+              </h3>
+              <div>
+                <label className="block text-[11px] font-semibold uppercase tracking-wide text-slate-500">
+                  Baslik
+                </label>
+                <input
+                  type="text"
+                  className="mt-1 w-full rounded-xl border border-border-subtle bg-white px-3 py-2 text-sm"
+                  value={form.payment2Label}
+                  onChange={(e) =>
+                    setForm({ ...form, payment2Label: e.target.value })
+                  }
+                />
+              </div>
+              <div>
+                <label className="block text-[11px] font-semibold uppercase tracking-wide text-slate-500">
+                  Tutar (bilgi icin)
+                </label>
+                <input
+                  type="text"
+                  className="mt-1 w-full rounded-xl border border-border-subtle bg-white px-3 py-2 text-sm"
+                  value={form.payment2Amount}
+                  onChange={(e) =>
+                    setForm({ ...form, payment2Amount: e.target.value })
+                  }
+                  placeholder="Orn: 149 €"
+                />
+              </div>
+              <div>
+                <label className="block text-[11px] font-semibold uppercase tracking-wide text-slate-500">
+                  Stripe Payment Link URL
+                </label>
+                <input
+                  type="url"
+                  className="mt-1 w-full rounded-xl border border-border-subtle bg-white px-3 py-2 text-sm"
+                  value={form.payment2Url}
+                  onChange={(e) =>
+                    setForm({ ...form, payment2Url: e.target.value })
+                  }
+                  placeholder="https://buy.stripe.com/..."
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Bakım Modu */}
         <section className="space-y-4 rounded-2xl border border-amber-200 bg-amber-50/70 p-6">
           <h2 className="text-lg font-semibold text-brand-dark">
@@ -338,3 +449,6 @@ export default function SiteAdminPage() {
     </main>
   );
 }
+
+
+

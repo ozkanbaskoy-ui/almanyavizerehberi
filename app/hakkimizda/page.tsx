@@ -17,10 +17,10 @@ export default function HakkimizdaPage() {
       <section className="relative overflow-hidden bg-[radial-gradient(circle_at_top,_var(--color-hero-from)_0,_var(--color-hero-to)_40%,_#020617_95%)] py-16 text-surface-main">
         <div className="mx-auto max-w-[1200px] px-4">
           <RevealOnScroll className="max-w-3xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-brand-light/80">
+            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-brand-light/80 font-heading">
               Hakkımızda
             </p>
-            <h1 className="mt-4 text-3xl font-semibold tracking-tight md:text-4xl lg:text-5xl">
+            <h1 className="mt-4 font-heading text-3xl font-semibold tracking-tight md:text-4xl lg:text-5xl">
               {page.title}
             </h1>
             <p className="mt-4 text-sm leading-relaxed text-surface-main/80 md:text-base">
@@ -171,4 +171,5 @@ export default function HakkimizdaPage() {
     </main>
   );
 }
+
 

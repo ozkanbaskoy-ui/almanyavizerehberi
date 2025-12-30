@@ -14,6 +14,13 @@ export type SiteSettings = {
   youtubeUrl: string;
   youtubeChannelId: string;
   calendlyUrl: string;
+  // Stripe odeme sayfasi icin basit 2 adet odeme linki konfigurasyonu
+  payment1Label: string;
+  payment1Amount: string;
+  payment1Url: string;
+  payment2Label: string;
+  payment2Amount: string;
+  payment2Url: string;
   maintenanceMode: boolean;
   maintenanceMessage: string;
 };
@@ -31,6 +38,12 @@ const DEFAULT_SETTINGS: SiteSettings = {
   youtubeChannelId: 'UCYNClRqdbdinZphYGiSGg9Q',
   calendlyUrl:
     'https://calendly.com/almanyavizerehberi/almanya-vize-rehberi',
+  payment1Label: '1. Odeme',
+  payment1Amount: '',
+  payment1Url: '',
+  payment2Label: '2. Odeme',
+  payment2Amount: '',
+  payment2Url: '',
   maintenanceMode: false,
   maintenanceMessage:
     'Web sitemizde şu anda bakım çalışması yapıyoruz. Kısa süre içinde tekrar hizmetinizde olacağız.',
@@ -58,6 +71,18 @@ export function getSiteSettings(): SiteSettings {
         DEFAULT_SETTINGS.youtubeChannelId,
       calendlyUrl:
         parsed.calendlyUrl || DEFAULT_SETTINGS.calendlyUrl,
+      payment1Label:
+        parsed.payment1Label || DEFAULT_SETTINGS.payment1Label,
+      payment1Amount:
+        parsed.payment1Amount || DEFAULT_SETTINGS.payment1Amount,
+      payment1Url:
+        parsed.payment1Url || DEFAULT_SETTINGS.payment1Url,
+      payment2Label:
+        parsed.payment2Label || DEFAULT_SETTINGS.payment2Label,
+      payment2Amount:
+        parsed.payment2Amount || DEFAULT_SETTINGS.payment2Amount,
+      payment2Url:
+        parsed.payment2Url || DEFAULT_SETTINGS.payment2Url,
       maintenanceMode:
         typeof parsed.maintenanceMode === 'boolean'
           ? parsed.maintenanceMode
@@ -88,6 +113,16 @@ export function saveSiteSettings(next: SiteSettings) {
       next.youtubeChannelId || DEFAULT_SETTINGS.youtubeChannelId,
     calendlyUrl:
       next.calendlyUrl || DEFAULT_SETTINGS.calendlyUrl,
+    payment1Label:
+      next.payment1Label || DEFAULT_SETTINGS.payment1Label,
+    payment1Amount:
+      next.payment1Amount || DEFAULT_SETTINGS.payment1Amount,
+    payment1Url: next.payment1Url || DEFAULT_SETTINGS.payment1Url,
+    payment2Label:
+      next.payment2Label || DEFAULT_SETTINGS.payment2Label,
+    payment2Amount:
+      next.payment2Amount || DEFAULT_SETTINGS.payment2Amount,
+    payment2Url: next.payment2Url || DEFAULT_SETTINGS.payment2Url,
     maintenanceMode:
       typeof next.maintenanceMode === 'boolean'
         ? next.maintenanceMode
@@ -107,4 +142,3 @@ export function saveSiteSettings(next: SiteSettings) {
     'utf8',
   );
 }
-

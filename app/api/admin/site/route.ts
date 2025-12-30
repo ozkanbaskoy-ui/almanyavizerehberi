@@ -27,6 +27,12 @@ export async function POST(request: Request) {
       youtubeUrl: body.youtubeUrl ?? current.youtubeUrl,
       youtubeChannelId: body.youtubeChannelId ?? current.youtubeChannelId,
       calendlyUrl: body.calendlyUrl ?? current.calendlyUrl,
+      payment1Label: body.payment1Label ?? current.payment1Label,
+      payment1Amount: body.payment1Amount ?? current.payment1Amount,
+      payment1Url: body.payment1Url ?? current.payment1Url,
+      payment2Label: body.payment2Label ?? current.payment2Label,
+      payment2Amount: body.payment2Amount ?? current.payment2Amount,
+      payment2Url: body.payment2Url ?? current.payment2Url,
       maintenanceMode:
         typeof body.maintenanceMode === 'boolean'
           ? body.maintenanceMode

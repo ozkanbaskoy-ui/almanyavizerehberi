@@ -43,6 +43,7 @@ const NAV_ITEMS: {
     items: [
       { label: 'Başvurular (CRM)', href: '/admin/applications' },
       { label: 'Finans & Randevu', href: '/admin/finance' },
+      { label: 'Musteriler', href: '/admin/customers' },
       { label: 'Ayarlar & E-posta', href: '/admin/settings' },
     ],
   },

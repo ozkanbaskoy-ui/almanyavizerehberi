@@ -1,7 +1,7 @@
 import type { CSSProperties } from 'react';
 import type { Metadata } from 'next';
 import Script from 'next/script';
-import { Inter, Plus_Jakarta_Sans, Roboto } from 'next/font/google';
+import localFont from 'next/font/local';
 import '../styles/globals.css';
 
 import { MainNav } from '@/components/layout/MainNav';
@@ -13,27 +13,68 @@ import { getThemeSettings } from '@/lib/settings/theme';
 import { getTypographySettings } from '@/lib/settings/typography';
 import { getSiteSettings } from '@/lib/settings/site';
 
-// Tüm ana yazı tiplerini aynı CSS değişkenine bağluyoruz.
-// Böylece Tailwind'deki font-sans / font-heading sınıfları değişmeden kalıyor,
-// sadece seçilen font bu değişkene atanıyor.
-const fontPlusJakarta = Plus_Jakarta_Sans({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  variable: '--font-plus-jakarta',
+// Ana fontlar:
+// - Raleway: basliklar icin
+// - Inter: govde metinleri ve KVKK / sozlesmeler icin
+// - Poppins: menu ve CTA (buton) alanlari icin
+const fontRaleway = localFont({
+  src: [
+    {
+      path: '../Fonts/Raleway/Raleway-VariableFont_wght.ttf',
+      weight: '100 900',
+      style: 'normal',
+    },
+    {
+      path: '../Fonts/Raleway/Raleway-Italic-VariableFont_wght.ttf',
+      weight: '100 900',
+      style: 'italic',
+    },
+  ],
+  variable: '--font-raleway',
   display: 'swap',
 });
 
-const fontInter = Inter({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  variable: '--font-plus-jakarta',
+const fontInter = localFont({
+  src: [
+    {
+      path: '../Fonts/Inter/Inter-VariableFont_opsz,wght.ttf',
+      weight: '100 900',
+      style: 'normal',
+    },
+    {
+      path: '../Fonts/Inter/Inter-Italic-VariableFont_opsz,wght.ttf',
+      weight: '100 900',
+      style: 'italic',
+    },
+  ],
+  variable: '--font-inter',
   display: 'swap',
 });
 
-const fontRoboto = Roboto({
-  subsets: ['latin'],
-  weight: ['400', '500', '700'],
-  variable: '--font-plus-jakarta',
+const fontPoppins = localFont({
+  src: [
+    {
+      path: '../Fonts/Poppins/Poppins-Regular.ttf',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../Fonts/Poppins/Poppins-Medium.ttf',
+      weight: '500',
+      style: 'normal',
+    },
+    {
+      path: '../Fonts/Poppins/Poppins-SemiBold.ttf',
+      weight: '600',
+      style: 'normal',
+    },
+    {
+      path: '../Fonts/Poppins/Poppins-Bold.ttf',
+      weight: '700',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-poppins',
   display: 'swap',
 });
 
@@ -80,12 +121,15 @@ export default function RootLayout({ children }: RootLayoutProps) {
     '--color-video-border': customColors.videoBorder,
   } as CSSProperties;
 
-  const fontClass =
-    typography.font === 'inter'
-      ? fontInter.variable
-      : typography.font === 'roboto'
-        ? fontRoboto.variable
-        : fontPlusJakarta.variable;
+  // Tipografi ayarlarindaki "font" secimi artik sadece eski Plus Jakarta / Inter / Roboto
+  // degisimini temsil ediyordu. Artik govde icin Inter, baslik icin Raleway,
+  // CTA / menu icin Poppins sabit; bu nedenle burada tum font degiskenlerini
+  // body'ye ekliyoruz. (Boyut olcegi ayari aynen calismaya devam eder.)
+  const fontClass = [
+    fontInter.variable,
+    fontRaleway.variable,
+    fontPoppins.variable,
+  ].join(' ');
 
   return (
     <html lang="tr">
@@ -127,3 +171,4 @@ export default function RootLayout({ children }: RootLayoutProps) {
     </html>
   );
 }
+

@@ -87,8 +87,9 @@ export function MainNav({ site }: MainNavProps) {
     >
       {/* Top bar */}
       <div className="bg-[#545454] text-[13px] text-slate-100">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-2">
-          <div className="flex flex-wrap items-center gap-4">
+        <div className="mx-auto flex max-w-6xl items-center gap-4 px-4 py-2">
+          {/* Sol: e-posta ve telefon */}
+          <div className="flex flex-wrap items-center gap-4 text-[11px] sm:text-[13px]">
             {site.contactEmail && (
               <a
                 href={`mailto:${site.contactEmail}`}
@@ -106,6 +107,15 @@ export function MainNav({ site }: MainNavProps) {
               </a>
             )}
           </div>
+
+          {/* Orta: kayar bilgilendirme metni */}
+          <div className="flex-1 overflow-hidden">
+            <div className="animate-marquee whitespace-nowrap font-ui text-[11px] font-medium tracking-wide text-slate-100/90">
+              Hayallerini erteleme, doğru, güvenilir ve şeffaf rehberlik için hemen başvur
+            </div>
+          </div>
+
+          {/* SaÄŸ: sosyal ikonlar */}
           <div className="hidden items-center gap-2 sm:flex">
             {site.instagramUrl && (
               <a
@@ -172,13 +182,13 @@ export function MainNav({ site }: MainNavProps) {
         </Link>
 
         {/* Desktop menu */}
-        <nav className="hidden items-center gap-4 text-[15px] font-semibold text-slate-800 md:flex">
+        <nav className="hidden items-center gap-4 text-sm font-semibold text-slate-800 font-ui md:flex">
           {MAIN_ITEMS.map((item) =>
             item.children ? (
               <div key={item.label} className="group relative">
                 <button
                   type="button"
-                  className="flex items-center gap-1 rounded-full px-3 py-1 text-[15px] font-semibold text-slate-800 transition-all duration-200 hover:-translate-y-[1px] hover:bg-brand-base/5 hover:text-brand-base hover:shadow-card"
+                  className="flex items-center gap-1 rounded-full px-3 py-1 font-semibold text-slate-800 transition-all duration-200 hover:-translate-y-[1px] hover:bg-brand-base/5 hover:text-brand-base hover:shadow-card"
                 >
                   <span>{item.label}</span>
                   <span className="text-xs leading-none">↓</span>
@@ -203,7 +213,7 @@ export function MainNav({ site }: MainNavProps) {
                 <Link
                   key={item.label}
                   href={item.href}
-                  className="rounded-full px-3 py-1 text-[15px] font-semibold text-slate-800 transition-all duration-200 hover:-translate-y-[1px] hover:bg-brand-base/5 hover:text-brand-base hover:shadow-card"
+                  className="rounded-full px-3 py-1 font-semibold text-slate-800 transition-all duration-200 hover:-translate-y-[1px] hover:bg-brand-base/5 hover:text-brand-base hover:shadow-card"
                 >
                   {item.label}
                 </Link>
@@ -213,7 +223,7 @@ export function MainNav({ site }: MainNavProps) {
 
           <Link
             href="/basvuru.php"
-            className="relative inline-flex items-center justify-center rounded-full bg-gradient-to-b from-brand-red to-red-700 px-5 py-2.5 text-xs font-semibold uppercase tracking-wide text-white shadow-[0_8px_18px_rgba(15,23,42,0.45)] transition-transform duration-150 hover:-translate-y-0.5 hover:shadow-[0_12px_26px_rgba(15,23,42,0.6)] active:translate-y-0 active:shadow-[0_4px_12px_rgba(15,23,42,0.4)]"
+            className="relative inline-flex items-center justify-center rounded-full bg-gradient-to-b from-brand-red to-red-700 px-5 py-2.5 text-xs font-semibold uppercase tracking-wide text-white shadow-[0_8px_18px_rgba(15,23,42,0.45)] transition-transform duration-150 hover:-translate-y-0.5 hover:shadow-[0_12px_26px_rgba(15,23,42,0.6)] active:translate-y-0 active:shadow-[0_4px_12px_rgba(15,23,42,0.4)] font-ui"
           >
             Başvuru Yap
           </Link>
@@ -253,7 +263,7 @@ export function MainNav({ site }: MainNavProps) {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <nav className="border-t border-slate-100 bg-white px-4 py-3 text-sm md:hidden">
+        <nav className="border-t border-slate-100 bg-white px-4 py-3 text-sm font-ui md:hidden">
           <ul className="space-y-2">
             {MAIN_ITEMS.map((item) =>
               item.children ? (
@@ -304,4 +314,7 @@ export function MainNav({ site }: MainNavProps) {
     </motion.header>
   );
 }
+
+
+
 

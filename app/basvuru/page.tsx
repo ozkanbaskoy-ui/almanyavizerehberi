@@ -19,10 +19,10 @@ export default function BasvuruPage() {
       <section className="bg-[radial-gradient(circle_at_top,_var(--color-hero-from)_0,_var(--color-hero-to)_40%,_#020617_95%)] py-16 text-surface-main">
         <div className="mx-auto max-w-[1200px] px-4">
           <RevealOnScroll className="text-center">
-            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-brand-light/80 md:text-sm">
+            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-brand-light/80 font-heading md:text-sm">
               Online Randevu
             </p>
-            <h1 className="mt-4 text-3xl font-semibold tracking-tight md:text-4xl lg:text-5xl">
+            <h1 className="mt-4 font-heading text-3xl font-semibold tracking-tight md:text-4xl lg:text-5xl">
               {page.title}
             </h1>
             <p className="mt-4 mx-auto max-w-2xl text-sm text-surface-main/80 md:text-base">
@@ -34,13 +34,6 @@ export default function BasvuruPage() {
 
           <RevealOnScroll>
             <CalendlyConsentGate url={site.calendlyUrl} />
-          </RevealOnScroll>
-
-          <RevealOnScroll className="mt-10">
-            <article
-              className="prose prose-invert prose-slate/90 mx-auto max-w-3xl text-sm md:text-base"
-              dangerouslySetInnerHTML={{ __html: page.bodyHtml }}
-            />
           </RevealOnScroll>
         </div>
       </section>

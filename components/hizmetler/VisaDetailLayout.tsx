@@ -59,10 +59,10 @@ export function VisaDetailLayout({ visa }: VisaDetailLayoutProps) {
                 { label: visa.title },
               ]}
             />
-            <p className="mt-3 text-xs font-semibold uppercase tracking-[0.25em] text-brand-light/80 md:text-sm">
+            <p className="mt-3 text-xs font-semibold uppercase tracking-[0.25em] text-brand-light/80 font-heading md:text-sm">
               Hizmet Detayı
             </p>
-            <h1 className="mt-4 text-3xl font-semibold tracking-tight md:text-4xl lg:text-5xl">
+            <h1 className="mt-4 font-heading text-3xl font-semibold tracking-tight md:text-4xl lg:text-5xl">
               {visa.title}
             </h1>
             {visa.seoDescription && (
@@ -92,7 +92,7 @@ export function VisaDetailLayout({ visa }: VisaDetailLayoutProps) {
             <div className="space-y-6">
               <RevealOnScroll delay={0.05}>
                 <aside className="rounded-3xl border border-border-subtle bg-surface-main p-5 shadow-soft">
-                  <h2 className="text-sm font-semibold uppercase tracking-wide text-slate-600">
+                  <h2 className="font-heading text-sm font-semibold uppercase tracking-wide text-slate-600">
                     Hizmetlerimiz
                   </h2>
                   <ul className="mt-4 space-y-2 text-sm">
@@ -120,19 +120,19 @@ export function VisaDetailLayout({ visa }: VisaDetailLayoutProps) {
 
               <RevealOnScroll delay={0.1}>
                 <aside className="rounded-3xl border border-border-subtle bg-surface-main p-5 shadow-soft">
-                  <h2 className="text-sm font-semibold uppercase tracking-wide text-slate-600">
+                  <h2 className="font-heading text-sm font-semibold uppercase tracking-wide text-slate-600">
                     Detaylı Bilgi ve Başvuru
                   </h2>
                   <div className="mt-4 space-y-2">
                     <Link
                       href="/basvuru.php"
-                      className="block rounded-full bg-brand-base px-4 py-2 text-center text-xs font-semibold uppercase tracking-wide text-white shadow-sm transition hover:bg-brand-light"
+                      className="block rounded-full bg-brand-base px-4 py-2 text-center text-xs font-ui font-semibold uppercase tracking-wide text-white shadow-sm transition hover:bg-brand-light"
                     >
                       Başvuru Yapın
                     </Link>
                     <Link
                       href="/iletisim.php"
-                      className="block rounded-full border border-border-subtle bg-surface-soft px-4 py-2 text-center text-xs font-semibold uppercase tracking-wide text-brand-dark transition hover:border-brand-base hover:text-brand-base"
+                      className="block rounded-full border border-border-subtle bg-surface-soft px-4 py-2 text-center text-xs font-ui font-semibold uppercase tracking-wide text-brand-dark transition hover:border-brand-base hover:text-brand-base"
                     >
                       İletişime Geçin
                     </Link>
@@ -146,4 +146,5 @@ export function VisaDetailLayout({ visa }: VisaDetailLayoutProps) {
     </main>
   );
 }
+
 

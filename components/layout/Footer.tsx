@@ -36,7 +36,7 @@ export function Footer({ site }: FooterProps) {
           <div className="grid gap-8 md:grid-cols-4">
             {/* Brand */}
             <div className="md:col-span-2">
-              <h3 className="text-lg font-semibold tracking-tight">
+              <h3 className="font-heading text-lg font-semibold tracking-tight">
                 {site.siteName || 'Almanya Vize Rehberi'}
               </h3>
               <p className="mt-3 text-sm text-slate-300/90">
@@ -97,7 +97,7 @@ export function Footer({ site }: FooterProps) {
 
             {/* Primary links */}
             <div>
-              <h4 className="text-[13px] font-semibold uppercase tracking-wide text-slate-300">
+              <h4 className="font-heading text-[13px] font-semibold uppercase tracking-wide text-slate-300">
                 Linkler
               </h4>
               <ul className="mt-3 space-y-2 text-sm">
@@ -153,7 +153,7 @@ export function Footer({ site }: FooterProps) {
 
             {/* Secondary links */}
             <div>
-              <h4 className="text-[13px] font-semibold uppercase tracking-wide text-slate-300">
+              <h4 className="font-heading text-[13px] font-semibold uppercase tracking-wide text-slate-300">
                 Diğer Linkler
               </h4>
               <ul className="mt-3 space-y-2 text-sm">
@@ -206,7 +206,7 @@ export function Footer({ site }: FooterProps) {
           {/* Newsletter */}
           <div className="mt-8 flex flex-col gap-4 border-t border-slate-800 pt-4 md:flex-row md:items-center md:justify-between">
             <div>
-              <h4 className="text-sm font-semibold uppercase tracking-wide text-slate-300">
+              <h4 className="font-heading text-sm font-semibold uppercase tracking-wide text-slate-300">
                 Bültenimize Abone Olun
               </h4>
               <p className="mt-2 text-xs text-slate-400">
@@ -223,7 +223,7 @@ export function Footer({ site }: FooterProps) {
               />
               <button
                 type="submit"
-                className="rounded-md bg-brand-red px-4 py-2 text-xs font-semibold uppercase tracking-wide text-white hover:bg-red-700"
+                className="font-ui rounded-md bg-brand-red px-4 py-2 text-xs font-semibold uppercase tracking-wide text-white hover:bg-red-700"
               >
                 Abone Ol
               </button>
@@ -245,4 +245,3 @@ export function Footer({ site }: FooterProps) {
     </motion.footer>
   );
 }
-

@@ -27,10 +27,10 @@ export default async function YouTubePage() {
       <section className="relative overflow-hidden bg-[radial-gradient(circle_at_top,_var(--color-hero-from)_0,_var(--color-hero-to)_40%,_#020617_95%)] py-16 text-surface-main">
         <div className="mx-auto max-w-[1200px] px-4">
           <RevealOnScroll className="text-center">
-            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-brand-light/80">
+            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-brand-light/80 font-heading">
               YouTube Kanalımız
             </p>
-            <h1 className="mt-4 text-3xl font-semibold md:text-4xl">
+            <h1 className="mt-4 font-heading text-3xl font-semibold md:text-4xl">
               Almanya Vize Süreçleri İçin Video Rehberler
             </h1>
             <p className="mt-4 mx-auto max-w-2xl text-sm md:text-base text-surface-main/80">
@@ -69,4 +69,5 @@ export default async function YouTubePage() {
     </main>
   );
 }
+
 

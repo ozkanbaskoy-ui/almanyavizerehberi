@@ -150,6 +150,9 @@ const nextConfig = {
         destination: '/servisler/oturum-izni-basvurusu-ve-yenilenmesi',
       },
 
+      // Odeme sayfasi
+      { source: '/odeme.php', destination: '/odeme' },
+
       // Hukuki sayfalar
       { source: '/cerezler.php', destination: '/cerezler' },
       { source: '/kullanim-sartlari.php', destination: '/kullanim-sartlari' },

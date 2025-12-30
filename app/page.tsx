@@ -74,10 +74,7 @@ export default async function HomePage() {
       >
         <div className="mx-auto flex max-w-[1200px] flex-col gap-10 px-4 pt-14 pb-12 md:flex-row md:items-center">
           <RevealOnScroll className="order-2 md:order-1 md:w-1/2">
-            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-brand-light/80">
-              {homeSettings.hero.kicker}
-            </p>
-            <h1 className="mt-4 text-4xl font-semibold tracking-tight md:text-5xl lg:text-6xl">
+            <h1 className="mt-4 font-heading text-4xl font-semibold tracking-tight md:text-5xl lg:text-6xl">
               {homeSettings.hero.title}
             </h1>
             <p className="mt-5 text-base leading-relaxed text-surface-main/85">
@@ -86,13 +83,13 @@ export default async function HomePage() {
             <div className="mt-8 flex flex-wrap gap-4">
               <Link
                 href="/basvuru.php"
-                className="inline-flex items-center justify-center rounded-full bg-gradient-to-br from-brand-base to-brand-light px-7 py-3 text-sm font-semibold uppercase tracking-wide text-white shadow-lg shadow-brand-dark/40 transition hover:from-brand-light hover:to-brand-base"
+                className="inline-flex items-center justify-center rounded-full bg-gradient-to-br from-brand-base to-brand-light px-7 py-3 text-sm font-ui font-semibold uppercase tracking-wide text-white shadow-lg shadow-brand-dark/40 transition hover:from-brand-light hover:to-brand-base"
               >
                 {homeSettings.hero.primaryCtaText}
               </Link>
               <Link
                 href="#home-services"
-                className="inline-flex items-center justify-center rounded-full border border-surface-main/20 bg-white/5 px-7 py-3 text-sm font-semibold uppercase tracking-wide text-surface-main backdrop-blur-sm transition hover:bg-white/10"
+                className="inline-flex items-center justify-center rounded-full border border-surface-main/20 bg-white/5 px-7 py-3 text-sm font-ui font-semibold uppercase tracking-wide text-surface-main backdrop-blur-sm transition hover:bg-white/10"
               >
                 {homeSettings.hero.secondaryCtaText}
               </Link>
@@ -150,10 +147,10 @@ export default async function HomePage() {
         <div className="relative mx-auto max-w-[1200px] px-4">
           {/* Bölüm başlığı – hero gibi lacivert zemin üzerinde beyaz metin */}
           <RevealOnScroll className="text-center">
-            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-surface-main/70 md:text-sm">
+            <p className="font-heading text-xs font-semibold uppercase tracking-[0.25em] text-surface-main/70 md:text-sm">
               {homeSettings.services.kicker}
             </p>
-            <h2 className="mt-4 text-3xl font-semibold text-surface-main md:text-4xl">
+            <h2 className="mt-4 font-heading text-3xl font-semibold text-surface-main md:text-4xl">
               {homeSettings.services.title}
             </h2>
             <p className="mt-4 mx-auto max-w-2xl text-base text-surface-main/80 md:text-lg">
@@ -179,7 +176,7 @@ export default async function HomePage() {
                         />
                       </div>
                       <div className="flex flex-1 flex-col p-5">
-                        <h3 className="text-lg font-semibold text-brand-dark md:text-xl">
+                        <h3 className="font-heading text-lg font-semibold text-brand-dark md:text-xl">
                           {visa.title}
                         </h3>
                         <p className="mt-2 line-clamp-4 text-[15px] leading-relaxed text-slate-800 md:text-base">
@@ -188,7 +185,7 @@ export default async function HomePage() {
                         <div className="mt-4 flex items-center justify-between">
                           <Link
                             href={`/hizmetler/${visa.slug}`}
-                            className="text-xs font-semibold text-brand-base hover:text-brand-light"
+                            className="text-xs font-ui font-semibold text-brand-base hover:text-brand-light"
                           >
                             Detayları Gör
                           </Link>
@@ -205,7 +202,7 @@ export default async function HomePage() {
               <RevealOnScroll className="relative mt-10 text-center">
                 <Link
                   href="/hizmetler.php?l=1"
-                  className="inline-flex items-center justify-center rounded-full border border-border-subtle bg-surface-main px-7 py-2.5 text-xs font-semibold uppercase tracking-wide text-brand-dark shadow-sm hover:border-brand-base hover:text-brand-base hover:shadow-md"
+                  className="inline-flex items-center justify-center rounded-full border border-border-subtle bg-surface-main px-7 py-2.5 text-xs font-ui font-semibold uppercase tracking-wide text-brand-dark shadow-sm hover:border-brand-base hover:text-brand-base hover:shadow-md"
                 >
                   Tüm Vize Hizmetlerini Gör
                 </Link>

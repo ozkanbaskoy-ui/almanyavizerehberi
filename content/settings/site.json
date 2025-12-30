@@ -8,7 +8,12 @@
   "youtubeUrl": "https://www.youtube.com/channel/UCYNClRqdbdinZphYGiSGg9Q",
   "youtubeChannelId": "UCYNClRqdbdinZphYGiSGg9Q",
   "calendlyUrl": "https://calendly.com/almanyavizerehberi/almanya-vize-rehberi",
+  "payment1Label": "1. Odeme",
+  "payment1Amount": "1.000 €",
+  "payment1Url": "https://buy.stripe.com/8wM02pgYCbkv2qs6ov",
+  "payment2Label": "2. Odeme",
+  "payment2Amount": "2.000€",
+  "payment2Url": "https://buy.stripe.com/28o4iFcIm74fd56fZ0",
   "maintenanceMode": false,
   "maintenanceMessage": "Web sitemizde şu anda bakım çalışması yapıyoruz. Kısa süre içinde tekrar hizmetinizde olacağız."
 }
-
