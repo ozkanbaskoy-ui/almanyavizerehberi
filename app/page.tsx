@@ -119,8 +119,8 @@ export default async function HomePage() {
           </RevealOnScroll>
 
           {/* Slider kartı – beyaz panel */}
-          <RevealOnScroll className="mt-10">
-            <div className="relative overflow-hidden rounded-[2.25rem] border border-border-subtle/70 bg-surface-main px-4 py-10 shadow-[0_26px_80px_rgba(15,23,42,0.5)] md:px-10">
+          <RevealOnScroll className="mt-6 md:mt-10">
+            <div className="relative overflow-hidden rounded-[2.25rem] border border-border-subtle/70 bg-surface-main px-4 py-10 shadow-[0_26px_80px_rgba(15,23,42,0.5)] md:px-10 md:py-10">
               <div className="pointer-events-none absolute -top-24 -left-16 h-56 w-56 rounded-full bg-brand-base/10 blur-3xl" />
               <div className="pointer-events-none absolute -bottom-24 -right-16 h-56 w-56 rounded-full bg-brand-light/10 blur-3xl" />
               <div className="relative">
@@ -140,7 +140,7 @@ export default async function HomePage() {
       {/* HİZMETLERİMİZ - ÖNE ÇIKANLAR */}
       <section
         id="home-services"
-        className="relative overflow-hidden bg-[radial-gradient(circle_at_top,_var(--color-hero-from)_0,_var(--color-hero-to)_40%,_var(--color-video-bg)_100%)] pt-20 pb-10"
+        className="relative overflow-hidden bg-[radial-gradient(circle_at_top,_var(--color-hero-from)_0,_var(--color-hero-to)_40%,_var(--color-video-bg)_100%)] pt-10 pb-6 md:pt-20 md:pb-10"
       >
         <div className="pointer-events-none absolute -left-24 top-0 h-64 w-64 rounded-full bg-brand-base/20 blur-3xl" />
         <div className="pointer-events-none absolute -right-24 bottom-0 h-64 w-64 rounded-full bg-brand-light/25 blur-3xl" />
@@ -159,8 +159,8 @@ export default async function HomePage() {
           </RevealOnScroll>
 
           {/* Kartlar – beyaz panel içinde */}
-          <RevealOnScroll className="mt-10">
-            <div className="relative overflow-hidden rounded-[2.25rem] border border-border-subtle/70 bg-surface-main px-4 py-10 shadow-[0_26px_80px_rgba(15,23,42,0.5)] md:px-10">
+          <RevealOnScroll className="mt-6 md:mt-10">
+            <div className="relative overflow-hidden rounded-[2.25rem] border border-border-subtle/70 bg-surface-main px-4 py-10 shadow-[0_26px_80px_rgba(15,23,42,0.5)] md:px-10 md:py-10">
               <div className="pointer-events-none absolute -top-24 -right-24 h-64 w-64 rounded-full bg-brand-light/10 blur-3xl" />
               <div className="pointer-events-none absolute -bottom-24 -left-24 h-64 w-64 rounded-full bg-brand-base/10 blur-3xl" />
               <div className="relative grid gap-6 md:grid-cols-2 lg:grid-cols-4">
