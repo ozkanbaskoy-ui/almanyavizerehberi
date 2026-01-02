@@ -36,8 +36,10 @@ const DEFAULT_SETTINGS: SiteSettings = {
   youtubeUrl:
     'https://www.youtube.com/channel/UCYNClRqdbdinZphYGiSGg9Q',
   youtubeChannelId: 'UCYNClRqdbdinZphYGiSGg9Q',
+  // Basvuru sayfasindaki randevu takvimi icin URL.
+  // Artik Calendly degil, Google Takvim randevu planlama linki kullaniliyor.
   calendlyUrl:
-    'https://calendly.com/almanyavizerehberi/almanya-vize-rehberi',
+    'https://calendar.google.com/calendar/appointments/schedules/AcZssZ3gacJKI5nfMIm072rGVFxaHRSOFIRECySFmJMdgUZFHFCf5jHn4UrSytZeP8ErAI8H3PVqBaM1?gv=true',
   payment1Label: '1. Odeme',
   payment1Amount: '',
   payment1Url: '',
