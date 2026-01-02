@@ -229,6 +229,14 @@ export function MainNav({ site }: MainNavProps) {
           </Link>
         </nav>
 
+        {/* Mobile CTA (only mobilde grnsn) */}
+        <Link
+          href="/basvuru.php"
+          className="inline-flex items-center justify-center rounded-full bg-gradient-to-b from-brand-red to-red-700 px-4 py-2 text-xs font-ui font-semibold uppercase tracking-wide text-white shadow-[0_6px_14px_rgba(15,23,42,0.45)] md:hidden"
+        >
+          BaŸvuru Yap
+        </Link>
+
         {/* Mobile menu button */}
         <button
           type="button"
@@ -314,7 +322,6 @@ export function MainNav({ site }: MainNavProps) {
     </motion.header>
   );
 }
-
 
 
 
