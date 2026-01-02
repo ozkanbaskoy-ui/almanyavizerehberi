@@ -20,13 +20,14 @@ export function RevealOnScroll({
   return (
     <motion.div
       className={className}
-      initial={{ opacity: 0, y: 50 }}
+      initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.5 }}
+      // amount: 0.15 -> elemanin kucuk bir kismi gorunur olur olmaz animasyon
+      // baslasin; mobilde "bos gorunme" sorununu azaltir.
+      viewport={{ once: true, amount: 0.15 }}
       transition={{ duration: 0.8, ease: 'easeOut', delay }}
     >
       {children}
     </motion.div>
   );
 }
-
