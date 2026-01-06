@@ -2,27 +2,27 @@
   "templates": [
     {
       "id": "application_received",
-      "name": "BaŸvuru Alnd",
-      "subject": "BaŸvurunuz alnd - Almanya Vize Rehberi",
-      "body": "Merhaba {{fullName}},\n\nAlmanya vize danŸmanlk baŸvurunuz tarafmza ulaŸt.\n\nVize tr: {{visaType}}\nBaŸvuru tarihi: {{createdAt}}\n\nUzman ekibimiz en ksa srede sizinle iletiŸime ge‡ecek. Bu sre i‡inde sorularnz olursa bu e-posta adresine yant verebilir veya WhatsApp hattmz zerinden bize ulaŸabilirsiniz.\n\nSayglarmzla,\nAlmanya Vize Rehberi Ekibi"
+      "name": "Başvuru Alındı",
+      "subject": "Başvurunuz alındı - Almanya Vize Rehberi",
+      "body": "Merhaba {{fullName}},\n\nAlmanya vize danışmanlık başvurunuz tarafımıza ulaştı.\n\nVize türü: {{visaType}}\nBaşvuru tarihi: {{createdAt}}\n\nUzman ekibimiz en kısa sürede sizinle iletişime geçecek. Bu süre içinde sorularınız olursa bu e-posta adresine yanıt verebilir veya WhatsApp hattımız üzerinden bize ulaşabilirsiniz.\n\nSaygılarımızla,\nAlmanya Vize Rehberi Ekibi"
     },
     {
       "id": "payment_received",
-      "name": "™deme Alnd",
-      "subject": "™demeniz i‡in teŸekkr ederiz",
-      "body": "Merhaba {{fullName}},\n\nDanŸmanlk hizmeti i‡in yapmŸ oldu§unuz ”demeyi baŸaryla aldk.\n\nTutar: {{amount}}\nPaket: {{productName}}\nTarih: {{paidAt}}\n\nBir sonraki admlar sizinle e-posta veya WhatsApp zerinden paylaŸaca§z.\n\nTeŸekkr ederiz,\nAlmanya Vize Rehberi Ekibi"
+      "name": "Ödeme Alındı",
+      "subject": "Ödemeniz için teşekkür ederiz",
+      "body": "Merhaba {{fullName}},\n\nDanışmanlık hizmeti için yapmış olduğunuz ödemeyi başarıyla aldık.\n\nTutar: {{amount}}\nPaket: {{productName}}\nTarih: {{paidAt}}\n\nBir sonraki adımları sizinle e-posta veya WhatsApp üzerinden paylaşacağız.\n\nTeşekkür ederiz,\nAlmanya Vize Rehberi Ekibi"
     },
     {
       "id": "appointment_scheduled",
-      "name": "Randevu OluŸturuldu",
-      "subject": "G”rŸme randevunuz oluŸturuldu",
-      "body": "Merhaba {{fullName}},\n\nAlmanya Vize Rehberi ekibi ile online g”rŸme randevunuz oluŸturuldu.\n\nTarih: {{appointmentDate}}\nSaat: {{appointmentTime}}\nKanal: {{channel}}\n\nRandevuya zamannda katlmanz, srecinizin hzl ilerlemesi i‡in ‡ok ”nemlidir. Randevuyu ertelemek veya iptal etmek isterseniz ltfen en az 24 saat ”nce bize bilgi verin.\n\nG”rŸmek zere,\nAlmanya Vize Rehberi Ekibi"
+      "name": "Randevu Oluşturuldu",
+      "subject": "Görüşme randevunuz oluşturuldu",
+      "body": "Merhaba {{fullName}},\n\nAlmanya Vize Rehberi ekibi ile online görüşme randevunuz oluşturuldu.\n\nTarih: {{appointmentDate}}\nSaat: {{appointmentTime}}\nKanal: {{channel}}\n\nRandevuya zamanında katılmanız, sürecinizin hızlı ilerlemesi için çok önemlidir. Randevuyu ertelemek veya iptal etmek isterseniz lütfen en az 24 saat önce bize bilgi verin.\n\nGörüşmek üzere,\nAlmanya Vize Rehberi Ekibi"
     },
     {
       "id": "admin_login_code",
-      "name": "Admin GiriŸ Kodu",
-      "subject": "Admin giriŸ kodunuz - Almanya Vize Rehberi",
-      "body": "Merhaba,\n\nAlmanya Vize Rehberi y”netim paneline giriŸ yapmak i‡in kullanaca§nz tek kullanmlk do§rulama kodunuz:\n\nKod: {{code}}\n\nBu kod {{time}} tarihinde retilmiŸtir ve ksa bir sre i‡inde (yaklaŸk 10 dakika) ge‡erlili§ini yitirecektir.\n\nE§er bu iste§i siz baŸlatmadysanz ltfen bu e-postay dikkate almayn ve giriŸ Ÿifrenizi de§iŸtirmeyi dŸnn.\n\nSayglarmzla,\nAlmanya Vize Rehberi"
+      "name": "Admin Giriş Kodu",
+      "subject": "Admin giriş kodunuz - Almanya Vize Rehberi",
+      "body": "Merhaba,\n\nAlmanya Vize Rehberi yönetim paneline giriş yapmak için kullanacağınız tek kullanımlık doğrulama kodunuz:\n\nKod: {{code}}\n\nBu kod {{time}} tarihinde üretilmiştir ve kısa bir süre içinde (yaklaşık 10 dakika) geçerliliğini yitirecektir.\n\nEğer bu isteği siz başlatmadıysanız lütfen bu e-postayı dikkate almayın ve giriş şifrenizi değiştirmeyi düşünün.\n\nSaygılarımızla,\nAlmanya Vize Rehberi"
     }
   ]
 }

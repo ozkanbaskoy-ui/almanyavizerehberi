@@ -13,8 +13,10 @@ export const runtime = 'nodejs';
 
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
 const ADMIN_USERNAME = process.env.ADMIN_USERNAME || 'ozkan';
+const ADMIN_OTP_EMAIL = process.env.ADMIN_OTP_EMAIL;
+const COOKIE_SECURE = process.env.NODE_ENV === 'production';
 const OTP_COOKIE_NAME = 'admin_otp';
-const OTP_TTL_SECONDS = 10 * 60; // 10 minutes
+const OTP_TTL_SECONDS = 10 * 60; // 10 dakika
 
 type Body = {
   mode?: 'password' | 'code';
@@ -24,7 +26,7 @@ type Body = {
 };
 
 function getOtpSecret() {
-  // Fallback secret if no dedicated secret is configured.
+  // Ayrı bir gizli anahtar tanımlı değilse, şifreyi fallback olarak kullan.
   return (
     process.env.ADMIN_OTP_SECRET ||
     ADMIN_PASSWORD ||
@@ -41,8 +43,7 @@ export async function POST(request: Request) {
   try {
     const body = (await request.json().catch(() => ({}))) as Body;
 
-    // If there is no admin password configured at all, behave like
-    // "auth disabled" and let the user in (development convenience).
+    // Hiç admin şifresi tanımlı değilse, geliştirme kolaylığı için korumayı kaldır.
     if (!ADMIN_PASSWORD) {
       const res = NextResponse.json({
         ok: true,
@@ -50,9 +51,9 @@ export async function POST(request: Request) {
       });
       res.cookies.set('admin_logged_in', '1', {
         httpOnly: true,
-        secure: true,
+        secure: COOKIE_SECURE,
         sameSite: 'lax',
-        path: '/admin',
+        path: '/',
         maxAge: 60 * 60 * 8,
       });
       return res;
@@ -61,7 +62,7 @@ export async function POST(request: Request) {
     const mode = body.mode ?? 'password';
 
     if (mode === 'password') {
-      // Step 1: validate username and password.
+      // Adım 1: kullanıcı adı ve şifre kontrolü
       if (!body.username || body.username !== ADMIN_USERNAME) {
         return NextResponse.json(
           { error: 'Geçersiz kullanıcı adı.' },
@@ -76,21 +77,27 @@ export async function POST(request: Request) {
         );
       }
 
-      // If SMTP and a contact email are configured, send an OTP code.
+      // SMTP ve hedef e-posta hazırsa OTP kodu gönder.
       const smtpReady = hasSmtpConfig();
       let toEmail: string | null = null;
 
       if (smtpReady) {
-        const site = getSiteSettings();
-        if (site.contactEmail) {
-          toEmail = site.contactEmail;
+        if (ADMIN_OTP_EMAIL) {
+          toEmail = ADMIN_OTP_EMAIL;
+        } else {
+          const site = getSiteSettings();
+          if (site.contactEmail) {
+            toEmail = site.contactEmail;
+          }
         }
       }
 
       if (smtpReady && toEmail) {
         const code = generateOtpCode();
         const now = new Date();
-        const expiresAt = new Date(now.getTime() + OTP_TTL_SECONDS * 1000);
+        const expiresAt = new Date(
+          now.getTime() + OTP_TTL_SECONDS * 1000,
+        );
         const secret = getOtpSecret();
 
         const hash = crypto
@@ -103,7 +110,6 @@ export async function POST(request: Request) {
           expiresAt: expiresAt.toISOString(),
         };
 
-        // Send the code by email.
         await sendTemplatedEmail({
           templateId: 'admin_login_code',
           to: toEmail,
@@ -121,20 +127,19 @@ export async function POST(request: Request) {
           step: 'code',
         });
 
-        // Temporary OTP cookie (only for /admin).
+        // Geçici OTP çerezi (tüm sitede geçerli olacak şekilde path '/')
         res.cookies.set(OTP_COOKIE_NAME, JSON.stringify(otpPayload), {
           httpOnly: true,
-          secure: true,
+          secure: COOKIE_SECURE,
           sameSite: 'lax',
-          path: '/admin',
+          path: '/',
           maxAge: OTP_TTL_SECONDS,
         });
 
         return res;
       }
 
-      // If SMTP or email is not ready yet, fall back to simple
-      // username + password login with no OTP.
+      // SMTP veya e-posta hazır değilse OTP olmadan doğrudan giriş.
       const res = NextResponse.json({
         ok: true,
         authEnabled: true,
@@ -143,10 +148,10 @@ export async function POST(request: Request) {
 
       res.cookies.set('admin_logged_in', '1', {
         httpOnly: true,
-        secure: true,
+        secure: COOKIE_SECURE,
         sameSite: 'lax',
-        path: '/admin',
-        maxAge: 60 * 60 * 8, // 8 hours
+        path: '/',
+        maxAge: 60 * 60 * 8, // 8 saat
       });
 
       return res;
@@ -161,7 +166,6 @@ export async function POST(request: Request) {
         );
       }
 
-      // Next.js 16 ile birlikte cookies() async hale geldi, bu yüzden burada await kullanıyoruz.
       const cookieStore = await cookies();
       const otpCookie = cookieStore.get(OTP_COOKIE_NAME)?.value;
 
@@ -202,9 +206,9 @@ export async function POST(request: Request) {
         );
         res.cookies.set(OTP_COOKIE_NAME, '', {
           httpOnly: true,
-          secure: true,
+          secure: COOKIE_SECURE,
           sameSite: 'lax',
-          path: '/admin',
+          path: '/',
           maxAge: 0,
         });
         return res;
@@ -228,21 +232,21 @@ export async function POST(request: Request) {
         authEnabled: true,
       });
 
-      // One-time use: clear OTP cookie.
+      // OTP çerezini temizle
       res.cookies.set(OTP_COOKIE_NAME, '', {
         httpOnly: true,
-        secure: true,
+        secure: COOKIE_SECURE,
         sameSite: 'lax',
-        path: '/admin',
+        path: '/',
         maxAge: 0,
       });
 
-      // Main admin session cookie.
+      // Ana admin oturumu
       res.cookies.set('admin_logged_in', '1', {
         httpOnly: true,
-        secure: true,
+        secure: COOKIE_SECURE,
         sameSite: 'lax',
-        path: '/admin',
+        path: '/',
         maxAge: 60 * 60 * 8,
       });
 
@@ -265,3 +269,4 @@ export async function POST(request: Request) {
     );
   }
 }
+
