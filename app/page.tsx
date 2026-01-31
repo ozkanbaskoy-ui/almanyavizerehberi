@@ -11,22 +11,25 @@ import { getHomeSettings } from '@/lib/settings/home';
 import { RevealOnScroll } from '@/components/common/RevealOnScroll';
 import { HeroParallaxImage } from '@/components/home/HeroParallaxImage';
 
+// Hizmet kartları için kullanılan görseller artık projeye dahil statik dosyalardan geliyor.
+// Eski sitedeki 2b.almanyavizerehberi.com alan adı Vercel'de kaldırıldığı için
+// home services bölümündeki görseller production'da görünmüyordu.
 const VISA_CARD_ORDER = [
   {
     slug: 'calisma-vizesi',
-    image: 'https://2b.almanyavizerehberi.com/dist/img/hizmet/1.webp',
+    image: '/assets/img/hizmet/1.webp',
   },
   {
     slug: 'mavi-kart-vizesi',
-    image: 'https://2b.almanyavizerehberi.com/dist/img/hizmet/2.webp',
+    image: '/assets/img/hizmet/2.webp',
   },
   {
     slug: 'firsat-karti',
-    image: 'https://2b.almanyavizerehberi.com/dist/img/hizmet/3.webp',
+    image: '/assets/img/hizmet/3.webp',
   },
   {
     slug: 'mesleki-egitim-vizesi',
-    image: 'https://2b.almanyavizerehberi.com/dist/img/hizmet/5.webp',
+    image: '/assets/img/hizmet/5.webp',
   },
 ];
 

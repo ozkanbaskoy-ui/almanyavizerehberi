@@ -3,8 +3,10 @@
 import { useScroll, useTransform, motion } from 'framer-motion';
 import Image from 'next/image';
 
-const HERO_IMAGE =
-  'https://2b.almanyavizerehberi.com/dist/img/slider/slider.webp';
+// Ana sayfa slider görseli de artık projedeki statik asset'ten okunuyor.
+// Eski 2b.almanyavizerehberi.com alan adı Vercel'de artık aktif olmadığı için
+// remote URL production ortamında 404 dönüyordu.
+const HERO_IMAGE = '/assets/img/slider.webp';
 
 export function HeroParallaxImage() {
   const { scrollYProgress } = useScroll();
@@ -26,4 +28,3 @@ export function HeroParallaxImage() {
     </motion.div>
   );
 }
-
