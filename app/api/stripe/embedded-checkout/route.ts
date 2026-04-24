@@ -21,7 +21,7 @@ export async function POST(request: Request) {
     return NextResponse.json(
       {
         error:
-          'Stripe gizli anahtari tanimli degil. STRIPE_SECRET_KEY degerini Vercel ortam degiskenlerine ekleyin.',
+          'Stripe gizli anahtarı tanımlı değil. STRIPE_SECRET_KEY değerini Vercel ortam değişkenlerine ekleyin.',
       },
       { status: 500 },
     );
@@ -34,7 +34,7 @@ export async function POST(request: Request) {
 
   if (!option) {
     return NextResponse.json(
-      { error: 'Gecerli bir odeme secenegi bulunamadi.' },
+      { error: 'Geçerli bir ödeme seçeneği bulunamadı.' },
       { status: 400 },
     );
   }
@@ -70,7 +70,7 @@ export async function POST(request: Request) {
     });
 
     if (!session.client_secret) {
-      throw new Error('Stripe istemci anahtari olusmadi.');
+      throw new Error('Stripe istemci anahtarı oluşmadı.');
     }
 
     return NextResponse.json({ clientSecret: session.client_secret });
@@ -80,7 +80,7 @@ export async function POST(request: Request) {
         error:
           err instanceof Error
             ? err.message
-            : 'Stripe odeme formu olusturulurken bir hata olustu.',
+            : 'Stripe ödeme formu oluşturulurken bir hata oluştu.',
       },
       { status: 500 },
     );

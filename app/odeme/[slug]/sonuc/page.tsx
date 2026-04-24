@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+﻿import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
@@ -17,7 +17,7 @@ type PageProps = {
 };
 
 export const metadata: Metadata = {
-  title: 'Odeme Sonucu',
+  title: 'Ödeme Sonucu',
   robots: {
     index: false,
     follow: false,
@@ -46,18 +46,18 @@ export default async function PaymentResultPage(props: PageProps) {
                 ✓
               </div>
               <h1 className="mt-5 font-heading text-2xl font-semibold md:text-3xl">
-                Odeme islemi tamamlandi
+                Ödeme işlemi tamamlandı
               </h1>
               <p className="mt-3 text-sm leading-7 text-slate-300">
-                {option.amount.toLocaleString('tr-TR')} EUR tutarindaki odeme
-                isleminiz Stripe tarafindan isleme alindi. Gerekli kontroller
-                sonrasi ekibimiz sizinle iletisime gececektir.
+                {option.amount.toLocaleString('tr-TR')} EUR tutarındaki ödeme
+                işleminiz Stripe tarafından işleme alındı. Gerekli kontroller
+                sonrası ekibimiz sizinle iletişime geçecektir.
               </p>
               <Link
                 href="/"
                 className="mt-6 inline-flex items-center justify-center rounded-full bg-brand-base px-6 py-2 text-xs font-semibold uppercase tracking-wide text-white shadow-lg shadow-red-950/40 transition hover:bg-red-700"
               >
-                Ana Sayfaya Don
+                Ana Sayfaya Dön
               </Link>
             </div>
           </RevealOnScroll>

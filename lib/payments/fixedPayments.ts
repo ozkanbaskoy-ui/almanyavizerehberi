@@ -9,22 +9,22 @@ export type FixedPaymentOption = {
 export const FIXED_PAYMENT_OPTIONS: FixedPaymentOption[] = [
   {
     slug: 'odeme1',
-    label: '1000 Euro Odeme',
-    description: 'AVR Global danismanlik hizmeti odemesi',
+    label: '1000 Euro Ödeme',
+    description: 'AVR Global danışmanlık hizmeti ödemesi',
     amount: 1000,
     currency: 'eur',
   },
   {
     slug: 'odeme2',
-    label: '2000 Euro Odeme',
-    description: 'AVR Global danismanlik hizmeti odemesi',
+    label: '2000 Euro Ödeme',
+    description: 'AVR Global danışmanlık hizmeti ödemesi',
     amount: 2000,
     currency: 'eur',
   },
   {
     slug: 'odeme3',
-    label: '5 Euro Test Odeme',
-    description: 'AVR Global test odemesi',
+    label: '5 Euro Test Ödemesi',
+    description: 'AVR Global test ödemesi',
     amount: 5,
     currency: 'eur',
   },

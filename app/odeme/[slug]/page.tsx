@@ -28,7 +28,7 @@ export async function generateMetadata(
   const option = getFixedPaymentOption(slug);
 
   return {
-    title: option ? option.label : 'Odeme',
+    title: option ? option.label : 'Ödeme',
     robots: {
       index: false,
       follow: false,
@@ -57,16 +57,16 @@ export default async function FixedPaymentPage(props: PageProps) {
             </Link>
 
             <h1 className="mt-5 font-heading text-3xl font-semibold tracking-tight md:text-4xl">
-              Guvenli Online Odeme
+              Güvenli Online Ödeme
             </h1>
             <p className="mt-4 text-sm leading-7 text-surface-main/80 md:text-base">
-              Odeme isleminizi bu sayfadan ayrilmadan Stripe altyapisi ile
-              guvenli sekilde tamamlayabilirsiniz.
+              Ödeme işleminizi bu sayfadan ayrılmadan Stripe altyapısı ile
+              güvenli şekilde tamamlayabilirsiniz.
             </p>
 
             <div className="mt-6 rounded-3xl border border-slate-700/70 bg-slate-950/60 p-5 shadow-xl shadow-black/30">
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
-                Odeme tutari
+                Ödeme tutarı
               </p>
               <p className="mt-2 font-heading text-4xl font-semibold text-brand-light">
                 {option.amount.toLocaleString('tr-TR')} EUR
@@ -77,8 +77,8 @@ export default async function FixedPaymentPage(props: PageProps) {
             </div>
 
             <div className="mt-5 rounded-2xl border border-emerald-400/20 bg-emerald-500/10 px-4 py-3 text-xs leading-6 text-emerald-100">
-              Kart bilgileriniz AVR Global sunucularinda saklanmaz. Odeme
-              alanlari Stripe tarafindan guvenli olarak saglanir.
+              Kart bilgileriniz AVR Global sunucularında saklanmaz. Ödeme
+              alanları Stripe tarafından güvenli olarak sağlanır.
             </div>
           </RevealOnScroll>
 
