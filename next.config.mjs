@@ -152,6 +152,12 @@ const nextConfig = {
 
       // Odeme sayfasi
       { source: '/odeme.php', destination: '/odeme' },
+      { source: '/odeme1', destination: '/odeme/odeme1' },
+      { source: '/odeme2', destination: '/odeme/odeme2' },
+      { source: '/odeme3', destination: '/odeme/odeme3' },
+      { source: '/odeme1/sonuc', destination: '/odeme/odeme1/sonuc' },
+      { source: '/odeme2/sonuc', destination: '/odeme/odeme2/sonuc' },
+      { source: '/odeme3/sonuc', destination: '/odeme/odeme3/sonuc' },
 
       // Hukuki sayfalar
       { source: '/cerezler.php', destination: '/cerezler' },

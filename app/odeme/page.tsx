@@ -1,8 +1,10 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 
 import { getSiteSettings } from '@/lib/settings/site';
 import { RevealOnScroll } from '@/components/common/RevealOnScroll';
 import { PaymentOptions } from '@/components/odeme/PaymentOptions';
+import { FIXED_PAYMENT_OPTIONS } from '@/lib/payments/fixedPayments';
 
 export const metadata: Metadata = {
   title: 'Odeme',
@@ -45,6 +47,26 @@ export default function OdemePage() {
           </RevealOnScroll>
 
           <RevealOnScroll className="mt-10">
+            <div className="mb-8 grid gap-5 md:grid-cols-2">
+              {FIXED_PAYMENT_OPTIONS.map((option) => (
+                <Link
+                  key={option.slug}
+                  href={`/${option.slug}`}
+                  className="rounded-3xl border border-emerald-400/25 bg-slate-900/70 p-6 shadow-xl shadow-black/40 transition hover:-translate-y-1 hover:border-emerald-300/50 hover:bg-slate-900"
+                >
+                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-300">
+                    Site ici odeme
+                  </p>
+                  <h2 className="mt-3 text-xl font-semibold text-slate-50">
+                    {option.amount.toLocaleString('tr-TR')} EUR
+                  </h2>
+                  <p className="mt-2 text-xs leading-6 text-slate-300">
+                    Bu secenekle odeme formu siteden ayrilmadan acilir.
+                  </p>
+                </Link>
+              ))}
+            </div>
+
             {options.length === 0 ? (
               <div className="rounded-3xl border border-slate-700/60 bg-slate-900/60 px-6 py-8 text-center text-sm text-slate-200 shadow-xl shadow-black/40">
                 Henuz aktif bir odeme linki tanimlanmamis. Lutfen AVR Global
