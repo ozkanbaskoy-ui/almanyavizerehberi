@@ -21,7 +21,20 @@ const nextConfig = {
     ],
   },
   async rewrites() {
-    return [
+    const paymentRewrites = [
+      ...fixedPaymentSlugs.map((slug) => ({
+        source: `/${slug}`,
+        destination: `/odeme/${slug}`,
+      })),
+      ...fixedPaymentSlugs.map((slug) => ({
+        source: `/${slug}/sonuc`,
+        destination: `/odeme/${slug}/sonuc`,
+      })),
+    ];
+
+    return {
+      beforeFiles: paymentRewrites,
+      afterFiles: [
       // Temel sayfalar
       { source: '/index.php', destination: '/' },
       { source: '/hakkimizda.php', destination: '/hakkimizda' },
@@ -163,14 +176,6 @@ const nextConfig = {
 
       // Odeme sayfasi
       { source: '/odeme.php', destination: '/odeme' },
-      ...fixedPaymentSlugs.map((slug) => ({
-        source: `/${slug}`,
-        destination: `/odeme/${slug}`,
-      })),
-      ...fixedPaymentSlugs.map((slug) => ({
-        source: `/${slug}/sonuc`,
-        destination: `/odeme/${slug}/sonuc`,
-      })),
 
       // Hukuki sayfalar
       { source: '/cerezler.php', destination: '/cerezler' },
@@ -178,7 +183,8 @@ const nextConfig = {
       { source: '/kvkk.php', destination: '/kvkk' },
       { source: '/sorumluluk-reddi.php', destination: '/sorumluluk-reddi' },
       { source: '/gdpr.php', destination: '/gdpr' },
-    ];
+      ],
+    };
   },
 };
 
