@@ -102,6 +102,35 @@ export function WhatsAppCommunityPopup({
     () => normalizeExternalUrl(site.whatsappChannelUrl),
     [site.whatsappChannelUrl],
   );
+  const communityLinks = useMemo(() => {
+    const entries = [
+      groupUrl
+        ? {
+            href: groupUrl,
+            label: 'WhatsApp Grubu',
+            tone: 'emerald' as const,
+          }
+        : null,
+      channelUrl
+        ? {
+            href: channelUrl,
+            label: 'WhatsApp Kanalı',
+            tone: 'sky' as const,
+          }
+        : null,
+    ].filter(Boolean) as Array<{
+      href: string;
+      label: string;
+      tone: 'emerald' | 'sky';
+    }>;
+
+    const seen = new Set<string>();
+    return entries.filter((entry) => {
+      if (seen.has(entry.href)) return false;
+      seen.add(entry.href);
+      return true;
+    });
+  }, [channelUrl, groupUrl]);
   const [open, setOpen] = useState(false);
 
   const handleClose = useCallback(() => {
@@ -112,7 +141,7 @@ export function WhatsAppCommunityPopup({
   }, []);
 
   useEffect(() => {
-    if (!groupUrl && !channelUrl) return;
+    if (!communityLinks.length) return;
 
     if (typeof window === 'undefined') return;
 
@@ -134,7 +163,7 @@ export function WhatsAppCommunityPopup({
     return () => {
       window.clearTimeout(timeoutId);
     };
-  }, [channelUrl, groupUrl]);
+  }, [channelUrl, groupUrl, communityLinks.length]);
 
   useEffect(() => {
     if (!open) return;
@@ -156,7 +185,7 @@ export function WhatsAppCommunityPopup({
     };
   }, [handleClose, open]);
 
-  if (!open || (!groupUrl && !channelUrl)) {
+  if (!open || !communityLinks.length) {
     return null;
   }
 
@@ -214,38 +243,34 @@ export function WhatsAppCommunityPopup({
 
           <div
             className={`mt-5 grid gap-3 ${
-              groupUrl && channelUrl ? 'sm:grid-cols-2' : ''
+              communityLinks.length > 1 ? 'sm:grid-cols-2' : ''
             }`}
           >
-            {groupUrl && (
+            {communityLinks.map((link) => (
               <a
-                href={groupUrl}
+                key={`${link.label}-${link.href}`}
+                href={link.href}
                 target="_blank"
                 rel="noreferrer"
-                className="group inline-flex items-center justify-between rounded-xl border border-emerald-400/20 bg-emerald-500/10 px-4 py-3 text-sm font-semibold text-emerald-100 transition hover:border-emerald-300/40 hover:bg-emerald-500/15 hover:text-white"
+                className={`group inline-flex items-center justify-between rounded-xl border px-4 py-3 text-sm font-semibold transition hover:text-white ${
+                  link.tone === 'emerald'
+                    ? 'border-emerald-400/20 bg-emerald-500/10 text-emerald-100 hover:border-emerald-300/40 hover:bg-emerald-500/15'
+                    : 'border-sky-400/20 bg-sky-500/10 text-sky-100 hover:border-sky-300/40 hover:bg-sky-500/15'
+                }`}
               >
                 <span className="inline-flex items-center gap-3">
                   <WhatsAppMark className="h-5 w-5" />
-                  WhatsApp Grubu
+                  {link.label}
                 </span>
-                <LinkArrowIcon className="h-4 w-4 text-emerald-200 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                <LinkArrowIcon
+                  className={`h-4 w-4 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5 ${
+                    link.tone === 'emerald'
+                      ? 'text-emerald-200'
+                      : 'text-sky-200'
+                  }`}
+                />
               </a>
-            )}
-
-            {channelUrl && (
-              <a
-                href={channelUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="group inline-flex items-center justify-between rounded-xl border border-sky-400/20 bg-sky-500/10 px-4 py-3 text-sm font-semibold text-sky-100 transition hover:border-sky-300/40 hover:bg-sky-500/15 hover:text-white"
-              >
-                <span className="inline-flex items-center gap-3">
-                  <WhatsAppMark className="h-5 w-5" />
-                  WhatsApp Kanalı
-                </span>
-                <LinkArrowIcon className="h-4 w-4 text-sky-200 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-              </a>
-            )}
+            ))}
           </div>
 
           <div className="mt-4 flex items-center justify-end">
