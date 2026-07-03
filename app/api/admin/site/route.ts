@@ -23,6 +23,10 @@ export async function POST(request: Request) {
       contactEmail: body.contactEmail ?? current.contactEmail,
       contactPhone: body.contactPhone ?? current.contactPhone,
       whatsappNumber: body.whatsappNumber ?? current.whatsappNumber,
+      whatsappGroupUrl:
+        body.whatsappGroupUrl ?? current.whatsappGroupUrl,
+      whatsappChannelUrl:
+        body.whatsappChannelUrl ?? current.whatsappChannelUrl,
       instagramUrl: body.instagramUrl ?? current.instagramUrl,
       youtubeUrl: body.youtubeUrl ?? current.youtubeUrl,
       youtubeChannelId: body.youtubeChannelId ?? current.youtubeChannelId,

@@ -17,12 +17,30 @@ function getRuntimeContactEmail() {
   return (process.env.SITE_CONTACT_EMAIL || '').trim();
 }
 
+function getDefaultWhatsAppGroupUrl() {
+  return (process.env.SITE_WHATSAPP_GROUP_URL || '').trim();
+}
+
+function getRuntimeWhatsAppGroupUrl() {
+  return (process.env.SITE_WHATSAPP_GROUP_URL || '').trim();
+}
+
+function getDefaultWhatsAppChannelUrl() {
+  return (process.env.SITE_WHATSAPP_CHANNEL_URL || '').trim();
+}
+
+function getRuntimeWhatsAppChannelUrl() {
+  return (process.env.SITE_WHATSAPP_CHANNEL_URL || '').trim();
+}
+
 export type SiteSettings = {
   siteName: string;
   tagline: string;
   contactEmail: string;
   contactPhone: string;
   whatsappNumber: string;
+  whatsappGroupUrl: string;
+  whatsappChannelUrl: string;
   instagramUrl: string;
   youtubeUrl: string;
   youtubeChannelId: string;
@@ -45,6 +63,8 @@ const DEFAULT_SETTINGS: SiteSettings = {
   contactEmail: getDefaultContactEmail(),
   contactPhone: '+49 178 382 1542',
   whatsappNumber: '+49 178 382 1542',
+  whatsappGroupUrl: getDefaultWhatsAppGroupUrl(),
+  whatsappChannelUrl: getDefaultWhatsAppChannelUrl(),
   instagramUrl: 'https://www.instagram.com/almanyavizerehberi',
   youtubeUrl: 'https://www.youtube.com/@AlmanyaVizeRehberi',
   youtubeChannelId: 'UCYNClRqdbdinZphYGiSGg9Q',
@@ -79,6 +99,14 @@ export function getSiteSettings(): SiteSettings {
         parsed.contactPhone || DEFAULT_SETTINGS.contactPhone,
       whatsappNumber:
         parsed.whatsappNumber || DEFAULT_SETTINGS.whatsappNumber,
+      whatsappGroupUrl:
+        getRuntimeWhatsAppGroupUrl() ||
+        parsed.whatsappGroupUrl ||
+        DEFAULT_SETTINGS.whatsappGroupUrl,
+      whatsappChannelUrl:
+        getRuntimeWhatsAppChannelUrl() ||
+        parsed.whatsappChannelUrl ||
+        DEFAULT_SETTINGS.whatsappChannelUrl,
       instagramUrl:
         parsed.instagramUrl || DEFAULT_SETTINGS.instagramUrl,
       youtubeUrl: parsed.youtubeUrl || DEFAULT_SETTINGS.youtubeUrl,
@@ -124,6 +152,14 @@ export function saveSiteSettings(next: SiteSettings) {
       next.contactPhone || DEFAULT_SETTINGS.contactPhone,
     whatsappNumber:
       next.whatsappNumber || DEFAULT_SETTINGS.whatsappNumber,
+    whatsappGroupUrl:
+      getRuntimeWhatsAppGroupUrl() ||
+      next.whatsappGroupUrl ||
+      DEFAULT_SETTINGS.whatsappGroupUrl,
+    whatsappChannelUrl:
+      getRuntimeWhatsAppChannelUrl() ||
+      next.whatsappChannelUrl ||
+      DEFAULT_SETTINGS.whatsappChannelUrl,
     instagramUrl:
       next.instagramUrl || DEFAULT_SETTINGS.instagramUrl,
     youtubeUrl: next.youtubeUrl || DEFAULT_SETTINGS.youtubeUrl,
