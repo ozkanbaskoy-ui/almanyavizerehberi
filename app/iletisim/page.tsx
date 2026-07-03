@@ -4,33 +4,61 @@ import Link from 'next/link';
 import { getPageBySlug } from '@/lib/content/pages';
 import { getSiteSettings } from '@/lib/settings/site';
 import { RevealOnScroll } from '@/components/common/RevealOnScroll';
+import { SocialLinks } from '@/components/layout/SocialLinks';
+import {
+  createWhatsAppHref,
+  DEFAULT_WHATSAPP_MESSAGE,
+} from '@/lib/whatsapp';
 
-const page = getPageBySlug('iletisim');
-const site = getSiteSettings();
+function getPage() {
+  return getPageBySlug('iletisim');
+}
 
-export const metadata: Metadata = {
-  title: page.seoTitle || page.title,
-  description: page.seoDescription || '',
-};
+export function generateMetadata(): Metadata {
+  const page = getPage();
+
+  return {
+    title: page.seoTitle || page.title,
+    description: page.seoDescription || '',
+    alternates: {
+      canonical: 'https://www.almanyavizerehberi.com/iletisim',
+    },
+    openGraph: {
+      type: 'website',
+      title: page.seoTitle || page.title,
+      description: page.seoDescription || '',
+      url: 'https://www.almanyavizerehberi.com/iletisim',
+      images: [
+        {
+          url: '/og/default-og.webp',
+          width: 1200,
+          height: 630,
+          alt: page.title,
+        },
+      ],
+    },
+  };
+}
 
 export default function IletisimPage() {
+  const page = getPage();
+  const site = getSiteSettings();
   const emailHref = site.contactEmail
     ? `mailto:${site.contactEmail}`
     : undefined;
   const phoneClean = site.contactPhone.replace(/\s+/g, '');
   const phoneHref = phoneClean ? `tel:${phoneClean}` : undefined;
-  const whatsappClean = site.whatsappNumber.replace(/\s+/g, '');
-  const whatsappHref = whatsappClean
-    ? `https://wa.me/${whatsappClean.replace('+', '')}`
-    : undefined;
+  const whatsappHref = createWhatsAppHref(site.whatsappNumber, {
+    message: DEFAULT_WHATSAPP_MESSAGE,
+  });
 
   return (
     <main className="bg-surface-main">
       {/* Hero */}
-      <section className="relative overflow-hidden bg-[radial-gradient(circle_at_top,_var(--color-hero-from)_0,_var(--color-hero-to)_40%,_#020617_95%)] py-16 text-surface-main">
-        <div className="mx-auto max-w-[1200px] px-4">
+      <section className="site-hero">
+        <div className="site-container">
           <RevealOnScroll className="max-w-3xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-brand-light/80 font-heading">
+            <p className="eyebrow-on-dark font-heading">
               İletişim
             </p>
             <h1 className="mt-4 font-heading text-3xl font-semibold tracking-tight md:text-4xl lg:text-5xl">
@@ -47,12 +75,12 @@ export default function IletisimPage() {
       </section>
 
       {/* İletişim kartları */}
-      <section className="bg-surface-soft py-16">
-        <div className="mx-auto max-w-[1200px] px-4">
+      <section className="section-surface">
+        <div className="site-container">
           <div className="grid gap-8 md:grid-cols-2">
             {/* Sol kart: Hemen Ulaşın */}
             <RevealOnScroll>
-              <div className="h-full rounded-3xl border border-border-subtle bg-surface-main p-6 shadow-soft md:p-8">
+              <div className="interactive-panel h-full p-6 md:p-8">
                 <h2 className="text-lg font-semibold text-brand-dark md:text-xl">
                   Hemen Ulaşın
                 </h2>
@@ -131,12 +159,30 @@ export default function IletisimPage() {
                     </div>
                   )}
                 </dl>
+
+                <div className="mt-7 border-t border-slate-200 pt-5">
+                  <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
+                    Sosyal Medya
+                  </p>
+                  <div className="mt-3 flex items-center gap-3">
+                    <SocialLinks
+                      instagramUrl={site.instagramUrl}
+                      youtubeUrl={site.youtubeUrl}
+                      className="flex items-center gap-3"
+                      iconClassName="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-brand-base shadow-sm transition hover:border-brand-base hover:bg-brand-base hover:text-white"
+                    />
+                  </div>
+                  <p className="mt-3 text-xs leading-5 text-slate-500">
+                    YouTube, X, TikTok ve Instagram hesaplarımızdan güncel
+                    içeriklerimizi takip edebilirsiniz.
+                  </p>
+                </div>
               </div>
             </RevealOnScroll>
 
             {/* Sağ kart: Danışmanlık Talebi */}
             <RevealOnScroll delay={0.05}>
-              <div className="h-full rounded-3xl border border-border-subtle bg-surface-main p-6 shadow-soft md:p-8">
+              <div className="interactive-panel h-full p-6 md:p-8">
                 <h2 className="text-lg font-semibold text-brand-dark md:text-xl">
                   Danışmanlık Talebi
                 </h2>
@@ -148,7 +194,7 @@ export default function IletisimPage() {
                 <div className="mt-6">
                   <Link
                     href="/basvuru.php"
-                    className="block rounded-full bg-brand-base px-4 py-2 text-center text-xs font-semibold uppercase tracking-wide text-white shadow-sm transition hover:bg-brand-light"
+                    className="btn-primary w-full"
                   >
                     Başvuru Formuna Git
                   </Link>
@@ -161,5 +207,3 @@ export default function IletisimPage() {
     </main>
   );
 }
-
-

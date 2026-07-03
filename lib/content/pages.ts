@@ -1,6 +1,8 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
+import { getSiteSettings } from '@/lib/settings/site';
+
 export type PageContent = {
   type: 'page';
   id: string;
@@ -15,6 +17,7 @@ export type PageContent = {
 };
 
 const PAGES_DIR = path.join(process.cwd(), 'content', 'pages');
+const LEGACY_CONTACT_EMAIL = 'info@almanyavizerehberi.com';
 
 // Removes layout chrome (topbar, header, footer, scripts, etc.)
 // and keeps only the main page content from the legacy HTML.
@@ -52,14 +55,23 @@ function cleanPageHtml(html: string): string {
   return working.trim();
 }
 
+function applyContactEmail(html: string, contactEmail: string) {
+  if (!html || !contactEmail) return html;
+  return html.replaceAll(LEGACY_CONTACT_EMAIL, contactEmail);
+}
+
 export function getPageBySlug(slug: string): PageContent {
   const fullPath = path.join(PAGES_DIR, `${slug}.json`);
   const raw = fs.readFileSync(fullPath, 'utf8');
   const parsed = JSON.parse(raw) as PageContent;
+  const site = getSiteSettings();
 
   return {
     ...parsed,
-    bodyHtml: cleanPageHtml(parsed.bodyHtml),
+    bodyHtml: applyContactEmail(
+      cleanPageHtml(parsed.bodyHtml),
+      site.contactEmail,
+    ),
   };
 }
 
@@ -69,13 +81,17 @@ export function getAllPages(): PageContent[] {
   const files = fs
     .readdirSync(PAGES_DIR)
     .filter((file) => file.endsWith('.json'));
+  const site = getSiteSettings();
 
   return files.map((file) => {
     const raw = fs.readFileSync(path.join(PAGES_DIR, file), 'utf8');
     const parsed = JSON.parse(raw) as PageContent;
     return {
       ...parsed,
-      bodyHtml: cleanPageHtml(parsed.bodyHtml),
+      bodyHtml: applyContactEmail(
+        cleanPageHtml(parsed.bodyHtml),
+        site.contactEmail,
+      ),
     };
   });
 }

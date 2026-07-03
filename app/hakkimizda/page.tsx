@@ -3,27 +3,52 @@ import type { Metadata } from 'next';
 import { getPageBySlug } from '@/lib/content/pages';
 import { RevealOnScroll } from '@/components/common/RevealOnScroll';
 
-const page = getPageBySlug('hakkimizda');
+function getPage() {
+  return getPageBySlug('hakkimizda');
+}
 
-export const metadata: Metadata = {
-  title: page.seoTitle || page.title,
-  description: page.seoDescription || '',
-};
+export function generateMetadata(): Metadata {
+  const page = getPage();
+
+  return {
+    title: page.seoTitle || page.title,
+    description: page.seoDescription || '',
+    alternates: {
+      canonical: 'https://www.almanyavizerehberi.com/hakkimizda',
+    },
+    openGraph: {
+      type: 'website',
+      title: page.seoTitle || page.title,
+      description: page.seoDescription || '',
+      url: 'https://www.almanyavizerehberi.com/hakkimizda',
+      images: [
+        {
+          url: '/og/default-og.webp',
+          width: 1200,
+          height: 630,
+          alt: page.title,
+        },
+      ],
+    },
+  };
+}
 
 export default function HakkimizdaPage() {
+  const page = getPage();
+
   return (
-    <main className="bg-surface-main">
+    <main className="compact-content-page bg-surface-main">
       {/* Hero */}
-      <section className="relative overflow-hidden bg-[radial-gradient(circle_at_top,_var(--color-hero-from)_0,_var(--color-hero-to)_40%,_#020617_95%)] py-16 text-surface-main">
-        <div className="mx-auto max-w-[1200px] px-4">
+      <section className="site-hero">
+        <div className="site-container">
           <RevealOnScroll className="max-w-3xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-brand-light/80 font-heading">
+            <p className="eyebrow-on-dark font-heading">
               Hakkımızda
             </p>
-            <h1 className="mt-4 font-heading text-3xl font-semibold tracking-tight md:text-4xl lg:text-5xl">
+            <h1 className="mt-2 font-heading text-3xl font-semibold tracking-tight md:text-4xl lg:text-5xl">
               {page.title}
             </h1>
-            <p className="mt-4 text-sm leading-relaxed text-surface-main/80 md:text-base">
+            <p className="mt-2 text-sm leading-relaxed text-surface-main/80 md:text-base">
               Almanya Vize Rehberi olarak, Almanya&apos;ya göç etmek, çalışmak
               veya eğitim almak isteyenlere uçtan uca, güvenilir ve şeffaf vize
               danışmanlığı sunuyoruz.
@@ -33,11 +58,11 @@ export default function HakkimizdaPage() {
       </section>
 
       {/* Ana içerik */}
-      <section className="bg-surface-soft py-16">
-        <div className="mx-auto max-w-[1200px] px-4">
+      <section className="section-surface">
+        <div className="site-container">
           <div className="grid gap-10 md:grid-cols-[minmax(0,3fr)_minmax(0,2fr)]">
             <RevealOnScroll>
-              <article className="space-y-4 rounded-3xl border border-border-subtle bg-surface-main p-6 text-sm leading-relaxed text-slate-800 md:p-8 md:text-base">
+              <article className="panel space-y-4 p-6 text-sm leading-relaxed text-slate-800 md:p-8 md:text-base">
                 <p className="font-semibold text-brand-dark">
                   Almanya Vize Rehberi olarak, uzun yıllardır Avrupa&apos;da
                   yaşayan ve Almanya ile Finlandiya&apos;da ekibi olan bir
@@ -65,7 +90,7 @@ export default function HakkimizdaPage() {
             </RevealOnScroll>
 
             <RevealOnScroll delay={0.1}>
-              <aside className="space-y-4 rounded-3xl border border-border-subtle bg-surface-main p-6 shadow-soft md:p-8">
+              <aside className="panel space-y-4 p-6 md:p-8">
                 <h2 className="text-lg font-semibold text-brand-dark md:text-xl">
                   Danışmanlık Yaklaşımımız
                 </h2>
@@ -90,20 +115,20 @@ export default function HakkimizdaPage() {
       </section>
 
       {/* Vizyon, misyon, neden biz, gelecek planları */}
-      <section className="bg-surface-main py-16">
-        <div className="mx-auto max-w-[1200px] px-4">
-          <RevealOnScroll className="text-center">
-            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-brand-base">
+      <section className="section-white">
+        <div className="site-container">
+          <RevealOnScroll className="mx-auto max-w-3xl text-center">
+            <p className="inline-flex rounded-full border border-white/20 bg-white/95 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.22em] text-brand-base shadow-sm">
               Değerlerimiz
             </p>
-            <h2 className="mt-4 text-2xl font-semibold text-brand-dark md:text-3xl">
+            <h2 className="mt-4 text-2xl font-semibold text-white drop-shadow-sm md:text-3xl">
               Vizyonumuz, Misyonumuz ve Yaklaşımımız
             </h2>
           </RevealOnScroll>
 
           <div className="mt-8 grid gap-6 md:grid-cols-2">
             <RevealOnScroll>
-              <div className="h-full rounded-3xl border border-border-subtle bg-surface-soft p-6">
+              <div className="interactive-panel h-full p-6">
                 <h3 className="text-lg font-semibold text-brand-dark">
                   Vizyonumuz
                 </h3>
@@ -117,7 +142,7 @@ export default function HakkimizdaPage() {
             </RevealOnScroll>
 
             <RevealOnScroll delay={0.05}>
-              <div className="h-full rounded-3xl border border-border-subtle bg-surface-soft p-6">
+              <div className="interactive-panel h-full p-6">
                 <h3 className="text-lg font-semibold text-brand-dark">
                   Misyonumuz
                 </h3>
@@ -131,7 +156,7 @@ export default function HakkimizdaPage() {
             </RevealOnScroll>
 
             <RevealOnScroll delay={0.1}>
-              <div className="h-full rounded-3xl border border-border-subtle bg-surface-soft p-6">
+              <div className="interactive-panel h-full p-6">
                 <h3 className="text-lg font-semibold text-brand-dark">
                   Neden Biz?
                 </h3>
@@ -145,7 +170,7 @@ export default function HakkimizdaPage() {
             </RevealOnScroll>
 
             <RevealOnScroll delay={0.15}>
-              <div className="h-full rounded-3xl border border-border-subtle bg-surface-soft p-6">
+              <div className="interactive-panel h-full p-6">
                 <h3 className="text-lg font-semibold text-brand-dark">
                   Geleceğe Yönelik Planlarımız
                 </h3>
@@ -160,7 +185,7 @@ export default function HakkimizdaPage() {
           </div>
 
           <RevealOnScroll className="mt-10 text-center">
-            <p className="text-sm text-slate-700 md:text-base">
+            <p className="text-sm text-white/86 drop-shadow-sm md:text-base">
               Hayallerinizi gerçeğe dönüştürmek için yanınızdayız. Almanya&apos;daki
               yeni hayatınıza giden yolculukta size rehberlik etmekten mutluluk
               duyarız.
@@ -171,5 +196,3 @@ export default function HakkimizdaPage() {
     </main>
   );
 }
-
-

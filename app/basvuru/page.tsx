@@ -1,39 +1,55 @@
 import type { Metadata } from 'next';
 
-import { getPageBySlug } from '@/lib/content/pages';
 import { CalendlyConsentGate } from '@/components/basvuru/CalendlyConsentGate';
 import { RevealOnScroll } from '@/components/common/RevealOnScroll';
 import { getSiteSettings } from '@/lib/settings/site';
 
-const page = getPageBySlug('basvuru');
-const site = getSiteSettings();
-
 export const metadata: Metadata = {
-  title: page.seoTitle || page.title,
-  description: page.seoDescription || '',
+  title: 'Almanya Vize Danışmanlığı Randevu Başvurusu',
+  description:
+    'Almanya vize ve göç danışmanlığı için online ön görüşme randevunuzu seçin.',
 };
 
 export default function BasvuruPage() {
+  const site = getSiteSettings();
+
   return (
     <main id="main">
-      <section className="bg-[radial-gradient(circle_at_top,_var(--color-hero-from)_0,_var(--color-hero-to)_40%,_#020617_95%)] py-16 text-surface-main">
-        <div className="mx-auto max-w-[1200px] px-4">
-          <RevealOnScroll className="text-center">
-            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-brand-light/80 font-heading md:text-sm">
+      <section className="site-hero">
+        <div className="site-container">
+          <RevealOnScroll className="mx-auto max-w-3xl text-center">
+            <p className="eyebrow-on-dark font-heading md:text-sm">
               Online Randevu
             </p>
             <h1 className="mt-4 font-heading text-3xl font-semibold tracking-tight md:text-4xl lg:text-5xl">
-              {page.title}
+              Almanya vize danışmanlığı için randevunuzu seçin
             </h1>
-            <p className="mt-4 mx-auto max-w-2xl text-sm text-surface-main/80 md:text-base">
-              Almanya vize ve göç süreçleriniz için uygun olduğunuz zamanı
-              seçin; uzmanlarımız seçtiğiniz saatte çevrim içi olarak sizinle
-              olacak.
+            <p className="mx-auto mt-4 max-w-2xl text-sm text-surface-main/80 md:text-base">
+              Uygun görüşme saatini seçin, danışmanlık ve hizmet şartlarını
+              onayladıktan sonra randevu akışını tamamlayın.
             </p>
           </RevealOnScroll>
+        </div>
+      </section>
 
-          <RevealOnScroll>
-            <CalendlyConsentGate url={site.calendlyUrl} />
+      <section className="py-12 md:py-14">
+        <div className="site-container">
+          <RevealOnScroll className="mx-auto max-w-5xl text-center">
+            <div className="panel p-5 text-center md:p-7">
+              <div className="text-center">
+                <p className="inline-flex rounded-full border border-brand-base/15 bg-brand-base/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.22em] text-brand-base">
+                  Randevu
+                </p>
+                <h2 className="mt-2 font-heading text-2xl font-semibold text-brand-dark md:text-3xl">
+                  Ön görüşme için uygun zamanı seçin
+                </h2>
+                <p className="mx-auto mt-3 max-w-2xl text-sm leading-6 text-slate-700">
+                  Takvimden size uygun görüşme saatini seçebilirsiniz. Randevu
+                  almadan önce hizmet şartlarını onaylamanız gerekir.
+                </p>
+              </div>
+              <CalendlyConsentGate url={site.calendlyUrl} />
+            </div>
           </RevealOnScroll>
         </div>
       </section>

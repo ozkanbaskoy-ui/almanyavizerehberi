@@ -11,8 +11,7 @@ const SMTP_PORT = process.env.SMTP_PORT
   : 587;
 const SMTP_USER = process.env.SMTP_USER;
 const SMTP_PASS = process.env.SMTP_PASS;
-const SMTP_FROM =
-  process.env.SMTP_FROM || 'info@almanyavizerehberi.com';
+const SMTP_FROM = process.env.SMTP_FROM || SMTP_USER || '';
 
 // Diğer bölümlerin (örneğin admin girişi için OTP)
 // SMTP yapılandırmasının hazır olup olmadığını kontrol edebilmesi için.
@@ -34,16 +33,69 @@ function renderTemplate(
   });
 }
 
+function createTransporter() {
+  return nodemailer.createTransport({
+    host: SMTP_HOST,
+    port: SMTP_PORT,
+    secure: SMTP_PORT === 465,
+    auth: {
+      user: SMTP_USER,
+      pass: SMTP_PASS,
+    },
+  });
+}
+
+export async function sendPlainEmail(params: {
+  to: string;
+  bcc?: string | string[];
+  subject: string;
+  text: string;
+}) {
+  if (!hasSmtpConfig()) {
+    console.warn(
+      '[email] SMTP yapılandırması eksik. E-posta gönderilmeyecek.',
+    );
+    return {
+      ok: false,
+      skipped: true,
+      subject: params.subject,
+      messageId: null,
+    };
+  }
+
+  const transporter = createTransporter();
+  const info = await transporter.sendMail({
+    from: SMTP_FROM,
+    to: params.to,
+    bcc: params.bcc,
+    subject: params.subject,
+    text: params.text,
+  });
+
+  return {
+    ok: true,
+    skipped: false,
+    subject: params.subject,
+    messageId: info.messageId || null,
+  };
+}
+
 export async function sendTemplatedEmail(params: {
   templateId: EmailTemplateId;
   to: string;
+  bcc?: string | string[];
   variables: TemplateVariables;
 }) {
   if (!hasSmtpConfig()) {
     console.warn(
       '[email] SMTP yapılandırması eksik. E-posta gönderilmeyecek.',
     );
-    return;
+    return {
+      ok: false,
+      skipped: true,
+      subject: '',
+      messageId: null,
+    };
   }
 
   const templates = getEmailTemplates();
@@ -55,7 +107,12 @@ export async function sendTemplatedEmail(params: {
     console.warn(
       `[email] Şablon bulunamadı: ${params.templateId}. E-posta gönderilmeyecek.`,
     );
-    return;
+    return {
+      ok: false,
+      skipped: true,
+      subject: '',
+      messageId: null,
+    };
   }
 
   const subject = renderTemplate(
@@ -64,21 +121,19 @@ export async function sendTemplatedEmail(params: {
   );
   const body = renderTemplate(template.body, params.variables);
 
-  const transporter = nodemailer.createTransport({
-    host: SMTP_HOST,
-    port: SMTP_PORT,
-    secure: SMTP_PORT === 465,
-    auth: {
-      user: SMTP_USER,
-      pass: SMTP_PASS,
-    },
-  });
-
-  await transporter.sendMail({
+  const transporter = createTransporter();
+  const info = await transporter.sendMail({
     from: SMTP_FROM,
     to: params.to,
+    bcc: params.bcc,
     subject,
     text: body,
   });
-}
 
+  return {
+    ok: true,
+    skipped: false,
+    subject,
+    messageId: info.messageId || null,
+  };
+}

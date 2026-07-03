@@ -2,9 +2,65 @@ import { headers } from 'next/headers';
 import { NextResponse } from 'next/server';
 
 import { getSupabaseServerClient } from '@/lib/db/supabaseServer';
+import {
+  addLocalApplicationEvent,
+  saveLocalApplication,
+} from '@/lib/admin/localApplicationsStore';
+import { saveLocalEmailLog } from '@/lib/admin/localEmailLogsStore';
 import { sendTemplatedEmail } from '@/lib/notifications/email';
+import { getRecipientEmails } from '@/lib/notifications/recipientEmails';
+import { getSiteSettings } from '@/lib/settings/site';
+
+export const runtime = 'nodejs';
 
 const HCAPTCHA_SECRET_KEY = process.env.HCAPTCHA_SECRET_KEY;
+
+type SupabaseClient = ReturnType<typeof getSupabaseServerClient>;
+
+type EmailJob = {
+  templateId: 'application_received' | 'admin_new_application';
+  to: string;
+  variables: Record<string, string | number | boolean>;
+};
+
+async function logEmailDelivery(
+  supabase: SupabaseClient | null,
+  params: {
+    applicationId: string;
+    templateId: string;
+    recipient: string;
+    subject?: string | null;
+    status: 'sent' | 'failed';
+    providerMessageId?: string | null;
+    errorMessage?: string | null;
+  },
+) {
+  saveLocalEmailLog({
+    applicationId: params.applicationId,
+    templateId: params.templateId,
+    recipient: params.recipient,
+    subject: params.subject || null,
+    status: params.status,
+    providerMessageId: params.providerMessageId || null,
+    errorMessage: params.errorMessage || null,
+  });
+
+  if (!supabase) return;
+
+  try {
+    await supabase.from('email_logs').insert({
+      application_id: params.applicationId,
+      template_id: params.templateId,
+      recipient: params.recipient,
+      subject: params.subject || null,
+      status: params.status,
+      provider_message_id: params.providerMessageId || null,
+      error_message: params.errorMessage || null,
+    });
+  } catch (logError) {
+    console.warn('[applications] E-posta logu yazılamadı:', logError);
+  }
+}
 
 const RATE_LIMIT_WINDOW_MS = 60_000; // 1 dakika
 const RATE_LIMIT_MAX_REQUESTS = 5;
@@ -42,9 +98,20 @@ export async function POST(request: Request) {
       fullName?: string;
       email?: string;
       phone?: string;
+      age?: string;
       visaType?: string;
+      profession?: string;
+      currentCountry?: string;
+      urgency?: string;
+      contactPreference?: string;
+      message?: string;
       source?: string;
       captchaToken?: string | null;
+      fitResult?: {
+        routeTitle?: string;
+        score?: number;
+        temperature?: string;
+      };
     };
 
     const headerList = await headers();
@@ -66,8 +133,15 @@ export async function POST(request: Request) {
     const fullName = body.fullName?.trim();
     const email = body.email?.trim();
     const phone = body.phone?.trim();
+    const age = body.age?.trim() || '';
     const visaType = body.visaType?.trim() || 'bilinmiyor';
     const source = body.source?.trim() || 'web-form';
+    const profession = body.profession?.trim() || '';
+    const currentCountry = body.currentCountry?.trim() || '';
+    const urgency = body.urgency?.trim() || '';
+    const contactPreference = body.contactPreference?.trim() || '';
+    const message = body.message?.trim() || '';
+    const fitResult = body.fitResult;
 
     if (!fullName || !email || !phone) {
       return NextResponse.json(
@@ -75,6 +149,13 @@ export async function POST(request: Request) {
           error:
             'Lütfen ad soyad, e-posta ve telefon alanlarını doldurun.',
         },
+        { status: 400 },
+      );
+    }
+
+    if (!body.visaType?.trim()) {
+      return NextResponse.json(
+        { error: 'Lütfen vize türünü seçin.' },
         { status: 400 },
       );
     }
@@ -150,34 +231,100 @@ export async function POST(request: Request) {
     }
 
     const id = crypto.randomUUID();
+    const createdAtIso = new Date().toISOString();
+    const detailLines = [
+      age && `Yaş: ${age}`,
+      profession && `Meslek / eğitim: ${profession}`,
+      currentCountry && `Bulunduğu ülke: ${currentCountry}`,
+      urgency && `Zamanlama: ${urgency}`,
+      contactPreference && `İletişim tercihi: ${contactPreference}`,
+      fitResult?.routeTitle && `Uygunluk sonucu: ${fitResult.routeTitle}`,
+      typeof fitResult?.score === 'number' && `Uygunluk skoru: ${fitResult.score}/100`,
+      fitResult?.temperature && `Uygunluk seviyesi: ${fitResult.temperature}`,
+      message && `Not: ${message}`,
+    ].filter(Boolean);
 
-    if (supabase) {
-      const { error } = await supabase.from('applications').insert({
-        id,
-        full_name: fullName,
-        email,
-        phone,
-        visa_type: visaType,
-        status: 'yeni',
-        payment_status: 'bekliyor',
-        source,
-      });
+    saveLocalApplication({
+      id,
+      createdAt: createdAtIso,
+      fullName,
+      email,
+      phone,
+      visaType,
+      status: 'yeni',
+      paymentStatus: 'bekliyor',
+      source,
+    });
 
-      if (error) {
-        throw error;
-      }
+    addLocalApplicationEvent({
+      applicationId: id,
+      type: 'not',
+      message: 'Başvuru formu gönderildi.',
+      createdAt: createdAtIso,
+    });
 
-      await supabase.from('application_events').insert({
-        application_id: id,
+    if (detailLines.length > 0) {
+      addLocalApplicationEvent({
+        applicationId: id,
         type: 'not',
-        message: 'Başvuru formu gönderildi.',
+        message: `Lead detayları:\n${detailLines.join('\n')}`,
       });
     }
 
-    try {
-      const createdAt = new Date().toLocaleString('tr-TR');
-      await sendTemplatedEmail({
-        templateId: 'application_received',
+    if (supabase) {
+      try {
+        const { error } = await supabase.from('applications').insert({
+          id,
+          full_name: fullName,
+          email,
+          phone,
+          visa_type: visaType,
+          status: 'yeni',
+          payment_status: 'bekliyor',
+          source,
+        });
+
+        if (error) {
+          throw error;
+        }
+
+        await supabase.from('application_events').insert({
+          application_id: id,
+          type: 'not',
+          message: 'Başvuru formu gönderildi.',
+        });
+
+        if (detailLines.length > 0) {
+          await supabase.from('application_events').insert({
+            application_id: id,
+            type: 'not',
+            message: `Lead detayları:\n${detailLines.join('\n')}`,
+          });
+        }
+      } catch (dbWriteError) {
+        console.warn(
+          '[applications] Supabase başvuru kaydı yazılamadı, lokal CRM kaydı kullanılacak:',
+          dbWriteError,
+        );
+      }
+    }
+
+    const createdAt = new Date().toLocaleString('tr-TR');
+    const site = getSiteSettings();
+    const adminNotifyEmails = getRecipientEmails(site.contactEmail, [
+      process.env.LEAD_NOTIFY_EMAIL,
+      process.env.ADMIN_OTP_EMAIL,
+    ]);
+    const fitSummary =
+      fitResult?.routeTitle && typeof fitResult?.score === 'number'
+        ? `${fitResult.routeTitle} - ${fitResult.score}/100${
+            fitResult.temperature ? ` (${fitResult.temperature})` : ''
+          }`
+        : '';
+
+    const emailJobs: EmailJob[] = [
+      {
+        templateId: 'application_received' as const,
         to: email,
         variables: {
           fullName,
@@ -185,12 +332,59 @@ export async function POST(request: Request) {
           createdAt,
           applicationId: id,
         },
+      },
+    ];
+
+    for (const adminEmail of adminNotifyEmails) {
+      emailJobs.push({
+        templateId: 'admin_new_application' as const,
+        to: adminEmail,
+        variables: {
+          fullName,
+          email,
+          phone,
+          visaType,
+          age,
+          profession,
+          currentCountry,
+          urgency,
+          contactPreference,
+          message,
+          fitSummary,
+          createdAt,
+          applicationId: id,
+        },
       });
-    } catch (emailError) {
-      console.warn(
-        '[applications] Başvuru alındı e-postası gönderilemedi:',
-        emailError,
-      );
+    }
+
+    for (const job of emailJobs) {
+      try {
+        const result = await sendTemplatedEmail(job);
+        await logEmailDelivery(supabase, {
+          applicationId: id,
+          templateId: job.templateId,
+          recipient: job.to,
+          subject: result?.subject,
+          status: result?.ok ? 'sent' : 'failed',
+          providerMessageId: result?.messageId,
+          errorMessage: result?.skipped ? 'E-posta gönderimi atlandı.' : null,
+        });
+      } catch (emailError) {
+        console.warn(
+          '[applications] Başvuru e-postası gönderilemedi:',
+          emailError,
+        );
+        await logEmailDelivery(supabase, {
+          applicationId: id,
+          templateId: job.templateId,
+          recipient: job.to,
+          status: 'failed',
+          errorMessage:
+            emailError instanceof Error
+              ? emailError.message
+              : 'Bilinmeyen e-posta hatası.',
+        });
+      }
     }
 
     return NextResponse.json({ ok: true, id });
@@ -206,4 +400,3 @@ export async function POST(request: Request) {
     );
   }
 }
-

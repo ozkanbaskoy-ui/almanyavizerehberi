@@ -7,6 +7,7 @@ import {
   hasSmtpConfig,
   sendTemplatedEmail,
 } from '@/lib/notifications/email';
+import { getRecipientEmails } from '@/lib/notifications/recipientEmails';
 import { getSiteSettings } from '@/lib/settings/site';
 
 export const runtime = 'nodejs';
@@ -14,9 +15,13 @@ export const runtime = 'nodejs';
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
 const ADMIN_USERNAME = process.env.ADMIN_USERNAME || 'ozkan';
 const ADMIN_OTP_EMAIL = process.env.ADMIN_OTP_EMAIL;
+const ADMIN_OTP_DISABLED =
+  process.env.NODE_ENV !== 'production' &&
+  process.env.ADMIN_OTP_DISABLED === 'true';
 const COOKIE_SECURE = process.env.NODE_ENV === 'production';
 const OTP_COOKIE_NAME = 'admin_otp';
 const OTP_TTL_SECONDS = 10 * 60; // 10 dakika
+const ADMIN_SESSION_TTL_SECONDS = 60 * 60; // 1 saat
 
 type Body = {
   mode?: 'password' | 'code';
@@ -54,7 +59,7 @@ export async function POST(request: Request) {
         secure: COOKIE_SECURE,
         sameSite: 'lax',
         path: '/',
-        maxAge: 60 * 60 * 8,
+        maxAge: ADMIN_SESSION_TTL_SECONDS,
       });
       return res;
     }
@@ -77,22 +82,38 @@ export async function POST(request: Request) {
         );
       }
 
-      // SMTP ve hedef e-posta hazırsa OTP kodu gönder.
-      const smtpReady = hasSmtpConfig();
-      let toEmail: string | null = null;
+      if (ADMIN_OTP_DISABLED) {
+        const res = NextResponse.json({
+          ok: true,
+          authEnabled: true,
+          step: 'done',
+          otpDisabled: true,
+        });
 
-      if (smtpReady) {
-        if (ADMIN_OTP_EMAIL) {
-          toEmail = ADMIN_OTP_EMAIL;
-        } else {
-          const site = getSiteSettings();
-          if (site.contactEmail) {
-            toEmail = site.contactEmail;
-          }
-        }
+        res.cookies.set('admin_logged_in', '1', {
+          httpOnly: true,
+          secure: COOKIE_SECURE,
+          sameSite: 'lax',
+          path: '/',
+          maxAge: ADMIN_SESSION_TTL_SECONDS,
+        });
+
+        return res;
       }
 
-      if (smtpReady && toEmail) {
+      // SMTP ve hedef e-posta hazırsa OTP kodu gönder.
+      const smtpReady = hasSmtpConfig();
+      let toEmails: string[] = [];
+
+      if (smtpReady) {
+        const site = getSiteSettings();
+        toEmails = getRecipientEmails(site.contactEmail, [
+          ADMIN_OTP_EMAIL,
+          process.env.LEAD_NOTIFY_EMAIL,
+        ]);
+      }
+
+      if (smtpReady && toEmails.length > 0) {
         const code = generateOtpCode();
         const now = new Date();
         const expiresAt = new Date(
@@ -110,17 +131,37 @@ export async function POST(request: Request) {
           expiresAt: expiresAt.toISOString(),
         };
 
-        await sendTemplatedEmail({
-          templateId: 'admin_login_code',
-          to: toEmail,
-          variables: {
-            code,
-            time: now.toLocaleString('tr-TR', {
-              dateStyle: 'short',
-              timeStyle: 'short',
-            }),
-          },
-        });
+        let sent = false;
+        let lastSendError: unknown = null;
+
+        for (const toEmail of toEmails) {
+          try {
+            await sendTemplatedEmail({
+              templateId: 'admin_login_code',
+              to: toEmail,
+              variables: {
+                code,
+                time: now.toLocaleString('tr-TR', {
+                  dateStyle: 'short',
+                  timeStyle: 'short',
+                }),
+              },
+            });
+            sent = true;
+          } catch (sendError) {
+            lastSendError = sendError;
+            console.warn(
+              `[admin-auth] OTP e-postası gönderilemedi: ${toEmail}`,
+              sendError,
+            );
+          }
+        }
+
+        if (!sent) {
+          throw lastSendError instanceof Error
+            ? lastSendError
+            : new Error('Doğrulama kodu e-postası gönderilemedi.');
+        }
 
         const res = NextResponse.json({
           ok: true,
@@ -151,7 +192,7 @@ export async function POST(request: Request) {
         secure: COOKIE_SECURE,
         sameSite: 'lax',
         path: '/',
-        maxAge: 60 * 60 * 8, // 8 saat
+        maxAge: ADMIN_SESSION_TTL_SECONDS,
       });
 
       return res;
@@ -247,7 +288,7 @@ export async function POST(request: Request) {
         secure: COOKIE_SECURE,
         sameSite: 'lax',
         path: '/',
-        maxAge: 60 * 60 * 8,
+        maxAge: ADMIN_SESSION_TTL_SECONDS,
       });
 
       return res;
@@ -269,4 +310,3 @@ export async function POST(request: Request) {
     );
   }
 }
-

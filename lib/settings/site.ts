@@ -4,6 +4,19 @@ import path from 'path';
 const SETTINGS_DIR = path.join(process.cwd(), 'content', 'settings');
 const SITE_SETTINGS_PATH = path.join(SETTINGS_DIR, 'site.json');
 
+function getDefaultContactEmail() {
+  return (
+    process.env.SITE_CONTACT_EMAIL ||
+    process.env.SMTP_USER ||
+    process.env.SMTP_FROM ||
+    ''
+  );
+}
+
+function getRuntimeContactEmail() {
+  return (process.env.SITE_CONTACT_EMAIL || '').trim();
+}
+
 export type SiteSettings = {
   siteName: string;
   tagline: string;
@@ -14,7 +27,7 @@ export type SiteSettings = {
   youtubeUrl: string;
   youtubeChannelId: string;
   calendlyUrl: string;
-  // Stripe odeme sayfasi icin basit 2 adet odeme linki konfigurasyonu
+  // Stripe ödeme sayfası için basit 2 adet ödeme linki konfigürasyonu
   payment1Label: string;
   payment1Amount: string;
   payment1Url: string;
@@ -29,21 +42,20 @@ const DEFAULT_SETTINGS: SiteSettings = {
   siteName: 'Almanya Vize Rehberi',
   tagline:
     'Almanya vize ve göç süreçlerinde profesyonel rehberiniz',
-  contactEmail: 'info@almanyavizerehberi.com',
+  contactEmail: getDefaultContactEmail(),
   contactPhone: '+49 178 382 1542',
   whatsappNumber: '+49 178 382 1542',
   instagramUrl: 'https://www.instagram.com/almanyavizerehberi',
-  youtubeUrl:
-    'https://www.youtube.com/channel/UCYNClRqdbdinZphYGiSGg9Q',
+  youtubeUrl: 'https://www.youtube.com/@AlmanyaVizeRehberi',
   youtubeChannelId: 'UCYNClRqdbdinZphYGiSGg9Q',
   // Basvuru sayfasindaki randevu takvimi icin URL.
   // Artik Calendly degil, Google Takvim randevu planlama linki kullaniliyor.
   calendlyUrl:
     'https://calendar.google.com/calendar/appointments/schedules/AcZssZ3gacJKI5nfMIm072rGVFxaHRSOFIRECySFmJMdgUZFHFCf5jHn4UrSytZeP8ErAI8H3PVqBaM1?gv=true',
-  payment1Label: '1. Odeme',
+  payment1Label: '1. Ödeme',
   payment1Amount: '',
   payment1Url: '',
-  payment2Label: '2. Odeme',
+  payment2Label: '2. Ödeme',
   payment2Amount: '',
   payment2Url: '',
   maintenanceMode: false,
@@ -60,7 +72,9 @@ export function getSiteSettings(): SiteSettings {
       siteName: parsed.siteName || DEFAULT_SETTINGS.siteName,
       tagline: parsed.tagline || DEFAULT_SETTINGS.tagline,
       contactEmail:
-        parsed.contactEmail || DEFAULT_SETTINGS.contactEmail,
+        getRuntimeContactEmail() ||
+        parsed.contactEmail ||
+        DEFAULT_SETTINGS.contactEmail,
       contactPhone:
         parsed.contactPhone || DEFAULT_SETTINGS.contactPhone,
       whatsappNumber:
@@ -103,7 +117,9 @@ export function saveSiteSettings(next: SiteSettings) {
     siteName: next.siteName || DEFAULT_SETTINGS.siteName,
     tagline: next.tagline || DEFAULT_SETTINGS.tagline,
     contactEmail:
-      next.contactEmail || DEFAULT_SETTINGS.contactEmail,
+      getRuntimeContactEmail() ||
+      next.contactEmail ||
+      DEFAULT_SETTINGS.contactEmail,
     contactPhone:
       next.contactPhone || DEFAULT_SETTINGS.contactPhone,
     whatsappNumber:

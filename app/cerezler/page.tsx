@@ -2,8 +2,12 @@ import type { Metadata } from 'next';
 
 import { getPageBySlug } from '@/lib/content/pages';
 
+function getPage() {
+  return getPageBySlug('cerezler');
+}
+
 export function generateMetadata(): Metadata {
-  const page = getPageBySlug('cerezler');
+  const page = getPage();
 
   return {
     title: page.seoTitle || page.title,
@@ -12,7 +16,7 @@ export function generateMetadata(): Metadata {
 }
 
 export default function CerezlerPage() {
-  const page = getPageBySlug('cerezler');
+  const page = getPage();
 
   return (
     <main className="bg-surface-soft">
@@ -26,7 +30,7 @@ export default function CerezlerPage() {
           </h1>
         </header>
 
-        <div className="rounded-3xl border border-border-subtle bg-white p-6 shadow-soft md:p-8">
+        <div className="panel p-6 md:p-8">
           <article
             className="prose prose-slate max-w-none"
             dangerouslySetInnerHTML={{ __html: page.bodyHtml }}
