@@ -21,9 +21,8 @@ function hasEnv(name: string) {
 
 export default function AdminSystemPage() {
   const site = getSiteSettings();
-  const leadRecipients = getRecipientEmails(site.contactEmail, [
+  const leadRecipients = getRecipientEmails(undefined, [
     process.env.LEAD_NOTIFY_EMAIL,
-    process.env.ADMIN_OTP_EMAIL,
   ]);
   const supabaseReady =
     hasEnv('NEXT_PUBLIC_SUPABASE_URL') &&

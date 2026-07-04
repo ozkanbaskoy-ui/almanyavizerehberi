@@ -7,6 +7,12 @@
       "body": "Merhaba {{fullName}},\n\nAlmanya vize danışmanlık başvurunuz tarafımıza ulaştı.\n\nVize türü: {{visaType}}\nBaşvuru tarihi: {{createdAt}}\n\nUzman ekibimiz en kısa sürede sizinle iletişime geçecek. Bu süre içinde sorularınız olursa bu e-posta adresine yanıt verebilir veya WhatsApp hattımız üzerinden bize ulaşabilirsiniz.\n\nSaygılarımızla,\nAlmanya Vize Rehberi Ekibi"
     },
     {
+      "id": "admin_new_application",
+      "name": "Yeni Lead Bildirimi",
+      "subject": "Yeni başvuru geldi - {{fullName}}",
+      "body": "Yeni bir lead / başvuru geldi.\n\nBaşvuru ID: {{applicationId}}\nAd Soyad: {{fullName}}\nE-posta: {{email}}\nTelefon: {{phone}}\nYaş: {{age}}\nVize türü: {{visaType}}\nMeslek / bölüm: {{profession}}\nEn son eğitim durumu: {{education}}\nZamanlama: {{urgency}}\nİletişim tercihi: {{contactPreference}}\nUygunluk sonucu: {{fitSummary}}\nNot: {{message}}\nTarih: {{createdAt}}\n\nCRM Lead Havuzu ekranından kaydı kontrol edin."
+    },
+    {
       "id": "payment_received",
       "name": "Ödeme Alındı",
       "subject": "Ödemeniz için teşekkür ederiz",
@@ -26,4 +32,3 @@
     }
   ]
 }
-

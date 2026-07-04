@@ -9,7 +9,6 @@ import {
 import { saveLocalEmailLog } from '@/lib/admin/localEmailLogsStore';
 import { sendTemplatedEmail } from '@/lib/notifications/email';
 import { getRecipientEmails } from '@/lib/notifications/recipientEmails';
-import { getSiteSettings } from '@/lib/settings/site';
 
 export const runtime = 'nodejs';
 
@@ -101,6 +100,7 @@ export async function POST(request: Request) {
       age?: string;
       visaType?: string;
       profession?: string;
+      education?: string;
       currentCountry?: string;
       urgency?: string;
       contactPreference?: string;
@@ -137,6 +137,7 @@ export async function POST(request: Request) {
     const visaType = body.visaType?.trim() || 'bilinmiyor';
     const source = body.source?.trim() || 'web-form';
     const profession = body.profession?.trim() || '';
+    const education = body.education?.trim() || '';
     const currentCountry = body.currentCountry?.trim() || '';
     const urgency = body.urgency?.trim() || '';
     const contactPreference = body.contactPreference?.trim() || '';
@@ -234,7 +235,8 @@ export async function POST(request: Request) {
     const createdAtIso = new Date().toISOString();
     const detailLines = [
       age && `Yaş: ${age}`,
-      profession && `Meslek / eğitim: ${profession}`,
+      profession && `Meslek / bölüm: ${profession}`,
+      education && `En son eğitim durumu: ${education}`,
       currentCountry && `Bulunduğu ülke: ${currentCountry}`,
       urgency && `Zamanlama: ${urgency}`,
       contactPreference && `İletişim tercihi: ${contactPreference}`,
@@ -310,10 +312,8 @@ export async function POST(request: Request) {
     }
 
     const createdAt = new Date().toLocaleString('tr-TR');
-    const site = getSiteSettings();
-    const adminNotifyEmails = getRecipientEmails(site.contactEmail, [
+    const leadNotifyEmails = getRecipientEmails(undefined, [
       process.env.LEAD_NOTIFY_EMAIL,
-      process.env.ADMIN_OTP_EMAIL,
     ]);
     const fitSummary =
       fitResult?.routeTitle && typeof fitResult?.score === 'number'
@@ -335,7 +335,7 @@ export async function POST(request: Request) {
       },
     ];
 
-    for (const adminEmail of adminNotifyEmails) {
+    for (const adminEmail of leadNotifyEmails) {
       emailJobs.push({
         templateId: 'admin_new_application' as const,
         to: adminEmail,
@@ -346,6 +346,7 @@ export async function POST(request: Request) {
           visaType,
           age,
           profession,
+          education,
           currentCountry,
           urgency,
           contactPreference,

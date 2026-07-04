@@ -117,6 +117,20 @@ export default function AdminSettingsPage() {
       '{{visaType}}',
       '{{createdAt}}',
     ],
+    admin_new_application: [
+      '{{applicationId}}',
+      '{{fullName}}',
+      '{{email}}',
+      '{{phone}}',
+      '{{visaType}}',
+      '{{profession}}',
+      '{{education}}',
+      '{{currentCountry}}',
+      '{{urgency}}',
+      '{{contactPreference}}',
+      '{{message}}',
+      '{{createdAt}}',
+    ],
     payment_received: [
       '{{fullName}}',
       '{{amount}}',
@@ -133,11 +147,11 @@ export default function AdminSettingsPage() {
   };
 
   return (
-    <main className="mx-auto max-w-[960px] px-4 py-8">
-      <h1 className="text-2xl font-semibold text-slate-900">
+    <main className="admin-page max-w-[960px]">
+      <h1 className="admin-page-title">
         Ayarlar &amp; E-posta Şablonları
       </h1>
-      <p className="mt-2 text-sm text-slate-600">
+      <p className="admin-page-subtitle">
         Buradan otomatik gönderilecek e-posta şablonlarının konu ve
         içeriklerini kod yazmadan güncelleyebilirsiniz.
       </p>
@@ -157,7 +171,7 @@ export default function AdminSettingsPage() {
         {config.templates.map((tpl) => (
           <section
             key={tpl.id}
-            className="space-y-4 rounded-2xl border border-border-subtle bg-surface-main p-6"
+            className="panel space-y-4 p-6"
           >
             <div className="flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
               <div>
@@ -175,12 +189,12 @@ export default function AdminSettingsPage() {
             </div>
 
             <div>
-              <label className="block text-xs font-semibold uppercase tracking-wide text-slate-500">
+              <label className="form-label">
                 Konu (Subject)
               </label>
               <input
                 type="text"
-                className="mt-1 w-full rounded-xl border border-border-subtle bg-surface-soft px-3 py-2 text-sm"
+                className="form-input"
                 value={tpl.subject}
                 onChange={(e) =>
                   updateTemplate(tpl.id, 'subject', e.target.value)
@@ -189,11 +203,11 @@ export default function AdminSettingsPage() {
             </div>
 
             <div>
-              <label className="block text-xs font-semibold uppercase tracking-wide text-slate-500">
+              <label className="form-label">
                 Gövde (Body)
               </label>
               <textarea
-                className="mt-1 w-full rounded-xl border border-border-subtle bg-surface-soft px-3 py-2 text-sm font-mono"
+                className="form-textarea font-mono"
                 rows={8}
                 value={tpl.body}
                 onChange={(e) =>
@@ -207,7 +221,7 @@ export default function AdminSettingsPage() {
         <div className="flex items-center gap-4 pt-2">
           <button
             type="submit"
-            className="inline-flex items-center justify-center rounded-full bg-brand-base px-6 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-brand-light disabled:opacity-60"
+            className="btn-primary"
             disabled={saving}
           >
             {saving ? 'Kaydediliyor…' : 'Şablonları Kaydet'}
@@ -217,4 +231,3 @@ export default function AdminSettingsPage() {
     </main>
   );
 }
-

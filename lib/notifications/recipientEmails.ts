@@ -26,8 +26,15 @@ export function getRecipientEmails(
   siteContactEmail?: string,
   envValues: Array<string | undefined | null> = [],
 ) {
-  return uniqueEmails([
-    ...envValues.flatMap((value) => splitEmailList(value)),
-    ...(siteContactEmail ? [siteContactEmail.trim()] : []),
-  ]).filter(isPlausibleEmail);
+  const envEmails = uniqueEmails(
+    envValues.flatMap((value) => splitEmailList(value)),
+  ).filter(isPlausibleEmail);
+
+  if (envEmails.length > 0) {
+    return envEmails;
+  }
+
+  return uniqueEmails(
+    siteContactEmail ? [siteContactEmail.trim()] : [],
+  ).filter(isPlausibleEmail);
 }
