@@ -33,6 +33,70 @@ export default function AdminSystemPage() {
     hasEnv('SMTP_PORT') &&
     hasEnv('SMTP_USER') &&
     hasEnv('SMTP_PASS');
+  const metaTokenReady =
+    hasEnv('SOCIAL_META_ACCESS_TOKEN') ||
+    hasEnv('SOCIAL_FACEBOOK_PAGE_ACCESS_TOKEN') ||
+    hasEnv('SOCIAL_INSTAGRAM_ACCESS_TOKEN');
+  const metaPageReady =
+    hasEnv('SOCIAL_FACEBOOK_PAGE_ID') || hasEnv('SOCIAL_META_PAGE_ID');
+  const socialChecks: Check[] = [
+    {
+      label: 'Meta yayınlama',
+      state: metaTokenReady && metaPageReady && hasEnv('SOCIAL_INSTAGRAM_USER_ID')
+        ? 'ready'
+        : 'attention',
+      status: metaTokenReady && metaPageReady && hasEnv('SOCIAL_INSTAGRAM_USER_ID')
+        ? 'Hazır'
+        : 'Eksik',
+      detail:
+        'Instagram ve Facebook otomatik yayın için Meta token, sayfa ID ve Instagram user ID gerekir.',
+    },
+    {
+      label: 'Telegram yayınlama',
+      state:
+        hasEnv('SOCIAL_TELEGRAM_BOT_TOKEN') &&
+        hasEnv('SOCIAL_TELEGRAM_CHAT_ID')
+          ? 'ready'
+          : 'attention',
+      status:
+        hasEnv('SOCIAL_TELEGRAM_BOT_TOKEN') &&
+        hasEnv('SOCIAL_TELEGRAM_CHAT_ID')
+          ? 'Hazır'
+          : 'Eksik',
+      detail:
+        'Kanal gönderimi için Telegram bot token ve hedef chat ID gerekir.',
+    },
+    {
+      label: 'X yayınlama',
+      state:
+        hasEnv('SOCIAL_X_ACCESS_TOKEN') ||
+        hasEnv('SOCIAL_X_BEARER_TOKEN')
+          ? 'ready'
+          : 'attention',
+      status:
+        hasEnv('SOCIAL_X_ACCESS_TOKEN') ||
+        hasEnv('SOCIAL_X_BEARER_TOKEN')
+          ? 'Hazır'
+          : 'Eksik',
+      detail:
+        'X paylaşımı için yazma yetkili kullanıcı access token gerekir.',
+    },
+    {
+      label: 'LinkedIn yayınlama',
+      state:
+        hasEnv('SOCIAL_LINKEDIN_ACCESS_TOKEN') &&
+        hasEnv('SOCIAL_LINKEDIN_AUTHOR_URN')
+          ? 'ready'
+          : 'attention',
+      status:
+        hasEnv('SOCIAL_LINKEDIN_ACCESS_TOKEN') &&
+        hasEnv('SOCIAL_LINKEDIN_AUTHOR_URN')
+          ? 'Hazır'
+          : 'Eksik',
+      detail:
+        'LinkedIn gönderileri için access token ve author URN gerekir.',
+    },
+  ];
 
   const checks: Check[] = [
     {
@@ -163,6 +227,30 @@ export default function AdminSystemPage() {
                 <span
                   className={`status-badge ${statusStyles[check.state]}`}
                 >
+                  {check.status}
+                </span>
+              </div>
+              <p className="mt-2 text-sm leading-6 text-slate-600">
+                {check.detail}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="panel mt-6 p-5">
+        <h2 className="text-lg font-semibold text-slate-950">
+          Sosyal Yayın Kanalları
+        </h2>
+        <div className="mt-4 grid gap-3 md:grid-cols-2">
+          {socialChecks.map((check) => (
+            <div
+              key={check.label}
+              className="rounded-xl border border-slate-200 bg-white px-4 py-3"
+            >
+              <div className="flex items-center justify-between gap-3">
+                <p className="font-semibold text-slate-950">{check.label}</p>
+                <span className={`status-badge ${statusStyles[check.state]}`}>
                   {check.status}
                 </span>
               </div>

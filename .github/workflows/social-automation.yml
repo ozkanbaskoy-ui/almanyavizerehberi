@@ -41,14 +41,32 @@ jobs:
       - name: Generate social automation snapshot
         run: npm run social:generate
 
+      - name: Publish social automation
+        env:
+          SOCIAL_DRY_RUN: ${{ vars.SOCIAL_DRY_RUN }}
+          SOCIAL_FORCE_PUBLISH: ${{ vars.SOCIAL_FORCE_PUBLISH }}
+          SOCIAL_META_ACCESS_TOKEN: ${{ secrets.SOCIAL_META_ACCESS_TOKEN }}
+          SOCIAL_META_PAGE_ID: ${{ vars.SOCIAL_META_PAGE_ID }}
+          SOCIAL_FACEBOOK_PAGE_ID: ${{ vars.SOCIAL_FACEBOOK_PAGE_ID }}
+          SOCIAL_FACEBOOK_PAGE_ACCESS_TOKEN: ${{ secrets.SOCIAL_FACEBOOK_PAGE_ACCESS_TOKEN }}
+          SOCIAL_INSTAGRAM_USER_ID: ${{ vars.SOCIAL_INSTAGRAM_USER_ID }}
+          SOCIAL_INSTAGRAM_ACCESS_TOKEN: ${{ secrets.SOCIAL_INSTAGRAM_ACCESS_TOKEN }}
+          SOCIAL_TELEGRAM_BOT_TOKEN: ${{ secrets.SOCIAL_TELEGRAM_BOT_TOKEN }}
+          SOCIAL_TELEGRAM_CHAT_ID: ${{ vars.SOCIAL_TELEGRAM_CHAT_ID }}
+          SOCIAL_X_ACCESS_TOKEN: ${{ secrets.SOCIAL_X_ACCESS_TOKEN }}
+          SOCIAL_X_BEARER_TOKEN: ${{ secrets.SOCIAL_X_BEARER_TOKEN }}
+          SOCIAL_LINKEDIN_ACCESS_TOKEN: ${{ secrets.SOCIAL_LINKEDIN_ACCESS_TOKEN }}
+          SOCIAL_LINKEDIN_AUTHOR_URN: ${{ vars.SOCIAL_LINKEDIN_AUTHOR_URN }}
+        run: npm run social:publish
+
       - name: Commit generated snapshot
         run: |
-          if git diff --quiet -- content/generated/social-automation.json; then
+          if git diff --quiet -- content/generated/social-automation.json content/generated/social-publish-state.json; then
             echo "No snapshot changes."
             exit 0
           fi
           git config user.name "social-automation-bot"
           git config user.email "social-automation-bot@users.noreply.github.com"
-          git add content/generated/social-automation.json
+          git add content/generated/social-automation.json content/generated/social-publish-state.json
           git commit -m "chore: refresh social automation"
           git push

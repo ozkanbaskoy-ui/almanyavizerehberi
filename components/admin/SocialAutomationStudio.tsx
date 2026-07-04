@@ -15,10 +15,12 @@ import {
   type SocialCampaign,
   type SocialTone,
 } from '@/lib/marketing/socialAutomation';
+import type { SocialPublishState } from '@/lib/marketing/socialPublishStore';
 
 type SocialAutomationStudioProps = {
   topics: MarketingTopic[];
   snapshot?: SocialAutomationSnapshot | null;
+  publishState?: SocialPublishState | null;
 };
 
 const DEFAULT_CHANNELS = SOCIAL_CHANNEL_OPTIONS.filter(
@@ -46,6 +48,7 @@ function getChannelLimitLabel(length: number, limit: number) {
 export function SocialAutomationStudio({
   topics,
   snapshot,
+  publishState,
 }: SocialAutomationStudioProps) {
   const [selectedTopicId, setSelectedTopicId] = useState(
     topics[0]?.id || '',
@@ -189,6 +192,92 @@ export function SocialAutomationStudio({
               <li key={note}>- {note}</li>
             ))}
           </ul>
+        </section>
+      ) : null}
+
+      {publishState ? (
+        <section className="panel mt-6 p-5">
+          <div className="flex flex-wrap items-center justify-between gap-4">
+            <div>
+              <h2 className="text-lg font-semibold text-slate-950">
+                Son Yayın
+              </h2>
+              <p className="mt-1 text-sm text-slate-600">
+                {new Date(publishState.publishedAt).toLocaleString('tr-TR')}
+              </p>
+            </div>
+            <span className="status-badge bg-slate-100 text-slate-700">
+              {publishState.executionMode === 'dry-run'
+                ? 'Dry-run'
+                : 'Otomatik'}
+            </span>
+          </div>
+
+          <div className="mt-4 grid gap-3 md:grid-cols-4">
+            <div className="metric-card">
+              <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
+                Kampanya
+              </p>
+              <p className="mt-2 text-sm font-semibold text-slate-950">
+                {publishState.campaignTitle}
+              </p>
+            </div>
+            <div className="metric-card">
+              <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
+                Yayınlandı
+              </p>
+              <p className="mt-2 text-2xl font-semibold text-slate-950">
+                {
+                  publishState.results.filter(
+                    (result) => result.status === 'published',
+                  ).length
+                }
+              </p>
+            </div>
+            <div className="metric-card">
+              <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
+                Draft
+              </p>
+              <p className="mt-2 text-2xl font-semibold text-slate-950">
+                {
+                  publishState.results.filter(
+                    (result) => result.status === 'drafted',
+                  ).length
+                }
+              </p>
+            </div>
+            <div className="metric-card">
+              <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
+                Hata
+              </p>
+              <p className="mt-2 text-2xl font-semibold text-slate-950">
+                {
+                  publishState.results.filter(
+                    (result) => result.status === 'failed',
+                  ).length
+                }
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-4 flex flex-wrap gap-2">
+            {publishState.results.map((result) => (
+              <span
+                key={`${result.channel}-${result.provider}`}
+                className={`status-badge ${
+                  result.status === 'published'
+                    ? 'bg-emerald-50 text-emerald-700'
+                    : result.status === 'drafted'
+                      ? 'bg-blue-50 text-blue-700'
+                      : result.status === 'skipped'
+                        ? 'bg-amber-50 text-amber-700'
+                        : 'bg-rose-50 text-rose-700'
+                }`}
+              >
+                {result.label}: {result.status}
+              </span>
+            ))}
+          </div>
         </section>
       ) : null}
 

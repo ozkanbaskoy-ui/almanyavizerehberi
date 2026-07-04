@@ -49,6 +49,8 @@ export type SocialChannelCopy = {
   id: SocialChannel;
   label: string;
   characterLimit: number;
+  leadUrl: string;
+  topicUrl: string;
   copy: string;
 };
 
@@ -441,7 +443,7 @@ function uniqueStrings(values: string[]) {
   });
 }
 
-function truncateToWordBoundary(value: string, limit: number) {
+export function truncateToWordBoundary(value: string, limit: number) {
   if (value.length <= limit) return value;
   const clipped = value.slice(0, Math.max(0, limit - 1));
   const lastSpace = clipped.lastIndexOf(' ');
@@ -556,6 +558,15 @@ export function buildLeadUrl(
   });
 }
 
+export function buildSocialCardUrl(params: {
+  title: string;
+  keyword: string;
+  channel: string;
+  cta: string;
+}) {
+  return buildAbsoluteUrl('/api/social-card', params);
+}
+
 function toneLeadIn(
   topic: MarketingTopic,
   profile: TopicProfile,
@@ -576,6 +587,7 @@ function buildInstagramCopy(
   topic: MarketingTopic,
   profile: TopicProfile,
   topicUrl: string,
+  leadUrl: string,
   tone: SocialTone,
 ) {
   const lead = toneLeadIn(topic, profile, tone);
@@ -587,6 +599,7 @@ function buildInstagramCopy(
     ${profile.bullets.map((item) => `• ${item}`).join('\n')}
 
     ${profile.cta}
+    ${leadUrl}
     ${topicUrl}
     ${profile.hashtags.join(' ')}
   `);
@@ -596,6 +609,7 @@ function buildFacebookCopy(
   topic: MarketingTopic,
   profile: TopicProfile,
   topicUrl: string,
+  leadUrl: string,
   tone: SocialTone,
 ) {
   const lead = toneLeadIn(topic, profile, tone);
@@ -607,6 +621,7 @@ function buildFacebookCopy(
     ${profile.bullets.map((item) => `- ${item}`).join('\n')}
 
     ${profile.cta}
+    ${leadUrl}
     ${topicUrl}
     ${profile.hashtags.slice(0, 5).join(' ')}
   `);
@@ -616,6 +631,7 @@ function buildLinkedInCopy(
   topic: MarketingTopic,
   profile: TopicProfile,
   topicUrl: string,
+  leadUrl: string,
   tone: SocialTone,
 ) {
   const intro =
@@ -631,6 +647,7 @@ function buildLinkedInCopy(
     ${profile.bullets.map((item) => `- ${item}`).join('\n')}
 
     ${profile.cta}
+    ${leadUrl}
     ${topicUrl}
     ${profile.hashtags.slice(0, 4).join(' ')}
   `);
@@ -639,7 +656,7 @@ function buildLinkedInCopy(
 function buildXCopy(
   topic: MarketingTopic,
   profile: TopicProfile,
-  topicUrl: string,
+  leadUrl: string,
   tone: SocialTone,
 ) {
   const intro =
@@ -648,8 +665,8 @@ function buildXCopy(
       : `${topic.title} için:`;
 
   const raw = normalizeText(
-    `${intro} ${profile.hook} ${profile.bullets[0]} ${topicUrl} ${profile.hashtags
-      .slice(0, 3)
+    `${intro} ${profile.hook} ${profile.bullets[0]} ${leadUrl} ${profile.hashtags
+      .slice(0, 2)
       .join(' ')}`,
   );
 
@@ -677,6 +694,7 @@ function buildTelegramCopy(
 function buildWhatsAppStatusCopy(
   topic: MarketingTopic,
   profile: TopicProfile,
+  leadUrl: string,
   tone: SocialTone,
 ) {
   const intro =
@@ -687,6 +705,7 @@ function buildWhatsAppStatusCopy(
   return normalizeText(`
     ${intro}
     ${profile.cta}
+    ${leadUrl}
   `);
 }
 
@@ -694,6 +713,7 @@ function buildTikTokCopy(
   topic: MarketingTopic,
   profile: TopicProfile,
   topicUrl: string,
+  leadUrl: string,
   tone: SocialTone,
 ) {
   const intro =
@@ -708,6 +728,7 @@ function buildTikTokCopy(
     ${profile.bullets.slice(0, 3).map((item) => `• ${item}`).join('\n')}
 
     ${profile.cta}
+    ${leadUrl}
     ${topicUrl}
     ${profile.hashtags.slice(0, 6).join(' ')}
   `);
@@ -717,6 +738,7 @@ function buildYouTubeShortsCopy(
   topic: MarketingTopic,
   profile: TopicProfile,
   topicUrl: string,
+  leadUrl: string,
   tone: SocialTone,
 ) {
   const intro =
@@ -731,6 +753,7 @@ function buildYouTubeShortsCopy(
     ${profile.bullets.map((item) => `- ${item}`).slice(0, 3).join('\n')}
 
     ${profile.cta}
+    ${leadUrl}
     ${topicUrl}
     ${profile.hashtags.slice(0, 5).join(' ')}
   `);
@@ -749,45 +772,46 @@ export function buildSocialCampaign(
         );
   const profile = buildTopicBaseProfile(topic);
   const topicUrl = buildTopicUrl(topic);
-  const leadUrl = buildLeadUrl(topic, channels[0], options.leadPath);
+  const primaryLeadUrl = buildLeadUrl(topic, channels[0], options.leadPath);
   const selectedHashtags = uniqueStrings([
     ...profile.hashtags,
     '#almanyagoc',
     '#almanyavizerehberi',
   ]);
-  const leadLine = `${profile.cta} ${leadUrl}`;
+  const leadLine = `${profile.cta} ${primaryLeadUrl}`;
 
   const platformCopies: SocialChannelCopy[] = channels.map((channel) => {
     const meta = SOCIAL_CHANNEL_OPTIONS.find((item) => item.id === channel);
     const label = meta?.label || channel;
     const characterLimit = meta?.characterLimit || 2000;
+    const leadUrl = buildLeadUrl(topic, channel, options.leadPath);
 
     let copy = '';
     switch (channel) {
       case 'instagram':
-        copy = buildInstagramCopy(topic, profile, topicUrl, tone);
+        copy = buildInstagramCopy(topic, profile, topicUrl, leadUrl, tone);
         break;
       case 'facebook':
-        copy = buildFacebookCopy(topic, profile, topicUrl, tone);
+        copy = buildFacebookCopy(topic, profile, topicUrl, leadUrl, tone);
         break;
       case 'linkedin':
-        copy = buildLinkedInCopy(topic, profile, topicUrl, tone);
+        copy = buildLinkedInCopy(topic, profile, topicUrl, leadUrl, tone);
         break;
       case 'telegram':
         copy = buildTelegramCopy(topic, profile, topicUrl, leadUrl);
         break;
       case 'whatsapp_status':
-        copy = buildWhatsAppStatusCopy(topic, profile, tone);
+        copy = buildWhatsAppStatusCopy(topic, profile, leadUrl, tone);
         break;
       case 'tiktok':
-        copy = buildTikTokCopy(topic, profile, topicUrl, tone);
+        copy = buildTikTokCopy(topic, profile, topicUrl, leadUrl, tone);
         break;
       case 'youtube_shorts':
-        copy = buildYouTubeShortsCopy(topic, profile, topicUrl, tone);
+        copy = buildYouTubeShortsCopy(topic, profile, topicUrl, leadUrl, tone);
         break;
       case 'x':
       default:
-        copy = buildXCopy(topic, profile, topicUrl, tone);
+        copy = buildXCopy(topic, profile, leadUrl, tone);
         break;
     }
 
@@ -799,6 +823,8 @@ export function buildSocialCampaign(
       id: channel,
       label,
       characterLimit,
+      leadUrl,
+      topicUrl,
       copy,
     };
   });
@@ -819,14 +845,14 @@ export function buildSocialCampaign(
     `Odak anahtar kelime: ${profile.focusKeyword}`,
     `Hedef kitle: ${profile.audience}`,
     `Landing URL: ${topicUrl}`,
-    `Lead URL: ${leadUrl}`,
+    `Lead URL: ${primaryLeadUrl}`,
     `Hashtag seti: ${selectedHashtags.slice(0, 6).join(' ')}`,
   ];
 
   return {
     topic,
     topicUrl,
-    leadUrl,
+    leadUrl: primaryLeadUrl,
     focusKeyword: profile.focusKeyword,
     audience: profile.audience,
     hashtags: selectedHashtags,
@@ -899,6 +925,8 @@ export function formatCampaignMarkdown(campaign: SocialCampaign) {
     '## Channels',
     ...campaign.platformCopies.flatMap((item) => [
       `### ${item.label}`,
+      item.leadUrl ? `Lead URL: ${item.leadUrl}` : '',
+      item.topicUrl ? `Topic URL: ${item.topicUrl}` : '',
       item.copy,
       '',
     ]),
@@ -940,7 +968,7 @@ function buildAutomationQueueItem(
       profile.weeklyAngles[(slot - 1) % profile.weeklyAngles.length] ||
       profile.hook,
     topicUrl: campaign.topicUrl,
-    leadUrl: campaign.leadUrl,
+    leadUrl: item?.leadUrl || campaign.leadUrl,
     copy: item?.copy || '',
   } satisfies AutomationQueueItem;
 }
