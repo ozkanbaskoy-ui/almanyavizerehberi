@@ -192,10 +192,10 @@ export default function IletisimPage() {
                   sizinle iletişime geçecektir.
                 </p>
                 <div className="mt-6">
-                  <Link
-                    href="/basvuru.php"
-                    className="btn-primary w-full"
-                  >
+                    <Link
+                      href="/basvuru"
+                      className="btn-primary w-full"
+                    >
                     Başvuru Formuna Git
                   </Link>
                 </div>

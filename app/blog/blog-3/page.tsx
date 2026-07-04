@@ -19,8 +19,8 @@ export default function Blog3Page() {
           <RevealOnScroll>
             <Breadcrumb
               items={[
-                { label: 'Ana Sayfa', href: '/index.php' },
-                { label: 'Blog', href: '/blog.php' },
+                { label: 'Ana Sayfa', href: '/' },
+                { label: 'Blog', href: '/blog' },
                 {
                   label: "Üniversite Eğitimi İçin Almanya'yı Seçmenin 5 İyi Nedeni",
                 },
@@ -230,3 +230,4 @@ export default function Blog3Page() {
     </main>
   );
 }
+

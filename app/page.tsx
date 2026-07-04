@@ -7,7 +7,7 @@ import { getAllVisas } from '@/lib/content/visas';
 export const metadata: Metadata = {
   title: 'Almanya Vize Rehberi - Profesyonel Danışmanlık',
   description:
-    "Almanya'ya yerleşim, çalışma ve eğitim vizeleri için profesyonel danışmanlık. Çalışma vizesi, Mavi Kart, Fırsat Kartı ve daha fazlası için kapsamlı rehberlik.",
+    'Almanya çalışma vizesi, Mavi Kart, Fırsat Kartı ve göç sonrası işlemler için profesyonel danışmanlık.',
   alternates: {
     canonical: 'https://www.almanyavizerehberi.com/',
   },
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     url: 'https://www.almanyavizerehberi.com/',
     title: 'Almanya Vize Rehberi - Profesyonel Danışmanlık',
     description:
-      "Almanya'ya yerleşim, çalışma ve eğitim vizeleri için profesyonel danışmanlık. Çalışma vizesi, Mavi Kart, Fırsat Kartı ve daha fazlası için kapsamlı rehberlik.",
+      'Almanya çalışma vizesi, Mavi Kart, Fırsat Kartı ve göç sonrası işlemler için profesyonel danışmanlık.',
     images: [
       {
         url: '/og/default-og.webp',
@@ -128,7 +128,7 @@ export default async function HomePage() {
               </p>
               <div className="mt-5 flex flex-col items-stretch gap-3 sm:flex-row sm:flex-wrap sm:items-center md:mt-8 md:gap-4">
                 <Link
-                  href="/basvuru.php"
+                  href="/basvuru"
                   className="inline-flex items-center justify-center rounded-full bg-gradient-to-br from-brand-base to-brand-light px-7 py-3 text-sm font-ui font-semibold uppercase tracking-wide text-white shadow-lg shadow-brand-dark/25 transition hover:from-brand-light hover:to-brand-base"
                 >
                   {homeSettings.hero.primaryCtaText}
@@ -237,8 +237,8 @@ export default async function HomePage() {
                 </div>
 
                 <RevealOnScroll className="relative mt-10 text-center">
-                  <Link
-                    href="/hizmetler.php?l=1"
+                <Link
+                    href="/hizmetler"
                     className="inline-flex items-center justify-center rounded-full border border-border-subtle bg-surface-main px-7 py-2.5 text-xs font-ui font-semibold uppercase tracking-wide text-brand-dark shadow-sm hover:border-brand-base hover:text-brand-base hover:shadow-md"
                   >
                     Tüm Vize Hizmetlerini Gör

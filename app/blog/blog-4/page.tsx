@@ -18,8 +18,8 @@ export default function Blog4Page() {
           <RevealOnScroll>
             <Breadcrumb
               items={[
-                { label: 'Ana Sayfa', href: '/index.php' },
-                { label: 'Blog', href: '/blog.php' },
+                { label: 'Ana Sayfa', href: '/' },
+                { label: 'Blog', href: '/blog' },
                 { label: 'Almanya’da Yaşam Maliyetleri' },
               ]}
             />
@@ -248,3 +248,4 @@ export default function Blog4Page() {
     </main>
   );
 }
+

@@ -22,56 +22,54 @@ type NavItem = {
 
 const VISA_SERVICES: NavItem = {
   label: 'Hizmetlerimiz',
-  href: '/hizmetler.php?l=1',
+  href: '/hizmetler',
   title: 'Hizmetlerimiz',
   children: [
-    { label: 'Çalışma Vizesi', href: '/hizmetler.php?l=1' },
-    { label: 'Mavi Kart Vizesi', href: '/hizmetler.php?l=2' },
-    { label: 'Fırsat Kartı', href: '/hizmetler.php?l=3' },
-    { label: 'Mesleki Eğitim Vizesi', href: '/hizmetler.php?l=5' },
-    { label: 'Aile Birleşimi Vizesi', href: '/hizmetler.php?l=7' },
-    { label: 'Yükseköğrenim Vizesi', href: '/hizmetler.php?l=9' },
-    { label: 'Dil Kursu Vizesi', href: '/hizmetler.php?l=10' },
+    { label: 'Tüm Vize Hizmetleri', href: '/hizmetler' },
+    { label: 'Çalışma Vizesi', href: '/hizmetler/calisma-vizesi' },
+    { label: 'Mavi Kart Vizesi', href: '/hizmetler/mavi-kart-vizesi' },
+    { label: 'Fırsat Kartı', href: '/hizmetler/firsat-karti' },
   ],
 };
 
 const AFTERCARE_SERVICES: NavItem = {
   label: 'Göç Sonrası Hizmetlerimiz',
-  href: '/servisler.php?l=1',
+  href: '/servisler',
   title: 'Göç Sonrası Hizmetlerimiz',
   children: [
+    { label: 'Tüm Göç Sonrası Hizmetler', href: '/servisler' },
     {
       label: 'Oturum İzni Başvurusu ve Yenilenmesi',
-      href: '/servisler.php?l=1',
+      href: '/servisler/oturum-izni-basvurusu-ve-yenilenmesi',
     },
-    { label: 'Yabancılar Dairesi İşlemleri', href: '/servisler.php?l=2' },
-    { label: 'Çalışma İzni', href: '/servisler.php?l=3' },
-    { label: 'Sigorta ve Sosyal Güvenlik', href: '/servisler.php?l=4' },
-    { label: 'Vergi İşlemleri', href: '/servisler.php?l=5' },
-    {
-      label: 'Dil Eğitimi ve Entegrasyon Kursları',
-      href: '/servisler.php?l=6',
-    },
-    { label: 'Barınma ve Emlak İşlemleri', href: '/servisler.php?l=7' },
-    { label: 'Eğitim ve Çocukların Eğitimi', href: '/servisler.php?l=8' },
-    { label: 'Hukuki Danışmanlık ve Haklar', href: '/servisler.php?l=9' },
-    { label: 'Kültürel ve Sosyal Rehberlik', href: '/servisler.php?l=10' },
+    { label: 'Yabancılar Dairesi İşlemleri', href: '/servisler/yabancilar-dairesi-islemleri' },
+    { label: 'Çalışma İzni', href: '/servisler/calisma-izni' },
+    { label: 'Sigorta ve Sosyal Güvenlik', href: '/servisler/sigorta-ve-sosyal-guvenlik' },
+    { label: 'Vergi İşlemleri', href: '/servisler/vergi-islemleri' },
+    { label: 'Barınma ve Emlak İşlemleri', href: '/servisler/barinma-ve-emlak-islemleri' },
+    { label: 'Hukuki Danışmanlık ve Haklar', href: '/servisler/hukuki-danismanlik-ve-haklar' },
+    { label: 'Kültürel ve Sosyal Rehberlik', href: '/servisler/kulturel-ve-sosyal-rehberlik' },
   ],
 };
 
 const MAIN_ITEMS: NavItem[] = [
-  { label: 'Ana Sayfa', href: '/index.php', title: 'Ana Sayfa' },
-  { label: 'Hakkımızda', href: '/hakkimizda.php', title: 'Hakkımızda' },
+  { label: 'Ana Sayfa', href: '/', title: 'Ana Sayfa' },
+  { label: 'Hakkımızda', href: '/hakkimizda', title: 'Hakkımızda' },
   {
     label: 'Uygunluk Testi',
     href: '/uygunluk-testi',
     title: 'Almanya Vize Uygunluk Testi',
   },
+  {
+    label: 'Almanya Göç',
+    href: '/almanya-goc',
+    title: 'Almanya Göç Rehberi',
+  },
   VISA_SERVICES,
   AFTERCARE_SERVICES,
-  { label: 'S.S.S.', href: '/sss.php', title: 'Sıkça Sorulan Sorular' },
-  { label: 'Blog', href: '/blog.php', title: 'Blog' },
-  { label: 'İletişim', href: '/iletisim.php', title: 'İletişim' },
+  { label: 'S.S.S.', href: '/sss', title: 'Sıkça Sorulan Sorular' },
+  { label: 'Blog', href: '/blog', title: 'Blog' },
+  { label: 'İletişim', href: '/iletisim', title: 'İletişim' },
 ];
 
 function normalizePathname(pathname: string) {
@@ -245,7 +243,7 @@ export function MainNav({ site }: MainNavProps) {
 
       {/* Main nav */}
       <div className="mx-auto flex max-w-[1280px] items-center justify-between gap-2 border-b border-slate-100 bg-white/95 px-4 py-3">
-        <Link href="/index.php" className="mr-8 flex min-h-14 shrink-0 items-center gap-3">
+        <Link href="/" className="mr-8 flex min-h-14 shrink-0 items-center gap-3">
           <Image
             src="/assets/img/logo-yan.webp"
             alt={site.siteName || 'Almanya Vize Rehberi'}
@@ -303,7 +301,7 @@ export function MainNav({ site }: MainNavProps) {
           })}
 
           <Link
-            href="/basvuru.php"
+            href="/basvuru"
             className="relative inline-flex min-h-10 shrink-0 items-center justify-center whitespace-nowrap rounded-full bg-gradient-to-b from-brand-red to-red-700 px-5 py-2.5 text-center text-xs font-bold uppercase leading-none tracking-wide text-white shadow-[0_8px_18px_rgba(185,28,28,0.28)] ring-1 ring-red-300/35 transition-transform duration-150 hover:-translate-y-0.5 hover:shadow-[0_12px_24px_rgba(185,28,28,0.34)] active:translate-y-0 active:shadow-[0_4px_12px_rgba(185,28,28,0.22)] font-ui"
           >
             Başvuru Yap
@@ -312,7 +310,7 @@ export function MainNav({ site }: MainNavProps) {
 
         {/* Mobile CTA (sadece mobilde görünsün) */}
         <Link
-          href="/basvuru.php"
+          href="/basvuru"
           className="inline-flex items-center justify-center whitespace-nowrap rounded-full bg-gradient-to-b from-brand-red to-red-700 px-4 py-2 text-xs font-ui font-semibold uppercase leading-none tracking-wide text-white shadow-[0_6px_14px_rgba(15,23,42,0.28)] md:hidden"
         >
           Başvuru Yap
@@ -400,7 +398,7 @@ export function MainNav({ site }: MainNavProps) {
             })}
             <li className="pt-2">
               <Link
-                href="/basvuru.php"
+                href="/basvuru"
                 className="block whitespace-nowrap rounded-full bg-gradient-to-b from-brand-red to-red-700 px-4 py-2 text-center text-xs font-semibold uppercase leading-none tracking-wide text-white shadow-[0_6px_14px_rgba(15,23,42,0.28)] active:shadow-[0_3px_8px_rgba(15,23,42,0.22)]"
                 onClick={() => setMobileOpen(false)}
               >

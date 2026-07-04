@@ -2,7 +2,9 @@ import Link from 'next/link';
 
 import type { Visa } from '@/lib/content/visas';
 import { getAllVisas } from '@/lib/content/visas';
+import { Breadcrumb } from '@/components/common/Breadcrumb';
 import { RevealOnScroll } from '@/components/common/RevealOnScroll';
+import { ALLOWED_VISA_SLUGS } from '@/lib/marketing/topicCatalog';
 
 type VisaDetailLayoutProps = {
   visa: Visa;
@@ -11,7 +13,9 @@ type VisaDetailLayoutProps = {
 const SITE_URL = 'https://www.almanyavizerehberi.com';
 
 export function VisaDetailLayout({ visa }: VisaDetailLayoutProps) {
-  const all = getAllVisas();
+  const all = getAllVisas().filter((item) =>
+    ALLOWED_VISA_SLUGS.has(item.slug),
+  );
 
   const breadcrumbJsonLd = {
     '@context': 'https://schema.org',
@@ -26,8 +30,8 @@ export function VisaDetailLayout({ visa }: VisaDetailLayoutProps) {
       {
         '@type': 'ListItem',
         position: 2,
-        name: 'Hizmetlerimiz',
-        item: `${SITE_URL}/hizmetler.php?l=1`,
+        name: 'Almanya Vize Hizmetleri',
+        item: `${SITE_URL}/hizmetler`,
       },
       {
         '@type': 'ListItem',
@@ -51,6 +55,14 @@ export function VisaDetailLayout({ visa }: VisaDetailLayoutProps) {
       <section className="site-hero">
         <div className="site-container">
           <RevealOnScroll>
+            <Breadcrumb
+              items={[
+                { label: 'Ana Sayfa', href: '/' },
+                { label: 'Almanya Göç Rehberi', href: '/almanya-goc' },
+                { label: 'Almanya Vize Hizmetleri', href: '/hizmetler' },
+                { label: visa.title },
+              ]}
+            />
             <p className="eyebrow-on-dark mt-3 font-heading md:text-sm">
               Hizmet Detayı
             </p>
@@ -132,6 +144,52 @@ export function VisaDetailLayout({ visa }: VisaDetailLayoutProps) {
                 </aside>
               </RevealOnScroll>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-surface py-8 md:py-10">
+        <div className="site-container">
+          <RevealOnScroll>
+            <h2 className="text-lg font-semibold text-slate-950">
+              İlgili Bağlantılar
+            </h2>
+          </RevealOnScroll>
+          <div className="mt-4 grid gap-4 md:grid-cols-3">
+            {[
+              {
+                href: '/almanya-goc',
+                label: 'Almanya Göç Rehberi',
+                text: 'Ana yol haritası ve genel plan.',
+              },
+              {
+                href: '/hizmetler',
+                label: 'Tüm Vize Hizmetleri',
+                text: 'Çalışma vizesi ve ana başvuru sayfaları.',
+              },
+              {
+                href: '/uygunluk-testi',
+                label: 'Ön Değerlendirme',
+                text: 'Hangi başvuru yolunun size uygun olduğunu görün.',
+              },
+            ].map((item, index) => (
+              <RevealOnScroll key={item.href} delay={index * 0.05}>
+                <Link
+                  href={item.href}
+                  className="panel block h-full p-5 transition hover:border-brand-base hover:shadow-md"
+                >
+                  <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
+                    Kılavuz
+                  </p>
+                  <h3 className="mt-2 text-base font-semibold text-slate-950">
+                    {item.label}
+                  </h3>
+                  <p className="mt-2 text-sm leading-6 text-slate-600">
+                    {item.text}
+                  </p>
+                </Link>
+              </RevealOnScroll>
+            ))}
           </div>
         </div>
       </section>

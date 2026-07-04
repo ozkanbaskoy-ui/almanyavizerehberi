@@ -18,8 +18,8 @@ export default function Blog1Page() {
           <RevealOnScroll>
             <Breadcrumb
               items={[
-                { label: 'Ana Sayfa', href: '/index.php' },
-                { label: 'Blog', href: '/blog.php' },
+                { label: 'Ana Sayfa', href: '/' },
+                { label: 'Blog', href: '/blog' },
                 { label: 'Almanya Fırsat Kartı Nedir?' },
               ]}
             />
@@ -138,3 +138,4 @@ export default function Blog1Page() {
     </main>
   );
 }
+

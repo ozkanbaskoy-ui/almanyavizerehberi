@@ -18,8 +18,8 @@ export default function Blog5Page() {
           <RevealOnScroll>
             <Breadcrumb
               items={[
-                { label: 'Ana Sayfa', href: '/index.php' },
-                { label: 'Blog', href: '/blog.php' },
+                { label: 'Ana Sayfa', href: '/' },
+                { label: 'Blog', href: '/blog' },
                 { label: 'Mavi Diploma Nedir? Ne İşe Yarar?' },
               ]}
             />
@@ -186,3 +186,4 @@ export default function Blog5Page() {
     </main>
   );
 }
+

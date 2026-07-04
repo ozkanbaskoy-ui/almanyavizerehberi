@@ -26,6 +26,7 @@ const NAV_ITEMS: {
       { label: 'Vize Sayfaları', href: '/admin/cms/visas' },
       { label: 'Göç Sonrası Hizmetler', href: '/admin/cms/services' },
       { label: 'Blog Yazıları', href: '/admin/cms/blog' },
+      { label: 'SEO & Sosyal Otomasyon', href: '/admin/marketing' },
       { label: 'SSS (FAQ)', href: '/admin/cms/faq' },
       { label: 'Statik Sayfalar', href: '/admin/cms/pages' },
     ],

@@ -1,38 +1,29 @@
+import fs from 'node:fs';
+import path from 'node:path';
+
 import type { MetadataRoute } from 'next';
+
+import { getAllBlogPosts } from '@/lib/content/blog';
+import { getAllServices } from '@/lib/content/services';
+import { getAllVisas } from '@/lib/content/visas';
+import {
+  ALLOWED_SERVICE_SLUGS,
+  ALLOWED_VISA_SLUGS,
+} from '@/lib/marketing/topicCatalog';
 
 const SITE_URL = 'https://www.almanyavizerehberi.com';
 
-const visaSlugs = [
-  'calisma-vizesi',
-  'mavi-kart-vizesi',
-  'firsat-karti',
-  'mesleki-egitim-vizesi',
-  'aile-birlesimi-vizesi',
-  'yuksekogrenim-vizesi',
-  'dil-kursu-vizesi',
-];
+function fileMtime(filePath: string) {
+  try {
+    return fs.statSync(filePath).mtime;
+  } catch {
+    return new Date();
+  }
+}
 
-const servisSlugs = [
-  'oturum-izni-basvurusu-ve-yenilenmesi',
-  'yabancilar-dairesi-islemleri',
-  'calisma-izni',
-  'sigorta-ve-sosyal-guvenlik',
-  'vergi-islemleri',
-  'dil-egitimi-ve-entegrasyon-kurslari',
-  'barinma-ve-emlak-islemleri',
-  'egitim-ve-cocuklarin-egitimi',
-  'hukuki-danismanlik-ve-haklar',
-  'kulturel-ve-sosyal-rehberlik',
-];
-
-const blogSlugs = [
-  'blog-1',
-  'blog-2',
-  'blog-3',
-  'blog-4',
-  'blog-5',
-  'blog-6',
-];
+function contentMtime(dir: string, slug: string) {
+  return fileMtime(path.join(process.cwd(), 'content', dir, `${slug}.json`));
+}
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages: MetadataRoute.Sitemap = [
@@ -41,6 +32,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 1.0,
+    },
+    {
+      url: `${SITE_URL}/almanya-goc`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.95,
+    },
+    {
+      url: `${SITE_URL}/hizmetler`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.95,
+    },
+    {
+      url: `${SITE_URL}/servisler`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9,
     },
     {
       url: `${SITE_URL}/hakkimizda`,
@@ -80,26 +89,40 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  const visaPages: MetadataRoute.Sitemap = visaSlugs.map((slug) => ({
-    url: `${SITE_URL}/hizmetler/${slug}`,
-    lastModified: new Date(),
+  const visaPages: MetadataRoute.Sitemap = getAllVisas()
+    .filter((item) => ALLOWED_VISA_SLUGS.has(item.slug))
+    .map((item) => ({
+    url: `${SITE_URL}/hizmetler/${item.slug}`,
+    lastModified: contentMtime('visas', item.slug),
     changeFrequency: 'monthly',
-    priority: 0.9,
+    priority:
+      item.slug === 'calisma-vizesi' ||
+      item.slug === 'mavi-kart-vizesi' ||
+      item.slug === 'firsat-karti'
+        ? 0.95
+        : 0.8,
   }));
 
-  const servisPages: MetadataRoute.Sitemap = servisSlugs.map((slug) => ({
-    url: `${SITE_URL}/servisler/${slug}`,
-    lastModified: new Date(),
+  const servicePages: MetadataRoute.Sitemap = getAllServices()
+    .filter((item) => ALLOWED_SERVICE_SLUGS.has(item.slug))
+    .map((item) => ({
+    url: `${SITE_URL}/servisler/${item.slug}`,
+    lastModified: contentMtime('services', item.slug),
     changeFrequency: 'monthly',
-    priority: 0.8,
+    priority:
+      item.slug === 'oturum-izni-basvurusu-ve-yenilenmesi' ||
+      item.slug === 'yabancilar-dairesi-islemleri' ||
+      item.slug === 'calisma-izni'
+        ? 0.9
+        : 0.75,
   }));
 
-  const blogPages: MetadataRoute.Sitemap = blogSlugs.map((slug) => ({
-    url: `${SITE_URL}/blog/${slug}`,
-    lastModified: new Date(),
+  const blogPages: MetadataRoute.Sitemap = getAllBlogPosts().map((item) => ({
+    url: `${SITE_URL}/blog/${item.slug}`,
+    lastModified: item.date ? new Date(item.date) : new Date(),
     changeFrequency: 'monthly',
     priority: 0.6,
   }));
 
-  return [...staticPages, ...visaPages, ...servisPages, ...blogPages];
+  return [...staticPages, ...visaPages, ...servicePages, ...blogPages];
 }

@@ -79,7 +79,7 @@ export default async function BlogDetailPage(props: PageProps) {
             <p className="mt-3 text-sm text-slate-700">
               Görüntülemeye çalıştığınız blog yazısı bulunamadı. Lütfen{' '}
               <Link
-                href="/blog.php"
+                href="/blog"
                 className="text-brand-base hover:text-brand-light"
               >
                 blog sayfasına
@@ -133,8 +133,8 @@ export default async function BlogDetailPage(props: PageProps) {
           <RevealOnScroll>
             <Breadcrumb
               items={[
-                { label: 'Ana Sayfa', href: '/index.php' },
-                { label: 'Blog', href: '/blog.php' },
+                { label: 'Ana Sayfa', href: '/' },
+                { label: 'Blog', href: '/blog' },
                 { label: post.title },
               ]}
             />

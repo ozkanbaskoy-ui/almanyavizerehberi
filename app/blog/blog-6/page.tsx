@@ -18,8 +18,8 @@ export default function Blog6Page() {
           <RevealOnScroll>
             <Breadcrumb
               items={[
-                { label: 'Ana Sayfa', href: '/index.php' },
-                { label: 'Blog', href: '/blog.php' },
+                { label: 'Ana Sayfa', href: '/' },
+                { label: 'Blog', href: '/blog' },
                 { label: 'Almanya Denklik Başvurusu Nedir? Nasıl Yapılır?' },
               ]}
             />
@@ -224,3 +224,4 @@ export default function Blog6Page() {
     </main>
   );
 }
+

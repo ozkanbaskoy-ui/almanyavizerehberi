@@ -8,7 +8,8 @@
     "start": "next start",
     "typecheck": "tsc --noEmit",
     "lint": "npm run typecheck",
-    "scrape": "node scripts/scrape-almanyavizerehberi.js"
+    "scrape": "node scripts/scrape-almanyavizerehberi.js",
+    "social:generate": "tsx scripts/generate-social-automation.ts"
   },
   "keywords": [],
   "author": "",
@@ -38,6 +39,7 @@
     "autoprefixer": "^10.4.23",
     "postcss": "^8.5.6",
     "tailwindcss": "^3.4.17",
+    "tsx": "^4.23.0",
     "typescript": "^5.9.3"
   }
 }

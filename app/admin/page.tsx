@@ -75,6 +75,11 @@ export default function AdminLandingPage() {
       body: 'SEO içeriklerini ve blog yazılarını panelden yönetin.',
     },
     {
+      href: '/admin/marketing',
+      title: 'SEO & Sosyal Otomasyon',
+      body: 'Çalışma vizesi, Mavi Kart ve Fırsat Kart için hazır sosyal medya paketleri oluşturun.',
+    },
+    {
       href: '/admin/settings',
       title: 'E-posta Ayarları',
       body: 'Başvuru bildirimleri, yönetici e-postaları ve şablon metinlerini düzenleyin.',

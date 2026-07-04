@@ -81,7 +81,7 @@ export const metadata: Metadata = {
     template: '%s | Almanya Vize Rehberi',
   },
   description:
-    "Almanya'ya yerleşim, çalışma ve eğitim vizeleri için profesyonel danışmanlık. Çalışma vizesi, Mavi Kart, Fırsat Kartı ve daha fazlası için kapsamlı rehberlik.",
+    'Almanya çalışma vizesi, Mavi Kart, Fırsat Kartı ve göç sonrası işlemler için profesyonel rehberlik.',
   robots: {
     index: true,
     follow: true,
@@ -94,6 +94,8 @@ export const metadata: Metadata = {
     type: 'website',
     siteName: 'Almanya Vize Rehberi',
     url: 'https://www.almanyavizerehberi.com/',
+    description:
+      'Almanya çalışma vizesi, Mavi Kart, Fırsat Kartı ve göç sonrası işlemler için profesyonel rehberlik.',
     images: [
       {
         url: '/og/default-og.webp',

@@ -18,8 +18,8 @@ export default function Blog2Page() {
           <RevealOnScroll>
             <Breadcrumb
               items={[
-                { label: 'Ana Sayfa', href: '/index.php' },
-                { label: 'Blog', href: '/blog.php' },
+                { label: 'Ana Sayfa', href: '/' },
+                { label: 'Blog', href: '/blog' },
                 { label: 'Almanya AB Mavi Kart Nedir ve Nasıl Alınır?' },
               ]}
             />
@@ -139,3 +139,4 @@ export default function Blog2Page() {
     </main>
   );
 }
+

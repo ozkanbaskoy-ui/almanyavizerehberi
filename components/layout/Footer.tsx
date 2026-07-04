@@ -16,23 +16,24 @@ type FooterProps = {
 };
 
 const PRIMARY_LINKS = [
-  { href: '/index.php', label: 'Ana Sayfa' },
-  { href: '/hakkimizda.php', label: 'Hakkımızda' },
+  { href: '/', label: 'Ana Sayfa' },
+  { href: '/hakkimizda', label: 'Hakkımızda' },
+  { href: '/almanya-goc', label: 'Almanya Göç Rehberi' },
   { href: '/uygunluk-testi', label: 'Uygunluk Testi' },
-  { href: '/hizmetler.php?l=1', label: 'Hizmetlerimiz' },
-  { href: '/servisler.php?l=1', label: 'Göç Sonrası' },
-  { href: '/blog.php', label: 'Blog' },
-  { href: '/sss.php', label: 'Sık Sorulan Sorular' },
+  { href: '/hizmetler', label: 'Hizmetlerimiz' },
+  { href: '/servisler', label: 'Göç Sonrası' },
+  { href: '/blog', label: 'Blog' },
+  { href: '/sss', label: 'Sık Sorulan Sorular' },
 ];
 
 const LEGAL_LINKS = [
-  { href: '/basvuru.php', label: 'Randevu Al' },
-  { href: '/iletisim.php', label: 'İletişim' },
-  { href: '/cerezler.php', label: 'Çerez Politikası' },
-  { href: '/kullanim-sartlari.php', label: 'Kullanım Şartları' },
-  { href: '/kvkk.php', label: 'K.V.K.K. Metni' },
-  { href: '/sorumluluk-reddi.php', label: 'Sorumluluk Reddi' },
-  { href: '/gdpr.php', label: 'Data Protection & Privacy' },
+  { href: '/basvuru', label: 'Randevu Al' },
+  { href: '/iletisim', label: 'İletişim' },
+  { href: '/cerezler', label: 'Çerez Politikası' },
+  { href: '/kullanim-sartlari', label: 'Kullanım Şartları' },
+  { href: '/kvkk', label: 'K.V.K.K. Metni' },
+  { href: '/sorumluluk-reddi', label: 'Sorumluluk Reddi' },
+  { href: '/gdpr', label: 'Data Protection & Privacy' },
 ];
 
 export function Footer({ site }: FooterProps) {
@@ -66,7 +67,7 @@ export function Footer({ site }: FooterProps) {
           <div className="grid gap-10 lg:grid-cols-[1.15fr_0.75fr_0.75fr]">
             <div>
               <Link
-                href="/index.php"
+                href="/"
                 className="inline-flex"
               >
                 <Image
