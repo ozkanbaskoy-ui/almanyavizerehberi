@@ -2,20 +2,23 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getServiceBySlug } from '@/lib/content/services';
 import { buildMetadata } from '@/lib/seo/metadata';
+import { ServiceDetailLayout } from '@/components/servisler/ServiceDetailLayout';
 
 type Params = { slug: string };
+type PageProps = { params: Promise<Params> };
 
 export async function generateMetadata(
-  { params }: { params: Params }
+  { params }: PageProps
 ): Promise<Metadata> {
-  if (!params?.slug) {
+  const resolvedParams = await params;
+  if (!resolvedParams?.slug) {
     return {
       title: 'Göç Sonrası Hizmet Detayı | Almanya Vize Rehberi',
       description:
         'Almanya göç sonrası hizmet detayları.',
     };
   }
-  const service = getServiceBySlug(params.slug);
+  const service = getServiceBySlug(resolvedParams.slug);
   return buildMetadata({
     title: service.seoTitle || service.title,
     description: service.seoDescription || '',
@@ -23,21 +26,12 @@ export async function generateMetadata(
   });
 }
 
-export default function ServicePage({ params }: { params: Params }) {
-  const service = getServiceBySlug(params.slug);
+export default async function ServicePage({ params }: PageProps) {
+  const { slug } = await params;
+  const service = getServiceBySlug(slug);
   if (!service) {
     return notFound();
   }
 
-  return (
-    <section className="mx-auto max-w-3xl px-4 py-10">
-      <h1 className="font-heading text-3xl font-semibold text-slate-900">
-        {service.title}
-      </h1>
-      <article
-        className="prose prose-slate mt-6 max-w-none"
-        dangerouslySetInnerHTML={{ __html: service.bodyHtml }}
-      />
-    </section>
-  );
+  return <ServiceDetailLayout service={service} />;
 }

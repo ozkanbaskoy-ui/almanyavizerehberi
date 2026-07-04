@@ -31,7 +31,7 @@ export default function OdemePage() {
 
   return (
     <main id="main">
-      <section className="bg-[radial-gradient(circle_at_top,_var(--color-hero-from)_0,_var(--color-hero-to)_40%,_#020617_95%)] py-16 text-surface-main">
+      <section className="site-hero">
         <div className="mx-auto max-w-[960px] px-4">
           <RevealOnScroll className="text-center">
             <p className="text-xs font-semibold uppercase tracking-[0.25em] text-brand-light/80 font-heading md:text-sm">
@@ -52,7 +52,7 @@ export default function OdemePage() {
                 <Link
                   key={option.slug}
                   href={`/${option.slug}`}
-                  className="rounded-3xl border border-emerald-400/25 bg-slate-900/70 p-6 shadow-xl shadow-black/40 transition hover:-translate-y-1 hover:border-emerald-300/50 hover:bg-slate-900"
+                  className="rounded-2xl border border-emerald-400/25 bg-slate-900/70 p-6 shadow-xl shadow-black/25 transition hover:border-emerald-300/50 hover:bg-slate-900/90"
                 >
                   <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-300">
                     Site içi ödeme
@@ -68,7 +68,7 @@ export default function OdemePage() {
             </div>
 
             {options.length === 0 ? (
-              <div className="rounded-3xl border border-slate-700/60 bg-slate-900/60 px-6 py-8 text-center text-sm text-slate-200 shadow-xl shadow-black/40">
+              <div className="rounded-2xl border border-slate-700/60 bg-slate-900/60 px-6 py-8 text-center text-sm text-slate-200 shadow-xl shadow-black/25">
                 Henüz aktif bir ödeme linki tanımlanmamış. Lütfen AVR Global
                 ekibiyle iletişime geçin.
               </div>

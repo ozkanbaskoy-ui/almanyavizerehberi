@@ -1,14 +1,24 @@
 'use client';
 
+import { useEffect } from 'react';
 import Link from 'next/link';
 
 // Bu çubuk her sayfa yüklemesinde görünür; "Kabul Et"e basınca sadece o oturumda kapanır.
 export function LegalConsentBar() {
+  useEffect(() => {
+    document.body.classList.add('legal-consent-visible');
+
+    return () => {
+      document.body.classList.remove('legal-consent-visible');
+    };
+  }, []);
+
   function handleAccept() {
     const bar = document.getElementById('legal-consent-bar');
     if (bar) {
       bar.style.display = 'none';
     }
+    document.body.classList.remove('legal-consent-visible');
   }
 
   return (
@@ -63,4 +73,3 @@ export function LegalConsentBar() {
     </div>
   );
 }
-

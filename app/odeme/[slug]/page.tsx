@@ -46,7 +46,7 @@ export default async function FixedPaymentPage(props: PageProps) {
 
   return (
     <main id="main">
-      <section className="bg-[radial-gradient(circle_at_top,_var(--color-hero-from)_0,_var(--color-hero-to)_42%,_#020617_95%)] py-12 text-surface-main md:py-16">
+      <section className="site-hero py-12 md:py-16">
         <div className="mx-auto grid max-w-[1180px] gap-8 px-4 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
           <RevealOnScroll>
             <Link
@@ -64,7 +64,7 @@ export default async function FixedPaymentPage(props: PageProps) {
               güvenli şekilde tamamlayabilirsiniz.
             </p>
 
-            <div className="mt-6 rounded-3xl border border-slate-700/70 bg-slate-950/60 p-5 shadow-xl shadow-black/30">
+            <div className="mt-6 rounded-2xl border border-slate-700/70 bg-slate-950/60 p-5 shadow-xl shadow-black/20">
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
                 Ödeme tutarı
               </p>

@@ -38,11 +38,11 @@ export default async function PaymentResultPage(props: PageProps) {
 
   return (
     <main id="main">
-      <section className="min-h-[70vh] bg-[radial-gradient(circle_at_top,_var(--color-hero-from)_0,_var(--color-hero-to)_42%,_#020617_95%)] py-16 text-surface-main">
+      <section className="site-hero min-h-[70vh] py-16">
         <div className="mx-auto max-w-2xl px-4">
           <RevealOnScroll>
-            <div className="rounded-3xl border border-emerald-400/30 bg-slate-950/75 p-6 text-center shadow-2xl shadow-black/50 md:p-8">
-              <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-emerald-500/15 text-2xl text-emerald-300">
+            <div className="rounded-2xl border border-emerald-400/30 bg-slate-950/70 p-6 text-center shadow-2xl shadow-black/25 md:p-8">
+              <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-emerald-500/20 text-2xl text-emerald-300">
                 ✓
               </div>
               <h1 className="mt-5 font-heading text-2xl font-semibold md:text-3xl">

@@ -6,6 +6,7 @@ import { Footer } from '@/components/layout/Footer';
 import { LegalConsentBar } from '@/components/layout/LegalConsentBar';
 import { MainNav } from '@/components/layout/MainNav';
 import { MaintenanceGate } from '@/components/layout/MaintenanceGate';
+import { WhatsAppCommunityBanner } from '@/components/layout/WhatsAppCommunityBanner';
 import { WhatsAppCommunityPopup } from '@/components/layout/WhatsAppCommunityPopup';
 import { WhatsAppFloatingButton } from '@/components/layout/WhatsAppFloatingButton';
 import type { SiteSettings } from '@/lib/settings/site';
@@ -27,6 +28,7 @@ export function AppChrome({ site, children }: AppChromeProps) {
   return (
     <div className="flex min-h-screen flex-col">
       <MainNav site={site} />
+      <WhatsAppCommunityBanner site={site} />
       <main className="flex-1">
         <MaintenanceGate site={site}>{children}</MaintenanceGate>
       </main>

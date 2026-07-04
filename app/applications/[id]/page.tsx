@@ -1,0 +1,14 @@
+import { redirect } from 'next/navigation';
+
+type PageProps = {
+  params: Promise<{
+    id: string;
+  }>;
+};
+
+export default async function ApplicationDetailShortcutPage({
+  params,
+}: PageProps) {
+  const { id } = await params;
+  redirect(`/crm/leads/${id}`);
+}

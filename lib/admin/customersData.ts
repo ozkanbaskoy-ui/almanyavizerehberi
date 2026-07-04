@@ -1,4 +1,5 @@
 import { getSupabaseServerClient } from '@/lib/db/supabaseServer';
+import { getLocalCustomers } from '@/lib/admin/localCustomersStore';
 
 export type CustomerRecord = {
   id: string;
@@ -9,9 +10,8 @@ export type CustomerRecord = {
   stripePaymentLinkUrl: string | null;
 };
 
-// Admin ekranlari icin musteri listesi ceker.
-// Supabase yapilandirilamadiysa veya tablo yoksa bos liste dondururuz ve
-// arayuzde aciklayici mesaj gosteririz.
+// Admin ekranları için müşteri listesi çeker.
+// Supabase yoksa lokal geliştirme deposu kullanılır.
 export async function fetchCustomers(): Promise<CustomerRecord[]> {
   try {
     const supabase = getSupabaseServerClient();
@@ -25,7 +25,7 @@ export async function fetchCustomers(): Promise<CustomerRecord[]> {
       .limit(200);
 
     if (error || !data) {
-      throw error ?? new Error('Bos sonuc');
+      throw error ?? new Error('Boş sonuç');
     }
 
     return data.map((row) => ({
@@ -37,7 +37,6 @@ export async function fetchCustomers(): Promise<CustomerRecord[]> {
       stripePaymentLinkUrl: (row as any).stripe_payment_link_url ?? null,
     }));
   } catch {
-    return [];
+    return getLocalCustomers();
   }
 }
-

@@ -15,18 +15,18 @@ export function CalendlyConsentGate({ url }: CalendlyConsentGateProps) {
 
   return (
     <>
-      {/* Calendly her zaman görünür */}
+      {/* Google Calendar her zaman görünür */}
       <div className="relative mt-10">
         <CalendlyEmbed url={url} />
 
-        {/* Rıza verilene kadar Calendly üzerine tıklama kilidi */}
+        {/* Rıza verilene kadar Google Calendar üzerine tıklama kilidi */}
         {!consented && (
           <>
             <div
-              className="absolute inset-0 z-20 cursor-pointer rounded-[2.5rem] bg-transparent"
+              className="absolute inset-0 z-20 cursor-pointer rounded-2xl bg-transparent"
               onClick={() => setShowModal(true)}
             />
-            <div className="pointer-events-none absolute inset-0 z-10 rounded-[2.5rem] border-2 border-dashed border-brand-red/40" />
+            <div className="pointer-events-none absolute inset-0 z-10 rounded-2xl border-2 border-dashed border-brand-red/40" />
             <div className="pointer-events-none absolute inset-x-6 bottom-6 z-10 flex items-center justify-between rounded-2xl bg-slate-900/85 px-4 py-3 text-[11px] text-slate-100 shadow-lg md:text-xs">
               <span>
                 Randevu almadan önce danışmanlık ve hizmet şartlarını okuyup
@@ -41,21 +41,40 @@ export function CalendlyConsentGate({ url }: CalendlyConsentGateProps) {
       </div>
 
       {showModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-4">
-          <div className="max-h-[80vh] w-full max-w-3xl overflow-hidden rounded-3xl bg-white shadow-[0_24px_70px_rgba(15,23,42,0.7)]">
-            <div className="flex items-center justify-between border-b border-slate-200 px-5 py-3">
-              <h2 className="text-sm font-semibold text-slate-900 md:text-base">
-                Danışmanlık Ön Görüşme ve Hizmet Şartları Onay Metni
-              </h2>
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/60 px-4 py-6 backdrop-blur-sm">
+          <div className="relative flex max-h-[86vh] w-full max-w-4xl flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-[0_24px_70px_rgba(15,23,42,0.18)]">
+            <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-brand-base via-brand-light to-emerald-400" />
+
+            <div className="flex items-start justify-between gap-4 border-b border-slate-200 px-5 py-4 sm:px-6 sm:py-5">
+              <div>
+                <p className="eyebrow">Randevu Onayı</p>
+                <h2 className="mt-2 font-heading text-xl font-semibold text-brand-dark md:text-2xl">
+                  Danışmanlık Ön Görüşme ve Hizmet Şartları Onay Metni
+                </h2>
+              </div>
               <button
                 type="button"
                 onClick={() => setShowModal(false)}
-                className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-semibold text-slate-700 hover:bg-slate-100"
+                className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-slate-200 bg-surface-soft text-slate-500 transition hover:border-slate-300 hover:bg-white hover:text-slate-900"
+                aria-label="Pencereyi kapat"
               >
-                Kapat
+                <svg
+                  className="h-4 w-4"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M6 6l12 12M18 6 6 18"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                  />
+                </svg>
               </button>
             </div>
-            <div className="max-h-[70vh] space-y-3 overflow-y-auto px-5 py-4 text-xs leading-relaxed text-slate-800 md:text-sm">
+
+            <div className="flex-1 space-y-3 overflow-y-auto px-5 py-4 text-xs leading-relaxed text-slate-700 md:px-6 md:py-5 md:text-sm">
               <p>
                 Lütfen aşağıdaki maddeleri dikkatle okuyunuz. Ödeme işleminin
                 tamamlanması ve randevunun oluşturulması ile birlikte bu
@@ -168,8 +187,8 @@ export function CalendlyConsentGate({ url }: CalendlyConsentGateProps) {
                 </li>
               </ul>
 
-              <div className="mt-4 flex flex-col gap-3 border-t border-slate-200 pt-3">
-                <label className="flex items-start gap-2 text-xs text-slate-800 md:text-sm">
+              <div className="mt-4 flex flex-col gap-4 border-t border-slate-200 pt-4 sm:flex-row sm:items-center sm:justify-between">
+                <label className="flex items-start gap-2 text-xs text-slate-700 md:text-sm">
                   <input
                     type="checkbox"
                     className="mt-0.5 h-3.5 w-3.5 rounded border-slate-400 text-brand-red focus:ring-brand-red"
@@ -186,7 +205,7 @@ export function CalendlyConsentGate({ url }: CalendlyConsentGateProps) {
                   <button
                     type="button"
                     onClick={() => setShowModal(false)}
-                    className="rounded-full border border-slate-300 bg-white px-4 py-1.5 text-xs font-semibold text-slate-700 hover:bg-slate-50"
+                    className="btn-secondary text-xs"
                   >
                     Vazgeç
                   </button>
@@ -198,7 +217,7 @@ export function CalendlyConsentGate({ url }: CalendlyConsentGateProps) {
                       setConsented(true);
                       setShowModal(false);
                     }}
-                    className="rounded-full bg-brand-red px-5 py-1.5 text-xs font-semibold uppercase tracking-wide text-white shadow-sm transition disabled:cursor-not-allowed disabled:bg-slate-400 hover:bg-red-700"
+                    className="btn-primary text-xs uppercase tracking-wide disabled:cursor-not-allowed disabled:opacity-60"
                   >
                     Onaylıyorum
                   </button>
@@ -211,4 +230,3 @@ export function CalendlyConsentGate({ url }: CalendlyConsentGateProps) {
     </>
   );
 }
-

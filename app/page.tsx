@@ -1,7 +1,32 @@
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 
 import { getAllVisas } from '@/lib/content/visas';
+
+export const metadata: Metadata = {
+  title: 'Almanya Vize Rehberi - Profesyonel Danışmanlık',
+  description:
+    "Almanya'ya yerleşim, çalışma ve eğitim vizeleri için profesyonel danışmanlık. Çalışma vizesi, Mavi Kart, Fırsat Kartı ve daha fazlası için kapsamlı rehberlik.",
+  alternates: {
+    canonical: 'https://www.almanyavizerehberi.com/',
+  },
+  openGraph: {
+    type: 'website',
+    url: 'https://www.almanyavizerehberi.com/',
+    title: 'Almanya Vize Rehberi - Profesyonel Danışmanlık',
+    description:
+      "Almanya'ya yerleşim, çalışma ve eğitim vizeleri için profesyonel danışmanlık. Çalışma vizesi, Mavi Kart, Fırsat Kartı ve daha fazlası için kapsamlı rehberlik.",
+    images: [
+      {
+        url: '/og/default-og.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Almanya Vize Rehberi',
+      },
+    ],
+  },
+};
 import {
   fetchLatestVideos,
   type YouTubeVideo,
@@ -68,152 +93,162 @@ export default async function HomePage() {
     image: string;
   })[];
 
+  const websiteJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Almanya Vize Rehberi',
+    url: 'https://www.almanyavizerehberi.com',
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: 'https://www.almanyavizerehberi.com/hizmetler/{search_term_string}',
+      },
+      'query-input': 'required name=search_term_string',
+    },
+  };
+
   return (
     <main id="main" className="bg-surface-main">
-      {/* HERO */}
-      <section
-        id="home-hero"
-        className="relative overflow-hidden bg-[radial-gradient(circle_at_top,_var(--color-hero-from)_0,_var(--color-hero-to)_50%,_#020617_95%)] text-surface-main"
-      >
-        <div className="mx-auto flex max-w-[1200px] flex-col gap-10 px-4 pt-14 pb-12 md:flex-row md:items-center">
-          <RevealOnScroll className="order-2 md:order-1 md:w-1/2">
-            <h1 className="mt-4 font-heading text-4xl font-semibold tracking-tight md:text-5xl lg:text-6xl">
-              {homeSettings.hero.title}
-            </h1>
-            <p className="mt-5 text-base leading-relaxed text-surface-main/85">
-              {homeSettings.hero.body}
-            </p>
-            <div className="mt-8 flex flex-wrap gap-4">
-              <Link
-                href="/basvuru.php"
-                className="inline-flex items-center justify-center rounded-full bg-gradient-to-br from-brand-base to-brand-light px-7 py-3 text-sm font-ui font-semibold uppercase tracking-wide text-white shadow-lg shadow-brand-dark/40 transition hover:from-brand-light hover:to-brand-base"
-              >
-                {homeSettings.hero.primaryCtaText}
-              </Link>
-              <Link
-                href="#home-services"
-                className="inline-flex items-center justify-center rounded-full border border-surface-main/20 bg-white/5 px-7 py-3 text-sm font-ui font-semibold uppercase tracking-wide text-surface-main backdrop-blur-sm transition hover:bg-white/10"
-              >
-                {homeSettings.hero.secondaryCtaText}
-              </Link>
-            </div>
-          </RevealOnScroll>
-
-          <RevealOnScroll className="order-1 md:order-2 md:w-1/2" delay={0.15}>
-            <HeroParallaxImage />
-          </RevealOnScroll>
-        </div>
-      </section>
-
-      {/* VİDEO REHBERLER */}
-      <section
-        id="home-videos"
-        className="relative overflow-hidden bg-[radial-gradient(circle_at_top,_var(--color-hero-to)_0,_var(--color-hero-from)_40%,_var(--color-video-bg)_100%)] py-20"
-      >
-        <div className="mx-auto max-w-[1200px] px-4">
-          {/* Bölüm başlığı – koyu mavi zemin üzerinde beyaz metin */}
-          <RevealOnScroll className="text-center">
-            <h2 className="text-3xl font-semibold text-surface-main md:text-4xl">
-              {homeSettings.videos.title}
-            </h2>
-            <p className="mt-3 mx-auto max-w-2xl text-base text-surface-main/80 md:text-lg">
-              {homeSettings.videos.body}
-            </p>
-          </RevealOnScroll>
-
-          {/* Slider kartı – beyaz panel */}
-          <RevealOnScroll className="mt-6 md:mt-10">
-            <div className="relative overflow-hidden rounded-[2.25rem] border border-border-subtle/70 bg-surface-main px-4 py-10 shadow-[0_26px_80px_rgba(15,23,42,0.5)] md:px-10 md:py-10">
-              <div className="pointer-events-none absolute -top-24 -left-16 h-56 w-56 rounded-full bg-brand-base/10 blur-3xl" />
-              <div className="pointer-events-none absolute -bottom-24 -right-16 h-56 w-56 rounded-full bg-brand-light/10 blur-3xl" />
-              <div className="relative">
-                <VideoSlider
-                  videos={videos.map((v) => ({
-                    id: v.id,
-                    title: v.title,
-                    description: v.description,
-                  }))}
-                />
-              </div>
-            </div>
-          </RevealOnScroll>
-        </div>
-      </section>
-
-      {/* HİZMETLERİMİZ - ÖNE ÇIKANLAR */}
-      <section
-        id="home-services"
-        className="relative overflow-hidden bg-[radial-gradient(circle_at_top,_var(--color-hero-from)_0,_var(--color-hero-to)_40%,_var(--color-video-bg)_100%)] pt-10 pb-6 md:pt-20 md:pb-10"
-      >
-        <div className="pointer-events-none absolute -left-24 top-0 h-64 w-64 rounded-full bg-brand-base/20 blur-3xl" />
-        <div className="pointer-events-none absolute -right-24 bottom-0 h-64 w-64 rounded-full bg-brand-light/25 blur-3xl" />
-        <div className="relative mx-auto max-w-[1200px] px-4">
-          {/* Bölüm başlığı – hero gibi lacivert zemin üzerinde beyaz metin */}
-          <RevealOnScroll className="text-center">
-            <p className="font-heading text-xs font-semibold uppercase tracking-[0.25em] text-surface-main/70 md:text-sm">
-              {homeSettings.services.kicker}
-            </p>
-            <h2 className="mt-4 font-heading text-3xl font-semibold text-surface-main md:text-4xl">
-              {homeSettings.services.title}
-            </h2>
-            <p className="mt-4 mx-auto max-w-2xl text-base text-surface-main/80 md:text-lg">
-              {homeSettings.services.body}
-            </p>
-          </RevealOnScroll>
-
-          {/* Kartlar – beyaz panel içinde */}
-          <RevealOnScroll className="mt-6 md:mt-10">
-            <div className="relative overflow-hidden rounded-[2.25rem] border border-border-subtle/70 bg-surface-main px-4 py-10 shadow-[0_26px_80px_rgba(15,23,42,0.5)] md:px-10 md:py-10">
-              <div className="pointer-events-none absolute -top-24 -right-24 h-64 w-64 rounded-full bg-brand-light/10 blur-3xl" />
-              <div className="pointer-events-none absolute -bottom-24 -left-24 h-64 w-64 rounded-full bg-brand-base/10 blur-3xl" />
-              <div className="relative grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-                {featuredVisas.map((visa, index) => (
-                  <RevealOnScroll key={visa.slug} delay={0.05 * index}>
-                    <article className="group flex h-full flex-col overflow-hidden rounded-3xl border border-border-subtle bg-surface-main shadow-[0_18px_60px_rgba(15,23,42,0.18)] transition hover:-translate-y-1.5 hover:shadow-[0_28px_80px_rgba(15,23,42,0.3)]">
-                      <div className="relative h-44 w-full overflow-hidden">
-                        <Image
-                          src={visa.image}
-                          alt={visa.title}
-                          fill
-                          className="object-cover transition-transform duration-500 group-hover:scale-105"
-                        />
-                      </div>
-                      <div className="flex flex-1 flex-col p-5">
-                        <h3 className="font-heading text-lg font-semibold text-brand-dark md:text-xl">
-                          {visa.title}
-                        </h3>
-                        <p className="mt-2 line-clamp-4 text-[15px] leading-relaxed text-slate-800 md:text-base">
-                          {visa.seoDescription}
-                        </p>
-                        <div className="mt-4 flex items-center justify-between">
-                          <Link
-                            href={`/hizmetler/${visa.slug}`}
-                            className="text-xs font-ui font-semibold text-brand-base hover:text-brand-light"
-                          >
-                            Detayları Gör
-                          </Link>
-                          <span className="text-xs text-slate-500">
-                            Vize • Almanya
-                          </span>
-                        </div>
-                      </div>
-                    </article>
-                  </RevealOnScroll>
-                ))}
-              </div>
-
-              <RevealOnScroll className="relative mt-10 text-center">
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+      />
+      <div className="home-flow">
+        {/* HERO */}
+        <section id="home-hero" className="home-flow-section text-surface-main">
+          <div className="mx-auto grid min-h-[auto] max-w-[1200px] items-center gap-4 px-4 pb-10 pt-4 md:min-h-[500px] md:grid-cols-[1fr_0.92fr] md:gap-14 md:pt-16 md:pb-20">
+            <RevealOnScroll className="order-2 max-w-[620px] md:order-1">
+              <h1 className="font-heading text-[2.18rem] font-semibold leading-[1.04] tracking-normal md:text-5xl lg:text-[4rem]">
+                {homeSettings.hero.title}
+              </h1>
+              <p className="mt-3 max-w-[560px] text-base leading-7 text-surface-main/85 md:mt-5 md:text-lg">
+                {homeSettings.hero.body}
+              </p>
+              <div className="mt-5 flex flex-col items-stretch gap-3 sm:flex-row sm:flex-wrap sm:items-center md:mt-8 md:gap-4">
                 <Link
-                  href="/hizmetler.php?l=1"
-                  className="inline-flex items-center justify-center rounded-full border border-border-subtle bg-surface-main px-7 py-2.5 text-xs font-ui font-semibold uppercase tracking-wide text-brand-dark shadow-sm hover:border-brand-base hover:text-brand-base hover:shadow-md"
+                  href="/basvuru.php"
+                  className="inline-flex items-center justify-center rounded-full bg-gradient-to-br from-brand-base to-brand-light px-7 py-3 text-sm font-ui font-semibold uppercase tracking-wide text-white shadow-lg shadow-brand-dark/25 transition hover:from-brand-light hover:to-brand-base"
                 >
-                  Tüm Vize Hizmetlerini Gör
+                  {homeSettings.hero.primaryCtaText}
                 </Link>
-              </RevealOnScroll>
-            </div>
-          </RevealOnScroll>
-        </div>
-      </section>
+                <Link
+                  href="/uygunluk-testi"
+                  className="inline-flex items-center justify-center rounded-full bg-white px-7 py-3 text-sm font-ui font-semibold uppercase tracking-wide text-brand-dark shadow-lg shadow-brand-dark/20 transition hover:bg-surface-soft hover:shadow-brand-dark/25"
+                >
+                  Vize Uygunluk Testi
+                </Link>
+              </div>
+            </RevealOnScroll>
+
+            <RevealOnScroll className="order-1 md:order-2" delay={0.15}>
+              <HeroParallaxImage />
+            </RevealOnScroll>
+          </div>
+        </section>
+
+        <div className="home-section-divider" aria-hidden="true" />
+
+        {/* VİDEO REHBERLER */}
+        <section id="home-videos" className="home-flow-section py-20">
+          <div className="mx-auto max-w-[1200px] px-4">
+            <RevealOnScroll className="text-center">
+              <h2 className="text-3xl font-semibold text-surface-main md:text-4xl">
+                {homeSettings.videos.title}
+              </h2>
+              <p className="mt-3 mx-auto max-w-2xl text-base text-surface-main/80 md:text-lg">
+                {homeSettings.videos.body}
+              </p>
+            </RevealOnScroll>
+
+            <RevealOnScroll className="mt-6 md:mt-10">
+              <div className="home-panel home-video-panel">
+                <div className="relative">
+                  <VideoSlider
+                    videos={videos.map((v) => ({
+                      id: v.id,
+                      title: v.title,
+                      description: v.description,
+                    }))}
+                  />
+                </div>
+              </div>
+            </RevealOnScroll>
+          </div>
+        </section>
+
+        <div className="home-section-divider" aria-hidden="true" />
+
+        {/* HİZMETLERİMİZ - ÖNE ÇIKANLAR */}
+        <section
+          id="home-services"
+          className="home-flow-section pt-10 pb-6 md:pt-20 md:pb-10"
+        >
+          <div className="relative mx-auto max-w-[1200px] px-4">
+            <RevealOnScroll className="text-center">
+              <p className="font-heading text-xs font-semibold uppercase tracking-[0.25em] text-surface-main/70 md:text-sm">
+                {homeSettings.services.kicker}
+              </p>
+              <h2 className="mt-4 font-heading text-3xl font-semibold text-surface-main md:text-4xl">
+                {homeSettings.services.title}
+              </h2>
+              <p className="mt-4 mx-auto max-w-2xl text-base text-surface-main/80 md:text-lg">
+                {homeSettings.services.body}
+              </p>
+            </RevealOnScroll>
+
+            <RevealOnScroll className="mt-6 md:mt-10">
+              <div className="home-panel">
+                <div className="relative grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+                  {featuredVisas.map((visa, index) => (
+                    <RevealOnScroll key={visa.slug} delay={0.05 * index}>
+                      <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border-subtle bg-surface-main shadow-soft transition hover:border-brand-base/40 hover:shadow-md">
+                        <div className="relative h-44 w-full overflow-hidden">
+                          <Image
+                            src={visa.image}
+                            alt={visa.title}
+                            fill
+                            className="object-cover transition-transform duration-500 group-hover:scale-105"
+                          />
+                        </div>
+                        <div className="flex flex-1 flex-col p-5">
+                          <h3 className="font-heading text-lg font-semibold text-brand-dark md:text-xl">
+                            {visa.title}
+                          </h3>
+                          <p className="mt-2 line-clamp-4 text-[15px] leading-relaxed text-slate-800 md:text-base">
+                            {visa.seoDescription}
+                          </p>
+                          <div className="mt-4 flex items-center justify-between">
+                            <Link
+                              href="/uygunluk-testi"
+                              className="text-xs font-ui font-semibold text-brand-base hover:text-brand-light"
+                            >
+                              Detayları Gör
+                            </Link>
+                            <span className="text-xs text-slate-500">
+                              Vize • Almanya
+                            </span>
+                          </div>
+                        </div>
+                      </article>
+                    </RevealOnScroll>
+                  ))}
+                </div>
+
+                <RevealOnScroll className="relative mt-10 text-center">
+                  <Link
+                    href="/hizmetler.php?l=1"
+                    className="inline-flex items-center justify-center rounded-full border border-border-subtle bg-surface-main px-7 py-2.5 text-xs font-ui font-semibold uppercase tracking-wide text-brand-dark shadow-sm hover:border-brand-base hover:text-brand-base hover:shadow-md"
+                  >
+                    Tüm Vize Hizmetlerini Gör
+                  </Link>
+                </RevealOnScroll>
+              </div>
+            </RevealOnScroll>
+          </div>
+        </section>
+      </div>
     </main>
   );
 }

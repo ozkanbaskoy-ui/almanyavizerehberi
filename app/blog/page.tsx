@@ -9,6 +9,17 @@ export const metadata: Metadata = {
   title: 'Blog Yazıları - Almanya Vize Rehberi',
   description:
     "Almanya Vize Rehberi olarak Almanya'ya göç, çalışma, eğitim ve Almanya'da günlük yaşamla ilgili güncel blog yazıları paylaşıyoruz.",
+  alternates: {
+    canonical: 'https://www.almanyavizerehberi.com/blog',
+  },
+  openGraph: {
+    type: 'website',
+    title: 'Blog Yazıları - Almanya Vize Rehberi',
+    description:
+      "Almanya Vize Rehberi olarak Almanya'ya göç, çalışma, eğitim ve Almanya'da günlük yaşamla ilgili güncel blog yazıları paylaşıyoruz.",
+    url: 'https://www.almanyavizerehberi.com/blog',
+    images: [{ url: '/og/default-og.webp', width: 1200, height: 630, alt: 'Blog Yazıları' }],
+  },
 };
 
 export default function BlogPage() {
@@ -33,13 +44,13 @@ export default function BlogPage() {
   return (
     <main className="bg-surface-main">
       {/* Hero */}
-      <section className="relative overflow-hidden bg-[radial-gradient(circle_at_top,_var(--color-hero-from)_0,_var(--color-hero-to)_40%,_#020617_95%)] py-16 text-surface-main">
-        <div className="mx-auto max-w-[1200px] px-4">
+      <section className="site-hero">
+        <div className="site-container">
           <RevealOnScroll>
-            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-brand-light/80">
+            <p className="eyebrow-on-dark">
               Blog Yazıları
             </p>
-            <h1 className="mt-4 text-3xl font-semibold md:text-4xl">
+            <h1 className="mt-4 font-heading text-3xl font-semibold tracking-tight md:text-4xl lg:text-5xl">
               Blog Yazılarımız
             </h1>
             <p className="mt-4 max-w-2xl text-sm text-surface-main/80 md:text-base">
@@ -53,7 +64,7 @@ export default function BlogPage() {
 
       {/* Liste */}
       <section className="bg-surface-soft py-16">
-        <div className="mx-auto max-w-[1200px] px-4">
+        <div className="site-container">
           <div className="grid gap-8 md:grid-cols-3">
             {posts.map((post, index) => {
               const excerptSource = getExcerpt(post);
@@ -64,14 +75,14 @@ export default function BlogPage() {
 
               return (
                 <RevealOnScroll key={post.slug} delay={index * 0.04}>
-                  <article className="flex h-full flex-col overflow-hidden rounded-3xl border border-border-subtle bg-surface-main shadow-soft">
+                  <article className="interactive-panel group flex h-full flex-col overflow-hidden">
                     {post.image && (
-                      <div className="relative h-44 w-full">
+                      <div className="relative h-44 w-full overflow-hidden">
                         <Image
                           src={post.image}
                           alt={post.title}
                           fill
-                          className="object-cover"
+                          className="object-cover transition duration-500 group-hover:scale-[1.03]"
                         />
                       </div>
                     )}
@@ -108,4 +119,3 @@ export default function BlogPage() {
     </main>
   );
 }
-

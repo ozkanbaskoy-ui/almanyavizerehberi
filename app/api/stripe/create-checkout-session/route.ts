@@ -22,7 +22,7 @@ export async function POST(request: Request) {
     return NextResponse.json(
       {
         error:
-          'Stripe anahtarlari tanimli degil. STRIPE_SECRET_KEY degerini .env.local dosyasinda ayarlayin.',
+          'Stripe anahtarları tanımlı değil. STRIPE_SECRET_KEY değerini .env.local dosyasında ayarlayın.',
       },
       { status: 500 },
     );
@@ -39,7 +39,7 @@ export async function POST(request: Request) {
 
   if (!optionId) {
     return NextResponse.json(
-      { error: 'Gecerli bir odeme secenegi belirtilmedi.' },
+      { error: 'Geçerli bir ödeme seçeneği belirtilmedi.' },
       { status: 400 },
     );
   }
@@ -59,7 +59,7 @@ export async function POST(request: Request) {
 
   if (!label) {
     return NextResponse.json(
-      { error: 'Secilen odeme secenegi icin baslik tanimli degil.' },
+      { error: 'Seçilen ödeme seçeneği için başlık tanımlı değil.' },
       { status: 400 },
     );
   }
@@ -74,7 +74,7 @@ export async function POST(request: Request) {
     return NextResponse.json(
       {
         error:
-          'Secilen odeme secenegi icin gecerli bir tutar tanimli degil. Lutfen admin panelinden tutari sayisal olarak girin (orn: 99 veya 99.00).',
+          'Seçilen ödeme seçeneği için geçerli bir tutar tanımlı değil. Lütfen admin panelinden tutarı sayısal olarak girin (örn. 99 veya 99.00).',
       },
       { status: 400 },
     );
@@ -112,7 +112,7 @@ export async function POST(request: Request) {
     });
 
     if (!session.url) {
-      throw new Error('Stripe oturum URL\'i olusmadi.');
+      throw new Error('Stripe oturum URL\'i oluşmadı.');
     }
 
     return NextResponse.json({ url: session.url });
@@ -122,10 +122,9 @@ export async function POST(request: Request) {
         error:
           err instanceof Error
             ? err.message
-            : 'Stripe oturumu olusturulurken bir hata olustu.',
+            : 'Stripe oturumu oluşturulurken bir hata oluştu.',
       },
       { status: 500 },
     );
   }
 }
-

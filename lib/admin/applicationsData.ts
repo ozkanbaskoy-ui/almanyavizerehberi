@@ -5,6 +5,11 @@ import {
   type MockApplication,
   type MockApplicationEvent,
 } from '@/lib/admin/mockData';
+import {
+  getLocalApplicationById,
+  getLocalApplicationEvents,
+  getLocalApplications,
+} from '@/lib/admin/localApplicationsStore';
 import { getSupabaseServerClient } from '@/lib/db/supabaseServer';
 
 export type ApplicationRecord = MockApplication;
@@ -25,7 +30,7 @@ export async function fetchApplications(): Promise<ApplicationRecord[]> {
       throw error ?? new Error('Boş sonuç');
     }
 
-    return data.map((row) => ({
+    const remote = data.map((row) => ({
       id: row.id,
       createdAt: row.created_at,
       fullName: row.full_name,
@@ -36,8 +41,17 @@ export async function fetchApplications(): Promise<ApplicationRecord[]> {
       paymentStatus: row.payment_status,
       source: row.source,
     }));
+    const local = getLocalApplications();
+    const seen = new Set(remote.map((app) => app.id));
+
+    return [...remote, ...local.filter((app) => !seen.has(app.id))].sort(
+      (a, b) =>
+        new Date(b.createdAt).getTime() -
+        new Date(a.createdAt).getTime(),
+    );
   } catch {
-    return getMockApplications();
+    const local = getLocalApplications();
+    return local.length > 0 ? local : getMockApplications();
   }
 }
 
@@ -70,7 +84,7 @@ export async function fetchApplicationById(
       source: data.source,
     };
   } catch {
-    return getMockApplicationById(id) ?? null;
+    return getLocalApplicationById(id) ?? getMockApplicationById(id) ?? null;
   }
 }
 
@@ -89,15 +103,26 @@ export async function fetchApplicationEvents(
       throw error ?? new Error('Boş sonuç');
     }
 
-    return data.map((row) => ({
+    const remoteEvents = data.map((row) => ({
       id: row.id,
       applicationId: row.application_id,
       createdAt: row.created_at,
       type: row.type,
       message: row.message,
     }));
+    const localEvents = getLocalApplicationEvents(applicationId);
+    const seen = new Set(remoteEvents.map((event) => event.id));
+
+    return [...remoteEvents, ...localEvents.filter((event) => !seen.has(event.id))]
+      .sort(
+        (a, b) =>
+          new Date(a.createdAt).getTime() -
+          new Date(b.createdAt).getTime(),
+      );
   } catch {
-    return getMockEventsForApplication(applicationId);
+    const local = getLocalApplicationEvents(applicationId);
+    return local.length > 0
+      ? local
+      : getMockEventsForApplication(applicationId);
   }
 }
-

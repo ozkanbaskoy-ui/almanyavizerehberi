@@ -1,8 +1,9 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 import type { SiteSettings } from '@/lib/settings/site';
+import { normalizeExternalUrl } from '@/lib/whatsappCommunity';
 
 export default function SiteAdminPage() {
   const [form, setForm] = useState<SiteSettings | null>(null);
@@ -10,6 +11,17 @@ export default function SiteAdminPage() {
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState<string | null>(null);
+  const normalizedGroupUrl = useMemo(
+    () => normalizeExternalUrl(form?.whatsappGroupUrl),
+    [form?.whatsappGroupUrl],
+  );
+  const normalizedChannelUrl = useMemo(
+    () => normalizeExternalUrl(form?.whatsappChannelUrl),
+    [form?.whatsappChannelUrl],
+  );
+  const whatsappUrlsMatch =
+    Boolean(normalizedGroupUrl) &&
+    normalizedGroupUrl === normalizedChannelUrl;
 
   useEffect(() => {
     let cancelled = false;
@@ -91,13 +103,14 @@ export default function SiteAdminPage() {
   }
 
   return (
-    <main className="mx-auto max-w-[960px] px-4 py-10">
-      <h1 className="text-3xl font-semibold text-brand-dark">
+    <main className="admin-page max-w-[960px] py-10">
+      <h1 className="admin-page-title text-3xl">
         Site Genel Ayarları
       </h1>
-      <p className="mt-3 text-sm text-slate-600">
-        Buradan site adı, iletişim bilgileri, sosyal medya adresleri ve Calendly
-        / YouTube entegrasyon ayarlarını kod yazmadan güncelleyebilirsiniz.
+      <p className="admin-page-subtitle mt-3">
+        Buradan site adı, iletişim bilgileri, sosyal medya adresleri, Google
+        Calendar randevu linki ve YouTube entegrasyon ayarlarını kod yazmadan
+        güncelleyebilirsiniz.
       </p>
 
       {error && (
@@ -108,19 +121,19 @@ export default function SiteAdminPage() {
 
       <form onSubmit={handleSubmit} className="mt-8 space-y-8">
         {/* Genel Bilgiler */}
-        <section className="space-y-4 rounded-2xl border border-border-subtle bg-surface-main p-6">
+        <section className="panel space-y-4 p-6">
           <h2 className="text-lg font-semibold text-brand-dark">
             Genel Bilgiler
           </h2>
 
           <div className="grid gap-4 md:grid-cols-2">
             <div>
-              <label className="block text-xs font-semibold uppercase tracking-wide text-slate-500">
+              <label className="form-label">
                 Site Adı
               </label>
               <input
                 type="text"
-                className="mt-1 w-full rounded-xl border border-border-subtle bg-surface-soft px-3 py-2 text-sm"
+                className="form-input"
                 value={form.siteName}
                 onChange={(e) =>
                   setForm({ ...form, siteName: e.target.value })
@@ -128,12 +141,12 @@ export default function SiteAdminPage() {
               />
             </div>
             <div>
-              <label className="block text-xs font-semibold uppercase tracking-wide text-slate-500">
+              <label className="form-label">
                 Kısa Slogan
               </label>
               <input
                 type="text"
-                className="mt-1 w-full rounded-xl border border-border-subtle bg-surface-soft px-3 py-2 text-sm"
+                className="form-input"
                 value={form.tagline}
                 onChange={(e) =>
                   setForm({ ...form, tagline: e.target.value })
@@ -144,19 +157,19 @@ export default function SiteAdminPage() {
         </section>
 
         {/* İletişim Bilgileri */}
-        <section className="space-y-4 rounded-2xl border border-border-subtle bg-surface-main p-6">
+        <section className="panel space-y-4 p-6">
           <h2 className="text-lg font-semibold text-brand-dark">
             İletişim Bilgileri
           </h2>
 
           <div className="grid gap-4 md:grid-cols-2">
             <div>
-              <label className="block text-xs font-semibold uppercase tracking-wide text-slate-500">
+              <label className="form-label">
                 E-posta
               </label>
               <input
                 type="email"
-                className="mt-1 w-full rounded-xl border border-border-subtle bg-surface-soft px-3 py-2 text-sm"
+                className="form-input"
                 value={form.contactEmail}
                 onChange={(e) =>
                   setForm({ ...form, contactEmail: e.target.value })
@@ -164,12 +177,12 @@ export default function SiteAdminPage() {
               />
             </div>
             <div>
-              <label className="block text-xs font-semibold uppercase tracking-wide text-slate-500">
+              <label className="form-label">
                 Telefon
               </label>
               <input
                 type="text"
-                className="mt-1 w-full rounded-xl border border-border-subtle bg-surface-soft px-3 py-2 text-sm"
+                className="form-input"
                 value={form.contactPhone}
                 onChange={(e) =>
                   setForm({ ...form, contactPhone: e.target.value })
@@ -179,12 +192,12 @@ export default function SiteAdminPage() {
           </div>
 
           <div>
-            <label className="block text-xs font-semibold uppercase tracking-wide text-slate-500">
+            <label className="form-label">
               WhatsApp Numarası (uluslararası format)
             </label>
             <input
               type="text"
-              className="mt-1 w-full rounded-xl border border-border-subtle bg-surface-soft px-3 py-2 text-sm"
+              className="form-input"
               value={form.whatsappNumber}
               onChange={(e) =>
                 setForm({ ...form, whatsappNumber: e.target.value })
@@ -194,19 +207,19 @@ export default function SiteAdminPage() {
         </section>
 
         {/* Sosyal Medya */}
-        <section className="space-y-4 rounded-2xl border border-border-subtle bg-surface-main p-6">
+        <section className="panel space-y-4 p-6">
           <h2 className="text-lg font-semibold text-brand-dark">
             Sosyal Medya
           </h2>
 
           <div className="space-y-4">
             <div>
-              <label className="block text-xs font-semibold uppercase tracking-wide text-slate-500">
+              <label className="form-label">
                 Instagram Adresi
               </label>
               <input
                 type="url"
-                className="mt-1 w-full rounded-xl border border-border-subtle bg-surface-soft px-3 py-2 text-sm"
+                className="form-input"
                 value={form.instagramUrl}
                 onChange={(e) =>
                   setForm({ ...form, instagramUrl: e.target.value })
@@ -215,12 +228,12 @@ export default function SiteAdminPage() {
             </div>
 
             <div>
-              <label className="block text-xs font-semibold uppercase tracking-wide text-slate-500">
+              <label className="form-label">
                 YouTube Kanal Adresi
               </label>
               <input
                 type="url"
-                className="mt-1 w-full rounded-xl border border-border-subtle bg-surface-soft px-3 py-2 text-sm"
+                className="form-input"
                 value={form.youtubeUrl}
                 onChange={(e) =>
                   setForm({ ...form, youtubeUrl: e.target.value })
@@ -229,12 +242,12 @@ export default function SiteAdminPage() {
             </div>
 
             <div>
-              <label className="block text-xs font-semibold uppercase tracking-wide text-slate-500">
+              <label className="form-label">
                 YouTube Kanal ID
               </label>
               <input
                 type="text"
-                className="mt-1 w-full rounded-xl border border-border-subtle bg-surface-soft px-3 py-2 text-sm"
+                className="form-input"
                 value={form.youtubeChannelId}
                 onChange={(e) =>
                   setForm({ ...form, youtubeChannelId: e.target.value })
@@ -247,56 +260,106 @@ export default function SiteAdminPage() {
           </div>
         </section>
 
+        <section className="panel space-y-4 p-6">
+          <h2 className="text-lg font-semibold text-brand-dark">
+            WhatsApp Topluluk
+          </h2>
+          <p className="text-xs text-slate-600">
+            Buraya eklediğiniz linkler, ziyaretçilere gösterilen pop-up içinde
+            grup ve kanal butonu olarak görünür.
+          </p>
+
+          <div className="space-y-4">
+            <div>
+              <label className="form-label">
+                WhatsApp Grup URL
+              </label>
+              <input
+                type="url"
+                className="form-input"
+                value={form.whatsappGroupUrl}
+                onChange={(e) =>
+                  setForm({ ...form, whatsappGroupUrl: e.target.value })
+                }
+                placeholder="https://chat.whatsapp.com/..."
+              />
+            </div>
+
+            <div>
+              <label className="form-label">
+                WhatsApp Kanal URL
+              </label>
+              <input
+                type="url"
+                className="form-input"
+                value={form.whatsappChannelUrl}
+                onChange={(e) =>
+                  setForm({ ...form, whatsappChannelUrl: e.target.value })
+                }
+                placeholder="https://whatsapp.com/channel/..."
+              />
+            </div>
+
+            {whatsappUrlsMatch && (
+              <p className="rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-xs leading-6 text-amber-900">
+                Grup ve kanal URL&apos;leri aynı görünüyor. Kanal butonunun ayrı
+                çalışması için buraya gerçek WhatsApp kanal linkini girmeniz
+                gerekir.
+              </p>
+            )}
+          </div>
+        </section>
+
         {/* Entegrasyonlar */}
-        <section className="space-y-4 rounded-2xl border border-border-subtle bg-surface-main p-6">
+        <section className="panel space-y-4 p-6">
           <h2 className="text-lg font-semibold text-brand-dark">
             Entegrasyonlar
           </h2>
 
           <div>
-            <label className="block text-xs font-semibold uppercase tracking-wide text-slate-500">
-              Calendly URL
+            <label className="form-label">
+              Google Calendar Randevu URL
             </label>
             <input
               type="url"
-              className="mt-1 w-full rounded-xl border border-border-subtle bg-surface-soft px-3 py-2 text-sm"
+              className="form-input"
               value={form.calendlyUrl}
               onChange={(e) =>
                 setForm({ ...form, calendlyUrl: e.target.value })
               }
             />
             <p className="mt-1 text-[11px] text-slate-500">
-              Örn: https://calendly.com/almanyavizerehberi/almanya-vize-rehberi
+              Örn: https://calendar.google.com/calendar/appointments/schedules/...
             </p>
           </div>
         </section>
 
-        {/* Stripe Odeme Linkleri */}
-        <section className="space-y-4 rounded-2xl border border-border-subtle bg-surface-main p-6">
+        {/* Stripe Ödeme Linkleri */}
+        <section className="panel space-y-4 p-6">
           <h2 className="text-lg font-semibold text-brand-dark">
-            Stripe Odeme Linkleri
+            Stripe Ödeme Linkleri
           </h2>
           <p className="text-xs text-slate-600">
-            Burada tanimladiginiz odeme linkleri, sitedeki{' '}
+            Burada tanımladığınız ödeme linkleri, sitedeki{' '}
             <code className="rounded bg-surface-soft px-1 py-0.5 text-[10px]">
               /odeme
             </code>{' '}
-            sayfasinda gosterilir. Stripe panelinizden Payment Link olusturup
-            URL&apos;leri bu alana yapistirabilirsiniz.
+            sayfasında gösterilir. Stripe panelinizden Payment Link oluşturup
+            URL&apos;leri bu alana yapıştırabilirsiniz.
           </p>
 
           <div className="grid gap-4 md:grid-cols-2">
             <div className="space-y-2 rounded-xl border border-border-subtle bg-surface-soft p-4">
               <h3 className="text-sm font-semibold text-brand-dark">
-                1. Odeme Linki
+                1. Ödeme Linki
               </h3>
               <div>
-                <label className="block text-[11px] font-semibold uppercase tracking-wide text-slate-500">
-                  Baslik
+                <label className="form-label text-[11px]">
+                  Başlık
                 </label>
                 <input
                   type="text"
-                  className="mt-1 w-full rounded-xl border border-border-subtle bg-white px-3 py-2 text-sm"
+                  className="form-input"
                   value={form.payment1Label}
                   onChange={(e) =>
                     setForm({ ...form, payment1Label: e.target.value })
@@ -304,26 +367,26 @@ export default function SiteAdminPage() {
                 />
               </div>
               <div>
-                <label className="block text-[11px] font-semibold uppercase tracking-wide text-slate-500">
-                  Tutar (bilgi icin)
+                <label className="form-label text-[11px]">
+                  Tutar (bilgi için)
                 </label>
                 <input
                   type="text"
-                  className="mt-1 w-full rounded-xl border border-border-subtle bg-white px-3 py-2 text-sm"
+                  className="form-input"
                   value={form.payment1Amount}
                   onChange={(e) =>
                     setForm({ ...form, payment1Amount: e.target.value })
                   }
-                  placeholder="Orn: 99 €"
+                  placeholder="Örn: 99 €"
                 />
               </div>
               <div>
-                <label className="block text-[11px] font-semibold uppercase tracking-wide text-slate-500">
+                <label className="form-label text-[11px]">
                   Stripe Payment Link URL
                 </label>
                 <input
                   type="url"
-                  className="mt-1 w-full rounded-xl border border-border-subtle bg-white px-3 py-2 text-sm"
+                  className="form-input"
                   value={form.payment1Url}
                   onChange={(e) =>
                     setForm({ ...form, payment1Url: e.target.value })
@@ -335,15 +398,15 @@ export default function SiteAdminPage() {
 
             <div className="space-y-2 rounded-xl border border-border-subtle bg-surface-soft p-4">
               <h3 className="text-sm font-semibold text-brand-dark">
-                2. Odeme Linki
+                2. Ödeme Linki
               </h3>
               <div>
-                <label className="block text-[11px] font-semibold uppercase tracking-wide text-slate-500">
-                  Baslik
+                <label className="form-label text-[11px]">
+                  Başlık
                 </label>
                 <input
                   type="text"
-                  className="mt-1 w-full rounded-xl border border-border-subtle bg-white px-3 py-2 text-sm"
+                  className="form-input"
                   value={form.payment2Label}
                   onChange={(e) =>
                     setForm({ ...form, payment2Label: e.target.value })
@@ -351,26 +414,26 @@ export default function SiteAdminPage() {
                 />
               </div>
               <div>
-                <label className="block text-[11px] font-semibold uppercase tracking-wide text-slate-500">
-                  Tutar (bilgi icin)
+                <label className="form-label text-[11px]">
+                  Tutar (bilgi için)
                 </label>
                 <input
                   type="text"
-                  className="mt-1 w-full rounded-xl border border-border-subtle bg-white px-3 py-2 text-sm"
+                  className="form-input"
                   value={form.payment2Amount}
                   onChange={(e) =>
                     setForm({ ...form, payment2Amount: e.target.value })
                   }
-                  placeholder="Orn: 149 €"
+                  placeholder="Örn: 149 €"
                 />
               </div>
               <div>
-                <label className="block text-[11px] font-semibold uppercase tracking-wide text-slate-500">
+                <label className="form-label text-[11px]">
                   Stripe Payment Link URL
                 </label>
                 <input
                   type="url"
-                  className="mt-1 w-full rounded-xl border border-border-subtle bg-white px-3 py-2 text-sm"
+                  className="form-input"
                   value={form.payment2Url}
                   onChange={(e) =>
                     setForm({ ...form, payment2Url: e.target.value })
@@ -411,11 +474,11 @@ export default function SiteAdminPage() {
           </div>
 
           <div>
-            <label className="block text-xs font-semibold uppercase tracking-wide text-slate-500">
+            <label className="form-label">
               Bakım Modu Mesajı
             </label>
             <textarea
-              className="mt-1 w-full rounded-xl border border-border-subtle bg-surface-soft px-3 py-2 text-sm"
+              className="form-textarea"
               rows={3}
               value={form.maintenanceMessage}
               onChange={(e) =>
@@ -428,7 +491,7 @@ export default function SiteAdminPage() {
         <div className="flex items-center gap-4">
           <button
             type="submit"
-            className="inline-flex items-center justify-center rounded-full bg-brand-base px-6 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-brand-light disabled:opacity-60"
+            className="btn-primary"
             disabled={saving}
           >
             {saving ? 'Kaydediliyor…' : 'Kaydet'}

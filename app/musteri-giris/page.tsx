@@ -15,7 +15,7 @@ export default function MusteriGirisPage() {
     setError(null);
 
     if (!identifier || !password) {
-      setError('Lutfen kullanici adi (veya e-posta) ve sifre girin.');
+      setError('Lütfen kullanıcı adı (veya e-posta) ve şifre girin.');
       return;
     }
 
@@ -33,7 +33,7 @@ export default function MusteriGirisPage() {
 
       if (!res.ok || !json.ok) {
         throw new Error(
-          json.error || 'Giris yapilirken bir hata olustu.',
+          json.error || 'Giriş yapılırken bir hata oluştu.',
         );
       }
 
@@ -42,7 +42,7 @@ export default function MusteriGirisPage() {
       setError(
         err instanceof Error
           ? err.message
-          : 'Giris yapilirken bir hata olustu.',
+          : 'Giriş yapılırken bir hata oluştu.',
       );
     } finally {
       setSubmitting(false);
@@ -52,20 +52,20 @@ export default function MusteriGirisPage() {
   return (
     <main className="min-h-screen bg-slate-950/95 py-16">
       <div className="mx-auto max-w-md px-4">
-        <div className="rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-xl shadow-black/60">
+        <div className="rounded-2xl border border-slate-800 bg-slate-950/80 p-6 shadow-xl shadow-black/60">
           <h1 className="text-center text-xl font-semibold text-slate-50">
-            Musteri Girisi
+            Müşteri Girişi
           </h1>
           <p className="mt-2 text-center text-xs text-slate-400">
-            Admin tarafindan size iletilen kullanici adi ve sifre ile giris
-            yapin. Giris sonrasinda size tanimlanan Stripe odeme linkini
-            goreceksiniz.
+            Admin tarafından size iletilen kullanıcı adı ve şifre ile giriş
+            yapın. Giriş sonrasında size tanımlanan Stripe ödeme linkini
+            göreceksiniz.
           </p>
 
           <form onSubmit={handleSubmit} className="mt-6 space-y-4">
             <div>
               <label className="block text-xs font-medium text-slate-200">
-                Kullanici Adi veya E-posta
+                Kullanıcı Adı veya E-posta
               </label>
               <input
                 type="text"
@@ -76,7 +76,7 @@ export default function MusteriGirisPage() {
             </div>
             <div>
               <label className="block text-xs font-medium text-slate-200">
-                Sifre
+                Şifre
               </label>
               <input
                 type="password"
@@ -97,17 +97,16 @@ export default function MusteriGirisPage() {
               disabled={submitting}
               className="mt-2 flex w-full items-center justify-center rounded-full bg-brand-base px-4 py-2 text-xs font-semibold uppercase tracking-wide text-white shadow-md shadow-red-900/40 transition hover:bg-red-700 disabled:cursor-not-allowed disabled:bg-slate-500"
             >
-              {submitting ? 'Giris Yapiliyor...' : 'Giris Yap'}
+              {submitting ? 'Giriş yapılıyor...' : 'Giriş Yap'}
             </button>
           </form>
 
           <p className="mt-4 text-center text-[11px] text-slate-500">
-            Sifrenizi bilmiyorsaniz veya hatali oldugunu dusunuyorsaniz AVR
-            Global ekibiyle iletisime gecin.
+            Şifrenizi bilmiyorsanız veya hatalı olduğunu düşünüyorsanız
+            ekibimizle iletişime geçin.
           </p>
         </div>
       </div>
     </main>
   );
 }
-

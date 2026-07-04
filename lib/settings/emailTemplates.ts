@@ -9,6 +9,7 @@ const EMAIL_TEMPLATES_PATH = path.join(
 
 export type EmailTemplateId =
   | 'application_received'
+  | 'admin_new_application'
   | 'payment_received'
   | 'appointment_scheduled'
   | 'admin_login_code';
@@ -30,6 +31,12 @@ const DEFAULT_CONFIG: EmailTemplatesConfig = {
       id: 'application_received',
       name: 'BaŸvuru Alnd',
       subject: 'BaŸvurunuz alnd - Almanya Vize Rehberi',
+      body: '',
+    },
+    {
+      id: 'admin_new_application',
+      name: 'Yeni Lead Bildirimi',
+      subject: 'Yeni başvuru geldi - Almanya Vize Rehberi',
       body: '',
     },
     {
@@ -95,4 +102,3 @@ export function saveEmailTemplates(config: EmailTemplatesConfig) {
     'utf8',
   );
 }
-

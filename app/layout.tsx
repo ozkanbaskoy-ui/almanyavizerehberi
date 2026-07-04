@@ -4,11 +4,7 @@ import Script from 'next/script';
 import localFont from 'next/font/local';
 import '../styles/globals.css';
 
-import { MainNav } from '@/components/layout/MainNav';
-import { Footer } from '@/components/layout/Footer';
-import { WhatsAppFloatingButton } from '@/components/layout/WhatsAppFloatingButton';
-import { LegalConsentBar } from '@/components/layout/LegalConsentBar';
-import { MaintenanceGate } from '@/components/layout/MaintenanceGate';
+import { AppChrome } from '@/components/layout/AppChrome';
 import { getThemeSettings } from '@/lib/settings/theme';
 import { getTypographySettings } from '@/lib/settings/typography';
 import { getSiteSettings } from '@/lib/settings/site';
@@ -86,6 +82,14 @@ export const metadata: Metadata = {
   },
   description:
     "Almanya'ya yerleşim, çalışma ve eğitim vizeleri için profesyonel danışmanlık. Çalışma vizesi, Mavi Kart, Fırsat Kartı ve daha fazlası için kapsamlı rehberlik.",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
   openGraph: {
     type: 'website',
     siteName: 'Almanya Vize Rehberi',
@@ -99,6 +103,12 @@ export const metadata: Metadata = {
       },
     ],
   },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@VizeRehberi',
+    creator: '@VizeRehberi',
+    images: ['/og/default-og.webp'],
+  },
   alternates: {
     canonical: 'https://www.almanyavizerehberi.com/',
   },
@@ -106,6 +116,25 @@ export const metadata: Metadata = {
 
 type RootLayoutProps = {
   children: React.ReactNode;
+};
+
+const organizationJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Almanya Vize Rehberi',
+  url: 'https://www.almanyavizerehberi.com',
+  logo: 'https://www.almanyavizerehberi.com/assets/img/logo.webp',
+  sameAs: [
+    'https://www.instagram.com/almanyavizerehberi',
+    'https://x.com/VizeRehberi',
+    'https://www.tiktok.com/@almanyavizerehberi',
+    'https://www.youtube.com/@AlmanyaVizeRehberi',
+  ],
+  contactPoint: {
+    '@type': 'ContactPoint',
+    contactType: 'customer service',
+    availableLanguage: ['Turkish', 'German'],
+  },
 };
 
 export default function RootLayout({ children }: RootLayoutProps) {
@@ -142,6 +171,11 @@ export default function RootLayout({ children }: RootLayoutProps) {
         ].join(' ')}
         style={cssVars}
       >
+        <script
+          type="application/ld+json"
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
         {gaId && (
           <>
             <Script
@@ -158,17 +192,8 @@ export default function RootLayout({ children }: RootLayoutProps) {
             </Script>
           </>
         )}
-        <div className="flex min-h-screen flex-col">
-          <MainNav site={site} />
-          <main className="flex-1">
-            <MaintenanceGate site={site}>{children}</MaintenanceGate>
-          </main>
-          <Footer site={site} />
-          <LegalConsentBar />
-          <WhatsAppFloatingButton whatsappNumber={site.whatsappNumber} />
-        </div>
+        <AppChrome site={site}>{children}</AppChrome>
       </body>
     </html>
   );
 }
-

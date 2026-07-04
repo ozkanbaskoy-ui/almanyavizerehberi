@@ -6,7 +6,7 @@ type PaymentOption = {
   id: string;
   label: string;
   amount?: string;
-  url?: string; // Eski Payment Link icin opsiyonel fallback
+  url?: string; // Eski Payment Link için opsiyonel fallback
 };
 
 type PaymentOptionsProps = {
@@ -44,7 +44,7 @@ export function PaymentOptions({ options }: PaymentOptionsProps) {
         return;
       }
 
-      // Stripe anahtarlari yoksa / hata varsa ve Payment Link tanimliysa fallback
+      // Stripe anahtarları yoksa / hata varsa ve Payment Link tanımlıysa fallback
       if (option.url) {
         window.open(option.url, '_blank', 'noopener,noreferrer');
         return;
@@ -52,7 +52,7 @@ export function PaymentOptions({ options }: PaymentOptionsProps) {
 
       setError(
         data.error ||
-          'Odeme baslatilirken bir hata olustu. Lutfen daha sonra tekrar deneyin.',
+          'Ödeme başlatılırken bir hata oluştu. Lütfen daha sonra tekrar deneyin.',
       );
     } catch (err) {
       if (option.url) {
@@ -63,7 +63,7 @@ export function PaymentOptions({ options }: PaymentOptionsProps) {
       setError(
         err instanceof Error
           ? err.message
-          : 'Odeme baslatilirken bir hata olustu.',
+          : 'Ödeme başlatılırken bir hata oluştu.',
       );
     } finally {
       setLoadingId(null);
@@ -82,7 +82,7 @@ export function PaymentOptions({ options }: PaymentOptionsProps) {
         {options.map((opt, index) => (
           <div
             key={opt.id || opt.label + index}
-            className="rounded-3xl border border-slate-700/60 bg-slate-900/70 p-6 shadow-xl shadow-black/40"
+            className="rounded-2xl border border-slate-700/60 bg-slate-900/70 p-6 shadow-xl shadow-black/40"
           >
             <h2 className="text-lg font-semibold text-slate-50">
               {opt.label}
@@ -93,9 +93,8 @@ export function PaymentOptions({ options }: PaymentOptionsProps) {
               </p>
             )}
             <p className="mt-3 text-xs text-slate-300">
-              Bu secenek Stripe uzerinden guvenli odeme icin hazirlanmistir.
-              Odeme tutari ve detaylari AVR Global tarafindan Stripe panelinde
-              tanimlanir.
+              Bu seçenek Stripe üzerinden güvenli ödeme için hazırlanmıştır.
+              Ödeme tutarı ve detayları Stripe panelinde tanımlanır.
             </p>
             <button
               type="button"
@@ -104,8 +103,8 @@ export function PaymentOptions({ options }: PaymentOptionsProps) {
               className="mt-5 inline-flex items-center justify-center rounded-full bg-emerald-500 px-5 py-2 text-xs font-semibold uppercase tracking-wide text-emerald-50 shadow-lg shadow-emerald-900/60 transition hover:bg-emerald-600 disabled:cursor-not-allowed disabled:bg-slate-500 font-ui"
             >
               {loadingId === opt.id
-                ? 'Yonlendiriliyor...'
-                : 'Stripe ile Odeme Yap'}
+                ? 'Yönlendiriliyor...'
+                : 'Stripe ile Ödeme Yap'}
             </button>
           </div>
         ))}

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 
 import {
@@ -34,21 +35,26 @@ export async function generateMetadata(
     const title = post.seoTitle || post.title;
     const description = post.seoDescription || '';
 
+    const ogImage = post.image || `/og/default-og.webp`;
+
     return {
       title,
       description,
+      alternates: {
+        canonical: `${SITE_URL}/blog/${post.slug}`,
+      },
       openGraph: {
+        type: 'article',
         title,
         description,
         url: `${SITE_URL}/blog/${post.slug}`,
-        images: post.image
-          ? [
-              {
-                url: post.image,
-                alt: post.title,
-              },
-            ]
-          : undefined,
+        images: [{ url: ogImage, width: 1200, height: 630, alt: title }],
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title,
+        description,
+        images: [ogImage],
       },
     };
   } catch {
@@ -102,13 +108,13 @@ export default async function BlogDetailPage(props: PageProps) {
         '@type': 'ListItem',
         position: 2,
         name: 'Blog',
-        item: `${SITE_URL}/blog.php`,
+        item: `${SITE_URL}/blog`,
       },
       {
         '@type': 'ListItem',
         position: 3,
         name: post.title,
-        item: post.canonical || `${SITE_URL}/blog/${post.slug}`,
+        item: `${SITE_URL}/blog/${post.slug}`,
       },
     ],
   };
@@ -122,8 +128,8 @@ export default async function BlogDetailPage(props: PageProps) {
       />
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-[radial-gradient(circle_at_top,_var(--color-hero-from)_0,_var(--color-hero-to)_40%,_#020617_95%)] py-12 text-surface-main">
-        <div className="mx-auto max-w-[1200px] px-4">
+      <section className="site-hero py-12">
+        <div className="site-container">
           <RevealOnScroll>
             <Breadcrumb
               items={[
@@ -132,7 +138,7 @@ export default async function BlogDetailPage(props: PageProps) {
                 { label: post.title },
               ]}
             />
-            <p className="mt-3 text-xs font-semibold uppercase tracking-[0.25em] text-brand-light/80 md:text-sm">
+            <p className="eyebrow-on-dark mt-3 md:text-sm">
               Blog Yazısı
             </p>
             <h1 className="mt-4 text-3xl font-semibold tracking-tight md:text-4xl lg:text-5xl">
@@ -154,14 +160,25 @@ export default async function BlogDetailPage(props: PageProps) {
       </section>
 
       {/* İçerik */}
-      <section className="bg-surface-soft py-12">
-        <div className="mx-auto max-w-[1200px] px-4">
+      <section className="section-surface py-12">
+        <div className="site-container">
           <div className="grid gap-10 lg:grid-cols-[minmax(0,3fr)_minmax(260px,1.2fr)]">
             {/* Sol: blog içeriği */}
             <RevealOnScroll>
-              <article className="rounded-3xl border border-border-subtle bg-surface-main p-6 text-sm leading-relaxed text-slate-800 shadow-soft md:p-8 md:text-base">
+              <article className="panel p-6 text-sm leading-relaxed text-slate-800 md:p-8 md:text-base">
+                {post.image && (
+                  <div className="relative mb-7 aspect-[16/9] overflow-hidden rounded-[8px] border border-slate-200 bg-slate-100">
+                    <Image
+                      src={post.image}
+                      alt={post.title}
+                      fill
+                      className="object-cover"
+                      priority
+                    />
+                  </div>
+                )}
                 {isBlog6 ? (
-                  <div className="prose prose-slate max-w-none prose-h2:text-brand-dark prose-h3:text-brand-dark prose-strong:text-brand-dark">
+                  <div className="content-prose">
                     <h2>Denklik Başvurusu Nedir?</h2>
                     <p>
                       Almanya’da denklik başvurusu, yurt dışında edinilen
@@ -325,7 +342,7 @@ export default async function BlogDetailPage(props: PageProps) {
                   </div>
                 ) : (
                   <div
-                    className="prose prose-slate max-w-none prose-h2:text-brand-dark prose-h3:text-brand-dark prose-strong:text-brand-dark"
+                    className="content-prose"
                     // eslint-disable-next-line react/no-danger
                     dangerouslySetInnerHTML={{ __html: post.bodyHtml }}
                   />
@@ -335,7 +352,7 @@ export default async function BlogDetailPage(props: PageProps) {
 
             {/* Sağ: diğer blog yazıları */}
             <RevealOnScroll delay={0.05}>
-              <aside className="rounded-3xl border border-border-subtle bg-surface-main p-5 shadow-soft">
+              <aside className="panel p-5">
                 <h2 className="text-sm font-semibold uppercase tracking-wide text-slate-600">
                   Diğer Blog Yazıları
                 </h2>
@@ -347,10 +364,10 @@ export default async function BlogDetailPage(props: PageProps) {
                         <Link
                           href={`/blog/${p.slug}`}
                           className={[
-                            'block rounded-full px-4 py-2 text-left transition',
+                            'side-nav-link text-left',
                             active
-                              ? 'bg-brand-base text-white shadow-sm'
-                              : 'bg-surface-soft text-slate-800 hover:bg-surface-softer',
+                              ? 'side-nav-link-active'
+                              : 'side-nav-link-idle',
                           ].join(' ')}
                         >
                           {p.title}
@@ -367,4 +384,3 @@ export default async function BlogDetailPage(props: PageProps) {
     </main>
   );
 }
-

@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --webpack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "lint": "npm run typecheck",
     "scrape": "node scripts/scrape-almanyavizerehberi.js"
   },
   "keywords": [],

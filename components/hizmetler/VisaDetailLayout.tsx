@@ -3,7 +3,6 @@ import Link from 'next/link';
 import type { Visa } from '@/lib/content/visas';
 import { getAllVisas } from '@/lib/content/visas';
 import { RevealOnScroll } from '@/components/common/RevealOnScroll';
-import { Breadcrumb } from '@/components/common/Breadcrumb';
 
 type VisaDetailLayoutProps = {
   visa: Visa;
@@ -42,31 +41,24 @@ export function VisaDetailLayout({ visa }: VisaDetailLayoutProps) {
   };
 
   return (
-    <main className="bg-surface-main">
+    <main className="compact-content-page bg-surface-main">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
 
       {/* Hero */}
-      <section className="relative overflow-hidden bg-[radial-gradient(circle_at_top,_var(--color-hero-from)_0,_var(--color-hero-to)_40%,_#020617_95%)] py-12 text-surface-main">
-        <div className="mx-auto max-w-[1200px] px-4">
+      <section className="site-hero">
+        <div className="site-container">
           <RevealOnScroll>
-            <Breadcrumb
-              items={[
-                { label: 'Ana Sayfa', href: '/index.php' },
-                { label: 'Hizmetlerimiz', href: '/hizmetler.php?l=1' },
-                { label: visa.title },
-              ]}
-            />
-            <p className="mt-3 text-xs font-semibold uppercase tracking-[0.25em] text-brand-light/80 font-heading md:text-sm">
+            <p className="eyebrow-on-dark mt-3 font-heading md:text-sm">
               Hizmet Detayı
             </p>
-            <h1 className="mt-4 font-heading text-3xl font-semibold tracking-tight md:text-4xl lg:text-5xl">
+            <h1 className="mt-2 font-heading text-3xl font-semibold tracking-tight md:text-4xl lg:text-5xl">
               {visa.title}
             </h1>
             {visa.seoDescription && (
-              <p className="mt-4 max-w-2xl text-sm leading-relaxed text-surface-main/80 md:text-base">
+              <p className="mt-2 max-w-2xl text-sm leading-relaxed text-surface-main/80 md:text-base">
                 {visa.seoDescription}
               </p>
             )}
@@ -75,14 +67,14 @@ export function VisaDetailLayout({ visa }: VisaDetailLayoutProps) {
       </section>
 
       {/* İçerik + sağ menü */}
-      <section className="bg-surface-soft py-12">
-        <div className="mx-auto max-w-[1200px] px-4">
+      <section className="section-surface py-8 md:py-10">
+        <div className="site-container">
           <div className="grid gap-10 lg:grid-cols-[minmax(0,3fr)_minmax(260px,1.2fr)]">
             {/* Sol: detay içeriği */}
             <RevealOnScroll>
-              <article className="rounded-3xl border border-border-subtle bg-surface-main p-6 text-sm leading-relaxed text-slate-800 shadow-soft md:p-8 md:text-base">
+              <article className="panel p-6 text-sm leading-relaxed text-slate-800 md:p-8 md:text-base">
                 <div
-                  className="prose prose-slate max-w-none prose-h2:text-brand-dark prose-h3:text-brand-dark prose-strong:text-brand-dark"
+                  className="content-prose"
                   dangerouslySetInnerHTML={{ __html: visa.bodyHtml }}
                 />
               </article>
@@ -91,7 +83,7 @@ export function VisaDetailLayout({ visa }: VisaDetailLayoutProps) {
             {/* Sağ: hizmet listesi + CTA */}
             <div className="space-y-6">
               <RevealOnScroll delay={0.05}>
-                <aside className="rounded-3xl border border-border-subtle bg-surface-main p-5 shadow-soft">
+                <aside className="panel p-5">
                   <h2 className="font-heading text-sm font-semibold uppercase tracking-wide text-slate-600">
                     Hizmetlerimiz
                   </h2>
@@ -103,10 +95,10 @@ export function VisaDetailLayout({ visa }: VisaDetailLayoutProps) {
                           <Link
                             href={`/hizmetler/${item.slug}`}
                             className={[
-                              'block rounded-full px-4 py-2 transition',
+                              'side-nav-link',
                               active
-                                ? 'bg-brand-base text-white shadow-sm'
-                                : 'bg-surface-soft text-slate-800 hover:bg-surface-softer',
+                                ? 'side-nav-link-active'
+                                : 'side-nav-link-idle',
                             ].join(' ')}
                           >
                             {item.title}
@@ -119,20 +111,20 @@ export function VisaDetailLayout({ visa }: VisaDetailLayoutProps) {
               </RevealOnScroll>
 
               <RevealOnScroll delay={0.1}>
-                <aside className="rounded-3xl border border-border-subtle bg-surface-main p-5 shadow-soft">
+                <aside className="panel p-5">
                   <h2 className="font-heading text-sm font-semibold uppercase tracking-wide text-slate-600">
                     Detaylı Bilgi ve Başvuru
                   </h2>
                   <div className="mt-4 space-y-2">
                     <Link
-                      href="/basvuru.php"
-                      className="block rounded-full bg-brand-base px-4 py-2 text-center text-xs font-ui font-semibold uppercase tracking-wide text-white shadow-sm transition hover:bg-brand-light"
+                      href="/basvuru"
+                      className="btn-primary w-full text-xs"
                     >
                       Başvuru Yapın
                     </Link>
                     <Link
-                      href="/iletisim.php"
-                      className="block rounded-full border border-border-subtle bg-surface-soft px-4 py-2 text-center text-xs font-ui font-semibold uppercase tracking-wide text-brand-dark transition hover:border-brand-base hover:text-brand-base"
+                      href="/uygunluk-testi"
+                      className="btn-secondary w-full text-xs"
                     >
                       İletişime Geçin
                     </Link>

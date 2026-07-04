@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 
 import { verifyPassword } from '@/lib/auth/customerPasswords';
 import { createCustomerSessionToken } from '@/lib/auth/customerSession';
+import { findLocalCustomerByIdentifier } from '@/lib/admin/localCustomersStore';
 import { getSupabaseServerClient } from '@/lib/db/supabaseServer';
 
 export const runtime = 'nodejs';
@@ -24,9 +25,31 @@ export async function POST(request: Request) {
 
   if (!identifier || !password) {
     return NextResponse.json(
-      { error: 'Lutfen kullanici adi/e-posta ve sifre girin.' },
+      { error: 'Lütfen kullanıcı adı/e-posta ve şifre girin.' },
       { status: 400 },
     );
+  }
+
+  function createLoginResponse(customer: { id: string; fullName: string }) {
+    const token = createCustomerSessionToken(customer.id);
+
+    const res = NextResponse.json({
+      ok: true,
+      customer: {
+        id: customer.id,
+        fullName: customer.fullName,
+      },
+    });
+
+    res.cookies.set('customer_session', token, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production',
+      sameSite: 'lax',
+      path: '/',
+      maxAge: 60 * 60 * 24 * 7,
+    });
+
+    return res;
   }
 
   try {
@@ -60,8 +83,29 @@ export async function POST(request: Request) {
     }
 
     if (!data) {
+      const localCustomer = findLocalCustomerByIdentifier(identifier);
+      if (localCustomer) {
+        const ok = verifyPassword(
+          password,
+          localCustomer.passwordSalt,
+          localCustomer.passwordHash,
+        );
+
+        if (ok) {
+          return createLoginResponse({
+            id: localCustomer.id,
+            fullName: localCustomer.fullName,
+          });
+        }
+
+        return NextResponse.json(
+          { error: 'Hatalı şifre.' },
+          { status: 401 },
+        );
+      }
+
       return NextResponse.json(
-        { error: 'Kullanici bulunamadi.' },
+        { error: 'Kullanıcı bulunamadı.' },
         { status: 401 },
       );
     }
@@ -74,41 +118,43 @@ export async function POST(request: Request) {
 
     if (!ok) {
       return NextResponse.json(
-        { error: 'Hatali sifre.' },
+        { error: 'Hatalı şifre.' },
         { status: 401 },
       );
     }
 
-    const token = createCustomerSessionToken(data.id as string);
-
-    const res = NextResponse.json({
-      ok: true,
-      customer: {
-        id: data.id,
-        fullName: data.full_name,
-      },
+    return createLoginResponse({
+      id: data.id as string,
+      fullName: data.full_name as string,
     });
-
-    // Dev ortamda cookie'nin calismasi icin secure bayragini sadece prod'da aciyoruz.
-    const secure =
-      process.env.NODE_ENV === 'production' ? true : false;
-
-    res.cookies.set('customer_session', token, {
-      httpOnly: true,
-      secure,
-      sameSite: 'lax',
-      path: '/',
-      maxAge: 60 * 60 * 24 * 7, // 7 gun
-    });
-
-    return res;
   } catch (err) {
+    const localCustomer = findLocalCustomerByIdentifier(identifier);
+    if (localCustomer) {
+      const ok = verifyPassword(
+        password,
+        localCustomer.passwordSalt,
+        localCustomer.passwordHash,
+      );
+
+      if (ok) {
+        return createLoginResponse({
+          id: localCustomer.id,
+          fullName: localCustomer.fullName,
+        });
+      }
+
+      return NextResponse.json(
+        { error: 'Hatalı şifre.' },
+        { status: 401 },
+      );
+    }
+
     return NextResponse.json(
       {
         error:
           err instanceof Error
             ? err.message
-            : 'Giris yapilirken bir hata olustu.',
+            : 'Giriş yapılırken bir hata oluştu.',
       },
       { status: 500 },
     );

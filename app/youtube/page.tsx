@@ -24,7 +24,7 @@ export default async function YouTubePage() {
 
   return (
     <main className="bg-surface-main">
-      <section className="relative overflow-hidden bg-[radial-gradient(circle_at_top,_var(--color-hero-from)_0,_var(--color-hero-to)_40%,_#020617_95%)] py-16 text-surface-main">
+      <section className="site-hero">
         <div className="mx-auto max-w-[1200px] px-4">
           <RevealOnScroll className="text-center">
             <p className="text-xs font-semibold uppercase tracking-[0.25em] text-brand-light/80 font-heading">
@@ -44,7 +44,7 @@ export default async function YouTubePage() {
       <section className="bg-surface-soft py-16">
         <div className="mx-auto max-w-[1200px] px-4">
           <RevealOnScroll>
-            <div className="rounded-3xl border border-border-subtle bg-surface-main px-4 py-8 shadow-soft md:px-8">
+            <div className="panel px-4 py-8 md:px-8">
               <YouTubeCoverflowSlider videos={coverflowVideos} />
             </div>
           </RevealOnScroll>

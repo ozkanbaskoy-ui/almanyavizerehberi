@@ -28,6 +28,9 @@ export type MockApplicationEvent = {
     | 'not'
     | 'telefon-gorusmesi'
     | 'mail-gonderildi'
+    | 'evrak'
+    | 'randevu'
+    | 'gorev'
     | 'odeme'
     | 'durum-degisikligi';
   message: string;
@@ -118,4 +121,3 @@ export function getMockEventsForApplication(
 ): MockApplicationEvent[] {
   return MOCK_EVENTS.filter((e) => e.applicationId === applicationId);
 }
-

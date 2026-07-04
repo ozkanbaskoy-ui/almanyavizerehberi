@@ -2,6 +2,10 @@ import { cookies } from 'next/headers';
 import { NextResponse } from 'next/server';
 
 import { hashPassword } from '@/lib/auth/customerPasswords';
+import {
+  getLocalCustomers,
+  saveLocalCustomer,
+} from '@/lib/admin/localCustomersStore';
 import { getSupabaseServerClient } from '@/lib/db/supabaseServer';
 
 export const runtime = 'nodejs';
@@ -9,7 +13,7 @@ export const runtime = 'nodejs';
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
 
 async function ensureAdminSession() {
-  // Gelistirme kolayligi icin admin sifresi tanimli degilse kontrol etmeyiz.
+  // Geliştirme kolaylığı için admin şifresi tanımlı değilse kontrol etmeyiz.
   if (!ADMIN_PASSWORD) return true;
 
   const cookieStore = await cookies();
@@ -20,7 +24,7 @@ async function ensureAdminSession() {
 export async function GET() {
   if (!(await ensureAdminSession())) {
     return NextResponse.json(
-      { error: 'Yetkisiz istek. Lutfen tekrar yonetici girisi yapin.' },
+      { error: 'Yetkisiz istek. Lütfen tekrar yönetici girişi yapın.' },
       { status: 401 },
     );
   }
@@ -37,7 +41,7 @@ export async function GET() {
       .limit(200);
 
     if (error || !data) {
-      throw error ?? new Error('Bos sonuc');
+      throw error ?? new Error('Boş sonuç');
     }
 
     return NextResponse.json({
@@ -51,16 +55,12 @@ export async function GET() {
         stripePaymentLinkUrl: (row as any).stripe_payment_link_url ?? null,
       })),
     });
-  } catch (err) {
-    return NextResponse.json(
-      {
-        error:
-          err instanceof Error
-            ? err.message
-            : 'Musteri listesi getirilirken bir hata olustu.',
-      },
-      { status: 500 },
-    );
+  } catch {
+    return NextResponse.json({
+      ok: true,
+      storage: 'local',
+      customers: getLocalCustomers(),
+    });
   }
 }
 
@@ -75,7 +75,7 @@ type CreateBody = {
 export async function POST(request: Request) {
   if (!(await ensureAdminSession())) {
     return NextResponse.json(
-      { error: 'Yetkisiz istek. Lutfen tekrar yonetici girisi yapin.' },
+      { error: 'Yetkisiz istek. Lütfen tekrar yönetici girişi yapın.' },
       { status: 401 },
     );
   }
@@ -97,16 +97,16 @@ export async function POST(request: Request) {
     return NextResponse.json(
       {
         error:
-          'Ad soyad, e-posta, kullanici adi ve sifre alanlari zorunludur.',
+          'Ad soyad, e-posta, kullanıcı adı ve şifre alanları zorunludur.',
       },
       { status: 400 },
     );
   }
 
+  const { salt, hash } = hashPassword(password);
+
   try {
     const supabase = getSupabaseServerClient();
-
-    const { salt, hash } = hashPassword(password);
 
     const { data, error } = await supabase
       .from('customer_accounts')
@@ -124,7 +124,7 @@ export async function POST(request: Request) {
       .single();
 
     if (error || !data) {
-      throw error ?? new Error('Kayit eklenemedi');
+      throw error ?? new Error('Kayıt eklenemedi');
     }
 
     return NextResponse.json({
@@ -140,15 +140,42 @@ export async function POST(request: Request) {
       },
     });
   } catch (err) {
-    return NextResponse.json(
-      {
-        error:
-          err instanceof Error
-            ? err.message
-            : 'Musteri olusturulurken bir hata olustu.',
-      },
-      { status: 500 },
-    );
+    try {
+      const customer = saveLocalCustomer({
+        id: crypto.randomUUID(),
+        createdAt: new Date().toISOString(),
+        fullName,
+        email,
+        username,
+        stripePaymentLinkUrl,
+        passwordHash: hash,
+        passwordSalt: salt,
+      });
+
+      return NextResponse.json({
+        ok: true,
+        storage: 'local',
+        customer: {
+          id: customer.id,
+          createdAt: customer.createdAt,
+          fullName: customer.fullName,
+          email: customer.email,
+          username: customer.username,
+          stripePaymentLinkUrl: customer.stripePaymentLinkUrl,
+        },
+      });
+    } catch (localErr) {
+      return NextResponse.json(
+        {
+          error:
+            localErr instanceof Error
+              ? localErr.message
+              : err instanceof Error
+                ? err.message
+                : 'Müşteri oluşturulurken bir hata oluştu.',
+        },
+        { status: 500 },
+      );
+    }
   }
 }
-

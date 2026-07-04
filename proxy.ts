@@ -2,22 +2,22 @@ import type { NextRequest } from 'next/server';
 import { NextResponse } from 'next/server';
 
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
+const ADMIN_SESSION_TTL_SECONDS = 60 * 60; // 1 saat
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // Sadece /admin altını kontrol et
-  if (!pathname.startsWith('/admin')) {
+  const isProtectedWorkspace =
+    pathname.startsWith('/admin') || pathname.startsWith('/crm');
+
+  if (!isProtectedWorkspace) {
     return NextResponse.next();
   }
 
-  // Eğer ADMIN_PASSWORD tanımlı değilse, geliştirme kolaylığı için
-  // admin panelini korumaya alma.
   if (!ADMIN_PASSWORD) {
     return NextResponse.next();
   }
 
-  // Login sayfasını serbest bırak
   if (pathname.startsWith('/admin/login')) {
     return NextResponse.next();
   }
@@ -25,7 +25,15 @@ export function middleware(request: NextRequest) {
   const session = request.cookies.get('admin_logged_in')?.value;
 
   if (session === '1') {
-    return NextResponse.next();
+    const res = NextResponse.next();
+    res.cookies.set('admin_logged_in', '1', {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production',
+      sameSite: 'lax',
+      path: '/',
+      maxAge: ADMIN_SESSION_TTL_SECONDS,
+    });
+    return res;
   }
 
   const url = request.nextUrl.clone();
@@ -36,6 +44,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/admin/:path*'],
+  matcher: ['/admin/:path*', '/crm/:path*'],
 };
-

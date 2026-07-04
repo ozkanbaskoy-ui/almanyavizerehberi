@@ -2,4 +2,9 @@ node_modules
 .next
 .env
 .env.local
+.env*.local
+.local-crm
 npm-debug.log*
+*.tsbuildinfo
+
+.vercel

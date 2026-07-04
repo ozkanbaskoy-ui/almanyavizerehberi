@@ -3,10 +3,7 @@
 import { useScroll, useTransform, motion } from 'framer-motion';
 import Image from 'next/image';
 
-// Ana sayfa slider görseli de artık projedeki statik asset'ten okunuyor.
-// Eski 2b.almanyavizerehberi.com alan adı Vercel'de artık aktif olmadığı için
-// remote URL production ortamında 404 dönüyordu.
-const HERO_IMAGE = '/assets/img/slider.webp';
+const HERO_IMAGE = '/assets/img/anasayfa-gorsel.png?v=20260430-1456';
 
 export function HeroParallaxImage() {
   const { scrollYProgress } = useScroll();
@@ -15,16 +12,15 @@ export function HeroParallaxImage() {
   return (
     <motion.div
       style={{ y }}
-      className="relative h-72 w-full overflow-hidden rounded-[2.5rem] border border-surface-main/10 bg-surface-main/5 shadow-2xl shadow-black/40"
+      className="relative mx-auto h-[250px] w-full max-w-[720px] md:h-[410px] lg:h-[470px]"
     >
       <Image
         src={HERO_IMAGE}
         alt="Almanya Vize Rehberi"
         fill
-        className="object-cover"
+        className="object-contain object-center drop-shadow-[0_28px_55px_rgba(0,0,0,0.28)]"
         priority
       />
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-brand-dark/70 via-transparent to-brand-light/30" />
     </motion.div>
   );
 }

@@ -23,13 +23,8 @@ export function NewCustomerForm({ supabaseConfigured }: Props) {
     setError(null);
     setSuccess(null);
 
-    if (!supabaseConfigured) {
-      setError('Supabase ayarlari yapilmadan musteri olusturamazsiniz.');
-      return;
-    }
-
     if (!fullName || !email || !username || !password) {
-      setError('Lutfen gerekli alanlari doldurun.');
+      setError('Lütfen gerekli alanları doldurun.');
       return;
     }
 
@@ -53,11 +48,15 @@ export function NewCustomerForm({ supabaseConfigured }: Props) {
 
       if (!res.ok || !json.ok) {
         throw new Error(
-          json.error || 'Musteri olusturulurken bir hata olustu.',
+          json.error || 'Müşteri oluşturulurken bir hata oluştu.',
         );
       }
 
-      setSuccess('Musteri olusturuldu.');
+      setSuccess(
+        json.storage === 'local'
+          ? 'Müşteri lokal geliştirme deposuna kaydedildi.'
+          : 'Müşteri oluşturuldu.',
+      );
       setFullName('');
       setEmail('');
       setUsername('');
@@ -70,7 +69,7 @@ export function NewCustomerForm({ supabaseConfigured }: Props) {
       setError(
         err instanceof Error
           ? err.message
-          : 'Musteri olusturulurken bir hata olustu.',
+          : 'Müşteri oluşturulurken bir hata oluştu.',
       );
     } finally {
       setSubmitting(false);
@@ -80,19 +79,20 @@ export function NewCustomerForm({ supabaseConfigured }: Props) {
   return (
     <form
       onSubmit={handleSubmit}
-      className="mt-4 space-y-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm"
+      className="panel mt-4 space-y-4 p-4"
     >
       <h2 className="text-sm font-semibold text-slate-900">
-        Yeni Musteri Olustur
+        Yeni Müşteri Oluştur
       </h2>
       <p className="text-xs text-slate-500">
-        Burada olusturulan musteri, kendi giris sayfasindan kullanici adi /
-        sifre ile giris yapip kendisine ozel Stripe odeme linkini gorecek.
+        Burada oluşturulan müşteri, kendi giriş sayfasından kullanıcı adı /
+        şifre ile giriş yapıp kendisine özel Stripe ödeme linkini görür.
       </p>
 
       {!supabaseConfigured && (
         <p className="rounded-md bg-amber-50 px-3 py-2 text-xs text-amber-800">
-          Supabase ortam degiskenleri tanimli degil. Oncelikle{' '}
+          Supabase ortam değişkenleri tanımlı değil. Bu ortamda kayıtlar
+          lokal geliştirme deposuna yazılır; canlı kullanım için{' '}
           <code className="rounded bg-amber-100 px-1 py-0.5">
             NEXT_PUBLIC_SUPABASE_URL
           </code>{' '}
@@ -100,83 +100,78 @@ export function NewCustomerForm({ supabaseConfigured }: Props) {
           <code className="rounded bg-amber-100 px-1 py-0.5">
             SUPABASE_SERVICE_ROLE_KEY
           </code>{' '}
-          degerlerini .env.local dosyanizda ayarlayin ve{' '}
-          <code className="rounded bg-amber-100 px-1 py-0.5">
-            supabase/customers.sql
-          </code>{' '}
-          scriptini Supabase uzerinde calistirin.
+          değerleri tanımlanmalıdır.
         </p>
       )}
 
       <div className="grid gap-3 md:grid-cols-2">
-        <div>
-          <label className="block text-xs font-medium text-slate-700">
+        <div className="form-field">
+          <label className="form-label">
             Ad Soyad
           </label>
           <input
             type="text"
             value={fullName}
             onChange={(e) => setFullName(e.target.value)}
-            className="mt-1 w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 shadow-sm focus:border-brand-base focus:outline-none focus:ring-1 focus:ring-brand-base"
+            className="form-input"
           />
         </div>
-        <div>
-          <label className="block text-xs font-medium text-slate-700">
+        <div className="form-field">
+          <label className="form-label">
             E-posta
           </label>
           <input
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="mt-1 w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 shadow-sm focus:border-brand-base focus:outline-none focus:ring-1 focus:ring-brand-base"
+            className="form-input"
           />
         </div>
       </div>
 
       <div className="grid gap-3 md:grid-cols-2">
-        <div>
-          <label className="block text-xs font-medium text-slate-700">
-            Kullanici Adi
+        <div className="form-field">
+          <label className="form-label">
+            Kullanıcı Adı
           </label>
           <input
             type="text"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
-            className="mt-1 w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 shadow-sm focus:border-brand-base focus:outline-none focus:ring-1 focus:ring-brand-base"
+            className="form-input"
           />
         </div>
-        <div>
-          <label className="block text-xs font-medium text-slate-700">
-            Gecici Sifre
+        <div className="form-field">
+          <label className="form-label">
+            Geçici Şifre
           </label>
           <input
             type="text"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="mt-1 w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 shadow-sm focus:border-brand-base focus:outline-none focus:ring-1 focus:ring-brand-base"
-            placeholder="Orn: Almanya2025!"
+            className="form-input"
+            placeholder="Örn. Almanya2026!"
           />
           <p className="mt-1 text-[11px] text-slate-500">
-            Bu sifreyi musterinizle paylasmaniz gerekir. Musteri panelinden
-            sifre degistirme ozelligi ileride eklenebilir.
+            Bu şifreyi müşterinizle paylaşmanız gerekir.
           </p>
         </div>
       </div>
 
-      <div>
-        <label className="block text-xs font-medium text-slate-700">
+      <div className="form-field">
+        <label className="form-label">
           Stripe Payment Link (opsiyonel)
         </label>
         <input
           type="url"
           value={stripeLink}
           onChange={(e) => setStripeLink(e.target.value)}
-          className="mt-1 w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 shadow-sm focus:border-brand-base focus:outline-none focus:ring-1 focus:ring-brand-base"
+          className="form-input"
           placeholder="https://buy.stripe.com/..."
         />
         <p className="mt-1 text-[11px] text-slate-500">
-          Stripe panelinizde her musteri icin bir Payment Link olusturup bu
-          alana yapistirabilirsiniz.
+          Stripe panelinizde her müşteri için bir Payment Link oluşturup bu
+          alana yapıştırabilirsiniz.
         </p>
       </div>
 
@@ -195,12 +190,11 @@ export function NewCustomerForm({ supabaseConfigured }: Props) {
         <button
           type="submit"
           disabled={submitting}
-          className="inline-flex items-center rounded-full bg-brand-base px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-white shadow-sm transition hover:bg-red-700 disabled:cursor-not-allowed disabled:bg-slate-400"
+          className="btn-primary"
         >
-          {submitting ? 'Kaydediliyor...' : 'Musteri Olustur'}
+          {submitting ? 'Kaydediliyor...' : 'Müşteri Oluştur'}
         </button>
       </div>
     </form>
   );
 }
-

@@ -3,12 +3,14 @@ import {
   fetchRecentPayments,
 } from '@/lib/admin/paymentsData';
 import { fetchUpcomingAppointments } from '@/lib/admin/appointmentsData';
+import { getSiteSettings } from '@/lib/settings/site';
 
 export const metadata = {
   title: 'Finans & Randevu',
 };
 
 export default async function AdminFinancePage() {
+  const site = getSiteSettings();
   const [paymentStats, recentPayments, upcomingAppointments] =
     await Promise.all([
       fetchPaymentStats(),
@@ -17,22 +19,23 @@ export default async function AdminFinancePage() {
     ]);
 
   const stripeConfigured = paymentStats !== null;
-  const calendlyConfigured = upcomingAppointments !== null;
+  const calendarSyncConfigured = upcomingAppointments !== null;
+  const googleCalendarReady = Boolean(site.calendlyUrl);
 
   return (
-    <main className="mx-auto max-w-[1200px] px-4 py-8">
-      <h1 className="text-2xl font-semibold text-slate-900">
+    <main className="admin-page">
+      <h1 className="admin-page-title">
         Finans &amp; Randevu
       </h1>
-      <p className="mt-2 text-sm text-slate-600">
-        Stripe üzerinden gelen ödemeleri ve Calendly randevularını tek
-        ekranda takip edin. Supabase, Stripe ve Calendly yapılandırılmadıysa
-        aşağıdaki kutularda açıklayıcı uyarılar görünecektir.
+      <p className="admin-page-subtitle">
+        Stripe üzerinden gelen ödemeleri ve Google Calendar randevu akışını tek
+        ekranda takip edin. Normal ödeme sayfası aktif kalır; bu paneldeki
+        geçmiş listeler kalıcı veritabanı bağlantısı varsa otomatik dolar.
       </p>
 
       {/* Ödeme istatistikleri */}
       <section className="mt-8 grid gap-4 md:grid-cols-3">
-        <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+        <div className="metric-card">
           <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
             Toplam Ciro (Stripe)
           </p>
@@ -43,12 +46,13 @@ export default async function AdminFinancePage() {
           </p>
           {!stripeConfigured && (
             <p className="mt-2 text-xs text-slate-500">
-              STRIPE_SECRET_KEY, STRIPE_WEBHOOK_SECRET ve Supabase tablosu
-              (supabase/payments.sql) henüz yapılandırılmamış görünüyor.
+              Stripe checkout anahtarları ödeme sayfası için kullanılır. Bu
+              kartta otomatik ödeme geçmişi için webhook ve kalıcı ödeme tablosu
+              gerekir.
             </p>
           )}
         </div>
-        <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+        <div className="metric-card">
           <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
             Son 30 Gün Cirosu
           </p>
@@ -58,7 +62,7 @@ export default async function AdminFinancePage() {
               : '-'}
           </p>
         </div>
-        <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+        <div className="metric-card">
           <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
             Ödeme Sayısı
           </p>
@@ -70,7 +74,7 @@ export default async function AdminFinancePage() {
 
       {/* Son ödemeler tablosu */}
       <section className="mt-10 grid gap-8 lg:grid-cols-2">
-        <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+        <div className="panel p-4">
           <div className="flex items-center justify-between gap-2">
             <h2 className="text-sm font-semibold text-slate-900">
               Son Stripe Ödemeleri
@@ -126,9 +130,9 @@ export default async function AdminFinancePage() {
             </div>
           ) : (
             <p className="mt-4 text-xs text-slate-500">
-              Henüz kaydedilmiş bir Stripe ödemesi bulunamadı veya Stripe /
-              Supabase entegrasyonu devre dışı. Stripe panelinizde webhook
-              adresini{' '}
+              Henüz kaydedilmiş bir Stripe ödemesi bulunamadı. Ödeme sayfası
+              normal çalışmaya devam eder; admin finans geçmişini otomatik
+              doldurmak için Stripe panelinde webhook adresini{' '}
               <code className="rounded bg-slate-100 px-1 py-0.5">
                 /api/stripe/webhook
               </code>{' '}
@@ -142,18 +146,18 @@ export default async function AdminFinancePage() {
         </div>
 
         {/* Yaklaşan randevular */}
-        <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+        <div className="panel p-4">
           <div className="flex items-center justify-between gap-2">
             <h2 className="text-sm font-semibold text-slate-900">
-              Yaklaşan Randevular (Calendly)
+              Google Calendar Randevuları
             </h2>
-            {!calendlyConfigured && (
+            {!googleCalendarReady && (
               <span className="rounded-full bg-amber-50 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-amber-700">
                 Pasif
               </span>
             )}
           </div>
-          {calendlyConfigured &&
+          {calendarSyncConfigured &&
           upcomingAppointments &&
           upcomingAppointments.length > 0 ? (
             <ul className="mt-4 space-y-2 text-xs">
@@ -176,23 +180,27 @@ export default async function AdminFinancePage() {
               ))}
             </ul>
           ) : (
-            <p className="mt-4 text-xs text-slate-500">
-              Yaklaşan randevu bulunamadı veya Calendly entegrasyonu henüz
-              aktif değil. Calendly panelinizde webhook adresi olarak{' '}
-              <code className="rounded bg-slate-100 px-1 py-0.5">
-                /api/calendly/webhook
-              </code>{' '}
-              tanımlayıp{' '}
-              <code className="rounded bg-slate-100 px-1 py-0.5">
-                supabase/appointments.sql
-              </code>{' '}
-              scriptini Supabase üzerinde çalıştırdığınızda bu liste otomatik
-              dolacak.
-            </p>
+            <div className="mt-4 space-y-3 text-xs text-slate-500">
+              <p>
+                Google Calendar randevu linki başvuru sayfasında aktif. Google
+                Calendar kendi ekranında randevuları yönetir; CRM içinde liste
+                tutulması istenirse randevular Supabase tablosuna ayrıca
+                senkronlanır.
+              </p>
+              {googleCalendarReady && (
+                <a
+                  href={site.calendlyUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn-secondary inline-flex text-xs"
+                >
+                  Google Calendar Randevu Sayfasını Aç
+                </a>
+              )}
+            </div>
           )}
         </div>
       </section>
     </main>
   );
 }
-

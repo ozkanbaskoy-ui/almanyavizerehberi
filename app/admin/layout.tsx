@@ -1,13 +1,5 @@
 import type { ReactNode } from 'react';
 import Link from 'next/link';
-import { Inter } from 'next/font/google';
-
-const inter = Inter({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  variable: '--font-admin-inter',
-  display: 'swap',
-});
 
 type AdminLayoutProps = {
   children: ReactNode;
@@ -41,17 +33,23 @@ const NAV_ITEMS: {
   {
     section: 'İş Yönetimi',
     items: [
-      { label: 'Başvurular (CRM)', href: '/admin/applications' },
+      { label: 'CRM Çalışma Alanı', href: '/crm' },
+      { label: 'Lead Başvuruları', href: '/crm/leads' },
+      { label: 'CRM Kullanıcıları', href: '/admin/users' },
+      { label: 'Roller & İzinler', href: '/admin/roles' },
       { label: 'Finans & Randevu', href: '/admin/finance' },
-      { label: 'Musteriler', href: '/admin/customers' },
+      { label: 'Müşteriler', href: '/admin/customers' },
+      { label: 'Audit Log', href: '/admin/audit-logs' },
+      { label: 'E-posta Logları', href: '/admin/email-logs' },
       { label: 'Ayarlar & E-posta', href: '/admin/settings' },
+      { label: 'Sistem Sağlığı', href: '/admin/system' },
     ],
   },
 ];
 
 export default function AdminLayout({ children }: AdminLayoutProps) {
   return (
-    <div className={`${inter.className} flex min-h-full bg-slate-950/95`}>
+    <div className="flex min-h-screen bg-slate-950">
       <aside className="hidden w-64 flex-col border-r border-slate-800 bg-slate-950 text-slate-100 md:flex">
         <div className="px-4 pb-4 pt-5">
           <p className="text-xs font-semibold uppercase tracking-[0.25em] text-slate-500">
@@ -61,7 +59,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
             Almanya Vize Rehberi
           </h1>
           <p className="mt-1 text-xs text-slate-400">
-            Yönetim panelinden siteyi kod yazmadan yönetin.
+            CRM, içerik ve site ayarları
           </p>
         </div>
         <nav className="flex-1 space-y-3 px-2 pb-4 pt-2 text-sm">
@@ -84,13 +82,31 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
         </nav>
         <div className="border-t border-slate-800 px-4 py-3 text-[11px] text-slate-500">
           <p className="font-semibold text-slate-400">
-            V0 • Yönetim Paneli
+            Yönetim Paneli
           </p>
-          <p>Gelişmiş dashboard, CRM ve Stripe entegrasyonu sırada.</p>
+          <p>Lead, müşteri ve içerik yönetimi.</p>
         </div>
       </aside>
 
-      <div className="flex-1 bg-surface-soft">{children}</div>
+      <div className="admin-content min-w-0 flex-1 bg-surface-soft">
+        <div className="border-b border-slate-200 bg-white px-4 py-3 md:hidden">
+          <p className="text-sm font-semibold text-slate-950">
+            Almanya Vize Rehberi Admin
+          </p>
+          <nav className="mt-3 flex gap-2 overflow-x-auto pb-1 text-xs font-semibold text-slate-700">
+            {NAV_ITEMS.flatMap((group) => group.items).map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="whitespace-nowrap rounded-full border border-slate-200 bg-slate-50 px-3 py-1.5 hover:border-brand-base hover:text-brand-base"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+        </div>
+        {children}
+      </div>
     </div>
   );
 }

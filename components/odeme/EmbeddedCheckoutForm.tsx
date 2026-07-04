@@ -79,7 +79,7 @@ export function EmbeddedCheckoutForm({
 
   if (error) {
     return (
-      <div className="rounded-3xl border border-red-400/40 bg-red-500/10 p-5 text-sm leading-7 text-red-100 shadow-xl shadow-black/30">
+      <div className="rounded-2xl border border-red-400/40 bg-red-500/10 p-5 text-sm leading-7 text-red-100 shadow-xl shadow-black/30">
         <p className="font-semibold">Ödeme formu açılamadı.</p>
         <p className="mt-2">{error}</p>
         <p className="mt-3 text-xs text-red-100/80">
@@ -92,7 +92,7 @@ export function EmbeddedCheckoutForm({
 
   if (!clientSecret) {
     return (
-      <div className="rounded-3xl border border-slate-700/70 bg-slate-950/70 p-8 text-center text-sm text-slate-200 shadow-xl shadow-black/30">
+      <div className="rounded-2xl border border-slate-700/70 bg-slate-950/70 p-8 text-center text-sm text-slate-200 shadow-xl shadow-black/30">
         Güvenli ödeme formu hazırlanıyor...
       </div>
     );
@@ -103,7 +103,7 @@ export function EmbeddedCheckoutForm({
       stripe={stripePromise}
       options={{ clientSecret }}
     >
-      <div className="overflow-hidden rounded-3xl bg-white p-1 shadow-2xl shadow-black/40">
+      <div className="overflow-hidden rounded-2xl bg-white p-1 shadow-2xl shadow-black/40">
         <EmbeddedCheckout />
       </div>
     </EmbeddedCheckoutProvider>

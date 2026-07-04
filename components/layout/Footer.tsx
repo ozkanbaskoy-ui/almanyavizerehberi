@@ -1,83 +1,122 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 
+import { SocialLinks } from '@/components/layout/SocialLinks';
 import type { SiteSettings } from '@/lib/settings/site';
+import {
+  createWhatsAppHref,
+  DEFAULT_WHATSAPP_MESSAGE,
+} from '@/lib/whatsapp';
 
 type FooterProps = {
   site: SiteSettings;
 };
 
+const PRIMARY_LINKS = [
+  { href: '/index.php', label: 'Ana Sayfa' },
+  { href: '/hakkimizda.php', label: 'Hakkımızda' },
+  { href: '/uygunluk-testi', label: 'Uygunluk Testi' },
+  { href: '/hizmetler.php?l=1', label: 'Hizmetlerimiz' },
+  { href: '/servisler.php?l=1', label: 'Göç Sonrası' },
+  { href: '/blog.php', label: 'Blog' },
+  { href: '/sss.php', label: 'Sık Sorulan Sorular' },
+];
+
+const LEGAL_LINKS = [
+  { href: '/basvuru.php', label: 'Randevu Al' },
+  { href: '/iletisim.php', label: 'İletişim' },
+  { href: '/cerezler.php', label: 'Çerez Politikası' },
+  { href: '/kullanim-sartlari.php', label: 'Kullanım Şartları' },
+  { href: '/kvkk.php', label: 'K.V.K.K. Metni' },
+  { href: '/sorumluluk-reddi.php', label: 'Sorumluluk Reddi' },
+  { href: '/gdpr.php', label: 'Data Protection & Privacy' },
+];
+
 export function Footer({ site }: FooterProps) {
-  const whatsappClean = site.whatsappNumber.replace(/\s+/g, '');
-  const whatsappHref = whatsappClean
-    ? `https://wa.me/${whatsappClean.replace('+', '')}`
-    : undefined;
+  const whatsappHref = createWhatsAppHref(site.whatsappNumber, {
+    message: DEFAULT_WHATSAPP_MESSAGE,
+  });
+
+  const cleanedPhone = site.contactPhone.replace(/\s+/g, '');
+  const telHref = cleanedPhone ? `tel:${cleanedPhone}` : undefined;
 
   return (
     <motion.footer
-      className="mt-0 border-t border-slate-800 bg-slate-950 text-slate-100"
+      className="mt-0 bg-slate-950 text-slate-100"
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.3 }}
+      viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
     >
-      <div
-        className="relative"
-        style={{
-          backgroundImage: "url('/assets/img/footer-bg.jpg')",
-          backgroundPosition: 'center',
-          backgroundSize: 'cover',
-        }}
-      >
-        <div className="absolute inset-0 bg-black/80" />
-        <div className="relative mx-auto max-w-6xl px-4 py-8">
-          <div className="grid gap-8 md:grid-cols-4">
-            {/* Brand */}
-            <div className="md:col-span-2">
-              <h3 className="font-heading text-lg font-semibold tracking-tight">
-                {site.siteName || 'Almanya Vize Rehberi'}
-              </h3>
-              <p className="mt-3 text-sm text-slate-300/90">
-                Almanya&apos;ya göç sürecinizde güvenilir partneriniz. Çalışma,
-                eğitim ve aile birleşimi vizelerinde uzman danışmanlık
-                sunuyoruz.
+      <div className="relative overflow-hidden border-t border-white/10 bg-[linear-gradient(135deg,#07111f_0%,#0f172a_48%,#17346b_100%)]">
+        <div
+          className="absolute inset-0 opacity-20"
+          style={{
+            backgroundImage: "url('/assets/img/footer-bg.jpg')",
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+          }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/90 to-slate-950/70" />
+
+        <div className="relative mx-auto max-w-[1200px] px-4 py-12">
+          <div className="grid gap-10 lg:grid-cols-[1.15fr_0.75fr_0.75fr]">
+            <div>
+              <Link
+                href="/index.php"
+                className="inline-flex"
+              >
+                <Image
+                  src="/assets/img/logo-yan.webp"
+                  alt={site.siteName || 'Almanya Vize Rehberi'}
+                  width={168}
+                  height={42}
+                  className="h-9 w-auto drop-shadow-[0_2px_10px_rgba(255,255,255,0.25)]"
+                />
+              </Link>
+
+              <p className="mt-5 max-w-xl text-sm leading-7 text-slate-300">
+                Almanya&apos;ya göç, çalışma, eğitim ve aile birleşimi
+                süreçlerinde başvurunuzu daha net, düzenli ve güvenli şekilde
+                planlamanız için uçtan uca danışmanlık sunuyoruz.
               </p>
-              <div className="mt-4 flex items-center gap-3 text-sm">
-                {site.instagramUrl && (
+
+              <div className="mt-5 flex flex-wrap gap-3 text-sm text-slate-300">
+                {site.contactEmail && (
                   <a
-                    href={site.instagramUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    aria-label="Instagram"
-                    className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-slate-900/70 text-slate-200 shadow-sm ring-1 ring-slate-700/70 transition hover:bg-brand-coral hover:text-white"
+                    href={`mailto:${site.contactEmail}`}
+                    className="rounded-full border border-white/10 bg-white/[0.06] px-4 py-2 hover:border-brand-light/40 hover:text-white"
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      className="h-4 w-4"
-                      aria-hidden="true"
-                    >
-                      <path
-                        fill="currentColor"
-                        d="M12 7.3A4.7 4.7 0 1 0 16.7 12 4.71 4.71 0 0 0 12 7.3Zm0 7.7A3 3 0 1 1 15 12a3 3 0 0 1-3 3Z"
-                      />
-                      <circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" />
-                      <path
-                        fill="currentColor"
-                        d="M17.5 3H6.5A3.5 3.5 0 0 0 3 6.5v11A3.5 3.5 0 0 0 6.5 21h11a3.5 3.5 0 0 0 3.5-3.5v-11A3.5 3.5 0 0 0 17.5 3Zm2 14.5a2 2 0 0 1-2 2h-11a2 2 0 0 1-2-2v-11a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2Z"
-                      />
-                    </svg>
+                    {site.contactEmail}
                   </a>
                 )}
+                {telHref && (
+                  <a
+                    href={telHref}
+                    className="rounded-full border border-white/10 bg-white/[0.06] px-4 py-2 hover:border-brand-light/40 hover:text-white"
+                  >
+                    {site.contactPhone}
+                  </a>
+                )}
+              </div>
+
+              <div className="mt-5 flex items-center gap-3">
+                <SocialLinks
+                  instagramUrl={site.instagramUrl}
+                  youtubeUrl={site.youtubeUrl}
+                  variant="footer"
+                  className="flex items-center gap-3"
+                />
                 {whatsappHref && (
                   <a
                     href={whatsappHref}
                     target="_blank"
                     rel="noreferrer"
                     aria-label="WhatsApp"
-                    className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-slate-900/70 text-slate-200 shadow-sm ring-1 ring-slate-700/70 transition hover:bg-emerald-500 hover:text-white"
+                    className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-emerald-400/30 bg-emerald-500/20 text-emerald-200 transition hover:bg-emerald-500 hover:text-white"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -95,149 +134,53 @@ export function Footer({ site }: FooterProps) {
               </div>
             </div>
 
-            {/* Primary links */}
             <div>
-              <h4 className="font-heading text-[13px] font-semibold uppercase tracking-wide text-slate-300">
-                Linkler
+              <h4 className="border-b border-white/10 pb-3 font-heading text-sm font-semibold uppercase tracking-[0.18em] text-white">
+                Site Haritası
               </h4>
-              <ul className="mt-3 space-y-2 text-sm">
-                <li>
-                  <Link href="/index.php" className="hover:text-brand-coral">
-                    Ana Sayfa
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/hakkimizda.php"
-                    className="hover:text-brand-coral"
-                  >
-                    Hakkımızda
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/hizmetler.php?l=1"
-                    className="hover:text-brand-coral"
-                  >
-                    Hizmetlerimiz
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/servisler.php?l=1"
-                    className="hover:text-brand-coral"
-                  >
-                    Göç Sonrası
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/blog.php" className="hover:text-brand-coral">
-                    Blog Yazıları
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/index.php#yorum"
-                    className="hover:text-brand-coral"
-                  >
-                    Sosyal Medya Videoları
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/sss.php" className="hover:text-brand-coral">
-                    Sık Sorulan Sorular
-                  </Link>
-                </li>
+              <ul className="mt-4 space-y-2 text-sm">
+                {PRIMARY_LINKS.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className="text-slate-200 hover:text-white"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
 
-            {/* Secondary links */}
             <div>
-              <h4 className="font-heading text-[13px] font-semibold uppercase tracking-wide text-slate-300">
-                Diğer Linkler
+              <h4 className="border-b border-white/10 pb-3 font-heading text-sm font-semibold uppercase tracking-[0.18em] text-white">
+                Kurumsal
               </h4>
-              <ul className="mt-3 space-y-2 text-sm">
-                <li>
-                  <Link
-                    href="/basvuru.php"
-                    className="hover:text-brand-coral"
-                  >
-                    Başvuru Formu
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/cerezler.php"
-                    className="hover:text-brand-coral"
-                  >
-                    Çerez Politikası
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/kullanim-sartlari.php"
-                    className="hover:text-brand-coral"
-                  >
-                    Kullanım Şartları
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/kvkk.php" className="hover:text-brand-coral">
-                    K.V.K.K. Metni
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/sorumluluk-reddi.php"
-                    className="hover:text-brand-coral"
-                  >
-                    Sorumluluk Reddi
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/gdpr.php" className="hover:text-brand-coral">
-                    Data Protection &amp; Privacy
-                  </Link>
-                </li>
+              <ul className="mt-4 space-y-2 text-sm">
+                {LEGAL_LINKS.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className="text-slate-200 hover:text-white"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
 
-          {/* Newsletter */}
-          <div className="mt-8 flex flex-col gap-4 border-t border-slate-800 pt-4 md:flex-row md:items-center md:justify-between">
+          <div className="mt-10 flex flex-col gap-3 border-t border-white/10 pt-5 text-[11px] text-slate-500 md:flex-row md:items-center md:justify-between">
             <div>
-              <h4 className="font-heading text-sm font-semibold uppercase tracking-wide text-slate-300">
-                Bültenimize Abone Olun
-              </h4>
-              <p className="mt-2 text-xs text-slate-400">
-                Son gelişmelerden haberdar olmak için bültenimize abone olun.
-              </p>
-            </div>
-            <form className="flex max-w-md gap-2">
-              <input
-                type="email"
-                name="email"
-                required
-                placeholder="Mail adresinizi giriniz"
-                className="flex-1 rounded-md border border-slate-700 bg-slate-900/90 px-3 py-2 text-sm text-slate-100 placeholder:text-slate-500 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500"
-              />
-              <button
-                type="submit"
-                className="font-ui rounded-md bg-brand-red px-4 py-2 text-xs font-semibold uppercase tracking-wide text-white hover:bg-red-700"
-              >
-                Abone Ol
-              </button>
-            </form>
-          </div>
-
-          {/* Bottom line */}
-          <div className="mt-4 flex flex-col items-start justify-between gap-3 border-t border-slate-800 pt-3 text-[11px] text-slate-500 md:flex-row md:items-center">
-            <div>
-              © {new Date().getFullYear()}{' '}
-              <span className="font-semibold text-slate-200">
+              ©{' '}
+              <span className="font-semibold text-slate-300">
                 almanyavizerehberi.com
               </span>
               . Tüm hakları saklıdır.
+            </div>
+            <div className="text-slate-500">
+              Almanya vize ve göç danışmanlığı için profesyonel rehberlik.
             </div>
           </div>
         </div>

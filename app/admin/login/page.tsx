@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
 
 type Step = 'password' | 'code';
 
@@ -13,7 +12,13 @@ export default function AdminLoginPage() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [info, setInfo] = useState<string | null>(null);
-  const router = useRouter();
+
+  function goToAdmin() {
+    const params = new URLSearchParams(window.location.search);
+    const from = params.get('from');
+    const returnTo = from && from.startsWith('/') ? from : '/admin';
+    window.location.assign(returnTo);
+  }
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -52,7 +57,7 @@ export default function AdminLoginPage() {
         }
 
         // No OTP (SMTP not configured): go directly to admin.
-        router.push('/admin');
+        goToAdmin();
         return;
       }
 
@@ -73,7 +78,7 @@ export default function AdminLoginPage() {
         );
       }
 
-      router.push('/admin');
+      goToAdmin();
     } catch (err) {
       setError(
         err instanceof Error ? err.message : 'Bilinmeyen bir hata oluştu.',
@@ -84,7 +89,7 @@ export default function AdminLoginPage() {
   }
 
   return (
-    <main className="flex min-h-screen items-center justify-center bg-slate-950">
+    <main className="admin-login-page flex min-h-screen items-center justify-center bg-slate-950">
       <div className="w-full max-w-sm rounded-2xl border border-slate-800 bg-slate-900/80 px-6 py-8 shadow-xl">
         <h1 className="text-center text-xl font-semibold text-slate-50">
           Admin Girişi
@@ -103,7 +108,7 @@ export default function AdminLoginPage() {
                 </label>
                 <input
                   type="text"
-                  className="mt-2 w-full rounded-xl border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-100 placeholder:text-slate-500 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500"
+                  className="mt-2 w-full rounded-xl border border-slate-700 bg-slate-950 px-3 py-2.5 text-sm text-slate-100 placeholder:text-slate-500 transition focus:border-sky-500 focus:outline-none focus:ring-4 focus:ring-sky-500/10"
                   placeholder="ozkan"
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
@@ -116,7 +121,7 @@ export default function AdminLoginPage() {
                 </label>
                 <input
                   type="password"
-                  className="mt-2 w-full rounded-xl border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-100 placeholder:text-slate-500 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500"
+                  className="mt-2 w-full rounded-xl border border-slate-700 bg-slate-950 px-3 py-2.5 text-sm text-slate-100 placeholder:text-slate-500 transition focus:border-sky-500 focus:outline-none focus:ring-4 focus:ring-sky-500/10"
                   placeholder="••••••••"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
@@ -134,7 +139,7 @@ export default function AdminLoginPage() {
                 type="text"
                 inputMode="numeric"
                 maxLength={6}
-                className="mt-2 w-full rounded-xl border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-100 placeholder:text-slate-500 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500"
+                className="mt-2 w-full rounded-xl border border-slate-700 bg-slate-950 px-3 py-2.5 text-sm text-slate-100 placeholder:text-slate-500 transition focus:border-sky-500 focus:outline-none focus:ring-4 focus:ring-sky-500/10"
                 placeholder="6 haneli kod"
                 value={code}
                 onChange={(e) => setCode(e.target.value)}
@@ -162,7 +167,7 @@ export default function AdminLoginPage() {
           <button
             type="submit"
             disabled={loading}
-            className="mt-2 w-full rounded-full bg-sky-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-sky-500 disabled:opacity-60"
+            className="mt-2 w-full rounded-full bg-sky-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-sky-500 disabled:opacity-60"
           >
             {loading
               ? step === 'password'
@@ -190,4 +195,3 @@ export default function AdminLoginPage() {
     </main>
   );
 }
-

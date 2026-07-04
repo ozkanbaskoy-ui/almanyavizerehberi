@@ -10,10 +10,9 @@ const config: Config = {
       fontFamily: {
         // Govde metinleri icin Inter
         sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
-        // Basliklar icin Raleway (font-heading sinifi)
-        heading: ['var(--font-raleway)', 'system-ui', 'sans-serif'],
-        // Menu ve CTA butonlari icin Poppins
-        ui: ['var(--font-poppins)', 'system-ui', 'sans-serif'],
+        // Basliklar ve operasyon arayuzu icin Inter daha temiz ve kurumsal.
+        heading: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+        ui: ['var(--font-inter)', 'system-ui', 'sans-serif'],
       },
       colors: {
         // Kurumsal palet (eski site + yeni tasarim)

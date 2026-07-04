@@ -12,7 +12,29 @@ export const metadata: Metadata = buildMetadata({
   path: '/hizmetler/dil-kursu-vizesi',
 });
 
-export default function DilKursuVizesiPage() {
-  return <VisaDetailLayout visa={visa} />;
-}
+const serviceJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: visa.title,
+  description: visa.seoDescription,
+  provider: {
+    '@type': 'Organization',
+    name: 'Almanya Vize Rehberi',
+    url: 'https://www.almanyavizerehberi.com',
+  },
+  areaServed: { '@type': 'Country', name: 'Germany' },
+  url: 'https://www.almanyavizerehberi.com/hizmetler/dil-kursu-vizesi',
+};
 
+export default function DilKursuVizesiPage() {
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
+      <VisaDetailLayout visa={visa} />
+    </>
+  );
+}

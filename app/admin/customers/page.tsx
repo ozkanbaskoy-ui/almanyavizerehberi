@@ -4,7 +4,7 @@ import { fetchCustomers } from '@/lib/admin/customersData';
 import { NewCustomerForm } from './NewCustomerForm';
 
 export const metadata: Metadata = {
-  title: 'Musteriler',
+  title: 'Müşteriler',
 };
 
 export default async function AdminCustomersPage() {
@@ -15,54 +15,51 @@ export default async function AdminCustomersPage() {
     !!process.env.SUPABASE_SERVICE_ROLE_KEY;
 
   return (
-    <main className="mx-auto max-w-[1200px] px-4 py-8">
-      <h1 className="text-2xl font-semibold text-slate-50">Musteriler</h1>
-      <p className="mt-2 max-w-2xl text-sm text-slate-300">
-        Buradan musteri hesaplari olusturup her musterinin Stripe odeme
-        linkini kaydedebilirsiniz. Musteriler, kendilerine tanimlanan kullanici
-        adi ve sifre ile musteri giris sayfasindan giris yapip kendi odeme
-        linklerini gorecekler.
+    <main className="admin-page">
+      <h1 className="admin-page-title">Müşteriler</h1>
+      <p className="admin-page-subtitle">
+        Buradan müşteri hesabı oluşturup her müşterinin Stripe ödeme linkini
+        kaydedebilirsiniz. Müşteriler kendilerine tanımlanan kullanıcı adı ve
+        şifre ile müşteri paneline giriş yapar.
       </p>
 
       <NewCustomerForm supabaseConfigured={supabaseConfigured} />
 
-      <section className="mt-8 rounded-2xl border border-slate-800 bg-slate-950/60 p-4">
-        <h2 className="text-sm font-semibold text-slate-100">
-          Mevcut Musteriler
+      <section className="panel mt-8 p-4">
+        <h2 className="text-sm font-semibold text-slate-900">
+          Mevcut Müşteriler
         </h2>
         <p className="mt-1 text-xs text-slate-400">
-          En fazla son 200 kayit gosterilir. Daha gelismis filtreleme ve arama
-          ozellikleri ileride eklenebilir.
+          En fazla son 200 kayıt gösterilir.
         </p>
 
         {customers.length === 0 ? (
           <p className="mt-4 text-xs text-slate-400">
-            Henuz kayitli musteri bulunmuyor ya da Supabase tablo/ortam
-            ayarlari tamamlanmadi. Supabase SQL editorunde{' '}
-            <code className="rounded bg-slate-800 px-1 py-0.5">
+            Henüz kayıtlı müşteri bulunmuyor. Supabase yoksa yeni kayıtlar
+            lokal geliştirme deposuna yazılır.
+            <code className="ml-1 rounded bg-slate-100 px-1 py-0.5">
               supabase/customers.sql
-            </code>{' '}
-            icerigini calistirdiginizdan emin olun.
+            </code>
           </p>
         ) : (
           <div className="mt-4 overflow-x-auto">
-            <table className="min-w-full border-collapse text-xs text-slate-100">
+            <table className="min-w-full border-collapse text-xs text-slate-700">
               <thead>
-                <tr className="border-b border-slate-800 bg-slate-900/60">
+                <tr className="border-b border-slate-200 bg-slate-50">
                   <th className="px-3 py-2 text-left font-semibold">
-                    Musteri
+                    Müşteri
                   </th>
                   <th className="px-3 py-2 text-left font-semibold">
                     E-posta
                   </th>
                   <th className="px-3 py-2 text-left font-semibold">
-                    Kullanici Adi
+                    Kullanıcı Adı
                   </th>
                   <th className="px-3 py-2 text-left font-semibold">
                     Stripe Linki
                   </th>
                   <th className="px-3 py-2 text-left font-semibold">
-                    Olusturulma
+                    Oluşturulma
                   </th>
                 </tr>
               </thead>
@@ -70,13 +67,13 @@ export default async function AdminCustomersPage() {
                 {customers.map((c) => (
                   <tr
                     key={c.id}
-                    className="border-b border-slate-900/70 hover:bg-slate-900/70"
+                    className="border-b border-slate-100 hover:bg-slate-50"
                   >
                     <td className="px-3 py-2">
-                      <div className="font-medium text-slate-50">
+                      <div className="font-medium text-slate-950">
                         {c.fullName}
                       </div>
-                      <div className="text-[11px] text-slate-400">
+                      <div className="text-[11px] text-slate-500">
                         {c.id.slice(0, 8)}...
                       </div>
                     </td>
@@ -88,17 +85,17 @@ export default async function AdminCustomersPage() {
                           href={c.stripePaymentLinkUrl}
                           target="_blank"
                           rel="noreferrer"
-                          className="inline-flex items-center gap-1 rounded-full bg-emerald-500/10 px-3 py-1 text-[11px] font-semibold text-emerald-300 ring-1 ring-emerald-500/40 hover:bg-emerald-500/20"
+                          className="status-badge bg-emerald-50 text-emerald-700 hover:bg-emerald-100"
                         >
-                          Stripe Linkini Ac
+                          Stripe Linkini Aç
                         </a>
                       ) : (
                         <span className="text-[11px] text-slate-500">
-                          Tanimlanmamis
+                          Tanımlanmamış
                         </span>
                       )}
                     </td>
-                    <td className="px-3 py-2 text-[11px] text-slate-400">
+                    <td className="px-3 py-2 text-[11px] text-slate-500">
                       {new Date(c.createdAt).toLocaleString('tr-TR')}
                     </td>
                   </tr>
@@ -111,4 +108,3 @@ export default async function AdminCustomersPage() {
     </main>
   );
 }
-

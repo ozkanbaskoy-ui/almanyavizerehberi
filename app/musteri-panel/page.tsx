@@ -3,10 +3,11 @@ import { redirect } from 'next/navigation';
 import { cookies } from 'next/headers';
 
 import { verifyCustomerSessionToken } from '@/lib/auth/customerSession';
+import { getLocalCustomerById } from '@/lib/admin/localCustomersStore';
 import { getSupabaseServerClient } from '@/lib/db/supabaseServer';
 
 export const metadata: Metadata = {
-  title: 'Musteri Paneli',
+  title: 'Müşteri Paneli',
 };
 
 export default async function MusteriPanelPage() {
@@ -44,7 +45,7 @@ export default async function MusteriPanelPage() {
       .maybeSingle();
 
     if (error || !data) {
-      throw error ?? new Error('Musteri bulunamadi');
+      throw error ?? new Error('Müşteri bulunamadı');
     }
 
     customer = {
@@ -56,8 +57,16 @@ export default async function MusteriPanelPage() {
       createdAt: data.created_at as string,
     };
   } catch {
-    // Supabase ayarisinda bir sorun varsa guvenli tarafta kalarak tekrar girise yonlendir.
-    redirect('/musteri-giris');
+    const localCustomer = getLocalCustomerById(parsed.customerId);
+    if (localCustomer) {
+      customer = {
+        id: localCustomer.id,
+        fullName: localCustomer.fullName,
+        email: localCustomer.email,
+        stripePaymentLinkUrl: localCustomer.stripePaymentLinkUrl,
+        createdAt: localCustomer.createdAt,
+      };
+    }
   }
 
   if (!customer) {
@@ -67,24 +76,23 @@ export default async function MusteriPanelPage() {
   return (
     <main className="min-h-screen bg-slate-950/95 py-12">
       <div className="mx-auto max-w-2xl px-4">
-        <div className="rounded-3xl border border-slate-800 bg-slate-950/80 p-6 shadow-xl shadow-black/70">
+        <div className="rounded-2xl border border-slate-800 bg-slate-950/80 p-6 shadow-xl shadow-black/70">
           <h1 className="text-xl font-semibold text-slate-50">
             Merhaba, {customer.fullName}
           </h1>
           <p className="mt-1 text-xs text-slate-400">
-            Bu alan sizin icin olusturulan ozel musteri panelidir. Asagida
-            AVR Global ile calisma surecinde kullanacaginiz odeme linkini
-            bulabilirsiniz.
+            Bu alan sizin için oluşturulan özel müşteri panelidir. Aşağıda
+            çalışma sürecinde kullanacağınız ödeme linkini bulabilirsiniz.
           </p>
 
           <div className="mt-4 rounded-2xl border border-slate-800 bg-slate-900/70 p-4">
             <h2 className="text-sm font-semibold text-slate-100">
-              Odeme Linkiniz
+              Ödeme Linkiniz
             </h2>
             <p className="mt-1 text-xs text-slate-400">
-              Bu link Stripe uzerinden guvenli odeme yapmaniz icin
-              hazirlanmistir. Odeme tutari ve detaylari AVR Global tarafindan
-              Stripe panelinde tanimlanmistir.
+              Bu link Stripe üzerinden güvenli ödeme yapmanız için
+              hazırlanmıştır. Ödeme tutarı ve detayları ekip tarafından
+              tanımlanır.
             </p>
 
             {customer.stripePaymentLinkUrl ? (
@@ -94,12 +102,12 @@ export default async function MusteriPanelPage() {
                 rel="noreferrer"
                 className="mt-4 inline-flex items-center gap-2 rounded-full bg-emerald-500 px-5 py-2 text-xs font-semibold uppercase tracking-wide text-emerald-50 shadow-lg shadow-emerald-900/60 transition hover:bg-emerald-600"
               >
-                Stripe Uzerinden Odeme Yap
+                Stripe Üzerinden Ödeme Yap
               </a>
             ) : (
               <p className="mt-3 rounded-md bg-amber-500/10 px-3 py-2 text-xs text-amber-200">
-                Sizin icin tanimlanmis bir odeme linki henuz gorunmuyor. Lutfen
-                AVR Global ekibiyle iletisime gecin.
+                Sizin için tanımlanmış bir ödeme linki henüz görünmüyor. Lütfen
+                ekibimizle iletişime geçin.
               </p>
             )}
           </div>
@@ -112,9 +120,9 @@ export default async function MusteriPanelPage() {
               </span>
             </p>
             <p className="mt-1">
-              Hesabiniz{' '}
+              Hesabınız{' '}
               {new Date(customer.createdAt).toLocaleString('tr-TR')} tarihinde
-              olusturulmustur.
+              oluşturulmuştur.
             </p>
           </div>
         </div>
@@ -122,4 +130,3 @@ export default async function MusteriPanelPage() {
     </main>
   );
 }
-

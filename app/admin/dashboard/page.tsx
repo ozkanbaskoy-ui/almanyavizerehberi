@@ -4,6 +4,8 @@ export const metadata = {
   title: 'Admin Dashboard',
 };
 
+export const dynamic = 'force-dynamic';
+
 export default async function AdminDashboardPage() {
   const apps = await fetchApplications();
 
@@ -22,18 +24,18 @@ export default async function AdminDashboardPage() {
   }
 
   return (
-    <main className="mx-auto max-w-[1200px] px-4 py-8">
-      <h1 className="text-2xl font-semibold text-slate-900">
+    <main className="admin-page">
+      <h1 className="admin-page-title">
         Genel Bakış
       </h1>
-      <p className="mt-2 text-sm text-slate-600">
+      <p className="admin-page-subtitle">
         Başvuru trafiğini ve temel metrikleri tek ekranda görün. Supabase
         yapılandırıldıysa bu kutulardaki sayılar gerçek veritabanı
         kayıtlarından gelir; aksi durumda örnek (mock) veriler kullanılır.
       </p>
 
       <section className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-        <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+        <div className="metric-card">
           <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
             Toplam Başvuru
           </p>
@@ -41,7 +43,7 @@ export default async function AdminDashboardPage() {
             {total}
           </p>
         </div>
-        <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+        <div className="metric-card">
           <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
             Aktif / İncelemede
           </p>
@@ -49,7 +51,7 @@ export default async function AdminDashboardPage() {
             {pending}
           </p>
         </div>
-        <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+        <div className="metric-card">
           <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
             Tamamlanan
           </p>
@@ -57,7 +59,7 @@ export default async function AdminDashboardPage() {
             {completed}
           </p>
         </div>
-        <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+        <div className="metric-card">
           <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
             Ödeme Bekleyen
           </p>
@@ -68,7 +70,7 @@ export default async function AdminDashboardPage() {
       </section>
 
       {/* Durum dağılımı mini grafik */}
-      <section className="mt-10 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+      <section className="panel mt-10 p-6">
         <h2 className="text-sm font-semibold text-slate-900">
           Başvuru Durum Dağılımı
         </h2>

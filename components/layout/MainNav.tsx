@@ -3,9 +3,15 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
+import { usePathname } from 'next/navigation';
 import { motion } from 'framer-motion';
 
+import { SocialLinks } from '@/components/layout/SocialLinks';
 import type { SiteSettings } from '@/lib/settings/site';
+import {
+  createWhatsAppHref,
+  DEFAULT_WHATSAPP_MESSAGE,
+} from '@/lib/whatsapp';
 
 type NavItem = {
   label: string;
@@ -56,6 +62,11 @@ const AFTERCARE_SERVICES: NavItem = {
 const MAIN_ITEMS: NavItem[] = [
   { label: 'Ana Sayfa', href: '/index.php', title: 'Ana Sayfa' },
   { label: 'Hakkımızda', href: '/hakkimizda.php', title: 'Hakkımızda' },
+  {
+    label: 'Uygunluk Testi',
+    href: '/uygunluk-testi',
+    title: 'Almanya Vize Uygunluk Testi',
+  },
   VISA_SERVICES,
   AFTERCARE_SERVICES,
   { label: 'S.S.S.', href: '/sss.php', title: 'Sıkça Sorulan Sorular' },
@@ -63,20 +74,100 @@ const MAIN_ITEMS: NavItem[] = [
   { label: 'İletişim', href: '/iletisim.php', title: 'İletişim' },
 ];
 
+function normalizePathname(pathname: string) {
+  const pathOnly = pathname.split('?')[0] || '/';
+  const withoutPhp = pathOnly.endsWith('.php')
+    ? pathOnly.slice(0, -4)
+    : pathOnly;
+
+  if (withoutPhp === '/index') {
+    return '/';
+  }
+
+  return withoutPhp || '/';
+}
+
+function hrefPath(href?: string) {
+  if (!href) {
+    return '';
+  }
+
+  try {
+    return normalizePathname(new URL(href, 'https://local.test').pathname);
+  } catch {
+    return normalizePathname(href);
+  }
+}
+
 type MainNavProps = {
   site: SiteSettings;
 };
 
 export function MainNav({ site }: MainNavProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const pathname = usePathname() || '/';
+  const currentPath = normalizePathname(pathname);
 
   const cleanedPhone = site.contactPhone.replace(/\s+/g, '');
   const telHref = cleanedPhone ? `tel:${cleanedPhone}` : undefined;
 
-  const whatsappClean = site.whatsappNumber.replace(/\s+/g, '');
-  const whatsappHref = whatsappClean
-    ? `https://wa.me/${whatsappClean.replace('+', '')}`
-    : undefined;
+  const whatsappHref = createWhatsAppHref(site.whatsappNumber, {
+    message: DEFAULT_WHATSAPP_MESSAGE,
+  });
+
+  const isHrefActive = (href?: string) => {
+    const targetPath = hrefPath(href);
+
+    if (!targetPath) {
+      return false;
+    }
+
+    if (targetPath === '/') {
+      return currentPath === '/';
+    }
+
+    if (targetPath === '/hizmetler' || targetPath === '/servisler') {
+      return (
+        currentPath === targetPath || currentPath.startsWith(`${targetPath}/`)
+      );
+    }
+
+    if (targetPath === '/blog') {
+      return currentPath === '/blog' || currentPath.startsWith('/blog/');
+    }
+
+    return currentPath === targetPath;
+  };
+
+  const isItemActive = (item: NavItem) =>
+    isHrefActive(item.href) || item.children?.some((child) => isHrefActive(child.href));
+
+  const desktopNavClass = (active?: boolean) =>
+    [
+      'inline-flex min-h-11 shrink-0 items-center justify-center rounded-full px-3 py-2 text-center font-semibold leading-none whitespace-nowrap transition-all duration-200 hover:-translate-y-[1px] hover:bg-brand-base/5 hover:text-brand-base hover:shadow-card',
+      active
+        ? 'bg-brand-base/10 text-brand-base shadow-[inset_0_0_0_1px_rgba(30,58,138,0.14)]'
+        : 'text-slate-800',
+    ].join(' ');
+
+  const desktopItemClass = (item: NavItem, active?: boolean) => {
+    const isFitTest = item.href === '/uygunluk-testi';
+    const baseClass = desktopNavClass(active);
+
+    if (!isFitTest) {
+      return baseClass;
+    }
+
+    return 'inline-flex min-h-10 shrink-0 items-center justify-center whitespace-nowrap rounded-full bg-gradient-to-b from-brand-base to-brand-light px-5 py-2 text-center text-xs font-bold uppercase leading-none tracking-wide text-white shadow-[0_8px_18px_rgba(30,58,138,0.22)] ring-1 ring-blue-200/50 transition hover:-translate-y-[1px] hover:shadow-[0_12px_24px_rgba(30,58,138,0.28)]';
+  };
+
+  const mobileNavClass = (active?: boolean) =>
+    [
+      'block rounded-xl px-3 py-2 transition',
+      active
+        ? 'bg-brand-base/10 font-semibold text-brand-base'
+        : 'text-slate-800 hover:bg-slate-50 hover:text-brand-base',
+    ].join(' ');
 
   return (
     <motion.header
@@ -86,10 +177,10 @@ export function MainNav({ site }: MainNavProps) {
       transition={{ duration: 0.8, ease: 'easeOut' }}
     >
       {/* Top bar */}
-      <div className="bg-[#545454] text-[13px] text-slate-100">
-        <div className="mx-auto flex max-w-6xl items-center gap-4 px-4 py-2">
+      <div className="bg-gradient-to-r from-slate-900 via-slate-800 to-brand-dark text-[13px] text-slate-100">
+        <div className="mx-auto flex max-w-[1280px] items-center gap-4 px-4 py-2">
           {/* Sol: e-posta ve telefon */}
-          <div className="flex flex-wrap items-center gap-4 text-[11px] sm:text-[13px]">
+          <div className="hidden flex-wrap items-center gap-4 text-[11px] sm:flex sm:text-[13px]">
             {site.contactEmail && (
               <a
                 href={`mailto:${site.contactEmail}`}
@@ -109,40 +200,24 @@ export function MainNav({ site }: MainNavProps) {
           </div>
 
           {/* Orta: kayar bilgilendirme metni */}
-          <div className="flex-1 overflow-hidden">
-            <div className="animate-marquee whitespace-nowrap font-ui text-[11px] font-medium tracking-wide text-slate-100/90">
-              Hayallerini erteleme, doğru, güvenilir ve şeffaf rehberlik için hemen başvur
+          <div className="min-w-0 flex-1 overflow-hidden sm:min-w-[320px]">
+            <div className="animate-marquee whitespace-nowrap font-ui text-[11px] font-semibold tracking-wide text-slate-100/95 sm:text-[11px]">
+              <span className="marquee-item">
+                Hayallerini erteleme, doğru, güvenilir ve şeffaf rehberlik için hemen başvur
+              </span>
+              <span className="marquee-item" aria-hidden="true">
+                Hayallerini erteleme, doğru, güvenilir ve şeffaf rehberlik için hemen başvur
+              </span>
             </div>
           </div>
 
-          {/* SaÄŸ: sosyal ikonlar */}
+          {/* Sağ: sosyal ikonlar */}
           <div className="hidden items-center gap-2 sm:flex">
-            {site.instagramUrl && (
-              <a
-                href={site.instagramUrl}
-                target="_blank"
-                rel="noreferrer"
-                aria-label="Instagram"
-                className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-slate-900/80 text-slate-100 shadow-sm ring-1 ring-slate-700/70 transition hover:bg-brand-coral hover:text-white hover:shadow-md"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  className="h-3.5 w-3.5"
-                  aria-hidden="true"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M12 7.3A4.7 4.7 0 1 0 16.7 12 4.71 4.71 0 0 0 12 7.3Zm0 7.7A3 3 0 1 1 15 12a3 3 0 0 1-3 3Z"
-                  />
-                  <circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" />
-                  <path
-                    fill="currentColor"
-                    d="M17.5 3H6.5A3.5 3.5 0 0 0 3 6.5v11A3.5 3.5 0 0 0 6.5 21h11a3.5 3.5 0 0 0 3.5-3.5v-11A3.5 3.5 0 0 0 17.5 3Zm2 14.5a2 2 0 0 1-2 2h-11a2 2 0 0 1-2-2v-11a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2Z"
-                  />
-                </svg>
-              </a>
-            )}
+            <SocialLinks
+              instagramUrl={site.instagramUrl}
+              youtubeUrl={site.youtubeUrl}
+              className="flex items-center gap-2"
+            />
             {whatsappHref && (
               <a
                 href={whatsappHref}
@@ -169,8 +244,8 @@ export function MainNav({ site }: MainNavProps) {
       </div>
 
       {/* Main nav */}
-      <div className="mx-auto flex max-w-6xl items-center justify-between border-b border-slate-100 bg-white/95 px-4 py-3">
-        <Link href="/index.php" className="flex items-center gap-3">
+      <div className="mx-auto flex max-w-[1280px] items-center justify-between gap-2 border-b border-slate-100 bg-white/95 px-4 py-3">
+        <Link href="/index.php" className="mr-8 flex min-h-14 shrink-0 items-center gap-3">
           <Image
             src="/assets/img/logo-yan.webp"
             alt={site.siteName || 'Almanya Vize Rehberi'}
@@ -182,30 +257,35 @@ export function MainNav({ site }: MainNavProps) {
         </Link>
 
         {/* Desktop menu */}
-        <nav className="hidden items-center gap-4 text-sm font-semibold text-slate-800 font-ui md:flex">
-          {MAIN_ITEMS.map((item) =>
-            item.children ? (
+        <nav className="hidden flex-1 items-center justify-between gap-2 text-[13px] font-semibold text-slate-800 font-ui xl:gap-3 xl:text-sm md:flex">
+          {MAIN_ITEMS.map((item) => {
+            const active = isItemActive(item);
+
+            return item.children ? (
               <div key={item.label} className="group relative">
                 <button
                   type="button"
-                  className="flex items-center gap-1 rounded-full px-3 py-1 font-semibold text-slate-800 transition-all duration-200 hover:-translate-y-[1px] hover:bg-brand-base/5 hover:text-brand-base hover:shadow-card"
+                  className={`gap-1 ${desktopNavClass(active)}`}
+                  aria-current={active ? 'page' : undefined}
                 >
                   <span>{item.label}</span>
-                  <span className="text-xs leading-none">↓</span>
+                  <span className="text-xs leading-none">+</span>
                 </button>
-                <div className="invisible absolute left-0 top-full mt-2 w-64 rounded-lg border border-slate-100 bg-white text-xs shadow-lg opacity-0 transition-all group-hover:visible group-hover:opacity-100">
-                  <ul className="py-2">
-                    {item.children.map((child) => (
-                      <li key={child.href}>
-                        <Link
-                          href={child.href}
-                          className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-sky-700"
-                        >
-                          {child.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
+                <div className="invisible absolute left-0 top-full z-50 w-72 pt-2 opacity-0 transition-all duration-150 group-hover:visible group-hover:opacity-100">
+                  <div className="rounded-xl border border-slate-100 bg-white text-xs shadow-xl shadow-slate-900/10 ring-1 ring-slate-900/5">
+                    <ul className="py-2">
+                      {item.children.map((child) => (
+                        <li key={child.href}>
+                          <Link
+                            href={child.href}
+                            className="block px-4 py-2.5 text-sm font-semibold text-slate-700 hover:bg-slate-50 hover:text-sky-700"
+                          >
+                            {child.label}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </div>
             ) : (
@@ -213,17 +293,18 @@ export function MainNav({ site }: MainNavProps) {
                 <Link
                   key={item.label}
                   href={item.href}
-                  className="rounded-full px-3 py-1 font-semibold text-slate-800 transition-all duration-200 hover:-translate-y-[1px] hover:bg-brand-base/5 hover:text-brand-base hover:shadow-card"
+                  className={desktopItemClass(item, active)}
+                  aria-current={active ? 'page' : undefined}
                 >
                   {item.label}
                 </Link>
               )
-            )
-          )}
+            );
+          })}
 
           <Link
             href="/basvuru.php"
-            className="relative inline-flex items-center justify-center rounded-full bg-gradient-to-b from-brand-red to-red-700 px-5 py-2.5 text-xs font-semibold uppercase tracking-wide text-white shadow-[0_8px_18px_rgba(15,23,42,0.45)] transition-transform duration-150 hover:-translate-y-0.5 hover:shadow-[0_12px_26px_rgba(15,23,42,0.6)] active:translate-y-0 active:shadow-[0_4px_12px_rgba(15,23,42,0.4)] font-ui"
+            className="relative inline-flex min-h-10 shrink-0 items-center justify-center whitespace-nowrap rounded-full bg-gradient-to-b from-brand-red to-red-700 px-5 py-2.5 text-center text-xs font-bold uppercase leading-none tracking-wide text-white shadow-[0_8px_18px_rgba(185,28,28,0.28)] ring-1 ring-red-300/35 transition-transform duration-150 hover:-translate-y-0.5 hover:shadow-[0_12px_24px_rgba(185,28,28,0.34)] active:translate-y-0 active:shadow-[0_4px_12px_rgba(185,28,28,0.22)] font-ui"
           >
             Başvuru Yap
           </Link>
@@ -232,7 +313,7 @@ export function MainNav({ site }: MainNavProps) {
         {/* Mobile CTA (sadece mobilde görünsün) */}
         <Link
           href="/basvuru.php"
-          className="inline-flex items-center justify-center rounded-full bg-gradient-to-b from-brand-red to-red-700 px-4 py-2 text-xs font-ui font-semibold uppercase tracking-wide text-white shadow-[0_6px_14px_rgba(15,23,42,0.45)] md:hidden"
+          className="inline-flex items-center justify-center whitespace-nowrap rounded-full bg-gradient-to-b from-brand-red to-red-700 px-4 py-2 text-xs font-ui font-semibold uppercase leading-none tracking-wide text-white shadow-[0_6px_14px_rgba(15,23,42,0.28)] md:hidden"
         >
           Başvuru Yap
         </Link>
@@ -271,12 +352,21 @@ export function MainNav({ site }: MainNavProps) {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <nav className="border-t border-slate-100 bg-white px-4 py-3 text-sm font-ui md:hidden">
+        <nav className="fixed inset-x-0 top-[116px] z-50 max-h-[calc(100dvh-116px)] overflow-y-auto overscroll-contain border-t border-slate-100 bg-white px-4 py-3 text-sm font-ui shadow-2xl md:hidden">
           <ul className="space-y-2">
-            {MAIN_ITEMS.map((item) =>
-              item.children ? (
+            {MAIN_ITEMS.map((item) => {
+              const active = isItemActive(item);
+
+              return item.children ? (
                 <li key={item.label}>
-                  <div className="mb-1 text-xs font-semibold uppercase tracking-wide text-slate-500">
+                  <div
+                    className={[
+                      'mb-1 rounded-xl px-3 py-2 text-xs font-semibold uppercase tracking-wide',
+                      active
+                        ? 'bg-brand-base/10 text-brand-base'
+                        : 'text-slate-500',
+                    ].join(' ')}
+                  >
                     {item.label}
                   </div>
                   <ul className="space-y-1 pl-3">
@@ -284,7 +374,7 @@ export function MainNav({ site }: MainNavProps) {
                       <li key={child.href}>
                         <Link
                           href={child.href}
-                          className="block py-1 text-slate-800"
+                          className={mobileNavClass(isHrefActive(child.href))}
                           onClick={() => setMobileOpen(false)}
                         >
                           {child.label}
@@ -298,19 +388,20 @@ export function MainNav({ site }: MainNavProps) {
                   <li key={item.label}>
                     <Link
                       href={item.href}
-                      className="block py-1 text-slate-800"
+                      className={mobileNavClass(active)}
+                      aria-current={active ? 'page' : undefined}
                       onClick={() => setMobileOpen(false)}
                     >
                       {item.label}
                     </Link>
                   </li>
                 )
-              )
-            )}
+              );
+            })}
             <li className="pt-2">
               <Link
                 href="/basvuru.php"
-                className="block rounded-full bg-gradient-to-b from-brand-red to-red-700 px-4 py-2 text-center text-xs font-semibold uppercase tracking-wide text-white shadow-[0_6px_14px_rgba(15,23,42,0.45)] active:shadow-[0_3px_8px_rgba(15,23,42,0.4)]"
+                className="block whitespace-nowrap rounded-full bg-gradient-to-b from-brand-red to-red-700 px-4 py-2 text-center text-xs font-semibold uppercase leading-none tracking-wide text-white shadow-[0_6px_14px_rgba(15,23,42,0.28)] active:shadow-[0_3px_8px_rgba(15,23,42,0.22)]"
                 onClick={() => setMobileOpen(false)}
               >
                 Başvuru Yap
