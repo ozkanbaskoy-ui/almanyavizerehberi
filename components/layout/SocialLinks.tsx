@@ -1,6 +1,7 @@
 type SocialLinksProps = {
   instagramUrl?: string;
   youtubeUrl?: string;
+  facebookUrl?: string;
   className?: string;
   iconClassName?: string;
   variant?: 'top' | 'footer';
@@ -60,9 +61,21 @@ function InstagramIcon() {
   );
 }
 
+function FacebookIcon() {
+  return (
+    <svg viewBox="0 0 24 24" className="h-4 w-4" aria-hidden="true">
+      <path
+        fill="currentColor"
+        d="M13.7 22v-7.4h2.5l.4-2.9h-2.9V9.8c0-.8.2-1.4 1.5-1.4h1.6V5.8c-.8-.1-1.8-.2-3-.2-2.9 0-4.8 1.8-4.8 5v1.1H7v2.9h2v7.4h4.7Z"
+      />
+    </svg>
+  );
+}
+
 export function SocialLinks({
   instagramUrl,
   youtubeUrl,
+  facebookUrl,
   className,
   iconClassName,
   variant = 'top',
@@ -93,6 +106,15 @@ export function SocialLinks({
       href: instagramUrl || DEFAULT_INSTAGRAM_URL,
       icon: <InstagramIcon />,
     },
+    ...(facebookUrl
+      ? [
+          {
+            label: 'Facebook',
+            href: facebookUrl,
+            icon: <FacebookIcon />,
+          },
+        ]
+      : []),
   ];
 
   return (
