@@ -35,6 +35,13 @@ export const metadata: Metadata = buildMetadata({
   title: 'Almanya Göç Rehberi',
   description:
     'Almanya çalışma vizesi, Mavi Kart, Fırsat Kartı ve göç sonrası işlemler için tek ve güncel rehber.',
+  keywords: [
+    'Almanya göç',
+    'Almanya çalışma vizesi',
+    'Mavi Kart',
+    'Fırsat Kartı',
+    'Almanya yerleşim rehberi',
+  ],
   path: '/almanya-goc',
 });
 

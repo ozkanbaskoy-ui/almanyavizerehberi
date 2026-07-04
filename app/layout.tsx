@@ -5,6 +5,7 @@ import localFont from 'next/font/local';
 import '../styles/globals.css';
 
 import { AppChrome } from '@/components/layout/AppChrome';
+import { DEFAULT_SOCIAL_IMAGE } from '@/lib/seo/metadata';
 import { getThemeSettings } from '@/lib/settings/theme';
 import { getTypographySettings } from '@/lib/settings/typography';
 import { getSiteSettings } from '@/lib/settings/site';
@@ -82,6 +83,14 @@ export const metadata: Metadata = {
   },
   description:
     'Almanya çalışma vizesi, Mavi Kart, Fırsat Kartı ve göç sonrası işlemler için profesyonel rehberlik.',
+  keywords: [
+    'Almanya vize rehberi',
+    'Almanya çalışma vizesi',
+    'Mavi Kart',
+    'Fırsat Kartı',
+    'Almanya göç',
+    'Almanya vize danışmanlığı',
+  ],
   robots: {
     index: true,
     follow: true,
@@ -98,7 +107,7 @@ export const metadata: Metadata = {
       'Almanya çalışma vizesi, Mavi Kart, Fırsat Kartı ve göç sonrası işlemler için profesyonel rehberlik.',
     images: [
       {
-        url: '/og/default-og.webp',
+        url: DEFAULT_SOCIAL_IMAGE,
         width: 1200,
         height: 630,
         alt: 'Almanya Vize Rehberi',
@@ -109,7 +118,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@VizeRehberi',
     creator: '@VizeRehberi',
-    images: ['/og/default-og.webp'],
+    images: [DEFAULT_SOCIAL_IMAGE],
   },
   alternates: {
     canonical: 'https://www.almanyavizerehberi.com/',
@@ -120,30 +129,12 @@ type RootLayoutProps = {
   children: React.ReactNode;
 };
 
-const organizationJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Organization',
-  name: 'Almanya Vize Rehberi',
-  url: 'https://www.almanyavizerehberi.com',
-  logo: 'https://www.almanyavizerehberi.com/assets/img/logo.webp',
-  sameAs: [
-    'https://www.instagram.com/almanyavizerehberi',
-    'https://x.com/VizeRehberi',
-    'https://www.tiktok.com/@almanyavizerehberi',
-    'https://www.youtube.com/@AlmanyaVizeRehberi',
-  ],
-  contactPoint: {
-    '@type': 'ContactPoint',
-    contactType: 'customer service',
-    availableLanguage: ['Turkish', 'German'],
-  },
-};
-
 export default function RootLayout({ children }: RootLayoutProps) {
   const { activeTheme, customColors } = getThemeSettings();
   const typography = getTypographySettings();
   const site = getSiteSettings();
   const gaId = process.env.NEXT_PUBLIC_GA_ID;
+  const cleanPhone = site.contactPhone.replace(/\s+/g, '');
 
   const cssVars = {
     '--color-hero-from': customColors.heroFrom,
@@ -162,6 +153,41 @@ export default function RootLayout({ children }: RootLayoutProps) {
     fontPoppins.variable,
   ].join(' ');
 
+  const organizationJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: site.siteName,
+    url: 'https://www.almanyavizerehberi.com',
+    logo: 'https://www.almanyavizerehberi.com/assets/img/logo-yan.webp',
+    sameAs: [
+      'https://www.instagram.com/almanyavizerehberi',
+      'https://x.com/VizeRehberi',
+      'https://www.tiktok.com/@almanyavizerehberi',
+      'https://www.youtube.com/@AlmanyaVizeRehberi',
+      'https://www.facebook.com/people/Almanya-Vize-Rehberi/61576181364841/',
+    ],
+    contactPoint: {
+      '@type': 'ContactPoint',
+      contactType: 'customer service',
+      telephone: cleanPhone,
+      email: site.contactEmail || undefined,
+      availableLanguage: ['Turkish', 'German'],
+    },
+  };
+
+  const websiteJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: site.siteName,
+    url: 'https://www.almanyavizerehberi.com',
+    inLanguage: 'tr-TR',
+    publisher: {
+      '@type': 'Organization',
+      name: site.siteName,
+      url: 'https://www.almanyavizerehberi.com',
+    },
+  };
+
   return (
     <html lang="tr">
       <body
@@ -173,11 +199,12 @@ export default function RootLayout({ children }: RootLayoutProps) {
         ].join(' ')}
         style={cssVars}
       >
-        <script
-          type="application/ld+json"
-          // eslint-disable-next-line react/no-danger
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
-        />
+        <Script id="organization-jsonld" type="application/ld+json">
+          {JSON.stringify(organizationJsonLd)}
+        </Script>
+        <Script id="website-jsonld" type="application/ld+json">
+          {JSON.stringify(websiteJsonLd)}
+        </Script>
         {gaId && (
           <>
             <Script

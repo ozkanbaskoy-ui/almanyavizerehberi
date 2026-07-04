@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import Script from 'next/script';
 
 import {
   getAllBlogPosts,
@@ -8,6 +9,7 @@ import {
 } from '@/lib/content/blog';
 import { RevealOnScroll } from '@/components/common/RevealOnScroll';
 import { Breadcrumb } from '@/components/common/Breadcrumb';
+import { DEFAULT_SOCIAL_IMAGE } from '@/lib/seo/metadata';
 
 type PageParams = {
   slug: string;
@@ -35,11 +37,12 @@ export async function generateMetadata(
     const title = post.seoTitle || post.title;
     const description = post.seoDescription || '';
 
-    const ogImage = post.image || `/og/default-og.webp`;
+    const ogImage = post.image || DEFAULT_SOCIAL_IMAGE;
 
     return {
       title,
       description,
+      keywords: post.keywords,
       alternates: {
         canonical: `${SITE_URL}/blog/${post.slug}`,
       },
@@ -119,8 +122,32 @@ export default async function BlogDetailPage(props: PageProps) {
     ],
   };
 
+  const articleJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: post.title,
+    description: post.seoDescription,
+    image: [post.image || DEFAULT_SOCIAL_IMAGE],
+    datePublished: post.date,
+    dateModified: post.date,
+    mainEntityOfPage: `${SITE_URL}/blog/${post.slug}`,
+    author: {
+      '@type': 'Organization',
+      name: 'Almanya Vize Rehberi',
+      url: SITE_URL,
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Almanya Vize Rehberi',
+      url: SITE_URL,
+    },
+  };
+
   return (
     <main className="bg-surface-main">
+      <Script id="blog-article-jsonld" type="application/ld+json">
+        {JSON.stringify(articleJsonLd)}
+      </Script>
       <script
         type="application/ld+json"
         // eslint-disable-next-line react/no-danger

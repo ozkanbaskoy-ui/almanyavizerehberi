@@ -6,10 +6,12 @@ type SeoParams = {
   path: string;
   ogImage?: string;
   ogType?: 'website' | 'article';
+  keywords?: string | string[];
 };
 
 const SITE_URL = 'https://www.almanyavizerehberi.com';
 const SITE_NAME = 'Almanya Vize Rehberi';
+export const DEFAULT_SOCIAL_IMAGE = '/opengraph-image';
 
 export function buildMetadata({
   title,
@@ -17,13 +19,15 @@ export function buildMetadata({
   path,
   ogImage,
   ogType = 'website',
+  keywords,
 }: SeoParams): Metadata {
   const url = new URL(path, SITE_URL).toString();
-  const defaultOgImage = `${SITE_URL}/og/default-og.webp`;
+  const defaultOgImage = DEFAULT_SOCIAL_IMAGE;
 
   return {
     title: `${title} | ${SITE_NAME}`,
     description,
+    keywords,
     robots: {
       index: true,
       follow: true,
@@ -54,4 +58,3 @@ export function buildMetadata({
     },
   };
 }
-

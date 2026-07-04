@@ -1,13 +1,22 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
+import Script from 'next/script';
 
 import { getAllVisas } from '@/lib/content/visas';
+import { DEFAULT_SOCIAL_IMAGE } from '@/lib/seo/metadata';
 
 export const metadata: Metadata = {
   title: 'Almanya Vize Rehberi - Profesyonel Danışmanlık',
   description:
     'Almanya çalışma vizesi, Mavi Kart, Fırsat Kartı ve göç sonrası işlemler için profesyonel danışmanlık.',
+  keywords: [
+    'Almanya vize rehberi',
+    'Almanya çalışma vizesi',
+    'Almanya göç',
+    'Mavi Kart',
+    'Fırsat Kartı',
+  ],
   alternates: {
     canonical: 'https://www.almanyavizerehberi.com/',
   },
@@ -19,7 +28,7 @@ export const metadata: Metadata = {
       'Almanya çalışma vizesi, Mavi Kart, Fırsat Kartı ve göç sonrası işlemler için profesyonel danışmanlık.',
     images: [
       {
-        url: '/og/default-og.webp',
+        url: DEFAULT_SOCIAL_IMAGE,
         width: 1200,
         height: 630,
         alt: 'Almanya Vize Rehberi',
@@ -93,28 +102,33 @@ export default async function HomePage() {
     image: string;
   })[];
 
-  const websiteJsonLd = {
+  const webPageJsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'WebSite',
+    '@type': 'WebPage',
     name: 'Almanya Vize Rehberi',
+    description:
+      'Almanya çalışma vizesi, Mavi Kart, Fırsat Kartı ve göç sonrası işlemler için profesyonel rehberlik.',
     url: 'https://www.almanyavizerehberi.com',
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: {
-        '@type': 'EntryPoint',
-        urlTemplate: 'https://www.almanyavizerehberi.com/hizmetler/{search_term_string}',
-      },
-      'query-input': 'required name=search_term_string',
+    isPartOf: {
+      '@type': 'WebSite',
+      name: 'Almanya Vize Rehberi',
+      url: 'https://www.almanyavizerehberi.com',
+    },
+    about: {
+      '@type': 'Organization',
+      name: 'Almanya Vize Rehberi',
+      url: 'https://www.almanyavizerehberi.com',
     },
   };
 
   return (
     <main id="main" className="bg-surface-main">
-      <script
+      <Script
+        id="home-webpage-jsonld"
         type="application/ld+json"
-        // eslint-disable-next-line react/no-danger
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
-      />
+      >
+        {JSON.stringify(webPageJsonLd)}
+      </Script>
       <div className="home-flow">
         {/* HERO */}
         <section id="home-hero" className="home-flow-section text-surface-main">

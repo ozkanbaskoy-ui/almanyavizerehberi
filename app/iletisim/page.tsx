@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import Script from 'next/script';
 
 import { getPageBySlug } from '@/lib/content/pages';
 import { getSiteSettings } from '@/lib/settings/site';
@@ -9,6 +10,7 @@ import {
   createWhatsAppHref,
   DEFAULT_WHATSAPP_MESSAGE,
 } from '@/lib/whatsapp';
+import { DEFAULT_SOCIAL_IMAGE } from '@/lib/seo/metadata';
 
 function getPage() {
   return getPageBySlug('iletisim');
@@ -20,6 +22,7 @@ export function generateMetadata(): Metadata {
   return {
     title: page.seoTitle || page.title,
     description: page.seoDescription || '',
+    keywords: page.keywords,
     alternates: {
       canonical: 'https://www.almanyavizerehberi.com/iletisim',
     },
@@ -30,7 +33,7 @@ export function generateMetadata(): Metadata {
       url: 'https://www.almanyavizerehberi.com/iletisim',
       images: [
         {
-          url: '/og/default-og.webp',
+          url: DEFAULT_SOCIAL_IMAGE,
           width: 1200,
           height: 630,
           alt: page.title,
@@ -51,9 +54,33 @@ export default function IletisimPage() {
   const whatsappHref = createWhatsAppHref(site.whatsappNumber, {
     message: DEFAULT_WHATSAPP_MESSAGE,
   });
+  const contactJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'ContactPage',
+    name: page.title,
+    description: page.seoDescription,
+    url: 'https://www.almanyavizerehberi.com/iletisim',
+    mainEntity: {
+      '@type': 'Organization',
+      name: site.siteName,
+      url: 'https://www.almanyavizerehberi.com',
+      email: site.contactEmail || undefined,
+      telephone: phoneClean,
+      sameAs: [
+        site.instagramUrl,
+        site.youtubeUrl,
+        'https://x.com/VizeRehberi',
+        'https://www.tiktok.com/@almanyavizerehberi',
+        'https://www.facebook.com/people/Almanya-Vize-Rehberi/61576181364841/',
+      ].filter(Boolean),
+    },
+  };
 
   return (
     <main className="bg-surface-main">
+      <Script id="contact-jsonld" type="application/ld+json">
+        {JSON.stringify(contactJsonLd)}
+      </Script>
       {/* Hero */}
       <section className="site-hero">
         <div className="site-container">

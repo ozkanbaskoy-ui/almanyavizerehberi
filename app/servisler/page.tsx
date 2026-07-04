@@ -24,6 +24,13 @@ export const metadata: Metadata = buildMetadata({
   title: 'Göç Sonrası Hizmetler',
   description:
     'Oturum, yabancılar dairesi, çalışma izni, vergi, sigorta ve diğer göç sonrası işlemler için rehber.',
+  keywords: [
+    'Almanya göç sonrası hizmetler',
+    'Oturum izni',
+    'Yabancılar dairesi',
+    'Çalışma izni',
+    'Vergi ve sigorta',
+  ],
   path: '/servisler',
 });
 

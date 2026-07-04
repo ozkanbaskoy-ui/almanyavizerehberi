@@ -19,6 +19,12 @@ export const metadata: Metadata = buildMetadata({
   title: 'Almanya Vize Hizmetleri',
   description:
     'Almanya çalışma vizesi, Mavi Kart ve Fırsat Kartı için odaklı rehber ve başvuru desteği.',
+  keywords: [
+    'Almanya çalışma vizesi',
+    'Mavi Kart',
+    'Fırsat Kartı',
+    'Almanya vize hizmetleri',
+  ],
   path: '/hizmetler',
 });
 

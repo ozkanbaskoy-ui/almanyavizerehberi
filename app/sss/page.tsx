@@ -2,11 +2,19 @@ import type { Metadata } from 'next';
 import Script from 'next/script';
 
 import { getAllFaq, buildFaqSchemaOrg } from '@/lib/content/faq';
+import { DEFAULT_SOCIAL_IMAGE } from '@/lib/seo/metadata';
 
 export const metadata: Metadata = {
   title: 'Sıkça Sorulan Sorular',
   description:
     'Almanya vize başvuru süreci hakkında en sık sorulan sorular ve yanıtlar.',
+  keywords: [
+    'Almanya vize soruları',
+    'Almanya çalışma vizesi',
+    'Mavi Kart',
+    'Fırsat Kartı',
+    'Almanya göç soruları',
+  ],
   alternates: {
     canonical: 'https://www.almanyavizerehberi.com/sss',
   },
@@ -15,7 +23,7 @@ export const metadata: Metadata = {
     title: 'Sıkça Sorulan Sorular - Almanya Vize Rehberi',
     description: 'Almanya vize başvuru süreci hakkında en sık sorulan sorular ve yanıtlar.',
     url: 'https://www.almanyavizerehberi.com/sss',
-    images: [{ url: '/og/default-og.webp', width: 1200, height: 630, alt: 'SSS' }],
+    images: [{ url: DEFAULT_SOCIAL_IMAGE, width: 1200, height: 630, alt: 'SSS' }],
   },
 };
 

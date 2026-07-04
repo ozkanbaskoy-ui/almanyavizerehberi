@@ -7,6 +7,13 @@ export const metadata: Metadata = {
   title: 'Almanya Vize Uygunluk Testi',
   description:
     'Almanya çalışma vizesi, Mavi Kart, Fırsat Kartı, öğrenci vizesi ve aile birleşimi için ön uygunluk testi. Rotanızı, risklerinizi ve eksik belgelerinizi görün.',
+  keywords: [
+    'Almanya vize uygunluk testi',
+    'Almanya çalışma vizesi',
+    'Mavi Kart',
+    'Fırsat Kartı',
+    'Almanya göç testi',
+  ],
   alternates: {
     canonical: 'https://www.almanyavizerehberi.com/uygunluk-testi',
   },

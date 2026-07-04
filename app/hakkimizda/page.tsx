@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 
 import { getPageBySlug } from '@/lib/content/pages';
 import { RevealOnScroll } from '@/components/common/RevealOnScroll';
+import { DEFAULT_SOCIAL_IMAGE } from '@/lib/seo/metadata';
 
 function getPage() {
   return getPageBySlug('hakkimizda');
@@ -13,6 +15,7 @@ export function generateMetadata(): Metadata {
   return {
     title: page.seoTitle || page.title,
     description: page.seoDescription || '',
+    keywords: page.keywords,
     alternates: {
       canonical: 'https://www.almanyavizerehberi.com/hakkimizda',
     },
@@ -23,7 +26,7 @@ export function generateMetadata(): Metadata {
       url: 'https://www.almanyavizerehberi.com/hakkimizda',
       images: [
         {
-          url: '/og/default-og.webp',
+          url: DEFAULT_SOCIAL_IMAGE,
           width: 1200,
           height: 630,
           alt: page.title,
@@ -35,9 +38,24 @@ export function generateMetadata(): Metadata {
 
 export default function HakkimizdaPage() {
   const page = getPage();
+  const aboutJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'AboutPage',
+    name: page.title,
+    description: page.seoDescription,
+    url: 'https://www.almanyavizerehberi.com/hakkimizda',
+    about: {
+      '@type': 'Organization',
+      name: 'Almanya Vize Rehberi',
+      url: 'https://www.almanyavizerehberi.com',
+    },
+  };
 
   return (
     <main className="compact-content-page bg-surface-main">
+      <Script id="about-jsonld" type="application/ld+json">
+        {JSON.stringify(aboutJsonLd)}
+      </Script>
       {/* Hero */}
       <section className="site-hero">
         <div className="site-container">

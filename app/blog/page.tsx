@@ -1,14 +1,23 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
+import Script from 'next/script';
 
 import { getAllBlogPosts } from '@/lib/content/blog';
 import { RevealOnScroll } from '@/components/common/RevealOnScroll';
+import { DEFAULT_SOCIAL_IMAGE } from '@/lib/seo/metadata';
 
 export const metadata: Metadata = {
   title: 'Blog Yazıları - Almanya Vize Rehberi',
   description:
     "Almanya Vize Rehberi olarak Almanya'ya göç, çalışma, eğitim ve Almanya'da günlük yaşamla ilgili güncel blog yazıları paylaşıyoruz.",
+  keywords: [
+    'Almanya göç blog',
+    'Almanya çalışma vizesi blog',
+    'Mavi Kart',
+    'Fırsat Kartı',
+    'Almanya yaşam rehberi',
+  ],
   alternates: {
     canonical: 'https://www.almanyavizerehberi.com/blog',
   },
@@ -18,7 +27,7 @@ export const metadata: Metadata = {
     description:
       "Almanya Vize Rehberi olarak Almanya'ya göç, çalışma, eğitim ve Almanya'da günlük yaşamla ilgili güncel blog yazıları paylaşıyoruz.",
     url: 'https://www.almanyavizerehberi.com/blog',
-    images: [{ url: '/og/default-og.webp', width: 1200, height: 630, alt: 'Blog Yazıları' }],
+    images: [{ url: DEFAULT_SOCIAL_IMAGE, width: 1200, height: 630, alt: 'Blog Yazıları' }],
   },
 };
 
@@ -47,8 +56,22 @@ export default function BlogPage() {
     return '';
   };
 
+  const itemListJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    itemListElement: posts.map((post, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: post.title,
+      url: `https://www.almanyavizerehberi.com/blog/${post.slug}`,
+    })),
+  };
+
   return (
     <main className="bg-surface-main">
+      <Script id="blog-itemlist-jsonld" type="application/ld+json">
+        {JSON.stringify(itemListJsonLd)}
+      </Script>
       {/* Hero */}
       <section className="site-hero">
         <div className="site-container">
