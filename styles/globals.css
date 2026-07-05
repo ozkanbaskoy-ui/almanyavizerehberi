@@ -655,6 +655,11 @@
     background: linear-gradient(90deg, transparent, rgba(15, 23, 42, 0.18), transparent);
   }
 
+  .home-services-band {
+    background:
+      linear-gradient(180deg, rgba(248, 250, 252, 0.98) 0%, rgba(255, 255, 255, 0.99) 100%);
+  }
+
   .home-panel {
     @apply relative overflow-hidden rounded-2xl border px-4 py-10 md:px-10 md:py-10;
     border-color: rgba(226, 232, 240, 0.82);
@@ -1099,6 +1104,11 @@ main:has(> .site-hero) > section:not(.site-hero) + section:not(.site-hero)::befo
     rgba(96, 165, 250, 0.42),
     transparent
   );
+}
+
+main:has(> .site-hero) > section.home-services-band {
+  background:
+    linear-gradient(180deg, rgba(248, 250, 252, 0.98) 0%, rgba(255, 255, 255, 0.99) 100%);
 }
 
 main:has(> .site-hero) .site-hero .eyebrow-on-dark,

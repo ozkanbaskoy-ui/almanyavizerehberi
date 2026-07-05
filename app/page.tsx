@@ -89,6 +89,14 @@ const FALLBACK_VIDEOS: YouTubeVideo[] = [
   },
 ];
 
+const SERVICE_SHORTCUTS = [
+  { href: '/almanya-vizesi', label: 'Almanya vizesi' },
+  { href: '/almanya-goc', label: 'Almanya göç' },
+  { href: '/hizmetler/calisma-vizesi', label: 'Almanya çalışma vizesi' },
+  { href: '/hizmetler/mavi-kart-vizesi', label: 'Mavi Kart' },
+  { href: '/hizmetler/firsat-karti', label: 'Fırsat Kartı' },
+] as const;
+
 export default async function HomePage() {
   const visas = getAllVisas();
   const homeSettings = getHomeSettings();
@@ -199,19 +207,30 @@ export default async function HomePage() {
         {/* HİZMETLERİMİZ - ÖNE ÇIKANLAR */}
         <section
           id="home-services"
-          className="home-flow-section pt-10 pb-6 md:pt-20 md:pb-10"
+          className="home-flow-section home-services-band pt-10 pb-6 md:pt-20 md:pb-10"
         >
           <div className="relative mx-auto max-w-[1200px] px-4">
             <RevealOnScroll className="text-center">
-              <p className="font-heading text-xs font-semibold uppercase tracking-[0.25em] text-surface-main/70 md:text-sm">
+              <p className="font-heading text-xs font-semibold uppercase tracking-[0.25em] text-brand-base md:text-sm">
                 {homeSettings.services.kicker}
               </p>
-              <h2 className="mt-4 font-heading text-3xl font-semibold text-surface-main md:text-4xl">
+              <h2 className="mt-4 font-heading text-3xl font-semibold text-brand-dark md:text-4xl">
                 {homeSettings.services.title}
               </h2>
-              <p className="mt-4 mx-auto max-w-2xl text-base text-surface-main/80 md:text-lg">
+              <p className="mt-4 mx-auto max-w-2xl text-base text-slate-700 md:text-lg">
                 {homeSettings.services.body}
               </p>
+              <div className="mt-5 flex flex-wrap justify-center gap-3">
+                {SERVICE_SHORTCUTS.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-wide text-slate-700 transition hover:border-brand-base hover:text-brand-base"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+              </div>
             </RevealOnScroll>
 
             <RevealOnScroll className="mt-6 md:mt-10">
