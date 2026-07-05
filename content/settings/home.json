@@ -2,7 +2,7 @@
   "hero": {
     "kicker": "Almanya Vize Rehberi",
     "title": "Almanya'daki Hayalinize Giden Yol",
-    "body": "Almanya'ya göç etmek, kariyer yapmak ve eğitim almak isteyenler için modern, şeffaf ve hızlı vize danışmanlığı sunuyoruz.",
+    "body": "Almanya'ya göç etmek, kariyer kurmak ve çalışma odaklı başvurular için modern, şeffaf ve hızlı danışmanlık sunuyoruz.",
     "primaryCtaText": "Başvuru Yap",
     "secondaryCtaText": "Hizmetlerimizi İncele"
   },
@@ -13,7 +13,7 @@
   "services": {
     "kicker": "HİZMETLERİMİZ",
     "title": "Almanya'ya Açılan Kapınız",
-    "body": "Almanya'da yeni bir hayat kurmak isteyenler için sunduğumuz vize türleriyle, kariyer ve yaşam hedeflerinize güvenli bir yol haritası çiziyoruz."
+    "body": "Çalışma vizesi, Mavi Kart ve Fırsat Kartı için ihtiyacınız olan yol haritasını netleştiriyor, göç sonrası işlemlerinizde de yanınızda oluyoruz."
   },
   "stats": [
     { "label": "Mutlu Müşteri", "value": 1000, "suffix": "+" },
@@ -22,4 +22,3 @@
     { "label": "Ülkeden Başvuru", "value": 15, "suffix": "+" }
   ]
 }
-

@@ -174,10 +174,9 @@ export default function IletisimPage() {
               Almanya Vize Rehberi ile İletişime Geçin
             </h1>
             <p className="mt-4 text-sm leading-relaxed text-surface-main/80 md:text-base">
-              Almanya&apos;ya göç, çalışma, eğitim ve aile birleşimi
-              süreçleriniz hakkında tüm sorularınız için bizimle iletişime
-              geçebilirsiniz. Uzman ekibimiz size en kısa sürede dönüş
-              yapacaktır.
+              Almanya çalışma vizesi, Mavi Kart, Fırsat Kartı ve göç sonrası
+              işlemleriniz hakkında bizimle iletişime geçebilirsiniz. Uzman
+              ekibimiz size en kısa sürede dönüş yapacaktır.
             </p>
           </RevealOnScroll>
         </div>

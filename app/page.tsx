@@ -9,7 +9,7 @@ import { DEFAULT_SOCIAL_IMAGE } from '@/lib/seo/metadata';
 export const metadata: Metadata = {
   title: 'Almanya Vize Rehberi - Profesyonel Danışmanlık',
   description:
-    'Almanya vizesi, Almanya çalışma vizesi, Mavi Kart, Fırsat Kartı ve göç sonrası işlemler için profesyonel danışmanlık.',
+    'Almanya vizesi, Almanya çalışma vizesi, Mavi Kart, Fırsat Kartı ve nitelikli göç sonrası işlemler için profesyonel danışmanlık.',
   keywords: [
     'Almanya vize rehberi',
     'Almanya vizesi',
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     url: 'https://www.almanyavizerehberi.com/',
     title: 'Almanya Vize Rehberi - Profesyonel Danışmanlık',
     description:
-      'Almanya vizesi, Almanya çalışma vizesi, Mavi Kart, Fırsat Kartı ve göç sonrası işlemler için profesyonel danışmanlık.',
+      'Almanya vizesi, Almanya çalışma vizesi, Mavi Kart, Fırsat Kartı ve nitelikli göç sonrası işlemler için profesyonel danışmanlık.',
     images: [
       {
         url: DEFAULT_SOCIAL_IMAGE,
@@ -109,7 +109,7 @@ export default async function HomePage() {
     '@type': 'WebPage',
     name: 'Almanya Vize Rehberi',
     description:
-      'Almanya vizesi, Almanya çalışma vizesi, Mavi Kart, Fırsat Kartı ve göç sonrası işlemler için profesyonel rehberlik.',
+      'Almanya vizesi, Almanya çalışma vizesi, Mavi Kart, Fırsat Kartı ve nitelikli göç sonrası işlemler için profesyonel rehberlik.',
     url: 'https://www.almanyavizerehberi.com',
     isPartOf: {
       '@type': 'WebSite',
@@ -262,6 +262,55 @@ export default async function HomePage() {
                 </RevealOnScroll>
               </div>
             </RevealOnScroll>
+          </div>
+        </section>
+
+        <section className="home-flow-section py-20 md:py-24">
+          <div className="mx-auto max-w-[1200px] px-4">
+            <RevealOnScroll className="max-w-3xl">
+              <p className="font-heading text-xs font-semibold uppercase tracking-[0.25em] text-surface-main/70 md:text-sm">
+                Sizin İçin Uygun
+              </p>
+              <h2 className="mt-4 font-heading text-3xl font-semibold text-surface-main md:text-4xl">
+                Odak alanımız çalışma ve nitelikli göç rotaları
+              </h2>
+              <p className="mt-4 max-w-2xl text-base leading-7 text-surface-main/80 md:text-lg">
+                Bizim yapı, iş teklifi ve nitelikli başvuru odaklı kişiler
+                için tasarlanır. Böylece kullanıcı daha ilk anda doğru hatta
+                yönlenir, size de daha temiz lead gelir.
+              </p>
+            </RevealOnScroll>
+
+            <div className="mt-8 grid gap-4 lg:grid-cols-2">
+              <RevealOnScroll>
+                <div className="rounded-[20px] border border-white/10 bg-white/[0.06] p-6 shadow-soft backdrop-blur-[2px]">
+                  <p className="text-xs font-semibold uppercase tracking-[0.22em] text-surface-main/65">
+                    Kapsamımız
+                  </p>
+                  <ul className="mt-4 space-y-3 text-sm leading-6 text-surface-main/90 md:text-base">
+                    <li>Almanya çalışma vizesi</li>
+                    <li>Almanya Mavi Kart</li>
+                    <li>Almanya Fırsat Kartı</li>
+                    <li>Göç sonrası işlemler ve yönlendirme</li>
+                    <li>Uygunluk testi ve başvuru ön değerlendirme</li>
+                  </ul>
+                </div>
+              </RevealOnScroll>
+
+              <RevealOnScroll delay={0.08}>
+                <div className="rounded-[20px] border border-white/10 bg-white/[0.06] p-6 shadow-soft backdrop-blur-[2px]">
+                  <p className="text-xs font-semibold uppercase tracking-[0.22em] text-surface-main/65">
+                    Kapsam Dışı
+                  </p>
+                  <ul className="mt-4 space-y-3 text-sm leading-6 text-surface-main/90 md:text-base">
+                    <li>Aile birleşimi başvuruları</li>
+                    <li>Öğrenci ve dil kursu vizeleri</li>
+                    <li>Turistik başvurular</li>
+                    <li>Kariyer dışı genel yönlendirmeler</li>
+                  </ul>
+                </div>
+              </RevealOnScroll>
+            </div>
           </div>
         </section>
       </div>

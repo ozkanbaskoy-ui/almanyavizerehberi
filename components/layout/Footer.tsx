@@ -81,7 +81,7 @@ export function Footer({ site }: FooterProps) {
               </Link>
 
               <p className="mt-5 max-w-xl text-sm leading-7 text-slate-300">
-                Almanya&apos;ya göç, çalışma, eğitim ve aile birleşimi
+                Almanya&apos;ya göç, çalışma ve nitelikli başvuru
                 süreçlerinde başvurunuzu daha net, düzenli ve güvenli şekilde
                 planlamanız için uçtan uca danışmanlık sunuyoruz.
               </p>
