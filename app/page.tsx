@@ -9,11 +9,13 @@ import { DEFAULT_SOCIAL_IMAGE } from '@/lib/seo/metadata';
 export const metadata: Metadata = {
   title: 'Almanya Vize Rehberi - Profesyonel Danışmanlık',
   description:
-    'Almanya çalışma vizesi, Mavi Kart, Fırsat Kartı ve göç sonrası işlemler için profesyonel danışmanlık.',
+    'Almanya vizesi, Almanya çalışma vizesi, Mavi Kart, Fırsat Kartı ve göç sonrası işlemler için profesyonel danışmanlık.',
   keywords: [
     'Almanya vize rehberi',
+    'Almanya vizesi',
     'Almanya çalışma vizesi',
     'Almanya göç',
+    'çalışma vizesi',
     'Mavi Kart',
     'Fırsat Kartı',
   ],
@@ -25,7 +27,7 @@ export const metadata: Metadata = {
     url: 'https://www.almanyavizerehberi.com/',
     title: 'Almanya Vize Rehberi - Profesyonel Danışmanlık',
     description:
-      'Almanya çalışma vizesi, Mavi Kart, Fırsat Kartı ve göç sonrası işlemler için profesyonel danışmanlık.',
+      'Almanya vizesi, Almanya çalışma vizesi, Mavi Kart, Fırsat Kartı ve göç sonrası işlemler için profesyonel danışmanlık.',
     images: [
       {
         url: DEFAULT_SOCIAL_IMAGE,
@@ -107,7 +109,7 @@ export default async function HomePage() {
     '@type': 'WebPage',
     name: 'Almanya Vize Rehberi',
     description:
-      'Almanya çalışma vizesi, Mavi Kart, Fırsat Kartı ve göç sonrası işlemler için profesyonel rehberlik.',
+      'Almanya vizesi, Almanya çalışma vizesi, Mavi Kart, Fırsat Kartı ve göç sonrası işlemler için profesyonel rehberlik.',
     url: 'https://www.almanyavizerehberi.com',
     isPartOf: {
       '@type': 'WebSite',

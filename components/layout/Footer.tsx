@@ -18,6 +18,7 @@ type FooterProps = {
 const PRIMARY_LINKS = [
   { href: '/', label: 'Ana Sayfa' },
   { href: '/hakkimizda', label: 'Hakkımızda' },
+  { href: '/almanya-vizesi', label: 'Almanya Vizesi Rehberi' },
   { href: '/almanya-goc', label: 'Almanya Göç Rehberi' },
   { href: '/uygunluk-testi', label: 'Uygunluk Testi' },
   { href: '/hizmetler', label: 'Hizmetlerimiz' },

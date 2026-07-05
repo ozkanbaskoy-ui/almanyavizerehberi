@@ -25,6 +25,7 @@ const coreServiceSlugs = [
 ] as const;
 
 const quickLinks = [
+  { href: '/almanya-vizesi', label: 'Almanya Vizesi Rehberi' },
   { href: '/hizmetler', label: 'Vize Hizmetleri' },
   { href: '/servisler', label: 'Göç Sonrası Hizmetler' },
   { href: '/uygunluk-testi', label: 'Uygunluk Testi' },
@@ -34,10 +35,12 @@ const quickLinks = [
 export const metadata: Metadata = buildMetadata({
   title: 'Almanya Göç Rehberi',
   description:
-    'Almanya çalışma vizesi, Mavi Kart, Fırsat Kartı ve göç sonrası işlemler için tek ve güncel rehber.',
+    'Almanya vizesi, Almanya çalışma vizesi, Mavi Kart, Fırsat Kartı ve göç sonrası işlemler için tek ve güncel rehber.',
   keywords: [
+    'Almanya vizesi',
     'Almanya göç',
     'Almanya çalışma vizesi',
+    'çalışma vizesi',
     'Mavi Kart',
     'Fırsat Kartı',
     'Almanya yerleşim rehberi',
@@ -117,9 +120,9 @@ export default function AlmanyaGocPage() {
               Almanya Göç Rehberi
             </h1>
             <p className="mt-4 max-w-2xl text-sm leading-7 text-surface-main/80 md:text-base">
-              Almanya&apos;da çalışma, nitelikli göç ve yerleşim sürecinde
-              çalışma vizesi, Mavi Kart, Fırsat Kartı ve sonrasındaki resmi
-              adımları tek yerden takip edin.
+              Almanya vizesi, çalışma vizesi, Mavi Kart, Fırsat Kartı ve
+              yerleşim sürecinde ihtiyaç duyduğunuz resmi adımları tek
+              yerden takip edin.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               {quickLinks.map((link) => (

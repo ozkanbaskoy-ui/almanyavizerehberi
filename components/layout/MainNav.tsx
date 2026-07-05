@@ -65,6 +65,11 @@ const MAIN_ITEMS: NavItem[] = [
     href: '/almanya-goc',
     title: 'Almanya Göç Rehberi',
   },
+  {
+    label: 'Almanya Vizesi',
+    href: '/almanya-vizesi',
+    title: 'Almanya Vizesi Rehberi',
+  },
   VISA_SERVICES,
   AFTERCARE_SERVICES,
   { label: 'S.S.S.', href: '/sss', title: 'Sıkça Sorulan Sorular' },
