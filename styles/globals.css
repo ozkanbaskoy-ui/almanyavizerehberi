@@ -726,6 +726,31 @@
     @apply bg-surface-main py-14 md:py-16;
   }
 
+  .public-page .section-surface h2,
+  .public-page .section-white h2,
+  .public-page .panel h2,
+  .public-page .interactive-panel h2 {
+    @apply text-brand-dark;
+  }
+
+  .public-page .section-surface h3,
+  .public-page .section-white h3,
+  .public-page .panel h3,
+  .public-page .interactive-panel h3 {
+    @apply text-brand-dark;
+  }
+
+  .public-page .section-surface p,
+  .public-page .section-white p,
+  .public-page .panel p,
+  .public-page .interactive-panel p,
+  .public-page .section-surface li,
+  .public-page .section-white li,
+  .public-page .panel li,
+  .public-page .interactive-panel li {
+    @apply text-slate-700;
+  }
+
   .content-prose {
     @apply prose prose-slate max-w-none prose-headings:font-semibold prose-headings:tracking-normal prose-h2:text-brand-dark prose-h3:text-brand-dark prose-p:text-slate-700 prose-li:text-slate-700 prose-strong:text-brand-dark;
   }

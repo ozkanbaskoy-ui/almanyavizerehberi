@@ -54,6 +54,12 @@ const OFFICIAL_SOURCES = [
   },
 ];
 
+const LAST_UPDATED = new Intl.DateTimeFormat('tr-TR', {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric',
+}).format(new Date());
+
 const PROCESS_STEPS = [
   {
     title: 'Rota netleştirin',
@@ -122,7 +128,7 @@ export default function AlmanyaVizesiPage() {
   const faqJsonLd = buildFaqSchemaOrg(faqItems);
 
   return (
-    <main className="bg-surface-main">
+    <main className="public-page bg-surface-main">
       <Script id="almanya-vizesi-breadcrumb" type="application/ld+json">
         {JSON.stringify(breadcrumbJsonLd)}
       </Script>
@@ -160,6 +166,14 @@ export default function AlmanyaVizesiPage() {
                   {link.label}
                 </Link>
               ))}
+            </div>
+            <div className="mt-5 flex flex-wrap gap-3">
+              <span className="inline-flex items-center rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-medium text-surface-main/80">
+                Son güncelleme: {LAST_UPDATED}
+              </span>
+              <span className="inline-flex items-center rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-medium text-surface-main/80">
+                Resmi kaynaklarla desteklenir
+              </span>
             </div>
           </RevealOnScroll>
 

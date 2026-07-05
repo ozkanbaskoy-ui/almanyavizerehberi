@@ -32,6 +32,12 @@ const quickLinks = [
   { href: '/sss', label: 'S.S.S.' },
 ];
 
+const LAST_UPDATED = new Intl.DateTimeFormat('tr-TR', {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric',
+}).format(new Date());
+
 export const metadata: Metadata = buildMetadata({
   title: 'Almanya Göç Rehberi',
   description:
@@ -93,7 +99,7 @@ export default function AlmanyaGocPage() {
   };
 
   return (
-    <main className="bg-surface-main">
+    <main className="public-page bg-surface-main">
       <Script
         id="almanya-goc-breadcrumb"
         type="application/ld+json"
@@ -134,6 +140,14 @@ export default function AlmanyaGocPage() {
                   {link.label}
                 </Link>
               ))}
+            </div>
+            <div className="mt-5 flex flex-wrap gap-3">
+              <span className="inline-flex items-center rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-medium text-surface-main/80">
+                Son güncelleme: {LAST_UPDATED}
+              </span>
+              <span className="inline-flex items-center rounded-full border border-white/15 bg-white/10 px-3 py-1 text-xs font-medium text-surface-main/80">
+                Resmi kaynaklarla desteklenir
+              </span>
             </div>
           </RevealOnScroll>
 

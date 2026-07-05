@@ -37,7 +37,7 @@ export default function SSSPage() {
         {JSON.stringify(schema)}
       </Script>
 
-      <main className="bg-surface-soft">
+      <main className="public-page bg-surface-soft">
         <section className="site-hero">
           <div className="mx-auto max-w-4xl px-4">
             <p className="eyebrow-on-dark">SSS</p>

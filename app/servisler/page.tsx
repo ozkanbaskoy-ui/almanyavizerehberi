@@ -68,7 +68,7 @@ export default function ServislerPage() {
   };
 
   return (
-    <main className="bg-surface-main">
+    <main className="public-page bg-surface-main">
       <Script id="servisler-breadcrumb" type="application/ld+json">
         {JSON.stringify(breadcrumbJsonLd)}
       </Script>

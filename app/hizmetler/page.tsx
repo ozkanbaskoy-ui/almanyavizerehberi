@@ -62,7 +62,7 @@ export default function HizmetlerPage() {
   };
 
   return (
-    <main className="bg-surface-main">
+    <main className="public-page bg-surface-main">
       <Script id="hizmetler-breadcrumb" type="application/ld+json">
         {JSON.stringify(breadcrumbJsonLd)}
       </Script>

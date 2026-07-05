@@ -159,7 +159,7 @@ export default function IletisimPage() {
   };
 
   return (
-    <main className="bg-surface-main">
+    <main className="public-page bg-surface-main">
       <Script id="contact-jsonld" type="application/ld+json">
         {JSON.stringify(contactJsonLd)}
       </Script>

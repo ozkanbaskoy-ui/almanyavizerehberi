@@ -124,7 +124,7 @@ export default async function HomePage() {
   };
 
   return (
-    <main id="main" className="bg-surface-main">
+    <main id="main" className="public-page bg-surface-main">
       <Script
         id="home-webpage-jsonld"
         type="application/ld+json"
@@ -265,16 +265,16 @@ export default async function HomePage() {
           </div>
         </section>
 
-        <section className="home-flow-section py-20 md:py-24">
+        <section className="home-flow-section section-white">
           <div className="mx-auto max-w-[1200px] px-4">
             <RevealOnScroll className="max-w-3xl">
-              <p className="font-heading text-xs font-semibold uppercase tracking-[0.25em] text-surface-main/70 md:text-sm">
+              <p className="font-heading text-xs font-semibold uppercase tracking-[0.25em] text-brand-base md:text-sm">
                 Sizin İçin Uygun
               </p>
-              <h2 className="mt-4 font-heading text-3xl font-semibold text-surface-main md:text-4xl">
+              <h2 className="mt-4 font-heading text-3xl font-semibold text-brand-dark md:text-4xl">
                 Odak alanımız çalışma ve nitelikli göç rotaları
               </h2>
-              <p className="mt-4 max-w-2xl text-base leading-7 text-surface-main/80 md:text-lg">
+              <p className="mt-4 max-w-2xl text-base leading-7 text-slate-700 md:text-lg">
                 Bizim yapı, iş teklifi ve nitelikli başvuru odaklı kişiler
                 için tasarlanır. Böylece kullanıcı daha ilk anda doğru hatta
                 yönlenir, size de daha temiz lead gelir.
@@ -283,11 +283,11 @@ export default async function HomePage() {
 
             <div className="mt-8 grid gap-4 lg:grid-cols-2">
               <RevealOnScroll>
-                <div className="rounded-[20px] border border-white/10 bg-white/[0.06] p-6 shadow-soft backdrop-blur-[2px]">
-                  <p className="text-xs font-semibold uppercase tracking-[0.22em] text-surface-main/65">
+                <div className="panel h-full p-6">
+                  <p className="inline-flex rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-emerald-700">
                     Kapsamımız
                   </p>
-                  <ul className="mt-4 space-y-3 text-sm leading-6 text-surface-main/90 md:text-base">
+                  <ul className="mt-4 space-y-3 text-sm leading-6 text-slate-700 md:text-base">
                     <li>Almanya çalışma vizesi</li>
                     <li>Almanya Mavi Kart</li>
                     <li>Almanya Fırsat Kartı</li>
@@ -298,11 +298,11 @@ export default async function HomePage() {
               </RevealOnScroll>
 
               <RevealOnScroll delay={0.08}>
-                <div className="rounded-[20px] border border-white/10 bg-white/[0.06] p-6 shadow-soft backdrop-blur-[2px]">
-                  <p className="text-xs font-semibold uppercase tracking-[0.22em] text-surface-main/65">
+                <div className="panel h-full p-6">
+                  <p className="inline-flex rounded-full bg-amber-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-amber-700">
                     Kapsam Dışı
                   </p>
-                  <ul className="mt-4 space-y-3 text-sm leading-6 text-surface-main/90 md:text-base">
+                  <ul className="mt-4 space-y-3 text-sm leading-6 text-slate-700 md:text-base">
                     <li>Aile birleşimi başvuruları</li>
                     <li>Öğrenci ve dil kursu vizeleri</li>
                     <li>Turistik başvurular</li>
