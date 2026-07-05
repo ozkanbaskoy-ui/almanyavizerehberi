@@ -216,101 +216,83 @@ export default async function HomePage() {
 
             <RevealOnScroll className="mt-6 md:mt-10">
               <div className="home-panel">
-                <div className="relative grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-                  {featuredVisas.map((visa, index) => (
-                    <RevealOnScroll key={visa.slug} delay={0.05 * index}>
-                      <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border-subtle bg-surface-main shadow-soft transition hover:border-brand-base/40 hover:shadow-md">
-                        <div className="relative h-44 w-full overflow-hidden">
-                          <Image
-                            src={visa.image}
-                            alt={visa.title}
-                            fill
-                            className="object-cover transition-transform duration-500 group-hover:scale-105"
-                          />
-                        </div>
-                        <div className="flex flex-1 flex-col p-5">
-                          <h3 className="font-heading text-lg font-semibold text-brand-dark md:text-xl">
-                            {visa.title}
-                          </h3>
-                          <p className="mt-2 line-clamp-4 text-[15px] leading-relaxed text-slate-800 md:text-base">
-                            {visa.seoDescription}
-                          </p>
-                          <div className="mt-4 flex items-center justify-between">
-                            <Link
-                              href="/uygunluk-testi"
-                              className="text-xs font-ui font-semibold text-brand-base hover:text-brand-light"
-                            >
-                              Detayları Gör
-                            </Link>
-                            <span className="text-xs text-slate-500">
-                              Vize • Almanya
-                            </span>
-                          </div>
-                        </div>
-                      </article>
-                    </RevealOnScroll>
-                  ))}
-                </div>
+                <RevealOnScroll>
+                  <div className="grid gap-4 lg:grid-cols-2">
+                    <div className="rounded-2xl border border-border-subtle bg-surface-main p-5 shadow-soft">
+                      <p className="inline-flex rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-emerald-700">
+                        Kapsamımız
+                      </p>
+                      <ul className="mt-4 space-y-3 text-sm leading-6 text-slate-700 md:text-base">
+                        <li>Almanya çalışma vizesi</li>
+                        <li>Almanya Mavi Kart</li>
+                        <li>Almanya Fırsat Kartı</li>
+                        <li>Göç sonrası işlemler ve yönlendirme</li>
+                        <li>Uygunluk testi ve başvuru ön değerlendirme</li>
+                      </ul>
+                    </div>
 
-                <RevealOnScroll className="relative mt-10 text-center">
-                <Link
-                    href="/hizmetler"
-                    className="inline-flex items-center justify-center rounded-full border border-border-subtle bg-surface-main px-7 py-2.5 text-xs font-ui font-semibold uppercase tracking-wide text-brand-dark shadow-sm hover:border-brand-base hover:text-brand-base hover:shadow-md"
-                  >
-                    Tüm Vize Hizmetlerini Gör
-                  </Link>
+                    <div className="rounded-2xl border border-border-subtle bg-surface-main p-5 shadow-soft">
+                      <p className="inline-flex rounded-full bg-amber-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-amber-700">
+                        Kapsam Dışı
+                      </p>
+                      <ul className="mt-4 space-y-3 text-sm leading-6 text-slate-700 md:text-base">
+                        <li>Aile birleşimi başvuruları</li>
+                        <li>Öğrenci ve dil kursu vizeleri</li>
+                        <li>Turistik başvurular</li>
+                        <li>Kariyer dışı genel yönlendirmeler</li>
+                      </ul>
+                    </div>
+                  </div>
                 </RevealOnScroll>
+
+                <div className="mt-8">
+                  <div className="relative grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+                    {featuredVisas.map((visa, index) => (
+                      <RevealOnScroll key={visa.slug} delay={0.05 * index}>
+                        <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border-subtle bg-surface-main shadow-soft transition hover:border-brand-base/40 hover:shadow-md">
+                          <div className="relative h-44 w-full overflow-hidden">
+                            <Image
+                              src={visa.image}
+                              alt={visa.title}
+                              fill
+                              className="object-cover transition-transform duration-500 group-hover:scale-105"
+                            />
+                          </div>
+                          <div className="flex flex-1 flex-col p-5">
+                            <h3 className="font-heading text-lg font-semibold text-brand-dark md:text-xl">
+                              {visa.title}
+                            </h3>
+                            <p className="mt-2 line-clamp-4 text-[15px] leading-relaxed text-slate-800 md:text-base">
+                              {visa.seoDescription}
+                            </p>
+                            <div className="mt-4 flex items-center justify-between">
+                              <Link
+                                href="/uygunluk-testi"
+                                className="text-xs font-ui font-semibold text-brand-base hover:text-brand-light"
+                              >
+                                Detayları Gör
+                              </Link>
+                              <span className="text-xs text-slate-500">
+                                Vize • Almanya
+                              </span>
+                            </div>
+                          </div>
+                        </article>
+                      </RevealOnScroll>
+                    ))}
+                  </div>
+
+                  <RevealOnScroll className="relative mt-10 text-center">
+                    <Link
+                      href="/hizmetler"
+                      className="inline-flex items-center justify-center rounded-full border border-border-subtle bg-surface-main px-7 py-2.5 text-xs font-ui font-semibold uppercase tracking-wide text-brand-dark shadow-sm hover:border-brand-base hover:text-brand-base hover:shadow-md"
+                    >
+                      Tüm Vize Hizmetlerini Gör
+                    </Link>
+                  </RevealOnScroll>
+                </div>
               </div>
             </RevealOnScroll>
-          </div>
-        </section>
-
-        <section className="home-flow-section section-white">
-          <div className="mx-auto max-w-[1200px] px-4">
-            <RevealOnScroll className="max-w-3xl">
-              <p className="font-heading text-xs font-semibold uppercase tracking-[0.25em] text-brand-base md:text-sm">
-                Sizin İçin Uygun
-              </p>
-              <h2 className="mt-4 font-heading text-3xl font-semibold text-brand-dark md:text-4xl">
-                Odak alanımız çalışma ve nitelikli göç rotaları
-              </h2>
-              <p className="mt-4 max-w-2xl text-base leading-7 text-slate-700 md:text-lg">
-                Bizim yapı, iş teklifi ve nitelikli başvuru odaklı kişiler
-                için tasarlanır. Böylece kullanıcı daha ilk anda doğru hatta
-                yönlenir, size de daha temiz lead gelir.
-              </p>
-            </RevealOnScroll>
-
-            <div className="mt-8 grid gap-4 lg:grid-cols-2">
-              <RevealOnScroll>
-                <div className="panel h-full p-6">
-                  <p className="inline-flex rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-emerald-700">
-                    Kapsamımız
-                  </p>
-                  <ul className="mt-4 space-y-3 text-sm leading-6 text-slate-700 md:text-base">
-                    <li>Almanya çalışma vizesi</li>
-                    <li>Almanya Mavi Kart</li>
-                    <li>Almanya Fırsat Kartı</li>
-                    <li>Göç sonrası işlemler ve yönlendirme</li>
-                    <li>Uygunluk testi ve başvuru ön değerlendirme</li>
-                  </ul>
-                </div>
-              </RevealOnScroll>
-
-              <RevealOnScroll delay={0.08}>
-                <div className="panel h-full p-6">
-                  <p className="inline-flex rounded-full bg-amber-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-amber-700">
-                    Kapsam Dışı
-                  </p>
-                  <ul className="mt-4 space-y-3 text-sm leading-6 text-slate-700 md:text-base">
-                    <li>Aile birleşimi başvuruları</li>
-                    <li>Öğrenci ve dil kursu vizeleri</li>
-                    <li>Turistik başvurular</li>
-                    <li>Kariyer dışı genel yönlendirmeler</li>
-                  </ul>
-                </div>
-              </RevealOnScroll>
-            </div>
           </div>
         </section>
       </div>

@@ -1125,6 +1125,28 @@ main:has(> .site-hero) .interactive-panel:hover {
   box-shadow: 0 22px 54px rgba(15, 23, 42, 0.15);
 }
 
+main.public-page:has(> .site-hero) > section:not(.site-hero),
+main.public-page:has(> .site-hero) .section-surface,
+main.public-page:has(> .site-hero) .section-white {
+  background:
+    linear-gradient(180deg, rgba(248, 250, 252, 0.98) 0%, rgba(255, 255, 255, 0.99) 100%);
+}
+
+main.public-page:has(> .site-hero) > section:not(.site-hero) + section:not(.site-hero)::before {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(148, 163, 184, 0.28),
+    rgba(30, 58, 138, 0.16),
+    transparent
+  );
+}
+
+main.public-page:has(> .site-hero) .site-hero .eyebrow-on-dark,
+main.public-page:has(> .site-hero) .site-hero p[class*='uppercase'][class*='tracking'] {
+  display: inline-flex;
+}
+
 main[class~='bg-surface-soft']:not(:has(> .site-hero)),
 main[class~='bg-surface-main']:not(:has(> .site-hero)):not(:has(> .home-flow)) {
   background:
