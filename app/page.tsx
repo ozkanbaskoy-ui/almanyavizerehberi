@@ -269,7 +269,7 @@ export default async function HomePage() {
             <RevealOnScroll className="mt-6 md:mt-10">
               <div className="home-panel">
                 <RevealOnScroll>
-                  <div className="grid gap-5 lg:grid-cols-2">
+                  <div className="grid gap-4 lg:grid-cols-2">
                     {SCOPE_PANELS.map((panel) => (
                       <article
                         key={panel.eyebrow}
@@ -289,19 +289,19 @@ export default async function HomePage() {
                           >
                             {panel.eyebrow}
                           </p>
-                          <h3 className="mt-3 font-heading text-2xl font-semibold text-brand-dark md:text-[1.85rem]">
+                          <h3 className="mt-2.5 font-heading text-2xl font-semibold text-brand-dark md:text-[1.85rem]">
                             {panel.title}
                           </h3>
-                          <p className="mt-1.5 max-w-lg text-sm leading-6 text-slate-600 md:text-[15px]">
+                          <p className="mt-1 max-w-lg text-sm leading-5 text-slate-600 md:text-[15px]">
                             {panel.description}
                           </p>
                         </div>
 
-                        <ul className="mx-auto mt-4 w-full max-w-xl space-y-2.5">
+                        <ul className="mx-auto mt-3 w-full max-w-xl space-y-1.5">
                           {panel.items.map((item) => (
                             <li
                               key={item}
-                              className="flex items-center gap-3 rounded-xl border border-white/80 bg-white/90 px-4 py-2.5 text-sm leading-5 text-slate-700 shadow-[0_1px_0_rgba(15,23,42,0.03)] md:text-[15px]"
+                              className="flex items-center gap-3 rounded-xl border border-white/80 bg-white/90 px-4 py-1.5 text-sm leading-[1.28] text-slate-700 shadow-[0_1px_0_rgba(15,23,42,0.03)] md:text-[15px]"
                             >
                               <span
                                 className={`h-2.5 w-2.5 shrink-0 rounded-full ${
