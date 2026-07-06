@@ -25,6 +25,7 @@ const QUICK_LINKS = [
   { href: '/hizmetler/mavi-kart-vizesi', label: 'Mavi Kart' },
   { href: '/hizmetler/firsat-karti', label: 'Fırsat Kartı' },
   { href: '/almanya-goc', label: 'Almanya Göç Rehberi' },
+  { href: '/almanya-is', label: 'Almanya İş Başvurusu' },
   { href: '/uygunluk-testi', label: 'Ön Değerlendirme' },
   { href: '/sss', label: 'SSS' },
 ];
@@ -83,10 +84,12 @@ const FAQ_IDS = ['faq-1', 'faq-2', 'faq-3', 'faq-9', 'faq-11', 'faq-20'];
 export const metadata: Metadata = buildMetadata({
   title: 'Almanya Vizesi Rehberi',
   description:
-    'Almanya vizesi, Almanya çalışma vizesi, çalışma vizesi, Mavi Kart ve Fırsat Kartı için tek merkezde güncel rehber.',
+    'Almanya vizesi, Almanya iş başvurusu, Almanya çalışma vizesi, çalışma vizesi, Mavi Kart ve Fırsat Kartı için tek merkezde güncel rehber.',
   keywords: [
     'Almanya vizesi',
     'Almanya',
+    'Almanya iş',
+    'Almanya iş başvurusu',
     'Almanya çalışma vizesi',
     'Almanya göç',
     'çalışma vizesi',

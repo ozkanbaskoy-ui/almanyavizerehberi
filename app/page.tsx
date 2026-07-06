@@ -9,10 +9,12 @@ import { DEFAULT_SOCIAL_IMAGE } from '@/lib/seo/metadata';
 export const metadata: Metadata = {
   title: 'Almanya Vize Rehberi - Profesyonel Danışmanlık',
   description:
-    'Almanya vizesi, Almanya çalışma vizesi, Mavi Kart, Fırsat Kartı ve nitelikli göç sonrası işlemler için profesyonel danışmanlık.',
+    'Almanya vizesi, Almanya iş başvurusu, Almanya çalışma vizesi, Mavi Kart, Fırsat Kartı ve nitelikli göç sonrası işlemler için profesyonel danışmanlık.',
   keywords: [
     'Almanya vize rehberi',
     'Almanya vizesi',
+    'Almanya iş',
+    'Almanya iş başvurusu',
     'Almanya çalışma vizesi',
     'Almanya göç',
     'çalışma vizesi',
@@ -27,7 +29,7 @@ export const metadata: Metadata = {
     url: 'https://www.almanyavizerehberi.com/',
     title: 'Almanya Vize Rehberi - Profesyonel Danışmanlık',
     description:
-      'Almanya vizesi, Almanya çalışma vizesi, Mavi Kart, Fırsat Kartı ve nitelikli göç sonrası işlemler için profesyonel danışmanlık.',
+      'Almanya vizesi, Almanya iş başvurusu, Almanya çalışma vizesi, Mavi Kart, Fırsat Kartı ve nitelikli göç sonrası işlemler için profesyonel danışmanlık.',
     images: [
       {
         url: DEFAULT_SOCIAL_IMAGE,
@@ -92,6 +94,7 @@ const FALLBACK_VIDEOS: YouTubeVideo[] = [
 const SERVICE_SHORTCUTS = [
   { href: '/almanya-vizesi', label: 'Almanya vizesi' },
   { href: '/almanya-goc', label: 'Almanya göç' },
+  { href: '/almanya-is', label: 'Almanya iş' },
   { href: '/hizmetler/calisma-vizesi', label: 'Almanya çalışma vizesi' },
   { href: '/hizmetler/mavi-kart-vizesi', label: 'Mavi Kart' },
   { href: '/hizmetler/firsat-karti', label: 'Fırsat Kartı' },
@@ -103,7 +106,7 @@ const SCOPE_PANELS = [
     eyebrow: 'KAPSAMIMIZ',
     title: 'Odaklandığımız hizmetler',
     description:
-      'Çalışma ve göç hattında hızlı, net ve başvuruya dönük destek sağlıyoruz.',
+      'Çalışma ve Almanya iş başvurusu hattında hızlı, net ve başvuruya dönük destek sağlıyoruz.',
     items: [
       'Almanya çalışma vizesi',
       'Almanya Mavi Kart',
@@ -286,22 +289,22 @@ export default async function HomePage() {
                           >
                             {panel.eyebrow}
                           </p>
-                          <h3 className="mt-4 font-heading text-2xl font-semibold text-brand-dark md:text-[1.85rem]">
+                          <h3 className="mt-3 font-heading text-2xl font-semibold text-brand-dark md:text-[1.85rem]">
                             {panel.title}
                           </h3>
-                          <p className="mt-2 max-w-lg text-sm leading-6 text-slate-600 md:text-[15px]">
+                          <p className="mt-1.5 max-w-lg text-sm leading-6 text-slate-600 md:text-[15px]">
                             {panel.description}
                           </p>
                         </div>
 
-                        <ul className="mx-auto mt-6 w-full max-w-xl space-y-3">
+                        <ul className="mx-auto mt-4 w-full max-w-xl space-y-2.5">
                           {panel.items.map((item) => (
                             <li
                               key={item}
-                              className="flex items-start gap-3 rounded-xl border border-white/80 bg-white/90 px-4 py-3 text-sm leading-6 text-slate-700 shadow-[0_1px_0_rgba(15,23,42,0.03)] md:text-[15px]"
+                              className="flex items-center gap-3 rounded-xl border border-white/80 bg-white/90 px-4 py-2.5 text-sm leading-5 text-slate-700 shadow-[0_1px_0_rgba(15,23,42,0.03)] md:text-[15px]"
                             >
                               <span
-                                className={`mt-2 h-2.5 w-2.5 shrink-0 rounded-full ${
+                                className={`h-2.5 w-2.5 shrink-0 rounded-full ${
                                   panel.tone === 'emerald'
                                     ? 'bg-emerald-500'
                                     : 'bg-amber-500'

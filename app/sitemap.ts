@@ -73,6 +73,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.97,
     },
     {
+      url: `${SITE_URL}/almanya-is`,
+      lastModified: fileMtime(
+        path.join(process.cwd(), 'app', 'almanya-is', 'page.tsx'),
+      ),
+      changeFrequency: 'weekly',
+      priority: 0.94,
+    },
+    {
       url: `${SITE_URL}/almanya-goc`,
       lastModified: latestMtime([
         path.join(process.cwd(), 'app', 'almanya-goc', 'page.tsx'),
