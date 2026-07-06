@@ -21,7 +21,7 @@ type NavItem = {
 };
 
 const VISA_SERVICES: NavItem = {
-  label: 'Hizmetlerimiz',
+  label: 'Hizmetler',
   href: '/hizmetler',
   title: 'Hizmetlerimiz',
   children: [
@@ -33,7 +33,7 @@ const VISA_SERVICES: NavItem = {
 };
 
 const AFTERCARE_SERVICES: NavItem = {
-  label: 'Göç Sonrası Hizmetlerimiz',
+  label: 'Göç Sonrası',
   href: '/servisler',
   title: 'Göç Sonrası Hizmetlerimiz',
   children: [
@@ -54,7 +54,16 @@ const AFTERCARE_SERVICES: NavItem = {
 
 const MAIN_ITEMS: NavItem[] = [
   { label: 'Ana Sayfa', href: '/', title: 'Ana Sayfa' },
-  { label: 'Hakkımızda', href: '/hakkimizda', title: 'Hakkımızda' },
+  {
+    label: 'Hakkımızda',
+    href: '/hakkimizda',
+    title: 'Hakkımızda',
+    children: [
+      { label: 'S.S.S.', href: '/sss' },
+      { label: 'Blog', href: '/blog' },
+      { label: 'İletişim', href: '/iletisim' },
+    ],
+  },
   {
     label: 'Uygunluk Testi',
     href: '/uygunluk-testi',
@@ -72,9 +81,6 @@ const MAIN_ITEMS: NavItem[] = [
   },
   VISA_SERVICES,
   AFTERCARE_SERVICES,
-  { label: 'S.S.S.', href: '/sss', title: 'Sıkça Sorulan Sorular' },
-  { label: 'Blog', href: '/blog', title: 'Blog' },
-  { label: 'İletişim', href: '/iletisim', title: 'İletişim' },
 ];
 
 function normalizePathname(pathname: string) {
@@ -147,7 +153,7 @@ export function MainNav({ site }: MainNavProps) {
 
   const desktopNavClass = (active?: boolean) =>
     [
-      'inline-flex min-h-11 shrink-0 items-center justify-center rounded-full px-3 py-2 text-center font-semibold leading-none whitespace-nowrap transition-all duration-200 hover:-translate-y-[1px] hover:bg-brand-base/5 hover:text-brand-base hover:shadow-card',
+      'inline-flex min-h-10 shrink-0 items-center justify-center rounded-full px-2.5 py-1.5 text-center font-semibold leading-none whitespace-nowrap transition-all duration-200 hover:-translate-y-[1px] hover:bg-brand-base/5 hover:text-brand-base hover:shadow-card',
       active
         ? 'bg-brand-base/10 text-brand-base shadow-[inset_0_0_0_1px_rgba(30,58,138,0.14)]'
         : 'text-slate-800',
@@ -161,7 +167,7 @@ export function MainNav({ site }: MainNavProps) {
       return baseClass;
     }
 
-    return 'inline-flex min-h-10 shrink-0 items-center justify-center whitespace-nowrap rounded-full bg-gradient-to-b from-brand-base to-brand-light px-5 py-2 text-center text-xs font-bold uppercase leading-none tracking-wide text-white shadow-[0_8px_18px_rgba(30,58,138,0.22)] ring-1 ring-blue-200/50 transition hover:-translate-y-[1px] hover:shadow-[0_12px_24px_rgba(30,58,138,0.28)]';
+    return 'inline-flex min-h-10 shrink-0 items-center justify-center whitespace-nowrap rounded-full bg-gradient-to-b from-brand-base to-brand-light px-3.5 py-2 text-center text-xs font-bold uppercase leading-none tracking-wide text-white shadow-[0_8px_18px_rgba(30,58,138,0.22)] ring-1 ring-blue-200/50 transition hover:-translate-y-[1px] hover:shadow-[0_12px_24px_rgba(30,58,138,0.28)]';
   };
 
   const mobileNavClass = (active?: boolean) =>
@@ -174,16 +180,15 @@ export function MainNav({ site }: MainNavProps) {
 
   return (
     <motion.header
-      className="sticky top-0 z-40 bg-white shadow-sm"
+      className="sticky top-0 z-50 bg-white shadow-sm"
       initial={{ opacity: 0, y: -30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: 'easeOut' }}
     >
       {/* Top bar */}
       <div className="bg-gradient-to-r from-slate-900 via-slate-800 to-brand-dark text-[13px] text-slate-100">
-        <div className="mx-auto flex max-w-[1280px] items-center gap-4 px-4 py-2">
-          {/* Sol: e-posta ve telefon */}
-          <div className="hidden flex-wrap items-center gap-4 text-[11px] sm:flex sm:text-[13px]">
+        <div className="mx-auto flex max-w-[1400px] flex-col gap-1 px-4 py-2 lg:flex-row lg:items-center lg:gap-4">
+          <div className="hidden flex-wrap items-center gap-4 text-[11px] lg:flex lg:text-[13px]">
             {site.contactEmail && (
               <a
                 href={`mailto:${site.contactEmail}`}
@@ -202,9 +207,8 @@ export function MainNav({ site }: MainNavProps) {
             )}
           </div>
 
-          {/* Orta: kayar bilgilendirme metni */}
-          <div className="min-w-0 flex-1 overflow-hidden sm:min-w-[320px]">
-            <div className="animate-marquee whitespace-nowrap font-ui text-[11px] font-semibold tracking-wide text-slate-100/95 sm:text-[11px]">
+          <div className="min-w-0 flex-1 overflow-hidden">
+            <div className="animate-marquee whitespace-nowrap font-ui text-[12px] font-semibold tracking-wide text-slate-100/95 lg:text-[13px]">
               <span className="marquee-item">
                 Hayallerini erteleme, doğru, güvenilir ve şeffaf rehberlik için hemen başvur
               </span>
@@ -214,8 +218,7 @@ export function MainNav({ site }: MainNavProps) {
             </div>
           </div>
 
-          {/* Sağ: sosyal ikonlar */}
-          <div className="hidden items-center gap-2 sm:flex">
+          <div className="hidden items-center gap-2 lg:flex">
             <SocialLinks
               instagramUrl={site.instagramUrl}
               youtubeUrl={site.youtubeUrl}
@@ -247,131 +250,159 @@ export function MainNav({ site }: MainNavProps) {
       </div>
 
       {/* Main nav */}
-      <div className="mx-auto flex max-w-[1280px] items-center justify-between gap-2 border-b border-slate-100 bg-white/95 px-4 py-3">
-        <Link href="/" className="mr-8 flex min-h-14 shrink-0 items-center gap-3">
-          <Image
-            src="/assets/img/logo-yan.webp"
-            alt={site.siteName || 'Almanya Vize Rehberi'}
-            width={160}
-            height={40}
-            className="h-8 w-auto"
-            priority
-          />
-        </Link>
+      <div className="mx-auto w-full max-w-[1400px] border-b border-slate-100 bg-white/95 px-3 py-3 sm:px-4">
+        <div className="flex items-center gap-2 lg:gap-3">
+          <Link
+            href="/"
+            className="flex min-h-14 shrink-0 items-center gap-3"
+          >
+            <Image
+              src="/assets/img/logo-yan.webp"
+              alt={site.siteName || 'Almanya Vize Rehberi'}
+              width={196}
+              height={49}
+              className="h-9 w-auto md:h-10 lg:h-11"
+              priority
+            />
+          </Link>
 
-        {/* Desktop menu */}
-        <nav className="hidden flex-1 items-center justify-between gap-2 text-[13px] font-semibold text-slate-800 font-ui xl:gap-3 xl:text-sm md:flex">
-          {MAIN_ITEMS.map((item) => {
-            const active = isItemActive(item);
+          <nav className="hidden min-w-0 flex-1 items-center justify-center gap-1.5 text-[11px] font-semibold text-slate-800 font-ui sm:text-[12px] xl:gap-2 xl:text-[12px] 2xl:text-[13px] xl:flex">
+            {MAIN_ITEMS.map((item) => {
+              const active = isItemActive(item);
 
-            return item.children ? (
-              <div key={item.label} className="group relative">
-                <button
-                  type="button"
-                  className={`gap-1 ${desktopNavClass(active)}`}
-                  aria-current={active ? 'page' : undefined}
-                >
-                  <span>{item.label}</span>
-                  <span className="text-xs leading-none">+</span>
-                </button>
-                <div className="invisible absolute left-0 top-full z-50 w-72 pt-2 opacity-0 transition-all duration-150 group-hover:visible group-hover:opacity-100">
-                  <div className="rounded-xl border border-slate-100 bg-white text-xs shadow-xl shadow-slate-900/10 ring-1 ring-slate-900/5">
-                    <ul className="py-2">
-                      {item.children.map((child) => (
-                        <li key={child.href}>
-                          <Link
-                            href={child.href}
-                            className="block px-4 py-2.5 text-sm font-semibold text-slate-700 hover:bg-slate-50 hover:text-sky-700"
-                          >
-                            {child.label}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
+              return item.children ? (
+                <div key={item.label} className="group relative">
+                  {item.href ? (
+                    <Link
+                      href={item.href}
+                      className={`inline-flex min-h-10 shrink-0 items-center justify-center rounded-full px-2.5 py-2 text-center font-semibold leading-none whitespace-nowrap transition-all duration-200 hover:-translate-y-[1px] hover:bg-brand-base/5 hover:text-brand-base hover:shadow-card ${active
+                        ? 'bg-brand-base/10 text-brand-base shadow-[inset_0_0_0_1px_rgba(30,58,138,0.14)]'
+                        : 'text-slate-800'
+                      } gap-1`}
+                      aria-current={active ? 'page' : undefined}
+                    >
+                      <span>{item.label}</span>
+                      <span className="text-xs leading-none">+</span>
+                    </Link>
+                  ) : (
+                    <button
+                      type="button"
+                      className={`gap-1 ${desktopNavClass(active)}`}
+                      aria-current={active ? 'page' : undefined}
+                    >
+                      <span>{item.label}</span>
+                      <span className="text-xs leading-none">+</span>
+                    </button>
+                  )}
+                  <div className="invisible absolute left-0 top-full z-50 w-72 pt-2 opacity-0 transition-all duration-150 group-hover:visible group-hover:opacity-100">
+                    <div className="rounded-xl border border-slate-100 bg-white text-xs shadow-xl shadow-slate-900/10 ring-1 ring-slate-900/5">
+                      <ul className="py-2">
+                        {item.children.map((child) => (
+                          <li key={child.href}>
+                            <Link
+                              href={child.href}
+                              className="block px-4 py-2.5 text-sm font-semibold text-slate-700 hover:bg-slate-50 hover:text-sky-700"
+                            >
+                              {child.label}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ) : (
-              item.href && (
-                <Link
-                  key={item.label}
-                  href={item.href}
-                  className={desktopItemClass(item, active)}
-                  aria-current={active ? 'page' : undefined}
-                >
-                  {item.label}
-                </Link>
-              )
-            );
-          })}
+              ) : (
+                item.href && (
+                  <Link
+                    key={item.label}
+                    href={item.href}
+                    className={desktopItemClass(item, active)}
+                    aria-current={active ? 'page' : undefined}
+                  >
+                    {item.label}
+                  </Link>
+                )
+              );
+            })}
+          </nav>
 
-          <Link
-            href="/basvuru"
-            className="relative inline-flex min-h-10 shrink-0 items-center justify-center whitespace-nowrap rounded-full bg-gradient-to-b from-brand-red to-red-700 px-5 py-2.5 text-center text-xs font-bold uppercase leading-none tracking-wide text-white shadow-[0_8px_18px_rgba(185,28,28,0.28)] ring-1 ring-red-300/35 transition-transform duration-150 hover:-translate-y-0.5 hover:shadow-[0_12px_24px_rgba(185,28,28,0.34)] active:translate-y-0 active:shadow-[0_4px_12px_rgba(185,28,28,0.22)] font-ui"
-          >
-            Başvuru Yap
-          </Link>
-        </nav>
+          <div className="flex shrink-0 items-center gap-2">
+            <button
+              type="button"
+              onClick={() => setMobileOpen((open) => !open)}
+              className="inline-flex items-center justify-center rounded-md border border-slate-200 p-2 text-slate-700 xl:hidden"
+              aria-label="Menüyü aç/kapat"
+            >
+              <span className="sr-only">Menüyü aç/kapat</span>
+              <svg
+                className="h-5 w-5"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                {mobileOpen ? (
+                  <path
+                    d="M18 6L6 18M6 6l12 12"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                  />
+                ) : (
+                  <path
+                    d="M4 6h16M4 12h16M4 18h16"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                  />
+                )}
+              </svg>
+            </button>
 
-        {/* Mobile CTA (sadece mobilde görünsün) */}
-        <Link
-          href="/basvuru"
-          className="inline-flex items-center justify-center whitespace-nowrap rounded-full bg-gradient-to-b from-brand-red to-red-700 px-4 py-2 text-xs font-ui font-semibold uppercase leading-none tracking-wide text-white shadow-[0_6px_14px_rgba(15,23,42,0.28)] md:hidden"
-        >
-          Başvuru Yap
-        </Link>
-
-        {/* Mobile menu button */}
-        <button
-          type="button"
-          onClick={() => setMobileOpen((open) => !open)}
-          className="inline-flex items-center justify-center rounded-md border border-slate-200 p-2 text-slate-700 md:hidden"
-          aria-label="Menüyü aç/kapat"
-        >
-          <span className="sr-only">Menüyü aç/kapat</span>
-          <svg
-            className="h-5 w-5"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-          >
-            {mobileOpen ? (
-              <path
-                d="M18 6L6 18M6 6l12 12"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-              />
-            ) : (
-              <path
-                d="M4 6h16M4 12h16M4 18h16"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-              />
-            )}
-          </svg>
-        </button>
+            <Link
+              href="/basvuru"
+              className="inline-flex min-h-10 items-center justify-center whitespace-nowrap rounded-full bg-gradient-to-b from-brand-red to-red-700 px-3 py-2 text-[11px] font-bold uppercase leading-none tracking-wide text-white shadow-[0_8px_18px_rgba(185,28,28,0.28)] ring-1 ring-red-300/35 transition-transform duration-150 hover:-translate-y-0.5 hover:shadow-[0_12px_24px_rgba(185,28,28,0.34)] active:translate-y-0 active:shadow-[0_4px_12px_rgba(185,28,28,0.22)] font-ui sm:px-4 sm:text-xs lg:px-5"
+            >
+              Başvuru Yap
+            </Link>
+          </div>
+        </div>
       </div>
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <nav className="fixed inset-x-0 top-[116px] z-50 max-h-[calc(100dvh-116px)] overflow-y-auto overscroll-contain border-t border-slate-100 bg-white px-4 py-3 text-sm font-ui shadow-2xl md:hidden">
+        <nav className="absolute inset-x-0 top-full z-50 max-h-[calc(100dvh-1rem)] overflow-y-auto overscroll-contain border-t border-slate-100 bg-white px-4 py-3 text-sm font-ui shadow-2xl xl:hidden">
           <ul className="space-y-2">
             {MAIN_ITEMS.map((item) => {
               const active = isItemActive(item);
 
               return item.children ? (
                 <li key={item.label}>
-                  <div
-                    className={[
-                      'mb-1 rounded-xl px-3 py-2 text-xs font-semibold uppercase tracking-wide',
-                      active
-                        ? 'bg-brand-base/10 text-brand-base'
-                        : 'text-slate-500',
-                    ].join(' ')}
-                  >
-                    {item.label}
-                  </div>
+                  {item.href ? (
+                    <Link
+                      href={item.href}
+                      className={[
+                        'mb-1 flex items-center justify-between rounded-xl px-3 py-2 text-[11px] font-semibold uppercase tracking-wide',
+                        active
+                          ? 'bg-brand-base/10 text-brand-base'
+                          : 'text-slate-500',
+                      ].join(' ')}
+                      onClick={() => setMobileOpen(false)}
+                      aria-current={active ? 'page' : undefined}
+                    >
+                      <span>{item.label}</span>
+                      <span className="text-xs leading-none">+</span>
+                    </Link>
+                  ) : (
+                    <div
+                      className={[
+                        'mb-1 rounded-xl px-3 py-2 text-[11px] font-semibold uppercase tracking-wide',
+                        active
+                          ? 'bg-brand-base/10 text-brand-base'
+                          : 'text-slate-500',
+                      ].join(' ')}
+                    >
+                      {item.label}
+                    </div>
+                  )}
                   <ul className="space-y-1 pl-3">
                     {item.children.map((child) => (
                       <li key={child.href}>
@@ -401,15 +432,6 @@ export function MainNav({ site }: MainNavProps) {
                 )
               );
             })}
-            <li className="pt-2">
-              <Link
-                href="/basvuru"
-                className="block whitespace-nowrap rounded-full bg-gradient-to-b from-brand-red to-red-700 px-4 py-2 text-center text-xs font-semibold uppercase leading-none tracking-wide text-white shadow-[0_6px_14px_rgba(15,23,42,0.28)] active:shadow-[0_3px_8px_rgba(15,23,42,0.22)]"
-                onClick={() => setMobileOpen(false)}
-              >
-                Başvuru Yap
-              </Link>
-            </li>
           </ul>
         </nav>
       )}

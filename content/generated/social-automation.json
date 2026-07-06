@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-04T20:19:49.350Z",
+  "generatedAt": "2026-07-06T10:26:21.893Z",
   "tone": "donusum",
   "leadPath": "/uygunluk-testi",
   "channels": [
@@ -60,49 +60,65 @@
           "id": "instagram",
           "label": "Instagram",
           "characterLimit": 2200,
-          "copy": "Çalışma Vizesi (Arbeitsvisum) için başvuru öncesi kritik notlar Almanya çalışma vizesi için başvuru yapmadan önce bu 3 noktayı netleştirin. • İş teklifi ve sözleşme dosyası hazır mı? • Diploma ve mesleki uygunluk doğru eşleşti mi? • Randevu ve evrak sırası önceden planlandı mı? Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/hizmetler/calisma-vizesi #almanyacalismavizesi #almanyagoc #isbulma #almanyavize #vize"
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=instagram&utm_medium=social&utm_campaign=calisma-vizesi&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/hizmetler/calisma-vizesi",
+          "copy": "Çalışma Vizesi (Arbeitsvisum) için başvuru öncesi kritik notlar Almanya çalışma vizesi için başvuru yapmadan önce bu 3 noktayı netleştirin. • İş teklifi ve sözleşme dosyası hazır mı? • Diploma ve mesleki uygunluk doğru eşleşti mi? • Randevu ve evrak sırası önceden planlandı mı? Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=instagram&utm_medium=social&utm_campaign=calisma-vizesi&utm_content=lead-form https://www.almanyavizerehberi.com/hizmetler/calisma-vizesi #almanyacalismavizesi #almanyagoc #isbulma #almanyavize #vize"
         },
         {
           "id": "facebook",
           "label": "Facebook",
           "characterLimit": 5000,
-          "copy": "Çalışma Vizesi (Arbeitsvisum) için başvuru öncesi kritik notlar Almanya çalışma vizesi için başvuru yapmadan önce bu 3 noktayı netleştirin. - İş teklifi ve sözleşme dosyası hazır mı? - Diploma ve mesleki uygunluk doğru eşleşti mi? - Randevu ve evrak sırası önceden planlandı mı? Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/hizmetler/calisma-vizesi #almanyacalismavizesi #almanyagoc #isbulma #almanyavize #vize"
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=facebook&utm_medium=social&utm_campaign=calisma-vizesi&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/hizmetler/calisma-vizesi",
+          "copy": "Çalışma Vizesi (Arbeitsvisum) için başvuru öncesi kritik notlar Almanya çalışma vizesi için başvuru yapmadan önce bu 3 noktayı netleştirin. - İş teklifi ve sözleşme dosyası hazır mı? - Diploma ve mesleki uygunluk doğru eşleşti mi? - Randevu ve evrak sırası önceden planlandı mı? Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=facebook&utm_medium=social&utm_campaign=calisma-vizesi&utm_content=lead-form https://www.almanyavizerehberi.com/hizmetler/calisma-vizesi #almanyacalismavizesi #almanyagoc #isbulma #almanyavize #vize"
         },
         {
           "id": "x",
           "label": "X",
           "characterLimit": 280,
-          "copy": "Çalışma Vizesi (Arbeitsvisum) için: Almanya çalışma vizesi için başvuru yapmadan önce bu 3 noktayı netleştirin. İş teklifi ve sözleşme dosyası hazır mı? https://www.almanyavizerehberi.com/hizmetler/calisma-vizesi #almanyacalismavizesi #almanyagoc #isbulma"
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=x&utm_medium=social&utm_campaign=calisma-vizesi&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/hizmetler/calisma-vizesi",
+          "copy": "Çalışma Vizesi (Arbeitsvisum) için: Almanya çalışma vizesi için başvuru yapmadan önce bu 3 noktayı netleştirin. İş teklifi ve sözleşme dosyası hazır mı?…"
         },
         {
           "id": "linkedin",
           "label": "LinkedIn",
           "characterLimit": 3000,
-          "copy": "Çalışma Vizesi (Arbeitsvisum) konusunda kısa ama net bir rehber hazırladık. Almanya çalışma vizesi için başvuru yapmadan önce bu 3 noktayı netleştirin. - İş teklifi ve sözleşme dosyası hazır mı? - Diploma ve mesleki uygunluk doğru eşleşti mi? - Randevu ve evrak sırası önceden planlandı mı? Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/hizmetler/calisma-vizesi #almanyacalismavizesi #almanyagoc #isbulma #almanyavize"
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=linkedin&utm_medium=social&utm_campaign=calisma-vizesi&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/hizmetler/calisma-vizesi",
+          "copy": "Çalışma Vizesi (Arbeitsvisum) konusunda kısa ama net bir rehber hazırladık. Almanya çalışma vizesi için başvuru yapmadan önce bu 3 noktayı netleştirin. - İş teklifi ve sözleşme dosyası hazır mı? - Diploma ve mesleki uygunluk doğru eşleşti mi? - Randevu ve evrak sırası önceden planlandı mı? Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=linkedin&utm_medium=social&utm_campaign=calisma-vizesi&utm_content=lead-form https://www.almanyavizerehberi.com/hizmetler/calisma-vizesi #almanyacalismavizesi #almanyagoc #isbulma #almanyavize"
         },
         {
           "id": "telegram",
           "label": "Telegram",
           "characterLimit": 2000,
-          "copy": "Çalışma Vizesi (Arbeitsvisum) Almanya çalışma vizesi için başvuru yapmadan önce bu 3 noktayı netleştirin. - İş teklifi ve sözleşme dosyası hazır mı? - Diploma ve mesleki uygunluk doğru eşleşti mi? - Randevu ve evrak sırası önceden planlandı mı? Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/hizmetler/calisma-vizesi https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=instagram&utm_medium=social&utm_campaign=calisma-vizesi&utm_content=lead-form"
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=telegram&utm_medium=social&utm_campaign=calisma-vizesi&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/hizmetler/calisma-vizesi",
+          "copy": "Çalışma Vizesi (Arbeitsvisum) Almanya çalışma vizesi için başvuru yapmadan önce bu 3 noktayı netleştirin. - İş teklifi ve sözleşme dosyası hazır mı? - Diploma ve mesleki uygunluk doğru eşleşti mi? - Randevu ve evrak sırası önceden planlandı mı? Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/hizmetler/calisma-vizesi https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=telegram&utm_medium=social&utm_campaign=calisma-vizesi&utm_content=lead-form"
         },
         {
           "id": "whatsapp_status",
           "label": "WhatsApp Durum",
           "characterLimit": 500,
-          "copy": "Çalışma Vizesi (Arbeitsvisum) Almanya çalışma vizesi için başvuru yapmadan önce bu 3 noktayı netleştirin. Ön değerlendirme formunu doldurun."
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=whatsapp_status&utm_medium=social&utm_campaign=calisma-vizesi&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/hizmetler/calisma-vizesi",
+          "copy": "Çalışma Vizesi (Arbeitsvisum) Almanya çalışma vizesi için başvuru yapmadan önce bu 3 noktayı netleştirin. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=whatsapp_status&utm_medium=social&utm_campaign=calisma-vizesi&utm_content=lead-form"
         },
         {
           "id": "tiktok",
           "label": "TikTok",
           "characterLimit": 2200,
-          "copy": "Çalışma Vizesi (Arbeitsvisum) için net özet Almanya çalışma vizesinde en sık yapılan 3 hata • İş teklifi ve sözleşme dosyası hazır mı? • Diploma ve mesleki uygunluk doğru eşleşti mi? • Randevu ve evrak sırası önceden planlandı mı? Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/hizmetler/calisma-vizesi #almanyacalismavizesi #almanyagoc #isbulma #almanyavize #vize"
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=tiktok&utm_medium=social&utm_campaign=calisma-vizesi&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/hizmetler/calisma-vizesi",
+          "copy": "Çalışma Vizesi (Arbeitsvisum) için net özet Almanya çalışma vizesinde en sık yapılan 3 hata • İş teklifi ve sözleşme dosyası hazır mı? • Diploma ve mesleki uygunluk doğru eşleşti mi? • Randevu ve evrak sırası önceden planlandı mı? Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=tiktok&utm_medium=social&utm_campaign=calisma-vizesi&utm_content=lead-form https://www.almanyavizerehberi.com/hizmetler/calisma-vizesi #almanyacalismavizesi #almanyagoc #isbulma #almanyavize #vize"
         },
         {
           "id": "youtube_shorts",
           "label": "YouTube Shorts",
           "characterLimit": 5000,
-          "copy": "Çalışma Vizesi (Arbeitsvisum) | Hızlı özet Almanya çalışma vizesinde en sık yapılan 3 hata - İş teklifi ve sözleşme dosyası hazır mı? - Diploma ve mesleki uygunluk doğru eşleşti mi? - Randevu ve evrak sırası önceden planlandı mı? Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/hizmetler/calisma-vizesi #almanyacalismavizesi #almanyagoc #isbulma #almanyavize #vize"
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=youtube_shorts&utm_medium=social&utm_campaign=calisma-vizesi&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/hizmetler/calisma-vizesi",
+          "copy": "Çalışma Vizesi (Arbeitsvisum) | Hızlı özet Almanya çalışma vizesinde en sık yapılan 3 hata - İş teklifi ve sözleşme dosyası hazır mı? - Diploma ve mesleki uygunluk doğru eşleşti mi? - Randevu ve evrak sırası önceden planlandı mı? Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=youtube_shorts&utm_medium=social&utm_campaign=calisma-vizesi&utm_content=lead-form https://www.almanyavizerehberi.com/hizmetler/calisma-vizesi #almanyacalismavizesi #almanyagoc #isbulma #almanyavize #vize"
         }
       ],
       "notes": [
@@ -161,49 +177,65 @@
           "id": "instagram",
           "label": "Instagram",
           "characterLimit": 2200,
-          "copy": "Mavi Kart Vizesi (Blaue Karte EU) için başvuru öncesi kritik notlar Mavi Kart, doğru aday için Almanya yolunu hızlandırır. Önce kriterleri doğru okuyun. • Maaş ve pozisyon eşleşmesi kontrol edilir. • Tanınan diploma ve iş teklifi birlikte değerlendirilir. • Uzun dönem oturum avantajları planlanır. Uygunluk kontrolünü şimdi yapın. https://www.almanyavizerehberi.com/hizmetler/mavi-kart-vizesi #mavikart #blaukarte #almanyacalismavizesi #almanyagog #uzman"
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=instagram&utm_medium=social&utm_campaign=mavi-kart-vizesi&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/hizmetler/mavi-kart-vizesi",
+          "copy": "Mavi Kart Vizesi (Blaue Karte EU) için başvuru öncesi kritik notlar Mavi Kart, doğru aday için Almanya yolunu hızlandırır. Önce kriterleri doğru okuyun. • Maaş ve pozisyon eşleşmesi kontrol edilir. • Tanınan diploma ve iş teklifi birlikte değerlendirilir. • Uzun dönem oturum avantajları planlanır. Uygunluk kontrolünü şimdi yapın. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=instagram&utm_medium=social&utm_campaign=mavi-kart-vizesi&utm_content=lead-form https://www.almanyavizerehberi.com/hizmetler/mavi-kart-vizesi #mavikart #blaukarte #almanyacalismavizesi #almanyagog #uzman"
         },
         {
           "id": "facebook",
           "label": "Facebook",
           "characterLimit": 5000,
-          "copy": "Mavi Kart Vizesi (Blaue Karte EU) için başvuru öncesi kritik notlar Mavi Kart, doğru aday için Almanya yolunu hızlandırır. Önce kriterleri doğru okuyun. - Maaş ve pozisyon eşleşmesi kontrol edilir. - Tanınan diploma ve iş teklifi birlikte değerlendirilir. - Uzun dönem oturum avantajları planlanır. Uygunluk kontrolünü şimdi yapın. https://www.almanyavizerehberi.com/hizmetler/mavi-kart-vizesi #mavikart #blaukarte #almanyacalismavizesi #almanyagog #uzman"
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=facebook&utm_medium=social&utm_campaign=mavi-kart-vizesi&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/hizmetler/mavi-kart-vizesi",
+          "copy": "Mavi Kart Vizesi (Blaue Karte EU) için başvuru öncesi kritik notlar Mavi Kart, doğru aday için Almanya yolunu hızlandırır. Önce kriterleri doğru okuyun. - Maaş ve pozisyon eşleşmesi kontrol edilir. - Tanınan diploma ve iş teklifi birlikte değerlendirilir. - Uzun dönem oturum avantajları planlanır. Uygunluk kontrolünü şimdi yapın. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=facebook&utm_medium=social&utm_campaign=mavi-kart-vizesi&utm_content=lead-form https://www.almanyavizerehberi.com/hizmetler/mavi-kart-vizesi #mavikart #blaukarte #almanyacalismavizesi #almanyagog #uzman"
         },
         {
           "id": "x",
           "label": "X",
           "characterLimit": 280,
-          "copy": "Mavi Kart Vizesi (Blaue Karte EU) için: Mavi Kart, doğru aday için Almanya yolunu hızlandırır. Önce kriterleri doğru okuyun. Maaş ve pozisyon eşleşmesi kontrol edilir. https://www.almanyavizerehberi.com/hizmetler/mavi-kart-vizesi #mavikart #blaukarte #almanyacalismavizesi"
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=x&utm_medium=social&utm_campaign=mavi-kart-vizesi&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/hizmetler/mavi-kart-vizesi",
+          "copy": "Mavi Kart Vizesi (Blaue Karte EU) için: Mavi Kart, doğru aday için Almanya yolunu hızlandırır. Önce kriterleri doğru okuyun. Maaş ve pozisyon eşleşmesi kontrol edilir.…"
         },
         {
           "id": "linkedin",
           "label": "LinkedIn",
           "characterLimit": 3000,
-          "copy": "Mavi Kart Vizesi (Blaue Karte EU) konusunda kısa ama net bir rehber hazırladık. Mavi Kart, doğru aday için Almanya yolunu hızlandırır. Önce kriterleri doğru okuyun. - Maaş ve pozisyon eşleşmesi kontrol edilir. - Tanınan diploma ve iş teklifi birlikte değerlendirilir. - Uzun dönem oturum avantajları planlanır. Uygunluk kontrolünü şimdi yapın. https://www.almanyavizerehberi.com/hizmetler/mavi-kart-vizesi #mavikart #blaukarte #almanyacalismavizesi #almanyagog"
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=linkedin&utm_medium=social&utm_campaign=mavi-kart-vizesi&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/hizmetler/mavi-kart-vizesi",
+          "copy": "Mavi Kart Vizesi (Blaue Karte EU) konusunda kısa ama net bir rehber hazırladık. Mavi Kart, doğru aday için Almanya yolunu hızlandırır. Önce kriterleri doğru okuyun. - Maaş ve pozisyon eşleşmesi kontrol edilir. - Tanınan diploma ve iş teklifi birlikte değerlendirilir. - Uzun dönem oturum avantajları planlanır. Uygunluk kontrolünü şimdi yapın. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=linkedin&utm_medium=social&utm_campaign=mavi-kart-vizesi&utm_content=lead-form https://www.almanyavizerehberi.com/hizmetler/mavi-kart-vizesi #mavikart #blaukarte #almanyacalismavizesi #almanyagog"
         },
         {
           "id": "telegram",
           "label": "Telegram",
           "characterLimit": 2000,
-          "copy": "Mavi Kart Vizesi (Blaue Karte EU) Mavi Kart, doğru aday için Almanya yolunu hızlandırır. Önce kriterleri doğru okuyun. - Maaş ve pozisyon eşleşmesi kontrol edilir. - Tanınan diploma ve iş teklifi birlikte değerlendirilir. - Uzun dönem oturum avantajları planlanır. Uygunluk kontrolünü şimdi yapın. https://www.almanyavizerehberi.com/hizmetler/mavi-kart-vizesi https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=instagram&utm_medium=social&utm_campaign=mavi-kart-vizesi&utm_content=lead-form"
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=telegram&utm_medium=social&utm_campaign=mavi-kart-vizesi&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/hizmetler/mavi-kart-vizesi",
+          "copy": "Mavi Kart Vizesi (Blaue Karte EU) Mavi Kart, doğru aday için Almanya yolunu hızlandırır. Önce kriterleri doğru okuyun. - Maaş ve pozisyon eşleşmesi kontrol edilir. - Tanınan diploma ve iş teklifi birlikte değerlendirilir. - Uzun dönem oturum avantajları planlanır. Uygunluk kontrolünü şimdi yapın. https://www.almanyavizerehberi.com/hizmetler/mavi-kart-vizesi https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=telegram&utm_medium=social&utm_campaign=mavi-kart-vizesi&utm_content=lead-form"
         },
         {
           "id": "whatsapp_status",
           "label": "WhatsApp Durum",
           "characterLimit": 500,
-          "copy": "Mavi Kart Vizesi (Blaue Karte EU) Mavi Kart, doğru aday için Almanya yolunu hızlandırır. Önce kriterleri doğru okuyun. Uygunluk kontrolünü şimdi yapın."
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=whatsapp_status&utm_medium=social&utm_campaign=mavi-kart-vizesi&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/hizmetler/mavi-kart-vizesi",
+          "copy": "Mavi Kart Vizesi (Blaue Karte EU) Mavi Kart, doğru aday için Almanya yolunu hızlandırır. Önce kriterleri doğru okuyun. Uygunluk kontrolünü şimdi yapın. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=whatsapp_status&utm_medium=social&utm_campaign=mavi-kart-vizesi&utm_content=lead-form"
         },
         {
           "id": "tiktok",
           "label": "TikTok",
           "characterLimit": 2200,
-          "copy": "Mavi Kart Vizesi (Blaue Karte EU) için net özet Mavi Kart mı, çalışma vizesi mi? Farkı kısa kısa • Maaş ve pozisyon eşleşmesi kontrol edilir. • Tanınan diploma ve iş teklifi birlikte değerlendirilir. • Uzun dönem oturum avantajları planlanır. Uygunluk kontrolünü şimdi yapın. https://www.almanyavizerehberi.com/hizmetler/mavi-kart-vizesi #mavikart #blaukarte #almanyacalismavizesi #almanyagog #uzman"
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=tiktok&utm_medium=social&utm_campaign=mavi-kart-vizesi&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/hizmetler/mavi-kart-vizesi",
+          "copy": "Mavi Kart Vizesi (Blaue Karte EU) için net özet Mavi Kart mı, çalışma vizesi mi? Farkı kısa kısa • Maaş ve pozisyon eşleşmesi kontrol edilir. • Tanınan diploma ve iş teklifi birlikte değerlendirilir. • Uzun dönem oturum avantajları planlanır. Uygunluk kontrolünü şimdi yapın. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=tiktok&utm_medium=social&utm_campaign=mavi-kart-vizesi&utm_content=lead-form https://www.almanyavizerehberi.com/hizmetler/mavi-kart-vizesi #mavikart #blaukarte #almanyacalismavizesi #almanyagog #uzman"
         },
         {
           "id": "youtube_shorts",
           "label": "YouTube Shorts",
           "characterLimit": 5000,
-          "copy": "Mavi Kart Vizesi (Blaue Karte EU) | Hızlı özet Mavi Kart mı, çalışma vizesi mi? Farkı kısa kısa - Maaş ve pozisyon eşleşmesi kontrol edilir. - Tanınan diploma ve iş teklifi birlikte değerlendirilir. - Uzun dönem oturum avantajları planlanır. Uygunluk kontrolünü şimdi yapın. https://www.almanyavizerehberi.com/hizmetler/mavi-kart-vizesi #mavikart #blaukarte #almanyacalismavizesi #almanyagog #uzman"
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=youtube_shorts&utm_medium=social&utm_campaign=mavi-kart-vizesi&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/hizmetler/mavi-kart-vizesi",
+          "copy": "Mavi Kart Vizesi (Blaue Karte EU) | Hızlı özet Mavi Kart mı, çalışma vizesi mi? Farkı kısa kısa - Maaş ve pozisyon eşleşmesi kontrol edilir. - Tanınan diploma ve iş teklifi birlikte değerlendirilir. - Uzun dönem oturum avantajları planlanır. Uygunluk kontrolünü şimdi yapın. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=youtube_shorts&utm_medium=social&utm_campaign=mavi-kart-vizesi&utm_content=lead-form https://www.almanyavizerehberi.com/hizmetler/mavi-kart-vizesi #mavikart #blaukarte #almanyacalismavizesi #almanyagog #uzman"
         }
       ],
       "notes": [
@@ -261,49 +293,65 @@
           "id": "instagram",
           "label": "Instagram",
           "characterLimit": 2200,
-          "copy": "Fırsat Kartı (Chancenkarte) için başvuru öncesi kritik notlar Fırsat Kartı ile iş arama sürecini planlı ve kontrollü yürütün. • Puan sistemi ve dil seviyesi birlikte okunur. • Geçim planı başvuru öncesi netleştirilir. • İş arama sürecine uygun strateji hazırlanır. Başvuru öncesi uygunluk kontrolü yapın. https://www.almanyavizerehberi.com/hizmetler/firsat-karti #firsatkarti #chancenkarte #almanyaisarama #almanyagoc #almanyavize"
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=instagram&utm_medium=social&utm_campaign=firsat-karti&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/hizmetler/firsat-karti",
+          "copy": "Fırsat Kartı (Chancenkarte) için başvuru öncesi kritik notlar Fırsat Kartı ile iş arama sürecini planlı ve kontrollü yürütün. • Puan sistemi ve dil seviyesi birlikte okunur. • Geçim planı başvuru öncesi netleştirilir. • İş arama sürecine uygun strateji hazırlanır. Başvuru öncesi uygunluk kontrolü yapın. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=instagram&utm_medium=social&utm_campaign=firsat-karti&utm_content=lead-form https://www.almanyavizerehberi.com/hizmetler/firsat-karti #firsatkarti #chancenkarte #almanyaisarama #almanyagoc #almanyavize"
         },
         {
           "id": "facebook",
           "label": "Facebook",
           "characterLimit": 5000,
-          "copy": "Fırsat Kartı (Chancenkarte) için başvuru öncesi kritik notlar Fırsat Kartı ile iş arama sürecini planlı ve kontrollü yürütün. - Puan sistemi ve dil seviyesi birlikte okunur. - Geçim planı başvuru öncesi netleştirilir. - İş arama sürecine uygun strateji hazırlanır. Başvuru öncesi uygunluk kontrolü yapın. https://www.almanyavizerehberi.com/hizmetler/firsat-karti #firsatkarti #chancenkarte #almanyaisarama #almanyagoc #almanyavize"
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=facebook&utm_medium=social&utm_campaign=firsat-karti&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/hizmetler/firsat-karti",
+          "copy": "Fırsat Kartı (Chancenkarte) için başvuru öncesi kritik notlar Fırsat Kartı ile iş arama sürecini planlı ve kontrollü yürütün. - Puan sistemi ve dil seviyesi birlikte okunur. - Geçim planı başvuru öncesi netleştirilir. - İş arama sürecine uygun strateji hazırlanır. Başvuru öncesi uygunluk kontrolü yapın. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=facebook&utm_medium=social&utm_campaign=firsat-karti&utm_content=lead-form https://www.almanyavizerehberi.com/hizmetler/firsat-karti #firsatkarti #chancenkarte #almanyaisarama #almanyagoc #almanyavize"
         },
         {
           "id": "x",
           "label": "X",
           "characterLimit": 280,
-          "copy": "Fırsat Kartı (Chancenkarte) için: Fırsat Kartı ile iş arama sürecini planlı ve kontrollü yürütün. Puan sistemi ve dil seviyesi birlikte okunur. https://www.almanyavizerehberi.com/hizmetler/firsat-karti #firsatkarti #chancenkarte #almanyaisarama"
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=x&utm_medium=social&utm_campaign=firsat-karti&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/hizmetler/firsat-karti",
+          "copy": "Fırsat Kartı (Chancenkarte) için: Fırsat Kartı ile iş arama sürecini planlı ve kontrollü yürütün. Puan sistemi ve dil seviyesi birlikte okunur. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=x&utm_medium=social&utm_campaign=firsat-karti&utm_content=lead-form…"
         },
         {
           "id": "linkedin",
           "label": "LinkedIn",
           "characterLimit": 3000,
-          "copy": "Fırsat Kartı (Chancenkarte) konusunda kısa ama net bir rehber hazırladık. Fırsat Kartı ile iş arama sürecini planlı ve kontrollü yürütün. - Puan sistemi ve dil seviyesi birlikte okunur. - Geçim planı başvuru öncesi netleştirilir. - İş arama sürecine uygun strateji hazırlanır. Başvuru öncesi uygunluk kontrolü yapın. https://www.almanyavizerehberi.com/hizmetler/firsat-karti #firsatkarti #chancenkarte #almanyaisarama #almanyagoc"
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=linkedin&utm_medium=social&utm_campaign=firsat-karti&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/hizmetler/firsat-karti",
+          "copy": "Fırsat Kartı (Chancenkarte) konusunda kısa ama net bir rehber hazırladık. Fırsat Kartı ile iş arama sürecini planlı ve kontrollü yürütün. - Puan sistemi ve dil seviyesi birlikte okunur. - Geçim planı başvuru öncesi netleştirilir. - İş arama sürecine uygun strateji hazırlanır. Başvuru öncesi uygunluk kontrolü yapın. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=linkedin&utm_medium=social&utm_campaign=firsat-karti&utm_content=lead-form https://www.almanyavizerehberi.com/hizmetler/firsat-karti #firsatkarti #chancenkarte #almanyaisarama #almanyagoc"
         },
         {
           "id": "telegram",
           "label": "Telegram",
           "characterLimit": 2000,
-          "copy": "Fırsat Kartı (Chancenkarte) Fırsat Kartı ile iş arama sürecini planlı ve kontrollü yürütün. - Puan sistemi ve dil seviyesi birlikte okunur. - Geçim planı başvuru öncesi netleştirilir. - İş arama sürecine uygun strateji hazırlanır. Başvuru öncesi uygunluk kontrolü yapın. https://www.almanyavizerehberi.com/hizmetler/firsat-karti https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=instagram&utm_medium=social&utm_campaign=firsat-karti&utm_content=lead-form"
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=telegram&utm_medium=social&utm_campaign=firsat-karti&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/hizmetler/firsat-karti",
+          "copy": "Fırsat Kartı (Chancenkarte) Fırsat Kartı ile iş arama sürecini planlı ve kontrollü yürütün. - Puan sistemi ve dil seviyesi birlikte okunur. - Geçim planı başvuru öncesi netleştirilir. - İş arama sürecine uygun strateji hazırlanır. Başvuru öncesi uygunluk kontrolü yapın. https://www.almanyavizerehberi.com/hizmetler/firsat-karti https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=telegram&utm_medium=social&utm_campaign=firsat-karti&utm_content=lead-form"
         },
         {
           "id": "whatsapp_status",
           "label": "WhatsApp Durum",
           "characterLimit": 500,
-          "copy": "Fırsat Kartı (Chancenkarte) Fırsat Kartı ile iş arama sürecini planlı ve kontrollü yürütün. Başvuru öncesi uygunluk kontrolü yapın."
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=whatsapp_status&utm_medium=social&utm_campaign=firsat-karti&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/hizmetler/firsat-karti",
+          "copy": "Fırsat Kartı (Chancenkarte) Fırsat Kartı ile iş arama sürecini planlı ve kontrollü yürütün. Başvuru öncesi uygunluk kontrolü yapın. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=whatsapp_status&utm_medium=social&utm_campaign=firsat-karti&utm_content=lead-form"
         },
         {
           "id": "tiktok",
           "label": "TikTok",
           "characterLimit": 2200,
-          "copy": "Fırsat Kartı (Chancenkarte) için net özet Fırsat Kartı ile Almanya'da iş arama nasıl olur? • Puan sistemi ve dil seviyesi birlikte okunur. • Geçim planı başvuru öncesi netleştirilir. • İş arama sürecine uygun strateji hazırlanır. Başvuru öncesi uygunluk kontrolü yapın. https://www.almanyavizerehberi.com/hizmetler/firsat-karti #firsatkarti #chancenkarte #almanyaisarama #almanyagoc #almanyavize"
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=tiktok&utm_medium=social&utm_campaign=firsat-karti&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/hizmetler/firsat-karti",
+          "copy": "Fırsat Kartı (Chancenkarte) için net özet Fırsat Kartı ile Almanya'da iş arama nasıl olur? • Puan sistemi ve dil seviyesi birlikte okunur. • Geçim planı başvuru öncesi netleştirilir. • İş arama sürecine uygun strateji hazırlanır. Başvuru öncesi uygunluk kontrolü yapın. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=tiktok&utm_medium=social&utm_campaign=firsat-karti&utm_content=lead-form https://www.almanyavizerehberi.com/hizmetler/firsat-karti #firsatkarti #chancenkarte #almanyaisarama #almanyagoc #almanyavize"
         },
         {
           "id": "youtube_shorts",
           "label": "YouTube Shorts",
           "characterLimit": 5000,
-          "copy": "Fırsat Kartı (Chancenkarte) | Hızlı özet Fırsat Kartı ile Almanya'da iş arama nasıl olur? - Puan sistemi ve dil seviyesi birlikte okunur. - Geçim planı başvuru öncesi netleştirilir. - İş arama sürecine uygun strateji hazırlanır. Başvuru öncesi uygunluk kontrolü yapın. https://www.almanyavizerehberi.com/hizmetler/firsat-karti #firsatkarti #chancenkarte #almanyaisarama #almanyagoc #almanyavize"
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=youtube_shorts&utm_medium=social&utm_campaign=firsat-karti&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/hizmetler/firsat-karti",
+          "copy": "Fırsat Kartı (Chancenkarte) | Hızlı özet Fırsat Kartı ile Almanya'da iş arama nasıl olur? - Puan sistemi ve dil seviyesi birlikte okunur. - Geçim planı başvuru öncesi netleştirilir. - İş arama sürecine uygun strateji hazırlanır. Başvuru öncesi uygunluk kontrolü yapın. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=youtube_shorts&utm_medium=social&utm_campaign=firsat-karti&utm_content=lead-form https://www.almanyavizerehberi.com/hizmetler/firsat-karti #firsatkarti #chancenkarte #almanyaisarama #almanyagoc #almanyavize"
         }
       ],
       "notes": [
@@ -360,49 +408,65 @@
           "id": "instagram",
           "label": "Instagram",
           "characterLimit": 2200,
-          "copy": "Oturum İzni Başvurusu ve Yenilenmesi için başvuru öncesi kritik notlar Oturum izni başvurusu ve yenilemesinde gecikme, tüm planı etkiler. • Süre bitimi önceden takip edilir. • Belgeler eksiksiz hazırlanır. • Başvuru sonrası takip düzenli tutulur. Süre bitmeden süreci planlayın. https://www.almanyavizerehberi.com/servisler/oturum-izni-basvurusu-ve-yenilenmesi #oturumizni #almanyagoc #almanyadahayat #vizedanismanligi"
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=instagram&utm_medium=social&utm_campaign=oturum-izni-basvurusu-ve-yenilenmesi&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/servisler/oturum-izni-basvurusu-ve-yenilenmesi",
+          "copy": "Oturum İzni Başvurusu ve Yenilenmesi için başvuru öncesi kritik notlar Oturum izni başvurusu ve yenilemesinde gecikme, tüm planı etkiler. • Süre bitimi önceden takip edilir. • Belgeler eksiksiz hazırlanır. • Başvuru sonrası takip düzenli tutulur. Süre bitmeden süreci planlayın. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=instagram&utm_medium=social&utm_campaign=oturum-izni-basvurusu-ve-yenilenmesi&utm_content=lead-form https://www.almanyavizerehberi.com/servisler/oturum-izni-basvurusu-ve-yenilenmesi #oturumizni #almanyagoc #almanyadahayat #vizedanismanligi"
         },
         {
           "id": "facebook",
           "label": "Facebook",
           "characterLimit": 5000,
-          "copy": "Oturum İzni Başvurusu ve Yenilenmesi için başvuru öncesi kritik notlar Oturum izni başvurusu ve yenilemesinde gecikme, tüm planı etkiler. - Süre bitimi önceden takip edilir. - Belgeler eksiksiz hazırlanır. - Başvuru sonrası takip düzenli tutulur. Süre bitmeden süreci planlayın. https://www.almanyavizerehberi.com/servisler/oturum-izni-basvurusu-ve-yenilenmesi #oturumizni #almanyagoc #almanyadahayat #vizedanismanligi"
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=facebook&utm_medium=social&utm_campaign=oturum-izni-basvurusu-ve-yenilenmesi&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/servisler/oturum-izni-basvurusu-ve-yenilenmesi",
+          "copy": "Oturum İzni Başvurusu ve Yenilenmesi için başvuru öncesi kritik notlar Oturum izni başvurusu ve yenilemesinde gecikme, tüm planı etkiler. - Süre bitimi önceden takip edilir. - Belgeler eksiksiz hazırlanır. - Başvuru sonrası takip düzenli tutulur. Süre bitmeden süreci planlayın. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=facebook&utm_medium=social&utm_campaign=oturum-izni-basvurusu-ve-yenilenmesi&utm_content=lead-form https://www.almanyavizerehberi.com/servisler/oturum-izni-basvurusu-ve-yenilenmesi #oturumizni #almanyagoc #almanyadahayat #vizedanismanligi"
         },
         {
           "id": "x",
           "label": "X",
           "characterLimit": 280,
-          "copy": "Oturum İzni Başvurusu ve Yenilenmesi için: Oturum izni başvurusu ve yenilemesinde gecikme, tüm planı etkiler. Süre bitimi önceden takip edilir. https://www.almanyavizerehberi.com/servisler/oturum-izni-basvurusu-ve-yenilenmesi #oturumizni #almanyagoc #almanyadahayat"
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=x&utm_medium=social&utm_campaign=oturum-izni-basvurusu-ve-yenilenmesi&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/servisler/oturum-izni-basvurusu-ve-yenilenmesi",
+          "copy": "Oturum İzni Başvurusu ve Yenilenmesi için: Oturum izni başvurusu ve yenilemesinde gecikme, tüm planı etkiler. Süre bitimi önceden takip edilir.…"
         },
         {
           "id": "linkedin",
           "label": "LinkedIn",
           "characterLimit": 3000,
-          "copy": "Oturum İzni Başvurusu ve Yenilenmesi konusunda kısa ama net bir rehber hazırladık. Oturum izni başvurusu ve yenilemesinde gecikme, tüm planı etkiler. - Süre bitimi önceden takip edilir. - Belgeler eksiksiz hazırlanır. - Başvuru sonrası takip düzenli tutulur. Süre bitmeden süreci planlayın. https://www.almanyavizerehberi.com/servisler/oturum-izni-basvurusu-ve-yenilenmesi #oturumizni #almanyagoc #almanyadahayat #vizedanismanligi"
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=linkedin&utm_medium=social&utm_campaign=oturum-izni-basvurusu-ve-yenilenmesi&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/servisler/oturum-izni-basvurusu-ve-yenilenmesi",
+          "copy": "Oturum İzni Başvurusu ve Yenilenmesi konusunda kısa ama net bir rehber hazırladık. Oturum izni başvurusu ve yenilemesinde gecikme, tüm planı etkiler. - Süre bitimi önceden takip edilir. - Belgeler eksiksiz hazırlanır. - Başvuru sonrası takip düzenli tutulur. Süre bitmeden süreci planlayın. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=linkedin&utm_medium=social&utm_campaign=oturum-izni-basvurusu-ve-yenilenmesi&utm_content=lead-form https://www.almanyavizerehberi.com/servisler/oturum-izni-basvurusu-ve-yenilenmesi #oturumizni #almanyagoc #almanyadahayat #vizedanismanligi"
         },
         {
           "id": "telegram",
           "label": "Telegram",
           "characterLimit": 2000,
-          "copy": "Oturum İzni Başvurusu ve Yenilenmesi Oturum izni başvurusu ve yenilemesinde gecikme, tüm planı etkiler. - Süre bitimi önceden takip edilir. - Belgeler eksiksiz hazırlanır. - Başvuru sonrası takip düzenli tutulur. Süre bitmeden süreci planlayın. https://www.almanyavizerehberi.com/servisler/oturum-izni-basvurusu-ve-yenilenmesi https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=instagram&utm_medium=social&utm_campaign=oturum-izni-basvurusu-ve-yenilenmesi&utm_content=lead-form"
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=telegram&utm_medium=social&utm_campaign=oturum-izni-basvurusu-ve-yenilenmesi&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/servisler/oturum-izni-basvurusu-ve-yenilenmesi",
+          "copy": "Oturum İzni Başvurusu ve Yenilenmesi Oturum izni başvurusu ve yenilemesinde gecikme, tüm planı etkiler. - Süre bitimi önceden takip edilir. - Belgeler eksiksiz hazırlanır. - Başvuru sonrası takip düzenli tutulur. Süre bitmeden süreci planlayın. https://www.almanyavizerehberi.com/servisler/oturum-izni-basvurusu-ve-yenilenmesi https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=telegram&utm_medium=social&utm_campaign=oturum-izni-basvurusu-ve-yenilenmesi&utm_content=lead-form"
         },
         {
           "id": "whatsapp_status",
           "label": "WhatsApp Durum",
           "characterLimit": 500,
-          "copy": "Oturum İzni Başvurusu ve Yenilenmesi Oturum izni başvurusu ve yenilemesinde gecikme, tüm planı etkiler. Süre bitmeden süreci planlayın."
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=whatsapp_status&utm_medium=social&utm_campaign=oturum-izni-basvurusu-ve-yenilenmesi&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/servisler/oturum-izni-basvurusu-ve-yenilenmesi",
+          "copy": "Oturum İzni Başvurusu ve Yenilenmesi Oturum izni başvurusu ve yenilemesinde gecikme, tüm planı etkiler. Süre bitmeden süreci planlayın. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=whatsapp_status&utm_medium=social&utm_campaign=oturum-izni-basvurusu-ve-yenilenmesi&utm_content=lead-form"
         },
         {
           "id": "tiktok",
           "label": "TikTok",
           "characterLimit": 2200,
-          "copy": "Oturum İzni Başvurusu ve Yenilenmesi için net özet Oturum yenilemede en çok unutulan 3 adım • Süre bitimi önceden takip edilir. • Belgeler eksiksiz hazırlanır. • Başvuru sonrası takip düzenli tutulur. Süre bitmeden süreci planlayın. https://www.almanyavizerehberi.com/servisler/oturum-izni-basvurusu-ve-yenilenmesi #oturumizni #almanyagoc #almanyadahayat #vizedanismanligi"
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=tiktok&utm_medium=social&utm_campaign=oturum-izni-basvurusu-ve-yenilenmesi&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/servisler/oturum-izni-basvurusu-ve-yenilenmesi",
+          "copy": "Oturum İzni Başvurusu ve Yenilenmesi için net özet Oturum yenilemede en çok unutulan 3 adım • Süre bitimi önceden takip edilir. • Belgeler eksiksiz hazırlanır. • Başvuru sonrası takip düzenli tutulur. Süre bitmeden süreci planlayın. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=tiktok&utm_medium=social&utm_campaign=oturum-izni-basvurusu-ve-yenilenmesi&utm_content=lead-form https://www.almanyavizerehberi.com/servisler/oturum-izni-basvurusu-ve-yenilenmesi #oturumizni #almanyagoc #almanyadahayat #vizedanismanligi"
         },
         {
           "id": "youtube_shorts",
           "label": "YouTube Shorts",
           "characterLimit": 5000,
-          "copy": "Oturum İzni Başvurusu ve Yenilenmesi | Hızlı özet Oturum yenilemede en çok unutulan 3 adım - Süre bitimi önceden takip edilir. - Belgeler eksiksiz hazırlanır. - Başvuru sonrası takip düzenli tutulur. Süre bitmeden süreci planlayın. https://www.almanyavizerehberi.com/servisler/oturum-izni-basvurusu-ve-yenilenmesi #oturumizni #almanyagoc #almanyadahayat #vizedanismanligi"
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=youtube_shorts&utm_medium=social&utm_campaign=oturum-izni-basvurusu-ve-yenilenmesi&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/servisler/oturum-izni-basvurusu-ve-yenilenmesi",
+          "copy": "Oturum İzni Başvurusu ve Yenilenmesi | Hızlı özet Oturum yenilemede en çok unutulan 3 adım - Süre bitimi önceden takip edilir. - Belgeler eksiksiz hazırlanır. - Başvuru sonrası takip düzenli tutulur. Süre bitmeden süreci planlayın. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=youtube_shorts&utm_medium=social&utm_campaign=oturum-izni-basvurusu-ve-yenilenmesi&utm_content=lead-form https://www.almanyavizerehberi.com/servisler/oturum-izni-basvurusu-ve-yenilenmesi #oturumizni #almanyagoc #almanyadahayat #vizedanismanligi"
         }
       ],
       "notes": [
@@ -459,49 +523,65 @@
           "id": "instagram",
           "label": "Instagram",
           "characterLimit": 2200,
-          "copy": "Yabancılar Dairesi İşlemleri için başvuru öncesi kritik notlar Yabancılar Dairesi sürecinde küçük bir eksik büyük gecikme yaratabilir. • Randevu ve evrak takibi sistemli yapılır. • Eksik belge riski önceden azaltılır. • Güncel prosedür değişiklikleri izlenir. Randevu öncesi kontrol listesi alın. https://www.almanyavizerehberi.com/servisler/yabancilar-dairesi-islemleri #yabancilardairesi #almanyagoc #almanyadahukuk #almanyavize"
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=instagram&utm_medium=social&utm_campaign=yabancilar-dairesi-islemleri&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/servisler/yabancilar-dairesi-islemleri",
+          "copy": "Yabancılar Dairesi İşlemleri için başvuru öncesi kritik notlar Yabancılar Dairesi sürecinde küçük bir eksik büyük gecikme yaratabilir. • Randevu ve evrak takibi sistemli yapılır. • Eksik belge riski önceden azaltılır. • Güncel prosedür değişiklikleri izlenir. Randevu öncesi kontrol listesi alın. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=instagram&utm_medium=social&utm_campaign=yabancilar-dairesi-islemleri&utm_content=lead-form https://www.almanyavizerehberi.com/servisler/yabancilar-dairesi-islemleri #yabancilardairesi #almanyagoc #almanyadahukuk #almanyavize"
         },
         {
           "id": "facebook",
           "label": "Facebook",
           "characterLimit": 5000,
-          "copy": "Yabancılar Dairesi İşlemleri için başvuru öncesi kritik notlar Yabancılar Dairesi sürecinde küçük bir eksik büyük gecikme yaratabilir. - Randevu ve evrak takibi sistemli yapılır. - Eksik belge riski önceden azaltılır. - Güncel prosedür değişiklikleri izlenir. Randevu öncesi kontrol listesi alın. https://www.almanyavizerehberi.com/servisler/yabancilar-dairesi-islemleri #yabancilardairesi #almanyagoc #almanyadahukuk #almanyavize"
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=facebook&utm_medium=social&utm_campaign=yabancilar-dairesi-islemleri&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/servisler/yabancilar-dairesi-islemleri",
+          "copy": "Yabancılar Dairesi İşlemleri için başvuru öncesi kritik notlar Yabancılar Dairesi sürecinde küçük bir eksik büyük gecikme yaratabilir. - Randevu ve evrak takibi sistemli yapılır. - Eksik belge riski önceden azaltılır. - Güncel prosedür değişiklikleri izlenir. Randevu öncesi kontrol listesi alın. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=facebook&utm_medium=social&utm_campaign=yabancilar-dairesi-islemleri&utm_content=lead-form https://www.almanyavizerehberi.com/servisler/yabancilar-dairesi-islemleri #yabancilardairesi #almanyagoc #almanyadahukuk #almanyavize"
         },
         {
           "id": "x",
           "label": "X",
           "characterLimit": 280,
-          "copy": "Yabancılar Dairesi İşlemleri için: Yabancılar Dairesi sürecinde küçük bir eksik büyük gecikme yaratabilir. Randevu ve evrak takibi sistemli yapılır. https://www.almanyavizerehberi.com/servisler/yabancilar-dairesi-islemleri #yabancilardairesi #almanyagoc #almanyadahukuk"
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=x&utm_medium=social&utm_campaign=yabancilar-dairesi-islemleri&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/servisler/yabancilar-dairesi-islemleri",
+          "copy": "Yabancılar Dairesi İşlemleri için: Yabancılar Dairesi sürecinde küçük bir eksik büyük gecikme yaratabilir. Randevu ve evrak takibi sistemli yapılır.…"
         },
         {
           "id": "linkedin",
           "label": "LinkedIn",
           "characterLimit": 3000,
-          "copy": "Yabancılar Dairesi İşlemleri konusunda kısa ama net bir rehber hazırladık. Yabancılar Dairesi sürecinde küçük bir eksik büyük gecikme yaratabilir. - Randevu ve evrak takibi sistemli yapılır. - Eksik belge riski önceden azaltılır. - Güncel prosedür değişiklikleri izlenir. Randevu öncesi kontrol listesi alın. https://www.almanyavizerehberi.com/servisler/yabancilar-dairesi-islemleri #yabancilardairesi #almanyagoc #almanyadahukuk #almanyavize"
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=linkedin&utm_medium=social&utm_campaign=yabancilar-dairesi-islemleri&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/servisler/yabancilar-dairesi-islemleri",
+          "copy": "Yabancılar Dairesi İşlemleri konusunda kısa ama net bir rehber hazırladık. Yabancılar Dairesi sürecinde küçük bir eksik büyük gecikme yaratabilir. - Randevu ve evrak takibi sistemli yapılır. - Eksik belge riski önceden azaltılır. - Güncel prosedür değişiklikleri izlenir. Randevu öncesi kontrol listesi alın. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=linkedin&utm_medium=social&utm_campaign=yabancilar-dairesi-islemleri&utm_content=lead-form https://www.almanyavizerehberi.com/servisler/yabancilar-dairesi-islemleri #yabancilardairesi #almanyagoc #almanyadahukuk #almanyavize"
         },
         {
           "id": "telegram",
           "label": "Telegram",
           "characterLimit": 2000,
-          "copy": "Yabancılar Dairesi İşlemleri Yabancılar Dairesi sürecinde küçük bir eksik büyük gecikme yaratabilir. - Randevu ve evrak takibi sistemli yapılır. - Eksik belge riski önceden azaltılır. - Güncel prosedür değişiklikleri izlenir. Randevu öncesi kontrol listesi alın. https://www.almanyavizerehberi.com/servisler/yabancilar-dairesi-islemleri https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=instagram&utm_medium=social&utm_campaign=yabancilar-dairesi-islemleri&utm_content=lead-form"
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=telegram&utm_medium=social&utm_campaign=yabancilar-dairesi-islemleri&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/servisler/yabancilar-dairesi-islemleri",
+          "copy": "Yabancılar Dairesi İşlemleri Yabancılar Dairesi sürecinde küçük bir eksik büyük gecikme yaratabilir. - Randevu ve evrak takibi sistemli yapılır. - Eksik belge riski önceden azaltılır. - Güncel prosedür değişiklikleri izlenir. Randevu öncesi kontrol listesi alın. https://www.almanyavizerehberi.com/servisler/yabancilar-dairesi-islemleri https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=telegram&utm_medium=social&utm_campaign=yabancilar-dairesi-islemleri&utm_content=lead-form"
         },
         {
           "id": "whatsapp_status",
           "label": "WhatsApp Durum",
           "characterLimit": 500,
-          "copy": "Yabancılar Dairesi İşlemleri Yabancılar Dairesi sürecinde küçük bir eksik büyük gecikme yaratabilir. Randevu öncesi kontrol listesi alın."
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=whatsapp_status&utm_medium=social&utm_campaign=yabancilar-dairesi-islemleri&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/servisler/yabancilar-dairesi-islemleri",
+          "copy": "Yabancılar Dairesi İşlemleri Yabancılar Dairesi sürecinde küçük bir eksik büyük gecikme yaratabilir. Randevu öncesi kontrol listesi alın. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=whatsapp_status&utm_medium=social&utm_campaign=yabancilar-dairesi-islemleri&utm_content=lead-form"
         },
         {
           "id": "tiktok",
           "label": "TikTok",
           "characterLimit": 2200,
-          "copy": "Yabancılar Dairesi İşlemleri için net özet Yabancılar Dairesi randevusunda dikkat edilecekler • Randevu ve evrak takibi sistemli yapılır. • Eksik belge riski önceden azaltılır. • Güncel prosedür değişiklikleri izlenir. Randevu öncesi kontrol listesi alın. https://www.almanyavizerehberi.com/servisler/yabancilar-dairesi-islemleri #yabancilardairesi #almanyagoc #almanyadahukuk #almanyavize"
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=tiktok&utm_medium=social&utm_campaign=yabancilar-dairesi-islemleri&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/servisler/yabancilar-dairesi-islemleri",
+          "copy": "Yabancılar Dairesi İşlemleri için net özet Yabancılar Dairesi randevusunda dikkat edilecekler • Randevu ve evrak takibi sistemli yapılır. • Eksik belge riski önceden azaltılır. • Güncel prosedür değişiklikleri izlenir. Randevu öncesi kontrol listesi alın. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=tiktok&utm_medium=social&utm_campaign=yabancilar-dairesi-islemleri&utm_content=lead-form https://www.almanyavizerehberi.com/servisler/yabancilar-dairesi-islemleri #yabancilardairesi #almanyagoc #almanyadahukuk #almanyavize"
         },
         {
           "id": "youtube_shorts",
           "label": "YouTube Shorts",
           "characterLimit": 5000,
-          "copy": "Yabancılar Dairesi İşlemleri | Hızlı özet Yabancılar Dairesi randevusunda dikkat edilecekler - Randevu ve evrak takibi sistemli yapılır. - Eksik belge riski önceden azaltılır. - Güncel prosedür değişiklikleri izlenir. Randevu öncesi kontrol listesi alın. https://www.almanyavizerehberi.com/servisler/yabancilar-dairesi-islemleri #yabancilardairesi #almanyagoc #almanyadahukuk #almanyavize"
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=youtube_shorts&utm_medium=social&utm_campaign=yabancilar-dairesi-islemleri&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/servisler/yabancilar-dairesi-islemleri",
+          "copy": "Yabancılar Dairesi İşlemleri | Hızlı özet Yabancılar Dairesi randevusunda dikkat edilecekler - Randevu ve evrak takibi sistemli yapılır. - Eksik belge riski önceden azaltılır. - Güncel prosedür değişiklikleri izlenir. Randevu öncesi kontrol listesi alın. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=youtube_shorts&utm_medium=social&utm_campaign=yabancilar-dairesi-islemleri&utm_content=lead-form https://www.almanyavizerehberi.com/servisler/yabancilar-dairesi-islemleri #yabancilardairesi #almanyagoc #almanyadahukuk #almanyavize"
         }
       ],
       "notes": [
@@ -558,49 +638,65 @@
           "id": "instagram",
           "label": "Instagram",
           "characterLimit": 2200,
-          "copy": "Barınma ve Emlak İşlemleri için başvuru öncesi kritik notlar Barınma ve Emlak İşlemleri için kısa kontrol listesi: Almanya Vize Rehberi, Almanya'daki Barınma ve Emlak İşlemleri süreçlerini yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler • Almanya Vize Rehberi, Almanya'daki Barınma ve Emlak İşlemleri süreçlerini yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler • Belgeleri doğru sırayla hazırlayın. • Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/servisler/barinma-ve-emlak-islemleri #almanyavize #almanyagog #almanyavizerehberi #vizedanismanligi"
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=instagram&utm_medium=social&utm_campaign=barinma-ve-emlak-islemleri&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/servisler/barinma-ve-emlak-islemleri",
+          "copy": "Barınma ve Emlak İşlemleri için başvuru öncesi kritik notlar Barınma ve Emlak İşlemleri için kısa kontrol listesi: Almanya Vize Rehberi, Almanya'daki Barınma ve Emlak İşlemleri süreçlerini yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler • Almanya Vize Rehberi, Almanya'daki Barınma ve Emlak İşlemleri süreçlerini yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler • Belgeleri doğru sırayla hazırlayın. • Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=instagram&utm_medium=social&utm_campaign=barinma-ve-emlak-islemleri&utm_content=lead-form https://www.almanyavizerehberi.com/servisler/barinma-ve-emlak-islemleri #almanyavize #almanyagog #almanyavizerehberi #vizedanismanligi"
         },
         {
           "id": "facebook",
           "label": "Facebook",
           "characterLimit": 5000,
-          "copy": "Barınma ve Emlak İşlemleri için başvuru öncesi kritik notlar Barınma ve Emlak İşlemleri için kısa kontrol listesi: Almanya Vize Rehberi, Almanya'daki Barınma ve Emlak İşlemleri süreçlerini yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler - Almanya Vize Rehberi, Almanya'daki Barınma ve Emlak İşlemleri süreçlerini yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler - Belgeleri doğru sırayla hazırlayın. - Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/servisler/barinma-ve-emlak-islemleri #almanyavize #almanyagog #almanyavizerehberi #vizedanismanligi"
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=facebook&utm_medium=social&utm_campaign=barinma-ve-emlak-islemleri&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/servisler/barinma-ve-emlak-islemleri",
+          "copy": "Barınma ve Emlak İşlemleri için başvuru öncesi kritik notlar Barınma ve Emlak İşlemleri için kısa kontrol listesi: Almanya Vize Rehberi, Almanya'daki Barınma ve Emlak İşlemleri süreçlerini yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler - Almanya Vize Rehberi, Almanya'daki Barınma ve Emlak İşlemleri süreçlerini yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler - Belgeleri doğru sırayla hazırlayın. - Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=facebook&utm_medium=social&utm_campaign=barinma-ve-emlak-islemleri&utm_content=lead-form https://www.almanyavizerehberi.com/servisler/barinma-ve-emlak-islemleri #almanyavize #almanyagog #almanyavizerehberi #vizedanismanligi"
         },
         {
           "id": "x",
           "label": "X",
           "characterLimit": 280,
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=x&utm_medium=social&utm_campaign=barinma-ve-emlak-islemleri&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/servisler/barinma-ve-emlak-islemleri",
           "copy": "Barınma ve Emlak İşlemleri için: Barınma ve Emlak İşlemleri için kısa kontrol listesi: Almanya Vize Rehberi, Almanya'daki Barınma ve Emlak İşlemleri süreçlerini yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler Almanya Vize Rehberi, Almanya'daki…"
         },
         {
           "id": "linkedin",
           "label": "LinkedIn",
           "characterLimit": 3000,
-          "copy": "Barınma ve Emlak İşlemleri konusunda kısa ama net bir rehber hazırladık. Barınma ve Emlak İşlemleri için kısa kontrol listesi: Almanya Vize Rehberi, Almanya'daki Barınma ve Emlak İşlemleri süreçlerini yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler - Almanya Vize Rehberi, Almanya'daki Barınma ve Emlak İşlemleri süreçlerini yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler - Belgeleri doğru sırayla hazırlayın. - Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/servisler/barinma-ve-emlak-islemleri #almanyavize #almanyagog #almanyavizerehberi #vizedanismanligi"
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=linkedin&utm_medium=social&utm_campaign=barinma-ve-emlak-islemleri&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/servisler/barinma-ve-emlak-islemleri",
+          "copy": "Barınma ve Emlak İşlemleri konusunda kısa ama net bir rehber hazırladık. Barınma ve Emlak İşlemleri için kısa kontrol listesi: Almanya Vize Rehberi, Almanya'daki Barınma ve Emlak İşlemleri süreçlerini yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler - Almanya Vize Rehberi, Almanya'daki Barınma ve Emlak İşlemleri süreçlerini yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler - Belgeleri doğru sırayla hazırlayın. - Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=linkedin&utm_medium=social&utm_campaign=barinma-ve-emlak-islemleri&utm_content=lead-form https://www.almanyavizerehberi.com/servisler/barinma-ve-emlak-islemleri #almanyavize #almanyagog #almanyavizerehberi #vizedanismanligi"
         },
         {
           "id": "telegram",
           "label": "Telegram",
           "characterLimit": 2000,
-          "copy": "Barınma ve Emlak İşlemleri Barınma ve Emlak İşlemleri için kısa kontrol listesi: Almanya Vize Rehberi, Almanya'daki Barınma ve Emlak İşlemleri süreçlerini yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler - Almanya Vize Rehberi, Almanya'daki Barınma ve Emlak İşlemleri süreçlerini yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler - Belgeleri doğru sırayla hazırlayın. - Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/servisler/barinma-ve-emlak-islemleri https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=instagram&utm_medium=social&utm_campaign=barinma-ve-emlak-islemleri&utm_content=lead-form"
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=telegram&utm_medium=social&utm_campaign=barinma-ve-emlak-islemleri&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/servisler/barinma-ve-emlak-islemleri",
+          "copy": "Barınma ve Emlak İşlemleri Barınma ve Emlak İşlemleri için kısa kontrol listesi: Almanya Vize Rehberi, Almanya'daki Barınma ve Emlak İşlemleri süreçlerini yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler - Almanya Vize Rehberi, Almanya'daki Barınma ve Emlak İşlemleri süreçlerini yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler - Belgeleri doğru sırayla hazırlayın. - Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/servisler/barinma-ve-emlak-islemleri https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=telegram&utm_medium=social&utm_campaign=barinma-ve-emlak-islemleri&utm_content=lead-form"
         },
         {
           "id": "whatsapp_status",
           "label": "WhatsApp Durum",
           "characterLimit": 500,
-          "copy": "Barınma ve Emlak İşlemleri Barınma ve Emlak İşlemleri için kısa kontrol listesi: Almanya Vize Rehberi, Almanya'daki Barınma ve Emlak İşlemleri süreçlerini yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler Ön değerlendirme formunu doldurun."
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=whatsapp_status&utm_medium=social&utm_campaign=barinma-ve-emlak-islemleri&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/servisler/barinma-ve-emlak-islemleri",
+          "copy": "Barınma ve Emlak İşlemleri Barınma ve Emlak İşlemleri için kısa kontrol listesi: Almanya Vize Rehberi, Almanya'daki Barınma ve Emlak İşlemleri süreçlerini yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=whatsapp_status&utm_medium=social&utm_campaign=barinma-ve-emlak-islemleri&utm_content=lead-form"
         },
         {
           "id": "tiktok",
           "label": "TikTok",
           "characterLimit": 2200,
-          "copy": "Barınma ve Emlak İşlemleri için net özet Barınma ve Emlak İşlemleri için 30 saniyelik kontrol listesi • Almanya Vize Rehberi, Almanya'daki Barınma ve Emlak İşlemleri süreçlerini yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler • Belgeleri doğru sırayla hazırlayın. • Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/servisler/barinma-ve-emlak-islemleri #almanyavize #almanyagog #almanyavizerehberi #vizedanismanligi"
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=tiktok&utm_medium=social&utm_campaign=barinma-ve-emlak-islemleri&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/servisler/barinma-ve-emlak-islemleri",
+          "copy": "Barınma ve Emlak İşlemleri için net özet Barınma ve Emlak İşlemleri için 30 saniyelik kontrol listesi • Almanya Vize Rehberi, Almanya'daki Barınma ve Emlak İşlemleri süreçlerini yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler • Belgeleri doğru sırayla hazırlayın. • Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=tiktok&utm_medium=social&utm_campaign=barinma-ve-emlak-islemleri&utm_content=lead-form https://www.almanyavizerehberi.com/servisler/barinma-ve-emlak-islemleri #almanyavize #almanyagog #almanyavizerehberi #vizedanismanligi"
         },
         {
           "id": "youtube_shorts",
           "label": "YouTube Shorts",
           "characterLimit": 5000,
-          "copy": "Barınma ve Emlak İşlemleri | Hızlı özet Barınma ve Emlak İşlemleri için 30 saniyelik kontrol listesi - Almanya Vize Rehberi, Almanya'daki Barınma ve Emlak İşlemleri süreçlerini yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler - Belgeleri doğru sırayla hazırlayın. - Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/servisler/barinma-ve-emlak-islemleri #almanyavize #almanyagog #almanyavizerehberi #vizedanismanligi"
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=youtube_shorts&utm_medium=social&utm_campaign=barinma-ve-emlak-islemleri&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/servisler/barinma-ve-emlak-islemleri",
+          "copy": "Barınma ve Emlak İşlemleri | Hızlı özet Barınma ve Emlak İşlemleri için 30 saniyelik kontrol listesi - Almanya Vize Rehberi, Almanya'daki Barınma ve Emlak İşlemleri süreçlerini yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler - Belgeleri doğru sırayla hazırlayın. - Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=youtube_shorts&utm_medium=social&utm_campaign=barinma-ve-emlak-islemleri&utm_content=lead-form https://www.almanyavizerehberi.com/servisler/barinma-ve-emlak-islemleri #almanyavize #almanyagog #almanyavizerehberi #vizedanismanligi"
         }
       ],
       "notes": [
@@ -657,49 +753,65 @@
           "id": "instagram",
           "label": "Instagram",
           "characterLimit": 2200,
-          "copy": "Çalışma İzni için başvuru öncesi kritik notlar Çalışma İzni için kısa kontrol listesi: Almanya Vize Rehberi olarak, Çalışma İzni (Arbeitserlaubnis) başvurusu ve işlemleri konusunda yardımcı oluyoruz • Almanya Vize Rehberi olarak, Çalışma İzni (Arbeitserlaubnis) başvurusu ve işlemleri konusunda yardımcı oluyoruz • Belgeleri doğru sırayla hazırlayın. • Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/servisler/calisma-izni #almanyavize #almanyagog #almanyavizerehberi #vizedanismanligi"
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=instagram&utm_medium=social&utm_campaign=calisma-izni&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/servisler/calisma-izni",
+          "copy": "Çalışma İzni için başvuru öncesi kritik notlar Çalışma İzni için kısa kontrol listesi: Almanya Vize Rehberi olarak, Çalışma İzni (Arbeitserlaubnis) başvurusu ve işlemleri konusunda yardımcı oluyoruz • Almanya Vize Rehberi olarak, Çalışma İzni (Arbeitserlaubnis) başvurusu ve işlemleri konusunda yardımcı oluyoruz • Belgeleri doğru sırayla hazırlayın. • Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=instagram&utm_medium=social&utm_campaign=calisma-izni&utm_content=lead-form https://www.almanyavizerehberi.com/servisler/calisma-izni #almanyavize #almanyagog #almanyavizerehberi #vizedanismanligi"
         },
         {
           "id": "facebook",
           "label": "Facebook",
           "characterLimit": 5000,
-          "copy": "Çalışma İzni için başvuru öncesi kritik notlar Çalışma İzni için kısa kontrol listesi: Almanya Vize Rehberi olarak, Çalışma İzni (Arbeitserlaubnis) başvurusu ve işlemleri konusunda yardımcı oluyoruz - Almanya Vize Rehberi olarak, Çalışma İzni (Arbeitserlaubnis) başvurusu ve işlemleri konusunda yardımcı oluyoruz - Belgeleri doğru sırayla hazırlayın. - Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/servisler/calisma-izni #almanyavize #almanyagog #almanyavizerehberi #vizedanismanligi"
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=facebook&utm_medium=social&utm_campaign=calisma-izni&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/servisler/calisma-izni",
+          "copy": "Çalışma İzni için başvuru öncesi kritik notlar Çalışma İzni için kısa kontrol listesi: Almanya Vize Rehberi olarak, Çalışma İzni (Arbeitserlaubnis) başvurusu ve işlemleri konusunda yardımcı oluyoruz - Almanya Vize Rehberi olarak, Çalışma İzni (Arbeitserlaubnis) başvurusu ve işlemleri konusunda yardımcı oluyoruz - Belgeleri doğru sırayla hazırlayın. - Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=facebook&utm_medium=social&utm_campaign=calisma-izni&utm_content=lead-form https://www.almanyavizerehberi.com/servisler/calisma-izni #almanyavize #almanyagog #almanyavizerehberi #vizedanismanligi"
         },
         {
           "id": "x",
           "label": "X",
           "characterLimit": 280,
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=x&utm_medium=social&utm_campaign=calisma-izni&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/servisler/calisma-izni",
           "copy": "Çalışma İzni için: Çalışma İzni için kısa kontrol listesi: Almanya Vize Rehberi olarak, Çalışma İzni (Arbeitserlaubnis) başvurusu ve işlemleri konusunda yardımcı oluyoruz Almanya Vize Rehberi olarak, Çalışma İzni (Arbeitserlaubnis) başvurusu ve işlemleri konusunda yardımcı…"
         },
         {
           "id": "linkedin",
           "label": "LinkedIn",
           "characterLimit": 3000,
-          "copy": "Çalışma İzni konusunda kısa ama net bir rehber hazırladık. Çalışma İzni için kısa kontrol listesi: Almanya Vize Rehberi olarak, Çalışma İzni (Arbeitserlaubnis) başvurusu ve işlemleri konusunda yardımcı oluyoruz - Almanya Vize Rehberi olarak, Çalışma İzni (Arbeitserlaubnis) başvurusu ve işlemleri konusunda yardımcı oluyoruz - Belgeleri doğru sırayla hazırlayın. - Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/servisler/calisma-izni #almanyavize #almanyagog #almanyavizerehberi #vizedanismanligi"
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=linkedin&utm_medium=social&utm_campaign=calisma-izni&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/servisler/calisma-izni",
+          "copy": "Çalışma İzni konusunda kısa ama net bir rehber hazırladık. Çalışma İzni için kısa kontrol listesi: Almanya Vize Rehberi olarak, Çalışma İzni (Arbeitserlaubnis) başvurusu ve işlemleri konusunda yardımcı oluyoruz - Almanya Vize Rehberi olarak, Çalışma İzni (Arbeitserlaubnis) başvurusu ve işlemleri konusunda yardımcı oluyoruz - Belgeleri doğru sırayla hazırlayın. - Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=linkedin&utm_medium=social&utm_campaign=calisma-izni&utm_content=lead-form https://www.almanyavizerehberi.com/servisler/calisma-izni #almanyavize #almanyagog #almanyavizerehberi #vizedanismanligi"
         },
         {
           "id": "telegram",
           "label": "Telegram",
           "characterLimit": 2000,
-          "copy": "Çalışma İzni Çalışma İzni için kısa kontrol listesi: Almanya Vize Rehberi olarak, Çalışma İzni (Arbeitserlaubnis) başvurusu ve işlemleri konusunda yardımcı oluyoruz - Almanya Vize Rehberi olarak, Çalışma İzni (Arbeitserlaubnis) başvurusu ve işlemleri konusunda yardımcı oluyoruz - Belgeleri doğru sırayla hazırlayın. - Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/servisler/calisma-izni https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=instagram&utm_medium=social&utm_campaign=calisma-izni&utm_content=lead-form"
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=telegram&utm_medium=social&utm_campaign=calisma-izni&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/servisler/calisma-izni",
+          "copy": "Çalışma İzni Çalışma İzni için kısa kontrol listesi: Almanya Vize Rehberi olarak, Çalışma İzni (Arbeitserlaubnis) başvurusu ve işlemleri konusunda yardımcı oluyoruz - Almanya Vize Rehberi olarak, Çalışma İzni (Arbeitserlaubnis) başvurusu ve işlemleri konusunda yardımcı oluyoruz - Belgeleri doğru sırayla hazırlayın. - Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/servisler/calisma-izni https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=telegram&utm_medium=social&utm_campaign=calisma-izni&utm_content=lead-form"
         },
         {
           "id": "whatsapp_status",
           "label": "WhatsApp Durum",
           "characterLimit": 500,
-          "copy": "Çalışma İzni Çalışma İzni için kısa kontrol listesi: Almanya Vize Rehberi olarak, Çalışma İzni (Arbeitserlaubnis) başvurusu ve işlemleri konusunda yardımcı oluyoruz Ön değerlendirme formunu doldurun."
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=whatsapp_status&utm_medium=social&utm_campaign=calisma-izni&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/servisler/calisma-izni",
+          "copy": "Çalışma İzni Çalışma İzni için kısa kontrol listesi: Almanya Vize Rehberi olarak, Çalışma İzni (Arbeitserlaubnis) başvurusu ve işlemleri konusunda yardımcı oluyoruz Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=whatsapp_status&utm_medium=social&utm_campaign=calisma-izni&utm_content=lead-form"
         },
         {
           "id": "tiktok",
           "label": "TikTok",
           "characterLimit": 2200,
-          "copy": "Çalışma İzni için net özet Çalışma İzni için 30 saniyelik kontrol listesi • Almanya Vize Rehberi olarak, Çalışma İzni (Arbeitserlaubnis) başvurusu ve işlemleri konusunda yardımcı oluyoruz • Belgeleri doğru sırayla hazırlayın. • Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/servisler/calisma-izni #almanyavize #almanyagog #almanyavizerehberi #vizedanismanligi"
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=tiktok&utm_medium=social&utm_campaign=calisma-izni&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/servisler/calisma-izni",
+          "copy": "Çalışma İzni için net özet Çalışma İzni için 30 saniyelik kontrol listesi • Almanya Vize Rehberi olarak, Çalışma İzni (Arbeitserlaubnis) başvurusu ve işlemleri konusunda yardımcı oluyoruz • Belgeleri doğru sırayla hazırlayın. • Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=tiktok&utm_medium=social&utm_campaign=calisma-izni&utm_content=lead-form https://www.almanyavizerehberi.com/servisler/calisma-izni #almanyavize #almanyagog #almanyavizerehberi #vizedanismanligi"
         },
         {
           "id": "youtube_shorts",
           "label": "YouTube Shorts",
           "characterLimit": 5000,
-          "copy": "Çalışma İzni | Hızlı özet Çalışma İzni için 30 saniyelik kontrol listesi - Almanya Vize Rehberi olarak, Çalışma İzni (Arbeitserlaubnis) başvurusu ve işlemleri konusunda yardımcı oluyoruz - Belgeleri doğru sırayla hazırlayın. - Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/servisler/calisma-izni #almanyavize #almanyagog #almanyavizerehberi #vizedanismanligi"
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=youtube_shorts&utm_medium=social&utm_campaign=calisma-izni&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/servisler/calisma-izni",
+          "copy": "Çalışma İzni | Hızlı özet Çalışma İzni için 30 saniyelik kontrol listesi - Almanya Vize Rehberi olarak, Çalışma İzni (Arbeitserlaubnis) başvurusu ve işlemleri konusunda yardımcı oluyoruz - Belgeleri doğru sırayla hazırlayın. - Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=youtube_shorts&utm_medium=social&utm_campaign=calisma-izni&utm_content=lead-form https://www.almanyavizerehberi.com/servisler/calisma-izni #almanyavize #almanyagog #almanyavizerehberi #vizedanismanligi"
         }
       ],
       "notes": [
@@ -756,49 +868,65 @@
           "id": "instagram",
           "label": "Instagram",
           "characterLimit": 2200,
-          "copy": "Hukuki Danışmanlık ve Haklar için başvuru öncesi kritik notlar Hukuki Danışmanlık ve Haklar için kısa kontrol listesi: Almanya vize rehberi, Almanya'daki Hukuki Danışmanlık ve Haklarınızı yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler • Almanya vize rehberi, Almanya'daki Hukuki Danışmanlık ve Haklarınızı yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler • Belgeleri doğru sırayla hazırlayın. • Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/servisler/hukuki-danismanlik-ve-haklar #almanyavize #almanyagog #almanyavizerehberi #vizedanismanligi"
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=instagram&utm_medium=social&utm_campaign=hukuki-danismanlik-ve-haklar&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/servisler/hukuki-danismanlik-ve-haklar",
+          "copy": "Hukuki Danışmanlık ve Haklar için başvuru öncesi kritik notlar Hukuki Danışmanlık ve Haklar için kısa kontrol listesi: Almanya vize rehberi, Almanya'daki Hukuki Danışmanlık ve Haklarınızı yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler • Almanya vize rehberi, Almanya'daki Hukuki Danışmanlık ve Haklarınızı yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler • Belgeleri doğru sırayla hazırlayın. • Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=instagram&utm_medium=social&utm_campaign=hukuki-danismanlik-ve-haklar&utm_content=lead-form https://www.almanyavizerehberi.com/servisler/hukuki-danismanlik-ve-haklar #almanyavize #almanyagog #almanyavizerehberi #vizedanismanligi"
         },
         {
           "id": "facebook",
           "label": "Facebook",
           "characterLimit": 5000,
-          "copy": "Hukuki Danışmanlık ve Haklar için başvuru öncesi kritik notlar Hukuki Danışmanlık ve Haklar için kısa kontrol listesi: Almanya vize rehberi, Almanya'daki Hukuki Danışmanlık ve Haklarınızı yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler - Almanya vize rehberi, Almanya'daki Hukuki Danışmanlık ve Haklarınızı yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler - Belgeleri doğru sırayla hazırlayın. - Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/servisler/hukuki-danismanlik-ve-haklar #almanyavize #almanyagog #almanyavizerehberi #vizedanismanligi"
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=facebook&utm_medium=social&utm_campaign=hukuki-danismanlik-ve-haklar&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/servisler/hukuki-danismanlik-ve-haklar",
+          "copy": "Hukuki Danışmanlık ve Haklar için başvuru öncesi kritik notlar Hukuki Danışmanlık ve Haklar için kısa kontrol listesi: Almanya vize rehberi, Almanya'daki Hukuki Danışmanlık ve Haklarınızı yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler - Almanya vize rehberi, Almanya'daki Hukuki Danışmanlık ve Haklarınızı yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler - Belgeleri doğru sırayla hazırlayın. - Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=facebook&utm_medium=social&utm_campaign=hukuki-danismanlik-ve-haklar&utm_content=lead-form https://www.almanyavizerehberi.com/servisler/hukuki-danismanlik-ve-haklar #almanyavize #almanyagog #almanyavizerehberi #vizedanismanligi"
         },
         {
           "id": "x",
           "label": "X",
           "characterLimit": 280,
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=x&utm_medium=social&utm_campaign=hukuki-danismanlik-ve-haklar&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/servisler/hukuki-danismanlik-ve-haklar",
           "copy": "Hukuki Danışmanlık ve Haklar için: Hukuki Danışmanlık ve Haklar için kısa kontrol listesi: Almanya vize rehberi, Almanya'daki Hukuki Danışmanlık ve Haklarınızı yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler Almanya vize rehberi, Almanya'daki Hukuki…"
         },
         {
           "id": "linkedin",
           "label": "LinkedIn",
           "characterLimit": 3000,
-          "copy": "Hukuki Danışmanlık ve Haklar konusunda kısa ama net bir rehber hazırladık. Hukuki Danışmanlık ve Haklar için kısa kontrol listesi: Almanya vize rehberi, Almanya'daki Hukuki Danışmanlık ve Haklarınızı yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler - Almanya vize rehberi, Almanya'daki Hukuki Danışmanlık ve Haklarınızı yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler - Belgeleri doğru sırayla hazırlayın. - Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/servisler/hukuki-danismanlik-ve-haklar #almanyavize #almanyagog #almanyavizerehberi #vizedanismanligi"
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=linkedin&utm_medium=social&utm_campaign=hukuki-danismanlik-ve-haklar&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/servisler/hukuki-danismanlik-ve-haklar",
+          "copy": "Hukuki Danışmanlık ve Haklar konusunda kısa ama net bir rehber hazırladık. Hukuki Danışmanlık ve Haklar için kısa kontrol listesi: Almanya vize rehberi, Almanya'daki Hukuki Danışmanlık ve Haklarınızı yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler - Almanya vize rehberi, Almanya'daki Hukuki Danışmanlık ve Haklarınızı yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler - Belgeleri doğru sırayla hazırlayın. - Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=linkedin&utm_medium=social&utm_campaign=hukuki-danismanlik-ve-haklar&utm_content=lead-form https://www.almanyavizerehberi.com/servisler/hukuki-danismanlik-ve-haklar #almanyavize #almanyagog #almanyavizerehberi #vizedanismanligi"
         },
         {
           "id": "telegram",
           "label": "Telegram",
           "characterLimit": 2000,
-          "copy": "Hukuki Danışmanlık ve Haklar Hukuki Danışmanlık ve Haklar için kısa kontrol listesi: Almanya vize rehberi, Almanya'daki Hukuki Danışmanlık ve Haklarınızı yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler - Almanya vize rehberi, Almanya'daki Hukuki Danışmanlık ve Haklarınızı yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler - Belgeleri doğru sırayla hazırlayın. - Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/servisler/hukuki-danismanlik-ve-haklar https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=instagram&utm_medium=social&utm_campaign=hukuki-danismanlik-ve-haklar&utm_content=lead-form"
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=telegram&utm_medium=social&utm_campaign=hukuki-danismanlik-ve-haklar&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/servisler/hukuki-danismanlik-ve-haklar",
+          "copy": "Hukuki Danışmanlık ve Haklar Hukuki Danışmanlık ve Haklar için kısa kontrol listesi: Almanya vize rehberi, Almanya'daki Hukuki Danışmanlık ve Haklarınızı yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler - Almanya vize rehberi, Almanya'daki Hukuki Danışmanlık ve Haklarınızı yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler - Belgeleri doğru sırayla hazırlayın. - Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/servisler/hukuki-danismanlik-ve-haklar https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=telegram&utm_medium=social&utm_campaign=hukuki-danismanlik-ve-haklar&utm_content=lead-form"
         },
         {
           "id": "whatsapp_status",
           "label": "WhatsApp Durum",
           "characterLimit": 500,
-          "copy": "Hukuki Danışmanlık ve Haklar Hukuki Danışmanlık ve Haklar için kısa kontrol listesi: Almanya vize rehberi, Almanya'daki Hukuki Danışmanlık ve Haklarınızı yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler Ön değerlendirme formunu doldurun."
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=whatsapp_status&utm_medium=social&utm_campaign=hukuki-danismanlik-ve-haklar&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/servisler/hukuki-danismanlik-ve-haklar",
+          "copy": "Hukuki Danışmanlık ve Haklar Hukuki Danışmanlık ve Haklar için kısa kontrol listesi: Almanya vize rehberi, Almanya'daki Hukuki Danışmanlık ve Haklarınızı yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=whatsapp_status&utm_medium=social&utm_campaign=hukuki-danismanlik-ve-haklar&utm_content=lead-form"
         },
         {
           "id": "tiktok",
           "label": "TikTok",
           "characterLimit": 2200,
-          "copy": "Hukuki Danışmanlık ve Haklar için net özet Hukuki Danışmanlık ve Haklar için 30 saniyelik kontrol listesi • Almanya vize rehberi, Almanya'daki Hukuki Danışmanlık ve Haklarınızı yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler • Belgeleri doğru sırayla hazırlayın. • Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/servisler/hukuki-danismanlik-ve-haklar #almanyavize #almanyagog #almanyavizerehberi #vizedanismanligi"
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=tiktok&utm_medium=social&utm_campaign=hukuki-danismanlik-ve-haklar&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/servisler/hukuki-danismanlik-ve-haklar",
+          "copy": "Hukuki Danışmanlık ve Haklar için net özet Hukuki Danışmanlık ve Haklar için 30 saniyelik kontrol listesi • Almanya vize rehberi, Almanya'daki Hukuki Danışmanlık ve Haklarınızı yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler • Belgeleri doğru sırayla hazırlayın. • Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=tiktok&utm_medium=social&utm_campaign=hukuki-danismanlik-ve-haklar&utm_content=lead-form https://www.almanyavizerehberi.com/servisler/hukuki-danismanlik-ve-haklar #almanyavize #almanyagog #almanyavizerehberi #vizedanismanligi"
         },
         {
           "id": "youtube_shorts",
           "label": "YouTube Shorts",
           "characterLimit": 5000,
-          "copy": "Hukuki Danışmanlık ve Haklar | Hızlı özet Hukuki Danışmanlık ve Haklar için 30 saniyelik kontrol listesi - Almanya vize rehberi, Almanya'daki Hukuki Danışmanlık ve Haklarınızı yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler - Belgeleri doğru sırayla hazırlayın. - Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/servisler/hukuki-danismanlik-ve-haklar #almanyavize #almanyagog #almanyavizerehberi #vizedanismanligi"
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=youtube_shorts&utm_medium=social&utm_campaign=hukuki-danismanlik-ve-haklar&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/servisler/hukuki-danismanlik-ve-haklar",
+          "copy": "Hukuki Danışmanlık ve Haklar | Hızlı özet Hukuki Danışmanlık ve Haklar için 30 saniyelik kontrol listesi - Almanya vize rehberi, Almanya'daki Hukuki Danışmanlık ve Haklarınızı yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler - Belgeleri doğru sırayla hazırlayın. - Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=youtube_shorts&utm_medium=social&utm_campaign=hukuki-danismanlik-ve-haklar&utm_content=lead-form https://www.almanyavizerehberi.com/servisler/hukuki-danismanlik-ve-haklar #almanyavize #almanyagog #almanyavizerehberi #vizedanismanligi"
         }
       ],
       "notes": [
@@ -855,49 +983,65 @@
           "id": "instagram",
           "label": "Instagram",
           "characterLimit": 2200,
-          "copy": "Kültürel ve Sosyal Rehberlik için başvuru öncesi kritik notlar Kültürel ve Sosyal Rehberlik için kısa kontrol listesi: Almanya vize rehberi, Göç Sonrası Hizmetlerimiz, Kültürel ve Sosyal Rehberlik, Almanya'daki Kültürel ve Sosyal Rehberlik süreçlerini yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler • Almanya vize rehberi, Göç Sonrası Hizmetlerimiz, Kültürel ve Sosyal Rehberlik, Almanya'daki Kültürel ve Sosyal Rehberlik süreçlerini yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler • Belgeleri doğru sırayla hazırlayın. • Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/servisler/kulturel-ve-sosyal-rehberlik #almanyavize #almanyagog #almanyavizerehberi #vizedanismanligi"
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=instagram&utm_medium=social&utm_campaign=kulturel-ve-sosyal-rehberlik&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/servisler/kulturel-ve-sosyal-rehberlik",
+          "copy": "Kültürel ve Sosyal Rehberlik için başvuru öncesi kritik notlar Kültürel ve Sosyal Rehberlik için kısa kontrol listesi: Almanya vize rehberi, Göç Sonrası Hizmetlerimiz, Kültürel ve Sosyal Rehberlik, Almanya'daki Kültürel ve Sosyal Rehberlik süreçlerini yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler • Almanya vize rehberi, Göç Sonrası Hizmetlerimiz, Kültürel ve Sosyal Rehberlik, Almanya'daki Kültürel ve Sosyal Rehberlik süreçlerini yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler • Belgeleri doğru sırayla hazırlayın. • Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=instagram&utm_medium=social&utm_campaign=kulturel-ve-sosyal-rehberlik&utm_content=lead-form https://www.almanyavizerehberi.com/servisler/kulturel-ve-sosyal-rehberlik #almanyavize #almanyagog #almanyavizerehberi #vizedanismanligi"
         },
         {
           "id": "facebook",
           "label": "Facebook",
           "characterLimit": 5000,
-          "copy": "Kültürel ve Sosyal Rehberlik için başvuru öncesi kritik notlar Kültürel ve Sosyal Rehberlik için kısa kontrol listesi: Almanya vize rehberi, Göç Sonrası Hizmetlerimiz, Kültürel ve Sosyal Rehberlik, Almanya'daki Kültürel ve Sosyal Rehberlik süreçlerini yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler - Almanya vize rehberi, Göç Sonrası Hizmetlerimiz, Kültürel ve Sosyal Rehberlik, Almanya'daki Kültürel ve Sosyal Rehberlik süreçlerini yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler - Belgeleri doğru sırayla hazırlayın. - Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/servisler/kulturel-ve-sosyal-rehberlik #almanyavize #almanyagog #almanyavizerehberi #vizedanismanligi"
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=facebook&utm_medium=social&utm_campaign=kulturel-ve-sosyal-rehberlik&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/servisler/kulturel-ve-sosyal-rehberlik",
+          "copy": "Kültürel ve Sosyal Rehberlik için başvuru öncesi kritik notlar Kültürel ve Sosyal Rehberlik için kısa kontrol listesi: Almanya vize rehberi, Göç Sonrası Hizmetlerimiz, Kültürel ve Sosyal Rehberlik, Almanya'daki Kültürel ve Sosyal Rehberlik süreçlerini yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler - Almanya vize rehberi, Göç Sonrası Hizmetlerimiz, Kültürel ve Sosyal Rehberlik, Almanya'daki Kültürel ve Sosyal Rehberlik süreçlerini yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler - Belgeleri doğru sırayla hazırlayın. - Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=facebook&utm_medium=social&utm_campaign=kulturel-ve-sosyal-rehberlik&utm_content=lead-form https://www.almanyavizerehberi.com/servisler/kulturel-ve-sosyal-rehberlik #almanyavize #almanyagog #almanyavizerehberi #vizedanismanligi"
         },
         {
           "id": "x",
           "label": "X",
           "characterLimit": 280,
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=x&utm_medium=social&utm_campaign=kulturel-ve-sosyal-rehberlik&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/servisler/kulturel-ve-sosyal-rehberlik",
           "copy": "Kültürel ve Sosyal Rehberlik için: Kültürel ve Sosyal Rehberlik için kısa kontrol listesi: Almanya vize rehberi, Göç Sonrası Hizmetlerimiz, Kültürel ve Sosyal Rehberlik, Almanya'daki Kültürel ve Sosyal Rehberlik süreçlerini yakından takip ederek, sizin için en uygun ve hızlı…"
         },
         {
           "id": "linkedin",
           "label": "LinkedIn",
           "characterLimit": 3000,
-          "copy": "Kültürel ve Sosyal Rehberlik konusunda kısa ama net bir rehber hazırladık. Kültürel ve Sosyal Rehberlik için kısa kontrol listesi: Almanya vize rehberi, Göç Sonrası Hizmetlerimiz, Kültürel ve Sosyal Rehberlik, Almanya'daki Kültürel ve Sosyal Rehberlik süreçlerini yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler - Almanya vize rehberi, Göç Sonrası Hizmetlerimiz, Kültürel ve Sosyal Rehberlik, Almanya'daki Kültürel ve Sosyal Rehberlik süreçlerini yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler - Belgeleri doğru sırayla hazırlayın. - Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/servisler/kulturel-ve-sosyal-rehberlik #almanyavize #almanyagog #almanyavizerehberi #vizedanismanligi"
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=linkedin&utm_medium=social&utm_campaign=kulturel-ve-sosyal-rehberlik&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/servisler/kulturel-ve-sosyal-rehberlik",
+          "copy": "Kültürel ve Sosyal Rehberlik konusunda kısa ama net bir rehber hazırladık. Kültürel ve Sosyal Rehberlik için kısa kontrol listesi: Almanya vize rehberi, Göç Sonrası Hizmetlerimiz, Kültürel ve Sosyal Rehberlik, Almanya'daki Kültürel ve Sosyal Rehberlik süreçlerini yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler - Almanya vize rehberi, Göç Sonrası Hizmetlerimiz, Kültürel ve Sosyal Rehberlik, Almanya'daki Kültürel ve Sosyal Rehberlik süreçlerini yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler - Belgeleri doğru sırayla hazırlayın. - Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=linkedin&utm_medium=social&utm_campaign=kulturel-ve-sosyal-rehberlik&utm_content=lead-form https://www.almanyavizerehberi.com/servisler/kulturel-ve-sosyal-rehberlik #almanyavize #almanyagog #almanyavizerehberi #vizedanismanligi"
         },
         {
           "id": "telegram",
           "label": "Telegram",
           "characterLimit": 2000,
-          "copy": "Kültürel ve Sosyal Rehberlik Kültürel ve Sosyal Rehberlik için kısa kontrol listesi: Almanya vize rehberi, Göç Sonrası Hizmetlerimiz, Kültürel ve Sosyal Rehberlik, Almanya'daki Kültürel ve Sosyal Rehberlik süreçlerini yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler - Almanya vize rehberi, Göç Sonrası Hizmetlerimiz, Kültürel ve Sosyal Rehberlik, Almanya'daki Kültürel ve Sosyal Rehberlik süreçlerini yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler - Belgeleri doğru sırayla hazırlayın. - Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/servisler/kulturel-ve-sosyal-rehberlik https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=instagram&utm_medium=social&utm_campaign=kulturel-ve-sosyal-rehberlik&utm_content=lead-form"
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=telegram&utm_medium=social&utm_campaign=kulturel-ve-sosyal-rehberlik&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/servisler/kulturel-ve-sosyal-rehberlik",
+          "copy": "Kültürel ve Sosyal Rehberlik Kültürel ve Sosyal Rehberlik için kısa kontrol listesi: Almanya vize rehberi, Göç Sonrası Hizmetlerimiz, Kültürel ve Sosyal Rehberlik, Almanya'daki Kültürel ve Sosyal Rehberlik süreçlerini yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler - Almanya vize rehberi, Göç Sonrası Hizmetlerimiz, Kültürel ve Sosyal Rehberlik, Almanya'daki Kültürel ve Sosyal Rehberlik süreçlerini yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler - Belgeleri doğru sırayla hazırlayın. - Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/servisler/kulturel-ve-sosyal-rehberlik https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=telegram&utm_medium=social&utm_campaign=kulturel-ve-sosyal-rehberlik&utm_content=lead-form"
         },
         {
           "id": "whatsapp_status",
           "label": "WhatsApp Durum",
           "characterLimit": 500,
-          "copy": "Kültürel ve Sosyal Rehberlik Kültürel ve Sosyal Rehberlik için kısa kontrol listesi: Almanya vize rehberi, Göç Sonrası Hizmetlerimiz, Kültürel ve Sosyal Rehberlik, Almanya'daki Kültürel ve Sosyal Rehberlik süreçlerini yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler Ön değerlendirme formunu doldurun."
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=whatsapp_status&utm_medium=social&utm_campaign=kulturel-ve-sosyal-rehberlik&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/servisler/kulturel-ve-sosyal-rehberlik",
+          "copy": "Kültürel ve Sosyal Rehberlik Kültürel ve Sosyal Rehberlik için kısa kontrol listesi: Almanya vize rehberi, Göç Sonrası Hizmetlerimiz, Kültürel ve Sosyal Rehberlik, Almanya'daki Kültürel ve Sosyal Rehberlik süreçlerini yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=whatsapp_status&utm_medium=social&utm_campaign=kulturel-ve-sosyal-rehberlik&utm_content=lead-form"
         },
         {
           "id": "tiktok",
           "label": "TikTok",
           "characterLimit": 2200,
-          "copy": "Kültürel ve Sosyal Rehberlik için net özet Kültürel ve Sosyal Rehberlik için 30 saniyelik kontrol listesi • Almanya vize rehberi, Göç Sonrası Hizmetlerimiz, Kültürel ve Sosyal Rehberlik, Almanya'daki Kültürel ve Sosyal Rehberlik süreçlerini yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler • Belgeleri doğru sırayla hazırlayın. • Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/servisler/kulturel-ve-sosyal-rehberlik #almanyavize #almanyagog #almanyavizerehberi #vizedanismanligi"
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=tiktok&utm_medium=social&utm_campaign=kulturel-ve-sosyal-rehberlik&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/servisler/kulturel-ve-sosyal-rehberlik",
+          "copy": "Kültürel ve Sosyal Rehberlik için net özet Kültürel ve Sosyal Rehberlik için 30 saniyelik kontrol listesi • Almanya vize rehberi, Göç Sonrası Hizmetlerimiz, Kültürel ve Sosyal Rehberlik, Almanya'daki Kültürel ve Sosyal Rehberlik süreçlerini yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler • Belgeleri doğru sırayla hazırlayın. • Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=tiktok&utm_medium=social&utm_campaign=kulturel-ve-sosyal-rehberlik&utm_content=lead-form https://www.almanyavizerehberi.com/servisler/kulturel-ve-sosyal-rehberlik #almanyavize #almanyagog #almanyavizerehberi #vizedanismanligi"
         },
         {
           "id": "youtube_shorts",
           "label": "YouTube Shorts",
           "characterLimit": 5000,
-          "copy": "Kültürel ve Sosyal Rehberlik | Hızlı özet Kültürel ve Sosyal Rehberlik için 30 saniyelik kontrol listesi - Almanya vize rehberi, Göç Sonrası Hizmetlerimiz, Kültürel ve Sosyal Rehberlik, Almanya'daki Kültürel ve Sosyal Rehberlik süreçlerini yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler - Belgeleri doğru sırayla hazırlayın. - Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/servisler/kulturel-ve-sosyal-rehberlik #almanyavize #almanyagog #almanyavizerehberi #vizedanismanligi"
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=youtube_shorts&utm_medium=social&utm_campaign=kulturel-ve-sosyal-rehberlik&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/servisler/kulturel-ve-sosyal-rehberlik",
+          "copy": "Kültürel ve Sosyal Rehberlik | Hızlı özet Kültürel ve Sosyal Rehberlik için 30 saniyelik kontrol listesi - Almanya vize rehberi, Göç Sonrası Hizmetlerimiz, Kültürel ve Sosyal Rehberlik, Almanya'daki Kültürel ve Sosyal Rehberlik süreçlerini yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler - Belgeleri doğru sırayla hazırlayın. - Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=youtube_shorts&utm_medium=social&utm_campaign=kulturel-ve-sosyal-rehberlik&utm_content=lead-form https://www.almanyavizerehberi.com/servisler/kulturel-ve-sosyal-rehberlik #almanyavize #almanyagog #almanyavizerehberi #vizedanismanligi"
         }
       ],
       "notes": [
@@ -954,49 +1098,65 @@
           "id": "instagram",
           "label": "Instagram",
           "characterLimit": 2200,
-          "copy": "Sigorta ve Sosyal Güvenlik için başvuru öncesi kritik notlar Sigorta ve Sosyal Güvenlik için kısa kontrol listesi: Almanya Vize Rehberi olarak, Sigorta ve sosyal güvenlik konularında bilgilendirme ve destek sağlıyoruz • Almanya Vize Rehberi olarak, Sigorta ve sosyal güvenlik konularında bilgilendirme ve destek sağlıyoruz • Belgeleri doğru sırayla hazırlayın. • Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/servisler/sigorta-ve-sosyal-guvenlik #almanyavize #almanyagog #almanyavizerehberi #vizedanismanligi"
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=instagram&utm_medium=social&utm_campaign=sigorta-ve-sosyal-guvenlik&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/servisler/sigorta-ve-sosyal-guvenlik",
+          "copy": "Sigorta ve Sosyal Güvenlik için başvuru öncesi kritik notlar Sigorta ve Sosyal Güvenlik için kısa kontrol listesi: Almanya Vize Rehberi olarak, Sigorta ve sosyal güvenlik konularında bilgilendirme ve destek sağlıyoruz • Almanya Vize Rehberi olarak, Sigorta ve sosyal güvenlik konularında bilgilendirme ve destek sağlıyoruz • Belgeleri doğru sırayla hazırlayın. • Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=instagram&utm_medium=social&utm_campaign=sigorta-ve-sosyal-guvenlik&utm_content=lead-form https://www.almanyavizerehberi.com/servisler/sigorta-ve-sosyal-guvenlik #almanyavize #almanyagog #almanyavizerehberi #vizedanismanligi"
         },
         {
           "id": "facebook",
           "label": "Facebook",
           "characterLimit": 5000,
-          "copy": "Sigorta ve Sosyal Güvenlik için başvuru öncesi kritik notlar Sigorta ve Sosyal Güvenlik için kısa kontrol listesi: Almanya Vize Rehberi olarak, Sigorta ve sosyal güvenlik konularında bilgilendirme ve destek sağlıyoruz - Almanya Vize Rehberi olarak, Sigorta ve sosyal güvenlik konularında bilgilendirme ve destek sağlıyoruz - Belgeleri doğru sırayla hazırlayın. - Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/servisler/sigorta-ve-sosyal-guvenlik #almanyavize #almanyagog #almanyavizerehberi #vizedanismanligi"
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=facebook&utm_medium=social&utm_campaign=sigorta-ve-sosyal-guvenlik&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/servisler/sigorta-ve-sosyal-guvenlik",
+          "copy": "Sigorta ve Sosyal Güvenlik için başvuru öncesi kritik notlar Sigorta ve Sosyal Güvenlik için kısa kontrol listesi: Almanya Vize Rehberi olarak, Sigorta ve sosyal güvenlik konularında bilgilendirme ve destek sağlıyoruz - Almanya Vize Rehberi olarak, Sigorta ve sosyal güvenlik konularında bilgilendirme ve destek sağlıyoruz - Belgeleri doğru sırayla hazırlayın. - Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=facebook&utm_medium=social&utm_campaign=sigorta-ve-sosyal-guvenlik&utm_content=lead-form https://www.almanyavizerehberi.com/servisler/sigorta-ve-sosyal-guvenlik #almanyavize #almanyagog #almanyavizerehberi #vizedanismanligi"
         },
         {
           "id": "x",
           "label": "X",
           "characterLimit": 280,
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=x&utm_medium=social&utm_campaign=sigorta-ve-sosyal-guvenlik&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/servisler/sigorta-ve-sosyal-guvenlik",
           "copy": "Sigorta ve Sosyal Güvenlik için: Sigorta ve Sosyal Güvenlik için kısa kontrol listesi: Almanya Vize Rehberi olarak, Sigorta ve sosyal güvenlik konularında bilgilendirme ve destek sağlıyoruz Almanya Vize Rehberi olarak, Sigorta ve sosyal güvenlik konularında bilgilendirme ve…"
         },
         {
           "id": "linkedin",
           "label": "LinkedIn",
           "characterLimit": 3000,
-          "copy": "Sigorta ve Sosyal Güvenlik konusunda kısa ama net bir rehber hazırladık. Sigorta ve Sosyal Güvenlik için kısa kontrol listesi: Almanya Vize Rehberi olarak, Sigorta ve sosyal güvenlik konularında bilgilendirme ve destek sağlıyoruz - Almanya Vize Rehberi olarak, Sigorta ve sosyal güvenlik konularında bilgilendirme ve destek sağlıyoruz - Belgeleri doğru sırayla hazırlayın. - Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/servisler/sigorta-ve-sosyal-guvenlik #almanyavize #almanyagog #almanyavizerehberi #vizedanismanligi"
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=linkedin&utm_medium=social&utm_campaign=sigorta-ve-sosyal-guvenlik&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/servisler/sigorta-ve-sosyal-guvenlik",
+          "copy": "Sigorta ve Sosyal Güvenlik konusunda kısa ama net bir rehber hazırladık. Sigorta ve Sosyal Güvenlik için kısa kontrol listesi: Almanya Vize Rehberi olarak, Sigorta ve sosyal güvenlik konularında bilgilendirme ve destek sağlıyoruz - Almanya Vize Rehberi olarak, Sigorta ve sosyal güvenlik konularında bilgilendirme ve destek sağlıyoruz - Belgeleri doğru sırayla hazırlayın. - Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=linkedin&utm_medium=social&utm_campaign=sigorta-ve-sosyal-guvenlik&utm_content=lead-form https://www.almanyavizerehberi.com/servisler/sigorta-ve-sosyal-guvenlik #almanyavize #almanyagog #almanyavizerehberi #vizedanismanligi"
         },
         {
           "id": "telegram",
           "label": "Telegram",
           "characterLimit": 2000,
-          "copy": "Sigorta ve Sosyal Güvenlik Sigorta ve Sosyal Güvenlik için kısa kontrol listesi: Almanya Vize Rehberi olarak, Sigorta ve sosyal güvenlik konularında bilgilendirme ve destek sağlıyoruz - Almanya Vize Rehberi olarak, Sigorta ve sosyal güvenlik konularında bilgilendirme ve destek sağlıyoruz - Belgeleri doğru sırayla hazırlayın. - Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/servisler/sigorta-ve-sosyal-guvenlik https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=instagram&utm_medium=social&utm_campaign=sigorta-ve-sosyal-guvenlik&utm_content=lead-form"
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=telegram&utm_medium=social&utm_campaign=sigorta-ve-sosyal-guvenlik&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/servisler/sigorta-ve-sosyal-guvenlik",
+          "copy": "Sigorta ve Sosyal Güvenlik Sigorta ve Sosyal Güvenlik için kısa kontrol listesi: Almanya Vize Rehberi olarak, Sigorta ve sosyal güvenlik konularında bilgilendirme ve destek sağlıyoruz - Almanya Vize Rehberi olarak, Sigorta ve sosyal güvenlik konularında bilgilendirme ve destek sağlıyoruz - Belgeleri doğru sırayla hazırlayın. - Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/servisler/sigorta-ve-sosyal-guvenlik https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=telegram&utm_medium=social&utm_campaign=sigorta-ve-sosyal-guvenlik&utm_content=lead-form"
         },
         {
           "id": "whatsapp_status",
           "label": "WhatsApp Durum",
           "characterLimit": 500,
-          "copy": "Sigorta ve Sosyal Güvenlik Sigorta ve Sosyal Güvenlik için kısa kontrol listesi: Almanya Vize Rehberi olarak, Sigorta ve sosyal güvenlik konularında bilgilendirme ve destek sağlıyoruz Ön değerlendirme formunu doldurun."
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=whatsapp_status&utm_medium=social&utm_campaign=sigorta-ve-sosyal-guvenlik&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/servisler/sigorta-ve-sosyal-guvenlik",
+          "copy": "Sigorta ve Sosyal Güvenlik Sigorta ve Sosyal Güvenlik için kısa kontrol listesi: Almanya Vize Rehberi olarak, Sigorta ve sosyal güvenlik konularında bilgilendirme ve destek sağlıyoruz Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=whatsapp_status&utm_medium=social&utm_campaign=sigorta-ve-sosyal-guvenlik&utm_content=lead-form"
         },
         {
           "id": "tiktok",
           "label": "TikTok",
           "characterLimit": 2200,
-          "copy": "Sigorta ve Sosyal Güvenlik için net özet Sigorta ve Sosyal Güvenlik için 30 saniyelik kontrol listesi • Almanya Vize Rehberi olarak, Sigorta ve sosyal güvenlik konularında bilgilendirme ve destek sağlıyoruz • Belgeleri doğru sırayla hazırlayın. • Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/servisler/sigorta-ve-sosyal-guvenlik #almanyavize #almanyagog #almanyavizerehberi #vizedanismanligi"
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=tiktok&utm_medium=social&utm_campaign=sigorta-ve-sosyal-guvenlik&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/servisler/sigorta-ve-sosyal-guvenlik",
+          "copy": "Sigorta ve Sosyal Güvenlik için net özet Sigorta ve Sosyal Güvenlik için 30 saniyelik kontrol listesi • Almanya Vize Rehberi olarak, Sigorta ve sosyal güvenlik konularında bilgilendirme ve destek sağlıyoruz • Belgeleri doğru sırayla hazırlayın. • Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=tiktok&utm_medium=social&utm_campaign=sigorta-ve-sosyal-guvenlik&utm_content=lead-form https://www.almanyavizerehberi.com/servisler/sigorta-ve-sosyal-guvenlik #almanyavize #almanyagog #almanyavizerehberi #vizedanismanligi"
         },
         {
           "id": "youtube_shorts",
           "label": "YouTube Shorts",
           "characterLimit": 5000,
-          "copy": "Sigorta ve Sosyal Güvenlik | Hızlı özet Sigorta ve Sosyal Güvenlik için 30 saniyelik kontrol listesi - Almanya Vize Rehberi olarak, Sigorta ve sosyal güvenlik konularında bilgilendirme ve destek sağlıyoruz - Belgeleri doğru sırayla hazırlayın. - Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/servisler/sigorta-ve-sosyal-guvenlik #almanyavize #almanyagog #almanyavizerehberi #vizedanismanligi"
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=youtube_shorts&utm_medium=social&utm_campaign=sigorta-ve-sosyal-guvenlik&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/servisler/sigorta-ve-sosyal-guvenlik",
+          "copy": "Sigorta ve Sosyal Güvenlik | Hızlı özet Sigorta ve Sosyal Güvenlik için 30 saniyelik kontrol listesi - Almanya Vize Rehberi olarak, Sigorta ve sosyal güvenlik konularında bilgilendirme ve destek sağlıyoruz - Belgeleri doğru sırayla hazırlayın. - Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=youtube_shorts&utm_medium=social&utm_campaign=sigorta-ve-sosyal-guvenlik&utm_content=lead-form https://www.almanyavizerehberi.com/servisler/sigorta-ve-sosyal-guvenlik #almanyavize #almanyagog #almanyavizerehberi #vizedanismanligi"
         }
       ],
       "notes": [
@@ -1053,49 +1213,65 @@
           "id": "instagram",
           "label": "Instagram",
           "characterLimit": 2200,
-          "copy": "Vergi İşlemleri için başvuru öncesi kritik notlar Vergi İşlemleri için kısa kontrol listesi: Almanya Vize Rehberi, Almanya'daki Vergi İşlemleri süreçlerini yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler • Almanya Vize Rehberi, Almanya'daki Vergi İşlemleri süreçlerini yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler • Belgeleri doğru sırayla hazırlayın. • Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/servisler/vergi-islemleri #almanyavize #almanyagog #almanyavizerehberi #vizedanismanligi"
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=instagram&utm_medium=social&utm_campaign=vergi-islemleri&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/servisler/vergi-islemleri",
+          "copy": "Vergi İşlemleri için başvuru öncesi kritik notlar Vergi İşlemleri için kısa kontrol listesi: Almanya Vize Rehberi, Almanya'daki Vergi İşlemleri süreçlerini yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler • Almanya Vize Rehberi, Almanya'daki Vergi İşlemleri süreçlerini yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler • Belgeleri doğru sırayla hazırlayın. • Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=instagram&utm_medium=social&utm_campaign=vergi-islemleri&utm_content=lead-form https://www.almanyavizerehberi.com/servisler/vergi-islemleri #almanyavize #almanyagog #almanyavizerehberi #vizedanismanligi"
         },
         {
           "id": "facebook",
           "label": "Facebook",
           "characterLimit": 5000,
-          "copy": "Vergi İşlemleri için başvuru öncesi kritik notlar Vergi İşlemleri için kısa kontrol listesi: Almanya Vize Rehberi, Almanya'daki Vergi İşlemleri süreçlerini yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler - Almanya Vize Rehberi, Almanya'daki Vergi İşlemleri süreçlerini yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler - Belgeleri doğru sırayla hazırlayın. - Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/servisler/vergi-islemleri #almanyavize #almanyagog #almanyavizerehberi #vizedanismanligi"
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=facebook&utm_medium=social&utm_campaign=vergi-islemleri&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/servisler/vergi-islemleri",
+          "copy": "Vergi İşlemleri için başvuru öncesi kritik notlar Vergi İşlemleri için kısa kontrol listesi: Almanya Vize Rehberi, Almanya'daki Vergi İşlemleri süreçlerini yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler - Almanya Vize Rehberi, Almanya'daki Vergi İşlemleri süreçlerini yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler - Belgeleri doğru sırayla hazırlayın. - Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=facebook&utm_medium=social&utm_campaign=vergi-islemleri&utm_content=lead-form https://www.almanyavizerehberi.com/servisler/vergi-islemleri #almanyavize #almanyagog #almanyavizerehberi #vizedanismanligi"
         },
         {
           "id": "x",
           "label": "X",
           "characterLimit": 280,
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=x&utm_medium=social&utm_campaign=vergi-islemleri&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/servisler/vergi-islemleri",
           "copy": "Vergi İşlemleri için: Vergi İşlemleri için kısa kontrol listesi: Almanya Vize Rehberi, Almanya'daki Vergi İşlemleri süreçlerini yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler Almanya Vize Rehberi, Almanya'daki Vergi İşlemleri süreçlerini yakından…"
         },
         {
           "id": "linkedin",
           "label": "LinkedIn",
           "characterLimit": 3000,
-          "copy": "Vergi İşlemleri konusunda kısa ama net bir rehber hazırladık. Vergi İşlemleri için kısa kontrol listesi: Almanya Vize Rehberi, Almanya'daki Vergi İşlemleri süreçlerini yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler - Almanya Vize Rehberi, Almanya'daki Vergi İşlemleri süreçlerini yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler - Belgeleri doğru sırayla hazırlayın. - Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/servisler/vergi-islemleri #almanyavize #almanyagog #almanyavizerehberi #vizedanismanligi"
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=linkedin&utm_medium=social&utm_campaign=vergi-islemleri&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/servisler/vergi-islemleri",
+          "copy": "Vergi İşlemleri konusunda kısa ama net bir rehber hazırladık. Vergi İşlemleri için kısa kontrol listesi: Almanya Vize Rehberi, Almanya'daki Vergi İşlemleri süreçlerini yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler - Almanya Vize Rehberi, Almanya'daki Vergi İşlemleri süreçlerini yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler - Belgeleri doğru sırayla hazırlayın. - Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=linkedin&utm_medium=social&utm_campaign=vergi-islemleri&utm_content=lead-form https://www.almanyavizerehberi.com/servisler/vergi-islemleri #almanyavize #almanyagog #almanyavizerehberi #vizedanismanligi"
         },
         {
           "id": "telegram",
           "label": "Telegram",
           "characterLimit": 2000,
-          "copy": "Vergi İşlemleri Vergi İşlemleri için kısa kontrol listesi: Almanya Vize Rehberi, Almanya'daki Vergi İşlemleri süreçlerini yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler - Almanya Vize Rehberi, Almanya'daki Vergi İşlemleri süreçlerini yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler - Belgeleri doğru sırayla hazırlayın. - Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/servisler/vergi-islemleri https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=instagram&utm_medium=social&utm_campaign=vergi-islemleri&utm_content=lead-form"
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=telegram&utm_medium=social&utm_campaign=vergi-islemleri&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/servisler/vergi-islemleri",
+          "copy": "Vergi İşlemleri Vergi İşlemleri için kısa kontrol listesi: Almanya Vize Rehberi, Almanya'daki Vergi İşlemleri süreçlerini yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler - Almanya Vize Rehberi, Almanya'daki Vergi İşlemleri süreçlerini yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler - Belgeleri doğru sırayla hazırlayın. - Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/servisler/vergi-islemleri https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=telegram&utm_medium=social&utm_campaign=vergi-islemleri&utm_content=lead-form"
         },
         {
           "id": "whatsapp_status",
           "label": "WhatsApp Durum",
           "characterLimit": 500,
-          "copy": "Vergi İşlemleri Vergi İşlemleri için kısa kontrol listesi: Almanya Vize Rehberi, Almanya'daki Vergi İşlemleri süreçlerini yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler Ön değerlendirme formunu doldurun."
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=whatsapp_status&utm_medium=social&utm_campaign=vergi-islemleri&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/servisler/vergi-islemleri",
+          "copy": "Vergi İşlemleri Vergi İşlemleri için kısa kontrol listesi: Almanya Vize Rehberi, Almanya'daki Vergi İşlemleri süreçlerini yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=whatsapp_status&utm_medium=social&utm_campaign=vergi-islemleri&utm_content=lead-form"
         },
         {
           "id": "tiktok",
           "label": "TikTok",
           "characterLimit": 2200,
-          "copy": "Vergi İşlemleri için net özet Vergi İşlemleri için 30 saniyelik kontrol listesi • Almanya Vize Rehberi, Almanya'daki Vergi İşlemleri süreçlerini yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler • Belgeleri doğru sırayla hazırlayın. • Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/servisler/vergi-islemleri #almanyavize #almanyagog #almanyavizerehberi #vizedanismanligi"
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=tiktok&utm_medium=social&utm_campaign=vergi-islemleri&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/servisler/vergi-islemleri",
+          "copy": "Vergi İşlemleri için net özet Vergi İşlemleri için 30 saniyelik kontrol listesi • Almanya Vize Rehberi, Almanya'daki Vergi İşlemleri süreçlerini yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler • Belgeleri doğru sırayla hazırlayın. • Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=tiktok&utm_medium=social&utm_campaign=vergi-islemleri&utm_content=lead-form https://www.almanyavizerehberi.com/servisler/vergi-islemleri #almanyavize #almanyagog #almanyavizerehberi #vizedanismanligi"
         },
         {
           "id": "youtube_shorts",
           "label": "YouTube Shorts",
           "characterLimit": 5000,
-          "copy": "Vergi İşlemleri | Hızlı özet Vergi İşlemleri için 30 saniyelik kontrol listesi - Almanya Vize Rehberi, Almanya'daki Vergi İşlemleri süreçlerini yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler - Belgeleri doğru sırayla hazırlayın. - Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/servisler/vergi-islemleri #almanyavize #almanyagog #almanyavizerehberi #vizedanismanligi"
+          "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=youtube_shorts&utm_medium=social&utm_campaign=vergi-islemleri&utm_content=lead-form",
+          "topicUrl": "https://www.almanyavizerehberi.com/servisler/vergi-islemleri",
+          "copy": "Vergi İşlemleri | Hızlı özet Vergi İşlemleri için 30 saniyelik kontrol listesi - Almanya Vize Rehberi, Almanya'daki Vergi İşlemleri süreçlerini yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler - Belgeleri doğru sırayla hazırlayın. - Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=youtube_shorts&utm_medium=social&utm_campaign=vergi-islemleri&utm_content=lead-form https://www.almanyavizerehberi.com/servisler/vergi-islemleri #almanyavize #almanyagog #almanyavizerehberi #vizedanismanligi"
         }
       ],
       "notes": [
@@ -1129,7 +1305,7 @@
         "priority": 100
       },
       "angle": "Kimler için uygun?",
-      "copy": "Çalışma Vizesi (Arbeitsvisum) için başvuru öncesi kritik notlar Almanya çalışma vizesi için başvuru yapmadan önce bu 3 noktayı netleştirin. • İş teklifi ve sözleşme dosyası hazır mı? • Diploma ve mesleki uygunluk doğru eşleşti mi? • Randevu ve evrak sırası önceden planlandı mı? Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/hizmetler/calisma-vizesi #almanyacalismavizesi #almanyagoc #isbulma #almanyavize #vize"
+      "copy": "Çalışma Vizesi (Arbeitsvisum) için başvuru öncesi kritik notlar Almanya çalışma vizesi için başvuru yapmadan önce bu 3 noktayı netleştirin. • İş teklifi ve sözleşme dosyası hazır mı? • Diploma ve mesleki uygunluk doğru eşleşti mi? • Randevu ve evrak sırası önceden planlandı mı? Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=instagram&utm_medium=social&utm_campaign=calisma-vizesi&utm_content=lead-form https://www.almanyavizerehberi.com/hizmetler/calisma-vizesi #almanyacalismavizesi #almanyagoc #isbulma #almanyavize #vize"
     },
     {
       "week": 1,
@@ -1152,7 +1328,7 @@
         "priority": 98
       },
       "angle": "Maaş kriteri",
-      "copy": "Mavi Kart Vizesi (Blaue Karte EU) için başvuru öncesi kritik notlar Mavi Kart, doğru aday için Almanya yolunu hızlandırır. Önce kriterleri doğru okuyun. - Maaş ve pozisyon eşleşmesi kontrol edilir. - Tanınan diploma ve iş teklifi birlikte değerlendirilir. - Uzun dönem oturum avantajları planlanır. Uygunluk kontrolünü şimdi yapın. https://www.almanyavizerehberi.com/hizmetler/mavi-kart-vizesi #mavikart #blaukarte #almanyacalismavizesi #almanyagog #uzman"
+      "copy": "Mavi Kart Vizesi (Blaue Karte EU) için başvuru öncesi kritik notlar Mavi Kart, doğru aday için Almanya yolunu hızlandırır. Önce kriterleri doğru okuyun. - Maaş ve pozisyon eşleşmesi kontrol edilir. - Tanınan diploma ve iş teklifi birlikte değerlendirilir. - Uzun dönem oturum avantajları planlanır. Uygunluk kontrolünü şimdi yapın. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=facebook&utm_medium=social&utm_campaign=mavi-kart-vizesi&utm_content=lead-form https://www.almanyavizerehberi.com/hizmetler/mavi-kart-vizesi #mavikart #blaukarte #almanyacalismavizesi #almanyagog #uzman"
     },
     {
       "week": 2,
@@ -1175,7 +1351,7 @@
         "priority": 96
       },
       "angle": "Dil ve geçim planı",
-      "copy": "Fırsat Kartı (Chancenkarte) için: Fırsat Kartı ile iş arama sürecini planlı ve kontrollü yürütün. Puan sistemi ve dil seviyesi birlikte okunur. https://www.almanyavizerehberi.com/hizmetler/firsat-karti #firsatkarti #chancenkarte #almanyaisarama"
+      "copy": "Fırsat Kartı (Chancenkarte) için: Fırsat Kartı ile iş arama sürecini planlı ve kontrollü yürütün. Puan sistemi ve dil seviyesi birlikte okunur. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=x&utm_medium=social&utm_campaign=firsat-karti&utm_content=lead-form…"
     },
     {
       "week": 2,
@@ -1198,7 +1374,7 @@
         "priority": 88
       },
       "angle": "Destek çağrısı",
-      "copy": "Oturum İzni Başvurusu ve Yenilenmesi konusunda kısa ama net bir rehber hazırladık. Oturum izni başvurusu ve yenilemesinde gecikme, tüm planı etkiler. - Süre bitimi önceden takip edilir. - Belgeler eksiksiz hazırlanır. - Başvuru sonrası takip düzenli tutulur. Süre bitmeden süreci planlayın. https://www.almanyavizerehberi.com/servisler/oturum-izni-basvurusu-ve-yenilenmesi #oturumizni #almanyagoc #almanyadahayat #vizedanismanligi"
+      "copy": "Oturum İzni Başvurusu ve Yenilenmesi konusunda kısa ama net bir rehber hazırladık. Oturum izni başvurusu ve yenilemesinde gecikme, tüm planı etkiler. - Süre bitimi önceden takip edilir. - Belgeler eksiksiz hazırlanır. - Başvuru sonrası takip düzenli tutulur. Süre bitmeden süreci planlayın. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=linkedin&utm_medium=social&utm_campaign=oturum-izni-basvurusu-ve-yenilenmesi&utm_content=lead-form https://www.almanyavizerehberi.com/servisler/oturum-izni-basvurusu-ve-yenilenmesi #oturumizni #almanyagoc #almanyadahayat #vizedanismanligi"
     },
     {
       "week": 3,
@@ -1244,7 +1420,7 @@
         "priority": 98
       },
       "angle": "Maaş kriteri",
-      "copy": "Mavi Kart Vizesi (Blaue Karte EU) Mavi Kart, doğru aday için Almanya yolunu hızlandırır. Önce kriterleri doğru okuyun. Uygunluk kontrolünü şimdi yapın."
+      "copy": "Mavi Kart Vizesi (Blaue Karte EU) Mavi Kart, doğru aday için Almanya yolunu hızlandırır. Önce kriterleri doğru okuyun. Uygunluk kontrolünü şimdi yapın. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=whatsapp_status&utm_medium=social&utm_campaign=mavi-kart-vizesi&utm_content=lead-form"
     },
     {
       "week": 4,
@@ -1267,7 +1443,7 @@
         "priority": 96
       },
       "angle": "Dil ve geçim planı",
-      "copy": "Fırsat Kartı (Chancenkarte) için net özet Fırsat Kartı ile Almanya'da iş arama nasıl olur? • Puan sistemi ve dil seviyesi birlikte okunur. • Geçim planı başvuru öncesi netleştirilir. • İş arama sürecine uygun strateji hazırlanır. Başvuru öncesi uygunluk kontrolü yapın. https://www.almanyavizerehberi.com/hizmetler/firsat-karti #firsatkarti #chancenkarte #almanyaisarama #almanyagoc #almanyavize"
+      "copy": "Fırsat Kartı (Chancenkarte) için net özet Fırsat Kartı ile Almanya'da iş arama nasıl olur? • Puan sistemi ve dil seviyesi birlikte okunur. • Geçim planı başvuru öncesi netleştirilir. • İş arama sürecine uygun strateji hazırlanır. Başvuru öncesi uygunluk kontrolü yapın. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=tiktok&utm_medium=social&utm_campaign=firsat-karti&utm_content=lead-form https://www.almanyavizerehberi.com/hizmetler/firsat-karti #firsatkarti #chancenkarte #almanyaisarama #almanyagoc #almanyavize"
     },
     {
       "week": 4,
@@ -1290,7 +1466,7 @@
         "priority": 88
       },
       "angle": "Destek çağrısı",
-      "copy": "Oturum İzni Başvurusu ve Yenilenmesi | Hızlı özet Oturum yenilemede en çok unutulan 3 adım - Süre bitimi önceden takip edilir. - Belgeler eksiksiz hazırlanır. - Başvuru sonrası takip düzenli tutulur. Süre bitmeden süreci planlayın. https://www.almanyavizerehberi.com/servisler/oturum-izni-basvurusu-ve-yenilenmesi #oturumizni #almanyagoc #almanyadahayat #vizedanismanligi"
+      "copy": "Oturum İzni Başvurusu ve Yenilenmesi | Hızlı özet Oturum yenilemede en çok unutulan 3 adım - Süre bitimi önceden takip edilir. - Belgeler eksiksiz hazırlanır. - Başvuru sonrası takip düzenli tutulur. Süre bitmeden süreci planlayın. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=youtube_shorts&utm_medium=social&utm_campaign=oturum-izni-basvurusu-ve-yenilenmesi&utm_content=lead-form https://www.almanyavizerehberi.com/servisler/oturum-izni-basvurusu-ve-yenilenmesi #oturumizni #almanyagoc #almanyadahayat #vizedanismanligi"
     },
     {
       "week": 5,
@@ -1313,7 +1489,7 @@
         "priority": 100
       },
       "angle": "Kimler için uygun?",
-      "copy": "Çalışma Vizesi (Arbeitsvisum) için başvuru öncesi kritik notlar Almanya çalışma vizesi için başvuru yapmadan önce bu 3 noktayı netleştirin. • İş teklifi ve sözleşme dosyası hazır mı? • Diploma ve mesleki uygunluk doğru eşleşti mi? • Randevu ve evrak sırası önceden planlandı mı? Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/hizmetler/calisma-vizesi #almanyacalismavizesi #almanyagoc #isbulma #almanyavize #vize"
+      "copy": "Çalışma Vizesi (Arbeitsvisum) için başvuru öncesi kritik notlar Almanya çalışma vizesi için başvuru yapmadan önce bu 3 noktayı netleştirin. • İş teklifi ve sözleşme dosyası hazır mı? • Diploma ve mesleki uygunluk doğru eşleşti mi? • Randevu ve evrak sırası önceden planlandı mı? Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=instagram&utm_medium=social&utm_campaign=calisma-vizesi&utm_content=lead-form https://www.almanyavizerehberi.com/hizmetler/calisma-vizesi #almanyacalismavizesi #almanyagoc #isbulma #almanyavize #vize"
     },
     {
       "week": 5,
@@ -1336,7 +1512,7 @@
         "priority": 98
       },
       "angle": "Maaş kriteri",
-      "copy": "Mavi Kart Vizesi (Blaue Karte EU) için başvuru öncesi kritik notlar Mavi Kart, doğru aday için Almanya yolunu hızlandırır. Önce kriterleri doğru okuyun. - Maaş ve pozisyon eşleşmesi kontrol edilir. - Tanınan diploma ve iş teklifi birlikte değerlendirilir. - Uzun dönem oturum avantajları planlanır. Uygunluk kontrolünü şimdi yapın. https://www.almanyavizerehberi.com/hizmetler/mavi-kart-vizesi #mavikart #blaukarte #almanyacalismavizesi #almanyagog #uzman"
+      "copy": "Mavi Kart Vizesi (Blaue Karte EU) için başvuru öncesi kritik notlar Mavi Kart, doğru aday için Almanya yolunu hızlandırır. Önce kriterleri doğru okuyun. - Maaş ve pozisyon eşleşmesi kontrol edilir. - Tanınan diploma ve iş teklifi birlikte değerlendirilir. - Uzun dönem oturum avantajları planlanır. Uygunluk kontrolünü şimdi yapın. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=facebook&utm_medium=social&utm_campaign=mavi-kart-vizesi&utm_content=lead-form https://www.almanyavizerehberi.com/hizmetler/mavi-kart-vizesi #mavikart #blaukarte #almanyacalismavizesi #almanyagog #uzman"
     },
     {
       "week": 6,
@@ -1359,7 +1535,7 @@
         "priority": 96
       },
       "angle": "Dil ve geçim planı",
-      "copy": "Fırsat Kartı (Chancenkarte) için: Fırsat Kartı ile iş arama sürecini planlı ve kontrollü yürütün. Puan sistemi ve dil seviyesi birlikte okunur. https://www.almanyavizerehberi.com/hizmetler/firsat-karti #firsatkarti #chancenkarte #almanyaisarama"
+      "copy": "Fırsat Kartı (Chancenkarte) için: Fırsat Kartı ile iş arama sürecini planlı ve kontrollü yürütün. Puan sistemi ve dil seviyesi birlikte okunur. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=x&utm_medium=social&utm_campaign=firsat-karti&utm_content=lead-form…"
     },
     {
       "week": 6,
@@ -1382,7 +1558,7 @@
         "priority": 88
       },
       "angle": "Destek çağrısı",
-      "copy": "Oturum İzni Başvurusu ve Yenilenmesi konusunda kısa ama net bir rehber hazırladık. Oturum izni başvurusu ve yenilemesinde gecikme, tüm planı etkiler. - Süre bitimi önceden takip edilir. - Belgeler eksiksiz hazırlanır. - Başvuru sonrası takip düzenli tutulur. Süre bitmeden süreci planlayın. https://www.almanyavizerehberi.com/servisler/oturum-izni-basvurusu-ve-yenilenmesi #oturumizni #almanyagoc #almanyadahayat #vizedanismanligi"
+      "copy": "Oturum İzni Başvurusu ve Yenilenmesi konusunda kısa ama net bir rehber hazırladık. Oturum izni başvurusu ve yenilemesinde gecikme, tüm planı etkiler. - Süre bitimi önceden takip edilir. - Belgeler eksiksiz hazırlanır. - Başvuru sonrası takip düzenli tutulur. Süre bitmeden süreci planlayın. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=linkedin&utm_medium=social&utm_campaign=oturum-izni-basvurusu-ve-yenilenmesi&utm_content=lead-form https://www.almanyavizerehberi.com/servisler/oturum-izni-basvurusu-ve-yenilenmesi #oturumizni #almanyagoc #almanyadahayat #vizedanismanligi"
     },
     {
       "week": 7,
@@ -1428,7 +1604,7 @@
         "priority": 98
       },
       "angle": "Maaş kriteri",
-      "copy": "Mavi Kart Vizesi (Blaue Karte EU) Mavi Kart, doğru aday için Almanya yolunu hızlandırır. Önce kriterleri doğru okuyun. Uygunluk kontrolünü şimdi yapın."
+      "copy": "Mavi Kart Vizesi (Blaue Karte EU) Mavi Kart, doğru aday için Almanya yolunu hızlandırır. Önce kriterleri doğru okuyun. Uygunluk kontrolünü şimdi yapın. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=whatsapp_status&utm_medium=social&utm_campaign=mavi-kart-vizesi&utm_content=lead-form"
     }
   ],
   "distributionQueue": [
@@ -1447,7 +1623,7 @@
       "angle": "Kimler için uygun?",
       "topicUrl": "https://www.almanyavizerehberi.com/hizmetler/calisma-vizesi",
       "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=instagram&utm_medium=social&utm_campaign=calisma-vizesi&utm_content=lead-form",
-      "copy": "Çalışma Vizesi (Arbeitsvisum) için başvuru öncesi kritik notlar Almanya çalışma vizesi için başvuru yapmadan önce bu 3 noktayı netleştirin. • İş teklifi ve sözleşme dosyası hazır mı? • Diploma ve mesleki uygunluk doğru eşleşti mi? • Randevu ve evrak sırası önceden planlandı mı? Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/hizmetler/calisma-vizesi #almanyacalismavizesi #almanyagoc #isbulma #almanyavize #vize"
+      "copy": "Çalışma Vizesi (Arbeitsvisum) için başvuru öncesi kritik notlar Almanya çalışma vizesi için başvuru yapmadan önce bu 3 noktayı netleştirin. • İş teklifi ve sözleşme dosyası hazır mı? • Diploma ve mesleki uygunluk doğru eşleşti mi? • Randevu ve evrak sırası önceden planlandı mı? Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=instagram&utm_medium=social&utm_campaign=calisma-vizesi&utm_content=lead-form https://www.almanyavizerehberi.com/hizmetler/calisma-vizesi #almanyacalismavizesi #almanyagoc #isbulma #almanyavize #vize"
     },
     {
       "slot": 2,
@@ -1464,7 +1640,7 @@
       "angle": "Maaş kriteri",
       "topicUrl": "https://www.almanyavizerehberi.com/hizmetler/mavi-kart-vizesi",
       "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=facebook&utm_medium=social&utm_campaign=mavi-kart-vizesi&utm_content=lead-form",
-      "copy": "Mavi Kart Vizesi (Blaue Karte EU) için başvuru öncesi kritik notlar Mavi Kart, doğru aday için Almanya yolunu hızlandırır. Önce kriterleri doğru okuyun. - Maaş ve pozisyon eşleşmesi kontrol edilir. - Tanınan diploma ve iş teklifi birlikte değerlendirilir. - Uzun dönem oturum avantajları planlanır. Uygunluk kontrolünü şimdi yapın. https://www.almanyavizerehberi.com/hizmetler/mavi-kart-vizesi #mavikart #blaukarte #almanyacalismavizesi #almanyagog #uzman"
+      "copy": "Mavi Kart Vizesi (Blaue Karte EU) için başvuru öncesi kritik notlar Mavi Kart, doğru aday için Almanya yolunu hızlandırır. Önce kriterleri doğru okuyun. - Maaş ve pozisyon eşleşmesi kontrol edilir. - Tanınan diploma ve iş teklifi birlikte değerlendirilir. - Uzun dönem oturum avantajları planlanır. Uygunluk kontrolünü şimdi yapın. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=facebook&utm_medium=social&utm_campaign=mavi-kart-vizesi&utm_content=lead-form https://www.almanyavizerehberi.com/hizmetler/mavi-kart-vizesi #mavikart #blaukarte #almanyacalismavizesi #almanyagog #uzman"
     },
     {
       "slot": 3,
@@ -1481,7 +1657,7 @@
       "angle": "Dil ve geçim planı",
       "topicUrl": "https://www.almanyavizerehberi.com/hizmetler/firsat-karti",
       "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=x&utm_medium=social&utm_campaign=firsat-karti&utm_content=lead-form",
-      "copy": "Fırsat Kartı (Chancenkarte) için: Fırsat Kartı ile iş arama sürecini planlı ve kontrollü yürütün. Puan sistemi ve dil seviyesi birlikte okunur. https://www.almanyavizerehberi.com/hizmetler/firsat-karti #firsatkarti #chancenkarte #almanyaisarama"
+      "copy": "Fırsat Kartı (Chancenkarte) için: Fırsat Kartı ile iş arama sürecini planlı ve kontrollü yürütün. Puan sistemi ve dil seviyesi birlikte okunur. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=x&utm_medium=social&utm_campaign=firsat-karti&utm_content=lead-form…"
     },
     {
       "slot": 4,
@@ -1498,7 +1674,7 @@
       "angle": "Destek çağrısı",
       "topicUrl": "https://www.almanyavizerehberi.com/servisler/oturum-izni-basvurusu-ve-yenilenmesi",
       "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=linkedin&utm_medium=social&utm_campaign=oturum-izni-basvurusu-ve-yenilenmesi&utm_content=lead-form",
-      "copy": "Oturum İzni Başvurusu ve Yenilenmesi konusunda kısa ama net bir rehber hazırladık. Oturum izni başvurusu ve yenilemesinde gecikme, tüm planı etkiler. - Süre bitimi önceden takip edilir. - Belgeler eksiksiz hazırlanır. - Başvuru sonrası takip düzenli tutulur. Süre bitmeden süreci planlayın. https://www.almanyavizerehberi.com/servisler/oturum-izni-basvurusu-ve-yenilenmesi #oturumizni #almanyagoc #almanyadahayat #vizedanismanligi"
+      "copy": "Oturum İzni Başvurusu ve Yenilenmesi konusunda kısa ama net bir rehber hazırladık. Oturum izni başvurusu ve yenilemesinde gecikme, tüm planı etkiler. - Süre bitimi önceden takip edilir. - Belgeler eksiksiz hazırlanır. - Başvuru sonrası takip düzenli tutulur. Süre bitmeden süreci planlayın. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=linkedin&utm_medium=social&utm_campaign=oturum-izni-basvurusu-ve-yenilenmesi&utm_content=lead-form https://www.almanyavizerehberi.com/servisler/oturum-izni-basvurusu-ve-yenilenmesi #oturumizni #almanyagoc #almanyadahayat #vizedanismanligi"
     },
     {
       "slot": 5,
@@ -1532,7 +1708,7 @@
       "angle": "Belgeler ve hazırlık",
       "topicUrl": "https://www.almanyavizerehberi.com/servisler/barinma-ve-emlak-islemleri",
       "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=whatsapp_status&utm_medium=social&utm_campaign=barinma-ve-emlak-islemleri&utm_content=lead-form",
-      "copy": "Barınma ve Emlak İşlemleri Barınma ve Emlak İşlemleri için kısa kontrol listesi: Almanya Vize Rehberi, Almanya'daki Barınma ve Emlak İşlemleri süreçlerini yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler Ön değerlendirme formunu doldurun."
+      "copy": "Barınma ve Emlak İşlemleri Barınma ve Emlak İşlemleri için kısa kontrol listesi: Almanya Vize Rehberi, Almanya'daki Barınma ve Emlak İşlemleri süreçlerini yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=whatsapp_status&utm_medium=social&utm_campaign=barinma-ve-emlak-islemleri&utm_content=lead-form"
     },
     {
       "slot": 7,
@@ -1549,7 +1725,7 @@
       "angle": "Süreçte kritik hata",
       "topicUrl": "https://www.almanyavizerehberi.com/servisler/calisma-izni",
       "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=tiktok&utm_medium=social&utm_campaign=calisma-izni&utm_content=lead-form",
-      "copy": "Çalışma İzni için net özet Çalışma İzni için 30 saniyelik kontrol listesi • Almanya Vize Rehberi olarak, Çalışma İzni (Arbeitserlaubnis) başvurusu ve işlemleri konusunda yardımcı oluyoruz • Belgeleri doğru sırayla hazırlayın. • Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/servisler/calisma-izni #almanyavize #almanyagog #almanyavizerehberi #vizedanismanligi"
+      "copy": "Çalışma İzni için net özet Çalışma İzni için 30 saniyelik kontrol listesi • Almanya Vize Rehberi olarak, Çalışma İzni (Arbeitserlaubnis) başvurusu ve işlemleri konusunda yardımcı oluyoruz • Belgeleri doğru sırayla hazırlayın. • Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=tiktok&utm_medium=social&utm_campaign=calisma-izni&utm_content=lead-form https://www.almanyavizerehberi.com/servisler/calisma-izni #almanyavize #almanyagog #almanyavizerehberi #vizedanismanligi"
     },
     {
       "slot": 8,
@@ -1566,7 +1742,7 @@
       "angle": "Başvuru çağrısı",
       "topicUrl": "https://www.almanyavizerehberi.com/servisler/hukuki-danismanlik-ve-haklar",
       "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=youtube_shorts&utm_medium=social&utm_campaign=hukuki-danismanlik-ve-haklar&utm_content=lead-form",
-      "copy": "Hukuki Danışmanlık ve Haklar | Hızlı özet Hukuki Danışmanlık ve Haklar için 30 saniyelik kontrol listesi - Almanya vize rehberi, Almanya'daki Hukuki Danışmanlık ve Haklarınızı yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler - Belgeleri doğru sırayla hazırlayın. - Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/servisler/hukuki-danismanlik-ve-haklar #almanyavize #almanyagog #almanyavizerehberi #vizedanismanligi"
+      "copy": "Hukuki Danışmanlık ve Haklar | Hızlı özet Hukuki Danışmanlık ve Haklar için 30 saniyelik kontrol listesi - Almanya vize rehberi, Almanya'daki Hukuki Danışmanlık ve Haklarınızı yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler - Belgeleri doğru sırayla hazırlayın. - Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=youtube_shorts&utm_medium=social&utm_campaign=hukuki-danismanlik-ve-haklar&utm_content=lead-form https://www.almanyavizerehberi.com/servisler/hukuki-danismanlik-ve-haklar #almanyavize #almanyagog #almanyavizerehberi #vizedanismanligi"
     },
     {
       "slot": 9,
@@ -1583,7 +1759,7 @@
       "angle": "Kimler için uygun?",
       "topicUrl": "https://www.almanyavizerehberi.com/servisler/kulturel-ve-sosyal-rehberlik",
       "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=instagram&utm_medium=social&utm_campaign=kulturel-ve-sosyal-rehberlik&utm_content=lead-form",
-      "copy": "Kültürel ve Sosyal Rehberlik için başvuru öncesi kritik notlar Kültürel ve Sosyal Rehberlik için kısa kontrol listesi: Almanya vize rehberi, Göç Sonrası Hizmetlerimiz, Kültürel ve Sosyal Rehberlik, Almanya'daki Kültürel ve Sosyal Rehberlik süreçlerini yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler • Almanya vize rehberi, Göç Sonrası Hizmetlerimiz, Kültürel ve Sosyal Rehberlik, Almanya'daki Kültürel ve Sosyal Rehberlik süreçlerini yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler • Belgeleri doğru sırayla hazırlayın. • Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/servisler/kulturel-ve-sosyal-rehberlik #almanyavize #almanyagog #almanyavizerehberi #vizedanismanligi"
+      "copy": "Kültürel ve Sosyal Rehberlik için başvuru öncesi kritik notlar Kültürel ve Sosyal Rehberlik için kısa kontrol listesi: Almanya vize rehberi, Göç Sonrası Hizmetlerimiz, Kültürel ve Sosyal Rehberlik, Almanya'daki Kültürel ve Sosyal Rehberlik süreçlerini yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler • Almanya vize rehberi, Göç Sonrası Hizmetlerimiz, Kültürel ve Sosyal Rehberlik, Almanya'daki Kültürel ve Sosyal Rehberlik süreçlerini yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler • Belgeleri doğru sırayla hazırlayın. • Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=instagram&utm_medium=social&utm_campaign=kulturel-ve-sosyal-rehberlik&utm_content=lead-form https://www.almanyavizerehberi.com/servisler/kulturel-ve-sosyal-rehberlik #almanyavize #almanyagog #almanyavizerehberi #vizedanismanligi"
     },
     {
       "slot": 10,
@@ -1600,7 +1776,7 @@
       "angle": "Belgeler ve hazırlık",
       "topicUrl": "https://www.almanyavizerehberi.com/servisler/sigorta-ve-sosyal-guvenlik",
       "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=facebook&utm_medium=social&utm_campaign=sigorta-ve-sosyal-guvenlik&utm_content=lead-form",
-      "copy": "Sigorta ve Sosyal Güvenlik için başvuru öncesi kritik notlar Sigorta ve Sosyal Güvenlik için kısa kontrol listesi: Almanya Vize Rehberi olarak, Sigorta ve sosyal güvenlik konularında bilgilendirme ve destek sağlıyoruz - Almanya Vize Rehberi olarak, Sigorta ve sosyal güvenlik konularında bilgilendirme ve destek sağlıyoruz - Belgeleri doğru sırayla hazırlayın. - Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/servisler/sigorta-ve-sosyal-guvenlik #almanyavize #almanyagog #almanyavizerehberi #vizedanismanligi"
+      "copy": "Sigorta ve Sosyal Güvenlik için başvuru öncesi kritik notlar Sigorta ve Sosyal Güvenlik için kısa kontrol listesi: Almanya Vize Rehberi olarak, Sigorta ve sosyal güvenlik konularında bilgilendirme ve destek sağlıyoruz - Almanya Vize Rehberi olarak, Sigorta ve sosyal güvenlik konularında bilgilendirme ve destek sağlıyoruz - Belgeleri doğru sırayla hazırlayın. - Süreçteki kritik adımları önceden planlayın. Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=facebook&utm_medium=social&utm_campaign=sigorta-ve-sosyal-guvenlik&utm_content=lead-form https://www.almanyavizerehberi.com/servisler/sigorta-ve-sosyal-guvenlik #almanyavize #almanyagog #almanyavizerehberi #vizedanismanligi"
     },
     {
       "slot": 11,
@@ -1634,7 +1810,7 @@
       "angle": "Ön değerlendirme çağrısı",
       "topicUrl": "https://www.almanyavizerehberi.com/hizmetler/calisma-vizesi",
       "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=linkedin&utm_medium=social&utm_campaign=calisma-vizesi&utm_content=lead-form",
-      "copy": "Çalışma Vizesi (Arbeitsvisum) konusunda kısa ama net bir rehber hazırladık. Almanya çalışma vizesi için başvuru yapmadan önce bu 3 noktayı netleştirin. - İş teklifi ve sözleşme dosyası hazır mı? - Diploma ve mesleki uygunluk doğru eşleşti mi? - Randevu ve evrak sırası önceden planlandı mı? Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/hizmetler/calisma-vizesi #almanyacalismavizesi #almanyagoc #isbulma #almanyavize"
+      "copy": "Çalışma Vizesi (Arbeitsvisum) konusunda kısa ama net bir rehber hazırladık. Almanya çalışma vizesi için başvuru yapmadan önce bu 3 noktayı netleştirin. - İş teklifi ve sözleşme dosyası hazır mı? - Diploma ve mesleki uygunluk doğru eşleşti mi? - Randevu ve evrak sırası önceden planlandı mı? Ön değerlendirme formunu doldurun. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=linkedin&utm_medium=social&utm_campaign=calisma-vizesi&utm_content=lead-form https://www.almanyavizerehberi.com/hizmetler/calisma-vizesi #almanyacalismavizesi #almanyagoc #isbulma #almanyavize"
     },
     {
       "slot": 13,
@@ -1668,7 +1844,7 @@
       "angle": "Puan sistemi",
       "topicUrl": "https://www.almanyavizerehberi.com/hizmetler/firsat-karti",
       "leadUrl": "https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=whatsapp_status&utm_medium=social&utm_campaign=firsat-karti&utm_content=lead-form",
-      "copy": "Fırsat Kartı (Chancenkarte) Fırsat Kartı ile iş arama sürecini planlı ve kontrollü yürütün. Başvuru öncesi uygunluk kontrolü yapın."
+      "copy": "Fırsat Kartı (Chancenkarte) Fırsat Kartı ile iş arama sürecini planlı ve kontrollü yürütün. Başvuru öncesi uygunluk kontrolü yapın. https://www.almanyavizerehberi.com/uygunluk-testi?utm_source=whatsapp_status&utm_medium=social&utm_campaign=firsat-karti&utm_content=lead-form"
     }
   ],
   "seoQueue": [

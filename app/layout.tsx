@@ -191,11 +191,11 @@ export default function RootLayout({ children }: RootLayoutProps) {
   };
 
   return (
-    <html lang="tr">
+    <html lang="tr" className="overflow-x-hidden">
       <body
         className={[
           fontClass,
-          'min-h-screen bg-surface-main text-brand-dark antialiased scrollbar-modern',
+          'min-h-screen overflow-x-hidden bg-surface-main text-brand-dark antialiased scrollbar-modern',
           `theme-${activeTheme}`,
           `typography-${typography.scale}`,
         ].join(' ')}

@@ -1,0 +1,529 @@
+{
+  "generatedAt": "2026-07-06T10:27:31.033Z",
+  "primaryPillars": [
+    {
+      "id": "home",
+      "title": "Almanya Vize Rehberi Ana Sayfa",
+      "path": "/",
+      "focusKeyword": "almanya vizesi",
+      "intent": "commercial",
+      "priority": 100,
+      "outline": [
+        "Almanya vizesi ve iş rotası için ana giriş noktası",
+        "Almanya iş, göç ve başvuru ön değerlendirme bağlantıları",
+        "Çalışma vizesi, Mavi Kart ve Fırsat Kartı için hızlı yönlendirme",
+        "Kanal ve iletişim alanları ile dönüşüm çağrısı"
+      ],
+      "supportingPaths": [
+        "/almanya-is",
+        "/almanya-goc",
+        "/almanya-vizesi",
+        "/uygunluk-testi"
+      ]
+    },
+    {
+      "id": "almanya-is",
+      "title": "Almanya İş Başvurusu Rehberi",
+      "path": "/almanya-is",
+      "focusKeyword": "almanya iş başvurusu",
+      "intent": "commercial",
+      "priority": 99,
+      "outline": [
+        "Almanya iş başvurusu için iş teklifi, CV ve denklik akışı",
+        "Çalışma vizesi, Mavi Kart ve Fırsat Kartı karşılaştırması",
+        "Başvuruya giden yol ve uygunluk testi",
+        "Sık yapılan hatalar ve doğru rota seçimi"
+      ],
+      "supportingPaths": [
+        "/hizmetler/calisma-vizesi",
+        "/hizmetler/mavi-kart-vizesi",
+        "/hizmetler/firsat-karti",
+        "/uygunluk-testi"
+      ]
+    },
+    {
+      "id": "almanya-goc",
+      "title": "Almanya Göç Rehberi",
+      "path": "/almanya-goc",
+      "focusKeyword": "almanya göç",
+      "intent": "informational",
+      "priority": 98,
+      "outline": [
+        "Göç öncesi ve sonrası resmi adımların tek haritası",
+        "Çalışma vizesi, Mavi Kart ve Fırsat Kartı için köprü içerik",
+        "Göç sonrası oturum ve kurum işlemleri",
+        "Blog ve kaynak bağlantıları ile geniş bilgi katmanı"
+      ],
+      "supportingPaths": [
+        "/hizmetler",
+        "/servisler",
+        "/blog"
+      ]
+    },
+    {
+      "id": "almanya-vizesi",
+      "title": "Almanya Vizesi Rehberi",
+      "path": "/almanya-vizesi",
+      "focusKeyword": "almanya vizesi",
+      "intent": "informational",
+      "priority": 97,
+      "outline": [
+        "Vize rotalarını tek sayfada toparlayan rehber alanı",
+        "Çalışma, Mavi Kart ve Fırsat Kartı bağlantıları",
+        "Başvuru öncesi karar verme akışı",
+        "Ön değerlendirme ve resmi kaynaklar"
+      ],
+      "supportingPaths": [
+        "/hizmetler",
+        "/uygunluk-testi",
+        "/blog"
+      ]
+    },
+    {
+      "id": "hizmetler",
+      "title": "Almanya Vize Hizmetleri",
+      "path": "/hizmetler",
+      "focusKeyword": "almanya çalışma vizesi",
+      "intent": "transactional",
+      "priority": 95,
+      "outline": [
+        "Çalışma vizesi, Mavi Kart ve Fırsat Kartı hizmetleri",
+        "Başvuruya dönük ana hizmetlerin listesi",
+        "İş başvurusu rotasına doğrudan köprü",
+        "Dönüşüm çağrısı ve ön değerlendirme"
+      ],
+      "supportingPaths": [
+        "/hizmetler/calisma-vizesi",
+        "/hizmetler/mavi-kart-vizesi",
+        "/hizmetler/firsat-karti",
+        "/almanya-is"
+      ]
+    },
+    {
+      "id": "servisler",
+      "title": "Göç Sonrası Hizmetler",
+      "path": "/servisler",
+      "focusKeyword": "oturum izni",
+      "intent": "transactional",
+      "priority": 92,
+      "outline": [
+        "Oturum, yabancılar dairesi ve resmi işlem başlıkları",
+        "Göç sonrası sık ihtiyaç duyulan servisler",
+        "Kurum takibi ve düzenli süreç yönetimi",
+        "Ana rehbere geri dönüş bağlantıları"
+      ],
+      "supportingPaths": [
+        "/servisler/oturum-izni-basvurusu-ve-yenilenmesi",
+        "/servisler/yabancilar-dairesi-islemleri",
+        "/almanya-goc"
+      ]
+    }
+  ],
+  "topicBriefs": [
+    {
+      "id": "visa:calisma-vizesi",
+      "title": "Çalışma Vizesi (Arbeitsvisum)",
+      "path": "/hizmetler/calisma-vizesi",
+      "focusKeyword": "almanya çalışma vizesi",
+      "intent": "commercial",
+      "priority": 100,
+      "outline": [
+        "Almanya çalışma vizesi için başvuru yapmadan önce bu 3 noktayı netleştirin.",
+        "İş teklifi ve sözleşme dosyası hazır mı?",
+        "Diploma ve mesleki uygunluk doğru eşleşti mi?",
+        "Ön değerlendirme formunu doldurun."
+      ],
+      "supportingPaths": [
+        "/almanya-is",
+        "/hizmetler",
+        "/uygunluk-testi"
+      ]
+    },
+    {
+      "id": "visa:mavi-kart-vizesi",
+      "title": "Mavi Kart Vizesi (Blaue Karte EU)",
+      "path": "/hizmetler/mavi-kart-vizesi",
+      "focusKeyword": "almanya mavi kart",
+      "intent": "commercial",
+      "priority": 98,
+      "outline": [
+        "Mavi Kart, doğru aday için Almanya yolunu hızlandırır. Önce kriterleri doğru okuyun.",
+        "Maaş ve pozisyon eşleşmesi kontrol edilir.",
+        "Tanınan diploma ve iş teklifi birlikte değerlendirilir.",
+        "Uygunluk kontrolünü şimdi yapın."
+      ],
+      "supportingPaths": [
+        "/almanya-is",
+        "/hizmetler",
+        "/uygunluk-testi"
+      ]
+    },
+    {
+      "id": "visa:firsat-karti",
+      "title": "Fırsat Kartı (Chancenkarte)",
+      "path": "/hizmetler/firsat-karti",
+      "focusKeyword": "almanya fırsat kartı",
+      "intent": "commercial",
+      "priority": 96,
+      "outline": [
+        "Fırsat Kartı ile iş arama sürecini planlı ve kontrollü yürütün.",
+        "Puan sistemi ve dil seviyesi birlikte okunur.",
+        "Geçim planı başvuru öncesi netleştirilir.",
+        "Başvuru öncesi uygunluk kontrolü yapın."
+      ],
+      "supportingPaths": [
+        "/almanya-is",
+        "/hizmetler",
+        "/uygunluk-testi"
+      ]
+    },
+    {
+      "id": "service:oturum-izni-basvurusu-ve-yenilenmesi",
+      "title": "Oturum İzni Başvurusu ve Yenilenmesi",
+      "path": "/servisler/oturum-izni-basvurusu-ve-yenilenmesi",
+      "focusKeyword": "almanya oturum izni",
+      "intent": "transactional",
+      "priority": 88,
+      "outline": [
+        "Oturum izni başvurusu ve yenilemesinde gecikme, tüm planı etkiler.",
+        "Süre bitimi önceden takip edilir.",
+        "Belgeler eksiksiz hazırlanır.",
+        "Süre bitmeden süreci planlayın."
+      ],
+      "supportingPaths": [
+        "/almanya-goc",
+        "/servisler",
+        "/uygunluk-testi"
+      ]
+    },
+    {
+      "id": "service:yabancilar-dairesi-islemleri",
+      "title": "Yabancılar Dairesi İşlemleri",
+      "path": "/servisler/yabancilar-dairesi-islemleri",
+      "focusKeyword": "yabancılar dairesi işlemleri",
+      "intent": "transactional",
+      "priority": 84,
+      "outline": [
+        "Yabancılar Dairesi sürecinde küçük bir eksik büyük gecikme yaratabilir.",
+        "Randevu ve evrak takibi sistemli yapılır.",
+        "Eksik belge riski önceden azaltılır.",
+        "Randevu öncesi kontrol listesi alın."
+      ],
+      "supportingPaths": [
+        "/almanya-goc",
+        "/servisler",
+        "/uygunluk-testi"
+      ]
+    },
+    {
+      "id": "service:barinma-ve-emlak-islemleri",
+      "title": "Barınma ve Emlak İşlemleri",
+      "path": "/servisler/barinma-ve-emlak-islemleri",
+      "focusKeyword": "barınma ve emlak i̇şlemleri",
+      "intent": "transactional",
+      "priority": 60,
+      "outline": [
+        "Barınma ve Emlak İşlemleri için kısa kontrol listesi: Almanya Vize Rehberi, Almanya'daki Barınma ve Emlak İşlemleri süreçlerini yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler",
+        "Almanya Vize Rehberi, Almanya'daki Barınma ve Emlak İşlemleri süreçlerini yakından takip ederek, sizin için en uygun ve hızlı çözümü sunmayı hedefler",
+        "Belgeleri doğru sırayla hazırlayın.",
+        "Ön değerlendirme formunu doldurun."
+      ],
+      "supportingPaths": [
+        "/almanya-goc",
+        "/servisler",
+        "/uygunluk-testi"
+      ]
+    }
+  ],
+  "linkSuggestions": [
+    {
+      "fromPath": "/",
+      "fromLabel": "Ana Sayfa",
+      "toPath": "/almanya-is",
+      "toLabel": "Almanya İş Başvurusu",
+      "anchorText": "Almanya iş başvurusu",
+      "reason": "Ana sayfa, iş niyetini en güçlü hub sayfaya taşır."
+    },
+    {
+      "fromPath": "/",
+      "fromLabel": "Ana Sayfa",
+      "toPath": "/almanya-goc",
+      "toLabel": "Almanya Göç Rehberi",
+      "anchorText": "Almanya göç rehberi",
+      "reason": "Genel göç niyetini merkez rehbere aktarır."
+    },
+    {
+      "fromPath": "/",
+      "fromLabel": "Ana Sayfa",
+      "toPath": "/almanya-vizesi",
+      "toLabel": "Almanya Vizesi Rehberi",
+      "anchorText": "Almanya vizesi",
+      "reason": "Vize aramalarının geniş kümeye yayılmasını sağlar."
+    },
+    {
+      "fromPath": "/almanya-is",
+      "fromLabel": "Almanya İş Başvurusu",
+      "toPath": "/hizmetler/calisma-vizesi",
+      "toLabel": "Çalışma Vizesi",
+      "anchorText": "Almanya çalışma vizesi",
+      "reason": "İş başvurusu niyetini doğrudan dönüşüm sayfasına bağlar."
+    },
+    {
+      "fromPath": "/almanya-is",
+      "fromLabel": "Almanya İş Başvurusu",
+      "toPath": "/hizmetler/mavi-kart-vizesi",
+      "toLabel": "Mavi Kart",
+      "anchorText": "Mavi Kart",
+      "reason": "Nitelikli adayları uygun vize rotasına yönlendirir."
+    },
+    {
+      "fromPath": "/almanya-is",
+      "fromLabel": "Almanya İş Başvurusu",
+      "toPath": "/hizmetler/firsat-karti",
+      "toLabel": "Fırsat Kartı",
+      "anchorText": "Fırsat Kartı",
+      "reason": "İş arama aşamasındaki kullanıcıyı ilgili rotaya taşır."
+    },
+    {
+      "fromPath": "/almanya-goc",
+      "fromLabel": "Almanya Göç Rehberi",
+      "toPath": "/servisler/oturum-izni-basvurusu-ve-yenilenmesi",
+      "toLabel": "Oturum İzni",
+      "anchorText": "Oturum izni",
+      "reason": "Göç sonrası aramalarda işlem sayfasını güçlendirir."
+    },
+    {
+      "fromPath": "/almanya-goc",
+      "fromLabel": "Almanya Göç Rehberi",
+      "toPath": "/servisler/yabancilar-dairesi-islemleri",
+      "toLabel": "Yabancılar Dairesi İşlemleri",
+      "anchorText": "Yabancılar Dairesi işlemleri",
+      "reason": "Resmi süreçlerdeki aramaları servis sayfasına taşır."
+    },
+    {
+      "fromPath": "/almanya-vizesi",
+      "fromLabel": "Almanya Vizesi Rehberi",
+      "toPath": "/uygunluk-testi",
+      "toLabel": "Ön Değerlendirme",
+      "anchorText": "ön değerlendirme",
+      "reason": "Bilgi arayan kullanıcıyı lead akışına taşır."
+    },
+    {
+      "fromPath": "/blog",
+      "fromLabel": "Blog",
+      "toPath": "/almanya-goc",
+      "toLabel": "Almanya Göç Rehberi",
+      "anchorText": "Almanya göç rehberi",
+      "reason": "Blog trafiğini ana hub sayfaya geri bağlar."
+    },
+    {
+      "fromPath": "/",
+      "fromLabel": "Almanya Vize Rehberi Ana Sayfa",
+      "toPath": "/almanya-is",
+      "toLabel": "Almanya İş Başvurusu",
+      "anchorText": "Almanya İş Başvurusu",
+      "reason": "Almanya Vize Rehberi Ana Sayfa sayfası ile destek içerik arasındaki tarama yolunu güçlendirir."
+    },
+    {
+      "fromPath": "/",
+      "fromLabel": "Almanya Vize Rehberi Ana Sayfa",
+      "toPath": "/almanya-goc",
+      "toLabel": "Almanya Göç Rehberi",
+      "anchorText": "Almanya Göç Rehberi",
+      "reason": "Almanya Vize Rehberi Ana Sayfa sayfası ile destek içerik arasındaki tarama yolunu güçlendirir."
+    },
+    {
+      "fromPath": "/",
+      "fromLabel": "Almanya Vize Rehberi Ana Sayfa",
+      "toPath": "/almanya-vizesi",
+      "toLabel": "Almanya Vizesi Rehberi",
+      "anchorText": "Almanya Vizesi Rehberi",
+      "reason": "Almanya Vize Rehberi Ana Sayfa sayfası ile destek içerik arasındaki tarama yolunu güçlendirir."
+    },
+    {
+      "fromPath": "/",
+      "fromLabel": "Almanya Vize Rehberi Ana Sayfa",
+      "toPath": "/uygunluk-testi",
+      "toLabel": "Ön Değerlendirme",
+      "anchorText": "Ön Değerlendirme",
+      "reason": "Almanya Vize Rehberi Ana Sayfa sayfası ile destek içerik arasındaki tarama yolunu güçlendirir."
+    },
+    {
+      "fromPath": "/almanya-is",
+      "fromLabel": "Almanya İş Başvurusu Rehberi",
+      "toPath": "/hizmetler/calisma-vizesi",
+      "toLabel": "Çalışma Vizesi",
+      "anchorText": "Çalışma Vizesi",
+      "reason": "Almanya İş Başvurusu Rehberi sayfası ile destek içerik arasındaki tarama yolunu güçlendirir."
+    },
+    {
+      "fromPath": "/almanya-is",
+      "fromLabel": "Almanya İş Başvurusu Rehberi",
+      "toPath": "/uygunluk-testi",
+      "toLabel": "Ön Değerlendirme",
+      "anchorText": "Ön Değerlendirme",
+      "reason": "Almanya İş Başvurusu Rehberi sayfası ile destek içerik arasındaki tarama yolunu güçlendirir."
+    },
+    {
+      "fromPath": "/almanya-goc",
+      "fromLabel": "Almanya Göç Rehberi",
+      "toPath": "/hizmetler",
+      "toLabel": "Almanya Vize Hizmetleri",
+      "anchorText": "Almanya Vize Hizmetleri",
+      "reason": "Almanya Göç Rehberi sayfası ile destek içerik arasındaki tarama yolunu güçlendirir."
+    },
+    {
+      "fromPath": "/almanya-goc",
+      "fromLabel": "Almanya Göç Rehberi",
+      "toPath": "/servisler",
+      "toLabel": "Göç Sonrası Hizmetler",
+      "anchorText": "Göç Sonrası Hizmetler",
+      "reason": "Almanya Göç Rehberi sayfası ile destek içerik arasındaki tarama yolunu güçlendirir."
+    },
+    {
+      "fromPath": "/almanya-goc",
+      "fromLabel": "Almanya Göç Rehberi",
+      "toPath": "/blog",
+      "toLabel": "Blog",
+      "anchorText": "Blog",
+      "reason": "Almanya Göç Rehberi sayfası ile destek içerik arasındaki tarama yolunu güçlendirir."
+    },
+    {
+      "fromPath": "/almanya-vizesi",
+      "fromLabel": "Almanya Vizesi Rehberi",
+      "toPath": "/hizmetler",
+      "toLabel": "Almanya Vize Hizmetleri",
+      "anchorText": "Almanya Vize Hizmetleri",
+      "reason": "Almanya Vizesi Rehberi sayfası ile destek içerik arasındaki tarama yolunu güçlendirir."
+    },
+    {
+      "fromPath": "/almanya-vizesi",
+      "fromLabel": "Almanya Vizesi Rehberi",
+      "toPath": "/uygunluk-testi",
+      "toLabel": "Ön Değerlendirme",
+      "anchorText": "Ön Değerlendirme",
+      "reason": "Almanya Vizesi Rehberi sayfası ile destek içerik arasındaki tarama yolunu güçlendirir."
+    },
+    {
+      "fromPath": "/almanya-vizesi",
+      "fromLabel": "Almanya Vizesi Rehberi",
+      "toPath": "/blog",
+      "toLabel": "Blog",
+      "anchorText": "Blog",
+      "reason": "Almanya Vizesi Rehberi sayfası ile destek içerik arasındaki tarama yolunu güçlendirir."
+    },
+    {
+      "fromPath": "/hizmetler",
+      "fromLabel": "Almanya Vize Hizmetleri",
+      "toPath": "/hizmetler/calisma-vizesi",
+      "toLabel": "Çalışma Vizesi",
+      "anchorText": "Çalışma Vizesi",
+      "reason": "Almanya Vize Hizmetleri sayfası ile destek içerik arasındaki tarama yolunu güçlendirir."
+    },
+    {
+      "fromPath": "/hizmetler",
+      "fromLabel": "Almanya Vize Hizmetleri",
+      "toPath": "/hizmetler/mavi-kart-vizesi",
+      "toLabel": "Mavi Kart",
+      "anchorText": "Mavi Kart",
+      "reason": "Almanya Vize Hizmetleri sayfası ile destek içerik arasındaki tarama yolunu güçlendirir."
+    },
+    {
+      "fromPath": "/hizmetler",
+      "fromLabel": "Almanya Vize Hizmetleri",
+      "toPath": "/hizmetler/firsat-karti",
+      "toLabel": "Fırsat Kartı",
+      "anchorText": "Fırsat Kartı",
+      "reason": "Almanya Vize Hizmetleri sayfası ile destek içerik arasındaki tarama yolunu güçlendirir."
+    },
+    {
+      "fromPath": "/hizmetler",
+      "fromLabel": "Almanya Vize Hizmetleri",
+      "toPath": "/almanya-is",
+      "toLabel": "Almanya İş Başvurusu",
+      "anchorText": "Almanya İş Başvurusu",
+      "reason": "Almanya Vize Hizmetleri sayfası ile destek içerik arasındaki tarama yolunu güçlendirir."
+    },
+    {
+      "fromPath": "/servisler",
+      "fromLabel": "Göç Sonrası Hizmetler",
+      "toPath": "/servisler/oturum-izni-basvurusu-ve-yenilenmesi",
+      "toLabel": "Oturum İzni",
+      "anchorText": "Oturum İzni",
+      "reason": "Göç Sonrası Hizmetler sayfası ile destek içerik arasındaki tarama yolunu güçlendirir."
+    },
+    {
+      "fromPath": "/servisler",
+      "fromLabel": "Göç Sonrası Hizmetler",
+      "toPath": "/servisler/yabancilar-dairesi-islemleri",
+      "toLabel": "Yabancılar Dairesi İşlemleri",
+      "anchorText": "Yabancılar Dairesi İşlemleri",
+      "reason": "Göç Sonrası Hizmetler sayfası ile destek içerik arasındaki tarama yolunu güçlendirir."
+    },
+    {
+      "fromPath": "/servisler",
+      "fromLabel": "Göç Sonrası Hizmetler",
+      "toPath": "/almanya-goc",
+      "toLabel": "Almanya Göç Rehberi",
+      "anchorText": "Almanya Göç Rehberi",
+      "reason": "Göç Sonrası Hizmetler sayfası ile destek içerik arasındaki tarama yolunu güçlendirir."
+    },
+    {
+      "fromPath": "/hizmetler/calisma-vizesi",
+      "fromLabel": "Çalışma Vizesi (Arbeitsvisum)",
+      "toPath": "/uygunluk-testi",
+      "toLabel": "Ön Değerlendirme",
+      "anchorText": "ön değerlendirme",
+      "reason": "Çalışma Vizesi (Arbeitsvisum) sayfasından lead akışına tek tık bağlantı sağlar."
+    },
+    {
+      "fromPath": "/hizmetler/mavi-kart-vizesi",
+      "fromLabel": "Mavi Kart Vizesi (Blaue Karte EU)",
+      "toPath": "/uygunluk-testi",
+      "toLabel": "Ön Değerlendirme",
+      "anchorText": "ön değerlendirme",
+      "reason": "Mavi Kart Vizesi (Blaue Karte EU) sayfasından lead akışına tek tık bağlantı sağlar."
+    },
+    {
+      "fromPath": "/hizmetler/firsat-karti",
+      "fromLabel": "Fırsat Kartı (Chancenkarte)",
+      "toPath": "/uygunluk-testi",
+      "toLabel": "Ön Değerlendirme",
+      "anchorText": "ön değerlendirme",
+      "reason": "Fırsat Kartı (Chancenkarte) sayfasından lead akışına tek tık bağlantı sağlar."
+    },
+    {
+      "fromPath": "/servisler/oturum-izni-basvurusu-ve-yenilenmesi",
+      "fromLabel": "Oturum İzni Başvurusu ve Yenilenmesi",
+      "toPath": "/uygunluk-testi",
+      "toLabel": "Ön Değerlendirme",
+      "anchorText": "ön değerlendirme",
+      "reason": "Oturum İzni Başvurusu ve Yenilenmesi sayfasından lead akışına tek tık bağlantı sağlar."
+    },
+    {
+      "fromPath": "/servisler/yabancilar-dairesi-islemleri",
+      "fromLabel": "Yabancılar Dairesi İşlemleri",
+      "toPath": "/uygunluk-testi",
+      "toLabel": "Ön Değerlendirme",
+      "anchorText": "ön değerlendirme",
+      "reason": "Yabancılar Dairesi İşlemleri sayfasından lead akışına tek tık bağlantı sağlar."
+    },
+    {
+      "fromPath": "/servisler/barinma-ve-emlak-islemleri",
+      "fromLabel": "Barınma ve Emlak İşlemleri",
+      "toPath": "/uygunluk-testi",
+      "toLabel": "Ön Değerlendirme",
+      "anchorText": "ön değerlendirme",
+      "reason": "Barınma ve Emlak İşlemleri sayfasından lead akışına tek tık bağlantı sağlar."
+    }
+  ],
+  "notes": [
+    "Günlük cron ana hub sayfalar, topic brief'leri ve iç link önerilerini yeniler.",
+    "Hedef odak: Almanya iş, Almanya iş başvurusu, Almanya göç, Almanya vizesi ve çalışma vizesi.",
+    "Yapı, mass page spam yerine hub-link-brief döngüsüyle çalışır.",
+    "Konu sayısı: 6",
+    "Pillar sayısı: 6",
+    "Link önerisi: 35",
+    "Site kökü: https://www.almanyavizerehberi.com"
+  ]
+}

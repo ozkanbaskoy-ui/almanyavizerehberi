@@ -10,7 +10,8 @@
     "lint": "npm run typecheck",
     "scrape": "node scripts/scrape-almanyavizerehberi.js",
     "social:generate": "tsx scripts/generate-social-automation.ts",
-    "social:publish": "tsx scripts/publish-social-automation.ts"
+    "social:publish": "tsx scripts/publish-social-automation.ts",
+    "seo:generate": "tsx scripts/generate-seo-automation.ts"
   },
   "keywords": [],
   "author": "",
