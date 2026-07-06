@@ -1,0 +1,13 @@
+.git
+.vercel
+.env
+.env.*
+.env*.local
+.local-crm
+.next
+node_modules
+npm-debug.log*
+*.tsbuildinfo
+ARGE_*.md
+ARGE_ADMIN_CRM_*.md
+mail ayarları.png
