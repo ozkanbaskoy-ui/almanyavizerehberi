@@ -97,6 +97,36 @@ const SERVICE_SHORTCUTS = [
   { href: '/hizmetler/firsat-karti', label: 'Fırsat Kartı' },
 ] as const;
 
+const SCOPE_PANELS = [
+  {
+    tone: 'emerald',
+    eyebrow: 'KAPSAMIMIZ',
+    title: 'Odaklandığımız hizmetler',
+    description:
+      'Çalışma ve göç hattında hızlı, net ve başvuruya dönük destek sağlıyoruz.',
+    items: [
+      'Almanya çalışma vizesi',
+      'Almanya Mavi Kart',
+      'Almanya Fırsat Kartı',
+      'Göç sonrası işlemler ve yönlendirme',
+      'Uygunluk testi ve başvuru ön değerlendirme',
+    ],
+  },
+  {
+    tone: 'amber',
+    eyebrow: 'KAPSAM DIŞI',
+    title: 'Üstlenmediğimiz başvurular',
+    description:
+      'Daha güçlü odak için çalışma-göç dışındaki başvuruları ayrı tutuyoruz.',
+    items: [
+      'Aile birleşimi başvuruları',
+      'Öğrenci ve dil kursu vizeleri',
+      'Turistik başvurular',
+      'Kariyer dışı genel yönlendirmeler',
+    ],
+  },
+] as const;
+
 export default async function HomePage() {
   const visas = getAllVisas();
   const homeSettings = getHomeSettings();
@@ -236,31 +266,69 @@ export default async function HomePage() {
             <RevealOnScroll className="mt-6 md:mt-10">
               <div className="home-panel">
                 <RevealOnScroll>
-                  <div className="grid gap-4 lg:grid-cols-2">
-                    <div className="rounded-2xl border border-border-subtle bg-surface-main p-5 shadow-soft">
-                      <p className="inline-flex rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-emerald-700">
-                        Kapsamımız
-                      </p>
-                      <ul className="mt-4 space-y-3 text-sm leading-6 text-slate-700 md:text-base">
-                        <li>Almanya çalışma vizesi</li>
-                        <li>Almanya Mavi Kart</li>
-                        <li>Almanya Fırsat Kartı</li>
-                        <li>Göç sonrası işlemler ve yönlendirme</li>
-                        <li>Uygunluk testi ve başvuru ön değerlendirme</li>
-                      </ul>
-                    </div>
+                  <div className="grid gap-5 lg:grid-cols-2">
+                    {SCOPE_PANELS.map((panel) => (
+                      <article
+                        key={panel.eyebrow}
+                        className={`overflow-hidden rounded-2xl border p-6 shadow-soft ${
+                          panel.tone === 'emerald'
+                            ? 'border-emerald-200/80 bg-gradient-to-br from-emerald-50/90 via-white to-white'
+                            : 'border-amber-200/80 bg-gradient-to-br from-amber-50/90 via-white to-white'
+                        }`}
+                      >
+                        <div className="flex items-start justify-between gap-4">
+                          <div className="max-w-xl">
+                            <p
+                              className={`inline-flex rounded-full px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.28em] ${
+                                panel.tone === 'emerald'
+                                  ? 'bg-emerald-500/10 text-emerald-700'
+                                  : 'bg-amber-500/10 text-amber-700'
+                              }`}
+                            >
+                              {panel.eyebrow}
+                            </p>
+                            <h3 className="mt-4 font-heading text-2xl font-semibold text-brand-dark md:text-[1.85rem]">
+                              {panel.title}
+                            </h3>
+                            <p className="mt-2 max-w-lg text-sm leading-6 text-slate-600 md:text-[15px]">
+                              {panel.description}
+                            </p>
+                          </div>
 
-                    <div className="rounded-2xl border border-border-subtle bg-surface-main p-5 shadow-soft">
-                      <p className="inline-flex rounded-full bg-amber-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-amber-700">
-                        Kapsam Dışı
-                      </p>
-                      <ul className="mt-4 space-y-3 text-sm leading-6 text-slate-700 md:text-base">
-                        <li>Aile birleşimi başvuruları</li>
-                        <li>Öğrenci ve dil kursu vizeleri</li>
-                        <li>Turistik başvurular</li>
-                        <li>Kariyer dışı genel yönlendirmeler</li>
-                      </ul>
-                    </div>
+                          <div
+                            className={`hidden h-12 w-12 shrink-0 rounded-full border md:flex md:items-center md:justify-center ${
+                              panel.tone === 'emerald'
+                                ? 'border-emerald-200 bg-emerald-50 text-emerald-600'
+                                : 'border-amber-200 bg-amber-50 text-amber-600'
+                            }`}
+                            aria-hidden="true"
+                          >
+                            <span className="text-base font-semibold">
+                              {panel.tone === 'emerald' ? '01' : '02'}
+                            </span>
+                          </div>
+                        </div>
+
+                        <ul className="mt-6 space-y-3">
+                          {panel.items.map((item) => (
+                            <li
+                              key={item}
+                              className="flex items-start gap-3 rounded-xl border border-white/80 bg-white/90 px-4 py-3 text-sm leading-6 text-slate-700 shadow-[0_1px_0_rgba(15,23,42,0.03)] md:text-[15px]"
+                            >
+                              <span
+                                className={`mt-2 h-2.5 w-2.5 shrink-0 rounded-full ${
+                                  panel.tone === 'emerald'
+                                    ? 'bg-emerald-500'
+                                    : 'bg-amber-500'
+                                }`}
+                                aria-hidden="true"
+                              />
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </article>
+                    ))}
                   </div>
                 </RevealOnScroll>
 

@@ -26,8 +26,8 @@ export function LegalConsentBar() {
       id="legal-consent-bar"
       className="fixed inset-x-0 bottom-0 z-40 border-t border-slate-800 bg-slate-900/95 text-slate-100"
     >
-      <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-3 text-xs md:flex-row md:items-center md:justify-between md:text-sm">
-        <p className="leading-snug">
+      <div className="mx-auto grid max-w-6xl gap-3 px-4 py-3 text-xs md:grid-cols-[minmax(0,1fr)_auto] md:items-center md:gap-4 md:text-sm">
+        <p className="min-w-0 leading-snug md:pr-2">
           Web sitemiz, size en iyi deneyimi sunmak ve yasal yükümlülüklerimizi
           yerine getirmek için çerezler kullanır. Devam ederek{' '}
           <Link
@@ -60,7 +60,7 @@ export function LegalConsentBar() {
           'nı okuduğunuzu ve kabul ettiğinizi onaylamış olursunuz.
         </p>
 
-        <div className="flex items-center justify-end">
+        <div className="flex items-start justify-start md:justify-end">
           <button
             type="button"
             onClick={handleAccept}

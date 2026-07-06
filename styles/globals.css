@@ -1285,6 +1285,10 @@ main[class~='bg-surface-main']:not(:has(> .site-hero)):not(:has(> .home-flow)) .
   }
 }
 
+body.legal-consent-visible .whatsapp-floating-button {
+  bottom: calc(env(safe-area-inset-bottom, 0px) + 6rem);
+}
+
 @media (max-width: 767px) {
   .home-video-coverflow {
     padding-inline: 0;
