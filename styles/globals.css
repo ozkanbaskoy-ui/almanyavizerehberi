@@ -27,19 +27,22 @@
   padding-inline: 2.5rem;
 }
 
-.animate-cta-marquee {
-  display: inline-flex;
-  width: max-content;
-  min-width: 200%;
-  animation: marquee 12s linear infinite;
+.header-cta-button {
+  min-width: clamp(66px, 22vw, 128px);
+  min-height: 36px;
+  padding: 0.3rem clamp(0.45rem, 1.8vw, 1rem);
+  font-size: clamp(6px, 1.8vw, 12px);
+  letter-spacing: 0.01em;
 }
 
-.cta-marquee-item {
-  display: inline-flex;
-  min-width: 50%;
-  align-items: center;
-  justify-content: center;
-  padding-inline: 0.75rem;
+@media (min-width: 640px) {
+  .header-cta-button {
+    min-width: 104px;
+    min-height: 40px;
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+  }
 }
 
 /* ========================================

@@ -208,7 +208,10 @@ export function MainNav({ site }: MainNavProps) {
           </div>
 
           <div className="min-w-0 flex-1 overflow-hidden">
-            <div className="animate-marquee whitespace-nowrap font-ui text-[12px] font-semibold tracking-wide text-slate-100/95 lg:text-[13px]">
+            <div className="lg:hidden text-center font-ui text-[10px] font-semibold leading-tight tracking-wide text-slate-100/95 sm:text-[11px]">
+              Hayallerini erteleme, güvenilir rehberlik için hemen başvur
+            </div>
+            <div className="!hidden whitespace-nowrap font-ui text-[12px] font-semibold tracking-wide text-slate-100/95 animate-marquee lg:!inline-flex lg:text-[13px]">
               <span className="marquee-item">
                 Hayallerini erteleme, doğru, güvenilir ve şeffaf rehberlik için hemen başvur
               </span>
@@ -251,7 +254,7 @@ export function MainNav({ site }: MainNavProps) {
 
       {/* Main nav */}
       <div className="mx-auto w-full max-w-[1400px] border-b border-slate-100 bg-white/95 px-3 py-3 sm:px-4">
-        <div className="flex flex-wrap items-center gap-2 lg:gap-3">
+        <div className="flex items-center gap-2 lg:gap-3">
           <Link
             href="/"
             className="flex min-h-14 shrink-0 items-center gap-3"
@@ -359,22 +362,23 @@ export function MainNav({ site }: MainNavProps) {
 
             <Link
               href="/basvuru"
-              className="inline-flex shrink-0 min-h-9 w-[clamp(88px,28vw,128px)] items-center justify-center overflow-hidden whitespace-nowrap rounded-full bg-gradient-to-b from-brand-red to-red-700 px-2 py-1.5 text-white shadow-[0_8px_18px_rgba(185,28,28,0.28)] ring-1 ring-red-300/35 transition-transform duration-150 hover:-translate-y-0.5 hover:shadow-[0_12px_24px_rgba(185,28,28,0.34)] active:translate-y-0 active:shadow-[0_4px_12px_rgba(185,28,28,0.22)] font-ui sm:w-auto sm:px-4 sm:py-2"
+              className="header-cta-button hidden shrink-0 items-center justify-center whitespace-nowrap rounded-full bg-gradient-to-b from-brand-red to-red-700 font-ui font-bold uppercase leading-none text-white shadow-[0_8px_18px_rgba(185,28,28,0.28)] ring-1 ring-red-300/35 transition-transform duration-150 hover:-translate-y-0.5 hover:shadow-[0_12px_24px_rgba(185,28,28,0.34)] active:translate-y-0 active:shadow-[0_4px_12px_rgba(185,28,28,0.22)] sm:inline-flex"
               aria-label="Başvuru Yap"
             >
-              <span className="sr-only">Başvuru Yap</span>
-              <span
-                className="animate-cta-marquee whitespace-nowrap text-[9px] font-bold uppercase leading-none tracking-[0.06em] text-white sm:hidden"
-                aria-hidden="true"
-              >
-                <span className="cta-marquee-item">Başvuru Yap</span>
-                <span className="cta-marquee-item" aria-hidden="true">
-                  Başvuru Yap
-                </span>
-              </span>
+              <span className="sm:hidden">Başvuru</span>
               <span className="hidden sm:inline">Başvuru Yap</span>
             </Link>
           </div>
+        </div>
+
+        <div className="mt-3 sm:hidden">
+          <Link
+            href="/basvuru"
+            className="inline-flex min-h-11 w-full items-center justify-center rounded-full bg-gradient-to-b from-brand-red to-red-700 px-4 py-2 text-sm font-bold uppercase leading-none tracking-wide text-white shadow-[0_10px_22px_rgba(185,28,28,0.22)] ring-1 ring-red-300/35 transition-transform duration-150 hover:-translate-y-0.5 active:translate-y-0 font-ui"
+            aria-label="Başvuru Yap"
+          >
+            Başvuru Yap
+          </Link>
         </div>
       </div>
 
