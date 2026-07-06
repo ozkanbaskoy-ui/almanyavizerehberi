@@ -250,7 +250,7 @@ export default async function HomePage() {
               <p className="mt-4 mx-auto max-w-2xl text-base text-slate-700 md:text-lg">
                 {homeSettings.services.body}
               </p>
-              <div className="mt-5 flex flex-wrap justify-center gap-3">
+              <div className="mx-auto mt-5 flex w-full max-w-4xl flex-wrap justify-center gap-3 px-2">
                 {SERVICE_SHORTCUTS.map((link) => (
                   <Link
                     key={link.href}
@@ -276,40 +276,25 @@ export default async function HomePage() {
                             : 'border-amber-200/80 bg-gradient-to-br from-amber-50/90 via-white to-white'
                         }`}
                       >
-                        <div className="flex items-start justify-between gap-4">
-                          <div className="max-w-xl">
-                            <p
-                              className={`inline-flex rounded-full px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.28em] ${
-                                panel.tone === 'emerald'
-                                  ? 'bg-emerald-500/10 text-emerald-700'
-                                  : 'bg-amber-500/10 text-amber-700'
-                              }`}
-                            >
-                              {panel.eyebrow}
-                            </p>
-                            <h3 className="mt-4 font-heading text-2xl font-semibold text-brand-dark md:text-[1.85rem]">
-                              {panel.title}
-                            </h3>
-                            <p className="mt-2 max-w-lg text-sm leading-6 text-slate-600 md:text-[15px]">
-                              {panel.description}
-                            </p>
-                          </div>
-
-                          <div
-                            className={`hidden h-12 w-12 shrink-0 rounded-full border md:flex md:items-center md:justify-center ${
+                        <div className="mx-auto flex max-w-xl flex-col items-center text-center">
+                          <p
+                            className={`inline-flex rounded-full px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.28em] ${
                               panel.tone === 'emerald'
-                                ? 'border-emerald-200 bg-emerald-50 text-emerald-600'
-                                : 'border-amber-200 bg-amber-50 text-amber-600'
+                                ? 'bg-emerald-500/10 text-emerald-700'
+                                : 'bg-amber-500/10 text-amber-700'
                             }`}
-                            aria-hidden="true"
                           >
-                            <span className="text-base font-semibold">
-                              {panel.tone === 'emerald' ? '01' : '02'}
-                            </span>
-                          </div>
+                            {panel.eyebrow}
+                          </p>
+                          <h3 className="mt-4 font-heading text-2xl font-semibold text-brand-dark md:text-[1.85rem]">
+                            {panel.title}
+                          </h3>
+                          <p className="mt-2 max-w-lg text-sm leading-6 text-slate-600 md:text-[15px]">
+                            {panel.description}
+                          </p>
                         </div>
 
-                        <ul className="mt-6 space-y-3">
+                        <ul className="mx-auto mt-6 w-full max-w-xl space-y-3">
                           {panel.items.map((item) => (
                             <li
                               key={item}
