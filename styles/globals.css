@@ -27,6 +27,21 @@
   padding-inline: 2.5rem;
 }
 
+.animate-cta-marquee {
+  display: inline-flex;
+  width: max-content;
+  min-width: 200%;
+  animation: marquee 12s linear infinite;
+}
+
+.cta-marquee-item {
+  display: inline-flex;
+  min-width: 50%;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 0.75rem;
+}
+
 /* ========================================
    MODERN YENİLİKÇİ TASARIM SİSTEMİ
    ======================================== */

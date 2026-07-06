@@ -359,9 +359,19 @@ export function MainNav({ site }: MainNavProps) {
 
             <Link
               href="/basvuru"
-              className="inline-flex min-h-9 items-center justify-center whitespace-nowrap rounded-full bg-gradient-to-b from-brand-red to-red-700 px-2.5 py-1.5 text-[10px] font-bold uppercase leading-none tracking-wide text-white shadow-[0_8px_18px_rgba(185,28,28,0.28)] ring-1 ring-red-300/35 transition-transform duration-150 hover:-translate-y-0.5 hover:shadow-[0_12px_24px_rgba(185,28,28,0.34)] active:translate-y-0 active:shadow-[0_4px_12px_rgba(185,28,28,0.22)] font-ui sm:px-4 sm:py-2 sm:text-xs lg:px-5"
+              className="inline-flex shrink-0 min-h-9 w-[clamp(88px,28vw,128px)] items-center justify-center overflow-hidden whitespace-nowrap rounded-full bg-gradient-to-b from-brand-red to-red-700 px-2 py-1.5 text-white shadow-[0_8px_18px_rgba(185,28,28,0.28)] ring-1 ring-red-300/35 transition-transform duration-150 hover:-translate-y-0.5 hover:shadow-[0_12px_24px_rgba(185,28,28,0.34)] active:translate-y-0 active:shadow-[0_4px_12px_rgba(185,28,28,0.22)] font-ui sm:w-auto sm:px-4 sm:py-2"
+              aria-label="Başvuru Yap"
             >
-              <span className="sm:hidden">Başvuru</span>
+              <span className="sr-only">Başvuru Yap</span>
+              <span
+                className="animate-cta-marquee whitespace-nowrap text-[9px] font-bold uppercase leading-none tracking-[0.06em] text-white sm:hidden"
+                aria-hidden="true"
+              >
+                <span className="cta-marquee-item">Başvuru Yap</span>
+                <span className="cta-marquee-item" aria-hidden="true">
+                  Başvuru Yap
+                </span>
+              </span>
               <span className="hidden sm:inline">Başvuru Yap</span>
             </Link>
           </div>
