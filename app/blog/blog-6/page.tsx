@@ -38,7 +38,7 @@ export default function Blog6Page() {
             </p>
             <p className="mt-3 text-xs text-surface-main/70 md:text-sm">
               Yayın tarihi:{' '}
-              <time dateTime="2024-08-15 12:21:29">2024-08-15 12:21:29</time>
+              <time dateTime="2026-06-25 15:15:00">2026-06-25 15:15:00</time>
             </p>
           </RevealOnScroll>
         </div>

@@ -637,29 +637,6 @@
       );
   }
 
-  .home-flow::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    pointer-events: none;
-    background:
-      linear-gradient(90deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0) 38%, rgba(255, 255, 255, 0.06)),
-      linear-gradient(180deg, rgba(59, 130, 246, 0.12), rgba(245, 158, 11, 0.08) 76%, rgba(255, 255, 255, 0.55));
-  }
-
-  .home-flow::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 0;
-    height: 30%;
-    pointer-events: none;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(248, 250, 252, 0.62) 56%, #ffffff);
-  }
-
   .home-flow-section {
     @apply relative overflow-hidden;
     z-index: 1;

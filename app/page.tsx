@@ -4,7 +4,12 @@ import Link from 'next/link';
 import Script from 'next/script';
 
 import { getAllVisas } from '@/lib/content/visas';
+import { getAllBlogPosts } from '@/lib/content/blog';
 import { DEFAULT_SOCIAL_IMAGE } from '@/lib/seo/metadata';
+import { SeoContentHub } from '@/components/home/SeoContentHub';
+import { getMarketingTopicCatalog } from '@/lib/marketing/topicCatalog';
+import { buildSeoAutomationSnapshot } from '@/lib/marketing/seoAutomation';
+import { readSeoAutomationSnapshot } from '@/lib/marketing/seoAutomationStore';
 
 export const metadata: Metadata = {
   title: 'Almanya Vize Rehberi - Profesyonel Danışmanlık',
@@ -132,10 +137,14 @@ const SCOPE_PANELS = [
 
 export default async function HomePage() {
   const visas = getAllVisas();
+  const blogPosts = getAllBlogPosts().slice(0, 2);
   const homeSettings = getHomeSettings();
   const latestVideos = await fetchLatestVideos(8);
   const videos: YouTubeVideo[] =
     latestVideos.length > 0 ? latestVideos : FALLBACK_VIDEOS;
+  const seoSnapshot =
+    readSeoAutomationSnapshot() ||
+    buildSeoAutomationSnapshot(getMarketingTopicCatalog());
 
   const featuredVisas = VISA_CARD_ORDER.map((item) => {
     const v = visas.find((visa) => visa.slug === item.slug);
@@ -370,6 +379,14 @@ export default async function HomePage() {
             </RevealOnScroll>
           </div>
         </section>
+
+        <div className="home-section-divider" aria-hidden="true" />
+
+        <SeoContentHub
+          pillars={seoSnapshot.primaryPillars}
+          topicBriefs={seoSnapshot.topicBriefs}
+          blogPosts={blogPosts}
+        />
       </div>
     </main>
   );
