@@ -57,11 +57,16 @@
   }
 
   html {
-    @apply scroll-smooth;
+    @apply h-full scroll-smooth;
+    overflow-x: hidden;
+    overflow-y: hidden;
   }
 
   body {
-    @apply min-h-screen bg-surface-main font-sans text-dark-900 antialiased;
+    @apply h-full bg-surface-main font-sans text-dark-900 antialiased;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior-y: none;
     font-feature-settings: 'rlig' 1, 'calt' 1;
     text-rendering: optimizeLegibility;
     line-height: 1.65;

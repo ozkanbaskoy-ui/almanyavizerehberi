@@ -384,7 +384,7 @@ export function MainNav({ site }: MainNavProps) {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <nav className="absolute inset-x-0 top-full z-50 max-h-[calc(100dvh-1rem)] overflow-y-auto overscroll-contain border-t border-slate-100 bg-white px-4 py-3 text-sm font-ui shadow-2xl xl:hidden">
+        <nav className="z-50 border-t border-slate-100 bg-white px-4 py-3 text-sm font-ui shadow-2xl xl:hidden">
           <ul className="space-y-2">
             {MAIN_ITEMS.map((item) => {
               const active = isItemActive(item);
